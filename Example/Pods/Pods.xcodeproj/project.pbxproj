@@ -88,7 +88,7 @@
 		0FAAB9E654FAC2D80EFE52EC1FF0EDB0 /* CRBoxInputView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CRBoxInputView.xcconfig; sourceTree = "<group>"; };
 		111E5C7FFEAB9582D55C17C7D5BAA686 /* Pods-CRBoxInputView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CRBoxInputView_Tests.modulemap"; sourceTree = "<group>"; };
 		12F0786A04B3B24AFA0976DF6FD5E894 /* CRBoxTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRBoxTextView.m; path = CRBoxInputView/Classes/CRBoxTextView.m; sourceTree = "<group>"; };
-		1488216F67CF3CD445DE6276D3E14F98 /* CRBoxInputView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = CRBoxInputView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1488216F67CF3CD445DE6276D3E14F98 /* CRBoxInputView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = CRBoxInputView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		1B7118E52EC1CC308A567B558B239187 /* Pods-CRBoxInputView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CRBoxInputView_Tests-resources.sh"; sourceTree = "<group>"; };
 		1B722CE4FD248F018D6A00F26AE4030C /* Pods-CRBoxInputView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CRBoxInputView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1F0183E721D7FD6AF70B4A911C1B1B95 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
@@ -106,13 +106,13 @@
 		537638D0C329C86D4ED401237F5D895F /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
 		57471F84A3674BBFE862F9148A908F77 /* CRBoxTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRBoxTextView.h; path = CRBoxInputView/Classes/CRBoxTextView.h; sourceTree = "<group>"; };
 		57527C4673F1E6AAF68C51C4C0A2022C /* Pods-CRBoxInputView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CRBoxInputView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		5989074CA241AA3916267389356BD019 /* Pods_CRBoxInputView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CRBoxInputView_Example.framework; path = "Pods-CRBoxInputView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5989074CA241AA3916267389356BD019 /* Pods_CRBoxInputView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRBoxInputView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A649F9297535214EF97548C9EA9FA33 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
 		611E26C24600589F4729E5EF510272FB /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
 		61881F60AB333EA86CE7881063A4BA60 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		67DC6C9B66C37A1AC9A0EB21907CFEEF /* Pods-CRBoxInputView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CRBoxInputView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		681F9CAF33BA3311DDC8A7B3C50C1E55 /* CRBoxFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRBoxFlowLayout.h; path = CRBoxInputView/Classes/CRBoxFlowLayout.h; sourceTree = "<group>"; };
-		69BF083DD6B165EA4D44E0503153AA86 /* CRBoxInputView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CRBoxInputView.framework; path = CRBoxInputView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69BF083DD6B165EA4D44E0503153AA86 /* CRBoxInputView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CRBoxInputView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BF35C23E029BF10AE1D3595169AFBCF /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4875E63FFAFF84A3CDFE99F28B551E /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
 		77F2CF8861113B6F7AAE7EA65C6A7C1B /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -122,16 +122,16 @@
 		7F91A3053FD3416327A1C1D0BCEA0BA7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		818E990F262EC48F8DAAFD014D7E9234 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
 		8223B4B9D2A5B7C0F33D1BC8949FA9F5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		825477C55255055B2A9E334E767486DE /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		830A5433CF481605ED7A4AC33C49CDC2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		825477C55255055B2A9E334E767486DE /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		830A5433CF481605ED7A4AC33C49CDC2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		848A22C69638D55424736A7E57530671 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		89FE678B72BCB26DF8890E92E21CB280 /* Pods-CRBoxInputView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CRBoxInputView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8AF9D557645158DDA54F0675938FDF8B /* Pods_CRBoxInputView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CRBoxInputView_Tests.framework; path = "Pods-CRBoxInputView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AF9D557645158DDA54F0675938FDF8B /* Pods_CRBoxInputView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRBoxInputView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90D30C0207645D89CAFD7D732CDF3BCC /* CRBoxInputView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRBoxInputView.m; path = CRBoxInputView/Classes/CRBoxInputView.m; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9461841334B5BBE1C89683978F7B757E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94ED53586901C346D84D937CFA3A5AF6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		959F9E6C631F823A690C8C8CB972552E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		959F9E6C631F823A690C8C8CB972552E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		96DCAB46CA2931B8140F2639F17404AF /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
 		985EA7145B08DC536C6949838C2E241A /* Pods-CRBoxInputView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CRBoxInputView_Example.modulemap"; sourceTree = "<group>"; };
 		986CB32629319F7F2256662716334944 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
@@ -218,14 +218,14 @@
 		218283FE3D2617F6C7145AE570466CB2 /* CRBoxInputView */ = {
 			isa = PBXGroup;
 			children = (
+				A89F99D5E1E1C409C5D7A7A40EB93EFB /* CRBoxInputView.h */,
+				90D30C0207645D89CAFD7D732CDF3BCC /* CRBoxInputView.m */,
 				681F9CAF33BA3311DDC8A7B3C50C1E55 /* CRBoxFlowLayout.h */,
 				F0814AC40832AC25F97400011AC8961A /* CRBoxFlowLayout.m */,
 				B53F4D4357A2D685C5A73747B1FF1372 /* CRBoxInputCell.h */,
 				C3A5C4A2C7FDE3A1B2151987BBF88753 /* CRBoxInputCell.m */,
 				24AD55DA4DE1ADD325F2F3DF8872C0A3 /* CRBoxInputCellProperty.h */,
 				F8B7CA05664B00CC1F849EC0D5A441FF /* CRBoxInputCellProperty.m */,
-				A89F99D5E1E1C409C5D7A7A40EB93EFB /* CRBoxInputView.h */,
-				90D30C0207645D89CAFD7D732CDF3BCC /* CRBoxInputView.m */,
 				57471F84A3674BBFE862F9148A908F77 /* CRBoxTextView.h */,
 				12F0786A04B3B24AFA0976DF6FD5E894 /* CRBoxTextView.m */,
 				FC9C798885FEB2B3BA5C20E45E5B94B1 /* Pod */,
@@ -314,7 +314,6 @@
 				3980E01C213ECEDEABAC38C1CFD3946D /* ViewController+MASAdditions.m */,
 				D253588BAFB01A953DA60C10CD597F84 /* Support Files */,
 			);
-			name = Masonry;
 			path = Masonry;
 			sourceTree = "<group>";
 		};

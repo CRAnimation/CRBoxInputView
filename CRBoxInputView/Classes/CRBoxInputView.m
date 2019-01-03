@@ -11,14 +11,20 @@
 #import "CRBoxInputCell.h"
 #import "CRBoxTextView.h"
 
+typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
+    CRBoxTextChangeType_NoChange,
+    CRBoxTextChangeType_Insert,
+    CRBoxTextChangeType_Delete,
+};
+
 @interface CRBoxInputView () <UITextViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 {
-    
+    NSInteger _oldLength;
 }
 
 @property (nonatomic, strong) CRBoxTextView *textView;
 @property (nonatomic, strong) UICollectionView *mainCollectionView;
-@property (nonatomic, strong) NSMutableArray *valueArr;
+@property (nonatomic, strong) NSMutableArray <NSString *> *valueArr;
 
 @end
 
@@ -44,6 +50,7 @@
 
 -(void)initDefaultValue{
     //初始化默认值
+    _oldLength = 0;
     self.codeLength = 4;
     self.ifNeedCursor = YES;
     self.backgroundColor = [UIColor clearColor];
@@ -98,17 +105,54 @@
     }
     textView.text = verStr;
     
+    // 判断删除/增加
+    CRBoxTextChangeType boxTextChangeType = CRBoxTextChangeType_NoChange;
+    if (verStr.length > _oldLength) {
+        boxTextChangeType = CRBoxTextChangeType_Insert;
+    }else if (verStr.length < _oldLength){
+        boxTextChangeType = CRBoxTextChangeType_Delete;
+    }
+    
     // _valueArr
-    [_valueArr removeAllObjects];
-    [verStr enumerateSubstringsInRange:NSMakeRange(0, verStr.length) options:(NSStringEnumerationByComposedCharacterSequences) usingBlock:^(NSString * _Nullable substring, NSRange substringRange, NSRange enclosingRange, BOOL * _Nonnull stop) {
-        [self->_valueArr addObject:substring];
-    }];
+    if (boxTextChangeType == CRBoxTextChangeType_Delete) {
+        [_valueArr removeLastObject];
+    }else if (boxTextChangeType == CRBoxTextChangeType_Insert){
+        if (verStr.length > 0) {
+            NSString *subStr = [verStr substringWithRange:NSMakeRange(verStr.length - 1, 1)];
+            [self->_valueArr addObject:subStr];
+        }
+    }
     [_mainCollectionView reloadData];
     
     if (self.textDidChangeblock) {
         BOOL isFinished = _valueArr.count == _codeLength ? YES : NO;
         self.textDidChangeblock(verStr, isFinished);
     }
+    
+    _oldLength = verStr.length;
+}
+
+- (void)allValueProtectProcess
+{
+    [_valueArr enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (![obj isEqualToString:@"*"]) {
+            [self->_valueArr replaceObjectAtIndex:idx withObject:@"*"];
+        }
+    }];
+    
+    [_mainCollectionView reloadData];
+//    [self delayAfter:<#(CGFloat)#> dealBlock:<#^(void)dealBlock#>]
+}
+
+#pragma mark - DelayBlock
+- (void)delayAfter:(CGFloat)delayTime dealBlock:(void (^)(void))dealBlock
+{
+    dispatch_time_t timer = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayTime *NSEC_PER_SEC));
+    dispatch_after(timer, dispatch_get_main_queue(), ^{
+        if (dealBlock) {
+            dealBlock();
+        }
+    });
 }
 
 #pragma mark - UICollectionViewDataSource
