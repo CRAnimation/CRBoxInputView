@@ -49,9 +49,9 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 }
 
 -(void)initDefaultValue{
-    //初始化默认值
     _oldLength = 0;
     self.securityDelay = 0.3;
+    self.securitySymbol = @"✱";
     self.codeLength = 4;
     self.ifNeedCursor = YES;
     self.backgroundColor = [UIColor clearColor];
@@ -152,8 +152,8 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         return;
     }
     
-    if (_valueArr.count > index && ![_valueArr[index] isEqualToString:@"✱"]) {
-        [_valueArr replaceObjectAtIndex:index withObject:@"✱"];
+    if (_valueArr.count > index && ![_valueArr[index] isEqualToString:self.securitySymbol]) {
+        [_valueArr replaceObjectAtIndex:index withObject:self.securitySymbol];
     }
 }
 
@@ -254,6 +254,15 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         _textView.keyboardType = UIKeyboardTypeDefault;
     }
     return _textView;
+}
+
+- (void)setSecuritySymbol:(NSString *)securitySymbol
+{
+    if (securitySymbol.length != 1) {
+        _securitySymbol = @"✱";
+    }else{
+        _securitySymbol = securitySymbol;
+    }
 }
 
 @end

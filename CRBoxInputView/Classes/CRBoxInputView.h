@@ -28,16 +28,22 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
 @property (nonatomic, assign) NSInteger codeLength;
 
 /**
- 是否启用*号
+ 是否启用密码模式
  default: NO
  */
 @property (assign, nonatomic) BOOL ifNeedSecurity;
 
 /**
- *号延时时间
+ 密码模式延时时间
  default: 0.3
  */
 @property (assign, nonatomic) CGFloat securityDelay;
+
+/**
+ 密码符号
+ default: ✱
+ */
+@property (strong, nonatomic) NSString  *securitySymbol;
 
 @property (assign, nonatomic) UIKeyboardType keyBoardType;
 @property (copy, nonatomic) TextDidChangeblock textDidChangeblock;
