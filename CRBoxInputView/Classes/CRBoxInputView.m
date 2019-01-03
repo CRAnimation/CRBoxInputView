@@ -50,6 +50,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 
 -(void)initDefaultValue{
     _oldLength = 0;
+    self.ifNeedSecurity = NO;
     self.securityDelay = 0.3;
     self.securitySymbol = @"✱";
     self.codeLength = 4;
@@ -148,6 +149,10 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 // 替换*
 - (void)replaceValueArrToAsteriskWithIndex:(NSInteger)index needEqualToCount:(BOOL)needEqualToCount
 {
+    if (!self.ifNeedSecurity) {
+        return;
+    }
+    
     if (needEqualToCount && index != _valueArr.count - 1) {
         return;
     }
@@ -160,6 +165,10 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 // 延时替换*
 - (void)delayAsteriskProcess
 {
+    if (!self.ifNeedSecurity) {
+        return;
+    }
+    
     __weak typeof(self) weakSelf = self;
     [self delayAfter:_securityDelay dealBlock:^{
         if (self->_valueArr.count > 0) {
