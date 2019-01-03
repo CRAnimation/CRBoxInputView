@@ -121,8 +121,12 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         [_valueArr removeLastObject];
     }else if (boxTextChangeType == CRBoxTextChangeType_Insert){
         if (verStr.length > 0) {
+            if (_valueArr.count > 0) {
+                [self replaceValueArrToAsteriskWithIndex:_valueArr.count - 1 needEqualToCount:NO];
+            }
             NSString *subStr = [verStr substringWithRange:NSMakeRange(verStr.length - 1, 1)];
             [self->_valueArr addObject:subStr];
+            [self delayAsteriskProcess];
         }
     }
     [_mainCollectionView reloadData];
@@ -139,16 +143,34 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     }
 }
 
-- (void)allValueProtectProcess
+// 替换*
+- (void)replaceValueArrToAsteriskWithIndex:(NSInteger)index needEqualToCount:(BOOL)needEqualToCount
 {
-    [_valueArr enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (![obj isEqualToString:@"*"]) {
-            [self->_valueArr replaceObjectAtIndex:idx withObject:@"*"];
+    if (needEqualToCount && index != _valueArr.count - 1) {
+        return;
+    }
+    
+    if (_valueArr.count > index && ![_valueArr[index] isEqualToString:@"✱"]) {
+        [_valueArr replaceObjectAtIndex:index withObject:@"✱"];
+        
+        if (needEqualToCount) {
+            NSLog(@"--replace index:%ld", (long)index);
+        }
+    }
+}
+
+// 延时替换*
+- (void)delayAsteriskProcess
+{
+    __weak typeof(self) weakSelf = self;
+    [self delayAfter:2 dealBlock:^{
+        if (self->_valueArr.count > 0) {
+            [weakSelf replaceValueArrToAsteriskWithIndex:self->_valueArr.count-1 needEqualToCount:YES];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->_mainCollectionView reloadData];
+            });
         }
     }];
-    
-    [_mainCollectionView reloadData];
-//    [self delayAfter:<#(CGFloat)#> dealBlock:<#^(void)dealBlock#>]
 }
 
 #pragma mark - DelayBlock
