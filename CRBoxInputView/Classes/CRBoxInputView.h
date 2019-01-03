@@ -27,9 +27,21 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
  */
 @property (nonatomic, assign) NSInteger codeLength;
 
-@property (nonatomic, assign) UIKeyboardType keyBoardType;
-@property (nonatomic, copy) TextDidChangeblock textDidChangeblock;
-@property (nonatomic, strong) CRBoxFlowLayout *boxFlowLayout;
+/**
+ 是否启用*号
+ default: NO
+ */
+@property (assign, nonatomic) BOOL ifNeedSecurity;
+
+/**
+ *号延时时间
+ default: 0.3
+ */
+@property (assign, nonatomic) CGFloat securityDelay;
+
+@property (assign, nonatomic) UIKeyboardType keyBoardType;
+@property (copy, nonatomic) TextDidChangeblock textDidChangeblock;
+@property (strong, nonatomic) CRBoxFlowLayout *boxFlowLayout;
 @property (strong, nonatomic) CRBoxInputCellProperty *boxInputCellProperty;
 
 -(void)loadAndPrepareView;

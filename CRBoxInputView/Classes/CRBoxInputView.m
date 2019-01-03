@@ -51,6 +51,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 -(void)initDefaultValue{
     //初始化默认值
     _oldLength = 0;
+    self.securityDelay = 0.3;
     self.codeLength = 4;
     self.ifNeedCursor = YES;
     self.backgroundColor = [UIColor clearColor];
@@ -143,6 +144,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     }
 }
 
+#pragma mark - Asterisk
 // 替换*
 - (void)replaceValueArrToAsteriskWithIndex:(NSInteger)index needEqualToCount:(BOOL)needEqualToCount
 {
@@ -152,10 +154,6 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     
     if (_valueArr.count > index && ![_valueArr[index] isEqualToString:@"✱"]) {
         [_valueArr replaceObjectAtIndex:index withObject:@"✱"];
-        
-        if (needEqualToCount) {
-            NSLog(@"--replace index:%ld", (long)index);
-        }
     }
 }
 
@@ -163,7 +161,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 - (void)delayAsteriskProcess
 {
     __weak typeof(self) weakSelf = self;
-    [self delayAfter:2 dealBlock:^{
+    [self delayAfter:_securityDelay dealBlock:^{
         if (self->_valueArr.count > 0) {
             [weakSelf replaceValueArrToAsteriskWithIndex:self->_valueArr.count-1 needEqualToCount:YES];
             dispatch_async(dispatch_get_main_queue(), ^{
