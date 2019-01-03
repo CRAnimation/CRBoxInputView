@@ -50,6 +50,21 @@
         make.centerY.offset(0);
         make.height.mas_equalTo(47);
     }];
+    
+    UIButton *clearBtn = [UIButton new];
+    [clearBtn addTarget:self action:@selector(clearBtnEvent) forControlEvents:UIControlEventTouchUpInside];
+    clearBtn.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:clearBtn];
+    [clearBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.offset(100);
+        make.width.height.mas_equalTo(100);
+        make.centerX.offset(0);
+    }];
+}
+
+- (void)clearBtnEvent
+{
+    [_boxInputView clearAll];
 }
 
 
