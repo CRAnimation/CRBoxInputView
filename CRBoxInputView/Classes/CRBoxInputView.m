@@ -87,8 +87,11 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 }
 
 -(void)clearAll{
+    _oldLength = 0;
+    [_valueArr removeAllObjects];
     self.textView.text = @"";
-    [self textViewDidChange:self.textView];
+    [self.mainCollectionView reloadData];
+    [self triggerBlock];
     [self beginEdit];
 }
 
@@ -124,12 +127,16 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     }
     [_mainCollectionView reloadData];
     
+    [self triggerBlock];
+    _oldLength = verStr.length;
+}
+
+- (void)triggerBlock
+{
     if (self.textDidChangeblock) {
         BOOL isFinished = _valueArr.count == _codeLength ? YES : NO;
-        self.textDidChangeblock(verStr, isFinished);
+        self.textDidChangeblock(_textView.text, isFinished);
     }
-    
-    _oldLength = verStr.length;
 }
 
 - (void)allValueProtectProcess
