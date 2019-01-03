@@ -9,13 +9,14 @@
 #import "CRBoxInputView.h"
 #import "Masonry.h"
 #import "CRBoxInputCell.h"
+#import "CRBoxTextView.h"
 
 @interface CRBoxInputView () <UITextViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 {
     
 }
 
-@property (nonatomic, strong) UITextView *textView;
+@property (nonatomic, strong) CRBoxTextView *textView;
 @property (nonatomic, strong) UICollectionView *mainCollectionView;
 @property (nonatomic, strong) NSMutableArray *valueArr;
 
@@ -172,15 +173,14 @@
     self.textView.keyboardType = keyBoardType;
 }
 
--(UITextView *)textView{
+-(CRBoxTextView *)textView{
     if (!_textView) {
-        _textView = [UITextView new];
+        _textView = [CRBoxTextView new];
         _textView.tintColor = [UIColor clearColor];
         _textView.backgroundColor = [UIColor clearColor];
         _textView.textColor = [UIColor clearColor];
         _textView.delegate = self;
         _textView.keyboardType = UIKeyboardTypeDefault;
-//        [_textView canPerformAction:<#(nonnull SEL)#> withSender:<#(nullable id)#>]
     }
     return _textView;
 }
