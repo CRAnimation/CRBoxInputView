@@ -1,0 +1,1040 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		003EE7EF3DC6A557E84928BA760CCAB6 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F69E835336330FF06E7268D32D667C9 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		042C1D3C6C28A3C8B35869742B828412 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C550CDA10D592ABB6A0383A3509F05 /* NSArray+MASAdditions.m */; };
+		075A8757E98E4076935B014896D42E30 /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = ECBBB506D4D551AB1A637EE3145A459E /* MASConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08CDA2B5F1E3F07C99C550F20C249CDD /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = AD04C760F0EB4FE7B23D85D56145A97F /* MASUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		090149A0C6BD2365E2E61906A0EF1616 /* Pods-CRBoxInputView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FA41BF00810C49EB5084F7ECF50800 /* Pods-CRBoxInputView_Tests-dummy.m */; };
+		0CEEF0C1A463E8B02FF331DFDB3E0BED /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 96DCAB46CA2931B8140F2639F17404AF /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1978B6D3A85EF18D35A1FAF85DFBC51E /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 79BEFB59B86F59C579FF7594DCF78FEB /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C718B481EB04B90F5AB7AE6C8AD115B /* CRBoxFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = C87B61DCA1AC086410BCB08CAEC626E7 /* CRBoxFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C2B6738B8B95DBFEDC5F277526568A8 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 818E990F262EC48F8DAAFD014D7E9234 /* Masonry-dummy.m */; };
+		2EF35894AC7CBA17B23283B2943A9C87 /* Masonry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB8A9BDAB144F118F7F74E1F2B74097 /* Masonry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E52283390C32807B4A1BBAE328378A1 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4875E63FFAFF84A3CDFE99F28B551E /* MASViewConstraint.m */; };
+		43A7BC25E0984F79EAF2579DB48DF085 /* Pods-CRBoxInputView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DF5F65224D57381EECF889FD5F7E4B08 /* Pods-CRBoxInputView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		485CB5231F152A8D42FD2A4501B41C26 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 986CB32629319F7F2256662716334944 /* MASConstraint.m */; };
+		582E911DFC61AC67721988DCAAD6DC7C /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 611E26C24600589F4729E5EF510272FB /* MASLayoutConstraint.m */; };
+		5A92C47A023437EFA70848E1D4B4BE02 /* CRBoxFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E14989C01E64E02D647D84D60473DA71 /* CRBoxFlowLayout.m */; };
+		5B4CFD8196AACD363DC05FF304859E0D /* CRBoxInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C8142A9724478E122ED6AA63EF66C7 /* CRBoxInputCell.m */; };
+		6118483E53DDB31D0AC1CAC47751733E /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3818136FED67BD32E3A7FAEDE4F68F /* MASConstraintMaker.m */; };
+		63A30D4FB7C633BE9F132BB024A72959 /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F2CF8861113B6F7AAE7EA65C6A7C1B /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64DB4C47C342FE74A5ADF0EAB3F0BDFC /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3980E01C213ECEDEABAC38C1CFD3946D /* ViewController+MASAdditions.m */; };
+		66922E8FF9C448581EC2A9F84CE24F19 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C6D5C71A7A4B3156186EC98A377E8543 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		696D41B73F472CC2BFFD5B29674813A6 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 537638D0C329C86D4ED401237F5D895F /* MASCompositeConstraint.m */; };
+		6987EFDA28BA6B043215EA4DE5A9C7F8 /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F0183E721D7FD6AF70B4A911C1B1B95 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69A0929A35D3F912534C7B1FA685C4B5 /* CRBoxInputView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB28B6A631B42CFA48DC67143493AB6E /* CRBoxInputView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6FDE85E692AB9874F4E6C28A397139F4 /* CRBoxInputView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C005D80632AC13CD9F4A83414260F812 /* CRBoxInputView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7578949EBE561028A94C24D0C919171A /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = C484EF8499F67EC81CA7E27930A63CDC /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		780185266D46E3FDA76374273B9FBF6D /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A649F9297535214EF97548C9EA9FA33 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		791EE8661DAB7113DBABD3BC67C1AB15 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = A02D339E60E114FCC992372E93245BA1 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7CDF472639E6A3433AE03DA28741ADC6 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A214B89738295B4A4B00EEB1960E8865 /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		80560AACB3AC61C4E0EC33B6950A1B6A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC31C30AA1B843123575E6EBA38993C /* UIKit.framework */; };
+		81862FE546190D4A605C789D22F98006 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848A22C69638D55424736A7E57530671 /* Foundation.framework */; };
+		85BF575F2F1F4C65795C42875EFDB14F /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC0A25DD6F58D072A4ACFC92D9237BF /* View+MASAdditions.m */; };
+		874ED4475001698AB2261CF932791CB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848A22C69638D55424736A7E57530671 /* Foundation.framework */; };
+		8802A55976A878C4D3E8FA273D3A9053 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 0925CC604B01F156279E8952DDE3EDDB /* MASViewAttribute.m */; };
+		8DD6CBB84DFE11F183554E8F1290DA60 /* CRBoxInputCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 491D241F8A2B6847803DEDA9B5EC6502 /* CRBoxInputCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		97281687CCD2D9451E4892A875E2023E /* CRBoxInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB648C5ADB296209874EAA9B07050AF0 /* CRBoxInputView.m */; };
+		983EEB5F67002A0DC5252E2074423CC7 /* CRBoxInputView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E06236DAF6778592FCC29B341F3C4C80 /* CRBoxInputView-dummy.m */; };
+		A326C88C533181ECDC71E19B531061AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848A22C69638D55424736A7E57530671 /* Foundation.framework */; };
+		C7E1A16632CA8576D7FC1279B515F815 /* Pods-CRBoxInputView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E62C1BB69595D4C0D245CD4381BA549 /* Pods-CRBoxInputView_Example-dummy.m */; };
+		CA599A9B72C7B39BFFD99675E48674BF /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = 303B58A2959C8EEE96799AD558DDA1D3 /* Masonry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D61D1CFABCEB1AEA146F4BB17B56B52D /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 61881F60AB333EA86CE7881063A4BA60 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC890DDEB70EAE5B76D10D715488E4BB /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F8187F5CAD09C6C6B2B54C65B4A807C9 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF4F2B7DAD4669186A913CFD025A180E /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = FF217FE4E512E3883BAD867868CB42D9 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3B961B596B0A9AF9EE645941CB6DB52 /* CRBoxInputCellProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E357F4FC59CBBF769FAAD3D6F7FE32 /* CRBoxInputCellProperty.m */; };
+		E69AA99F6884487BC879748237CF6B2C /* CRBoxInputCellProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = E959B918D4EEB32C4DD398E2FF6BD730 /* CRBoxInputCellProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB715235EE478F55BC4E2BE3B774FF50 /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF35C23E029BF10AE1D3595169AFBCF /* Masonry.framework */; };
+		F20861FA61324D88CC7D6CCD19583BB1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848A22C69638D55424736A7E57530671 /* Foundation.framework */; };
+		FEBD06BFEBD94973277A5D330C7EDD90 /* Pods-CRBoxInputView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F154BC607190AD8382DF783B0ACA21FA /* Pods-CRBoxInputView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		06E70B7043F822F8C5A9E19315DB8EB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA032A5FA752630019ABE8196090885F;
+			remoteInfo = Masonry;
+		};
+		1EB601AA604B60810FF3C28C937905A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA032A5FA752630019ABE8196090885F;
+			remoteInfo = Masonry;
+		};
+		3F437B07FF6B48E3048002F917A4E36F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6EF956F43A3AD9E25B4465FF909AC53F;
+			remoteInfo = CRBoxInputView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00EC77B3DCCAE6970685F9BA10455F0E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		0925CC604B01F156279E8952DDE3EDDB /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
+		0DC31C30AA1B843123575E6EBA38993C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		111E5C7FFEAB9582D55C17C7D5BAA686 /* Pods-CRBoxInputView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CRBoxInputView_Tests.modulemap"; sourceTree = "<group>"; };
+		1B7118E52EC1CC308A567B558B239187 /* Pods-CRBoxInputView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CRBoxInputView_Tests-resources.sh"; sourceTree = "<group>"; };
+		1B722CE4FD248F018D6A00F26AE4030C /* Pods-CRBoxInputView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CRBoxInputView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1F0183E721D7FD6AF70B4A911C1B1B95 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
+		1FB8A9BDAB144F118F7F74E1F2B74097 /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
+		23E357F4FC59CBBF769FAAD3D6F7FE32 /* CRBoxInputCellProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRBoxInputCellProperty.m; path = CRBoxInputView/Classes/CRBoxInputCellProperty.m; sourceTree = "<group>"; };
+		27FA41BF00810C49EB5084F7ECF50800 /* Pods-CRBoxInputView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CRBoxInputView_Tests-dummy.m"; sourceTree = "<group>"; };
+		2F69E835336330FF06E7268D32D667C9 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		303B58A2959C8EEE96799AD558DDA1D3 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
+		31C8142A9724478E122ED6AA63EF66C7 /* CRBoxInputCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRBoxInputCell.m; path = CRBoxInputView/Classes/CRBoxInputCell.m; sourceTree = "<group>"; };
+		36C40591902578632718E317104564A2 /* Masonry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Masonry.modulemap; sourceTree = "<group>"; };
+		3839A1AD8E883475BF8F8C6274F8A953 /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
+		3980E01C213ECEDEABAC38C1CFD3946D /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		47243E06051F7943EDD963A7723CEC0E /* Pods-CRBoxInputView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CRBoxInputView_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		491D241F8A2B6847803DEDA9B5EC6502 /* CRBoxInputCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRBoxInputCell.h; path = CRBoxInputView/Classes/CRBoxInputCell.h; sourceTree = "<group>"; };
+		537638D0C329C86D4ED401237F5D895F /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
+		57527C4673F1E6AAF68C51C4C0A2022C /* Pods-CRBoxInputView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CRBoxInputView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		57AE47BEC486F8AEBA45C394D5528AFC /* CRBoxInputView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CRBoxInputView-prefix.pch"; sourceTree = "<group>"; };
+		5989074CA241AA3916267389356BD019 /* Pods_CRBoxInputView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CRBoxInputView_Example.framework; path = "Pods-CRBoxInputView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A649F9297535214EF97548C9EA9FA33 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		5F6C40DD790E69C4EE59132B2F45184F /* CRBoxInputView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CRBoxInputView.xcconfig; sourceTree = "<group>"; };
+		611E26C24600589F4729E5EF510272FB /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
+		61881F60AB333EA86CE7881063A4BA60 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		67DC6C9B66C37A1AC9A0EB21907CFEEF /* Pods-CRBoxInputView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CRBoxInputView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		69BF083DD6B165EA4D44E0503153AA86 /* CRBoxInputView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CRBoxInputView.framework; path = CRBoxInputView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BF35C23E029BF10AE1D3595169AFBCF /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E4875E63FFAFF84A3CDFE99F28B551E /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
+		77F2CF8861113B6F7AAE7EA65C6A7C1B /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
+		79BEFB59B86F59C579FF7594DCF78FEB /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
+		7E62C1BB69595D4C0D245CD4381BA549 /* Pods-CRBoxInputView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CRBoxInputView_Example-dummy.m"; sourceTree = "<group>"; };
+		7EC0A25DD6F58D072A4ACFC92D9237BF /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
+		818E990F262EC48F8DAAFD014D7E9234 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
+		8223B4B9D2A5B7C0F33D1BC8949FA9F5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		825477C55255055B2A9E334E767486DE /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		848A22C69638D55424736A7E57530671 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		89FE678B72BCB26DF8890E92E21CB280 /* Pods-CRBoxInputView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CRBoxInputView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8AF9D557645158DDA54F0675938FDF8B /* Pods_CRBoxInputView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CRBoxInputView_Tests.framework; path = "Pods-CRBoxInputView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		91BD8E194964290634BCBE4BC1A51AB3 /* CRBoxInputView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CRBoxInputView.modulemap; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9461841334B5BBE1C89683978F7B757E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94ED53586901C346D84D937CFA3A5AF6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95223DADF4FDB7B97A7E9949AA2D9112 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		96DCAB46CA2931B8140F2639F17404AF /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
+		985EA7145B08DC536C6949838C2E241A /* Pods-CRBoxInputView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CRBoxInputView_Example.modulemap"; sourceTree = "<group>"; };
+		986CB32629319F7F2256662716334944 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
+		9C07E44B0808029442684391B5BA3CFC /* Pods-CRBoxInputView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CRBoxInputView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		A02D339E60E114FCC992372E93245BA1 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
+		A214B89738295B4A4B00EEB1960E8865 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		AD04C760F0EB4FE7B23D85D56145A97F /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
+		B1C550CDA10D592ABB6A0383A3509F05 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		C005D80632AC13CD9F4A83414260F812 /* CRBoxInputView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CRBoxInputView-umbrella.h"; sourceTree = "<group>"; };
+		C484EF8499F67EC81CA7E27930A63CDC /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
+		C5E4968548905F117237F7F636262E14 /* CRBoxInputView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = CRBoxInputView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C6D5C71A7A4B3156186EC98A377E8543 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		C87B61DCA1AC086410BCB08CAEC626E7 /* CRBoxFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRBoxFlowLayout.h; path = CRBoxInputView/Classes/CRBoxFlowLayout.h; sourceTree = "<group>"; };
+		CB648C5ADB296209874EAA9B07050AF0 /* CRBoxInputView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRBoxInputView.m; path = CRBoxInputView/Classes/CRBoxInputView.m; sourceTree = "<group>"; };
+		D17CB1DE6068CE2E9853579A61F771C4 /* Pods-CRBoxInputView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CRBoxInputView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		D95A07450B66FF3DE4FA6AEE0DE2AB3F /* Pods-CRBoxInputView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CRBoxInputView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB28B6A631B42CFA48DC67143493AB6E /* CRBoxInputView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRBoxInputView.h; path = CRBoxInputView/Classes/CRBoxInputView.h; sourceTree = "<group>"; };
+		DD014ED2F974DA824028AF03BE22C0E4 /* Pods-CRBoxInputView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CRBoxInputView_Example-frameworks.sh"; sourceTree = "<group>"; };
+		DF5F65224D57381EECF889FD5F7E4B08 /* Pods-CRBoxInputView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CRBoxInputView_Example-umbrella.h"; sourceTree = "<group>"; };
+		E06236DAF6778592FCC29B341F3C4C80 /* CRBoxInputView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CRBoxInputView-dummy.m"; sourceTree = "<group>"; };
+		E14989C01E64E02D647D84D60473DA71 /* CRBoxFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRBoxFlowLayout.m; path = CRBoxInputView/Classes/CRBoxFlowLayout.m; sourceTree = "<group>"; };
+		E77198CEE0CF691E7915471E9F19CD96 /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
+		E959B918D4EEB32C4DD398E2FF6BD730 /* CRBoxInputCellProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRBoxInputCellProperty.h; path = CRBoxInputView/Classes/CRBoxInputCellProperty.h; sourceTree = "<group>"; };
+		ECBBB506D4D551AB1A637EE3145A459E /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
+		EE285EBF6135377321F6A0279D92319C /* Pods-CRBoxInputView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CRBoxInputView_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		F007AFC828C64CF881C9A9609AE108F9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F154BC607190AD8382DF783B0ACA21FA /* Pods-CRBoxInputView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CRBoxInputView_Tests-umbrella.h"; sourceTree = "<group>"; };
+		F6C3DB1770EDF2C9B2A2D83A8525B3F6 /* Pods-CRBoxInputView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CRBoxInputView_Example-resources.sh"; sourceTree = "<group>"; };
+		F8187F5CAD09C6C6B2B54C65B4A807C9 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		FF217FE4E512E3883BAD867868CB42D9 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
+		FF3818136FED67BD32E3A7FAEDE4F68F /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0B738B6EED9F7C424330FEDE034A6A82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81862FE546190D4A605C789D22F98006 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ACDB1FABCB1C65E7528A66B7C70EBAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				874ED4475001698AB2261CF932791CB8 /* Foundation.framework in Frameworks */,
+				EB715235EE478F55BC4E2BE3B774FF50 /* Masonry.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5482362225A405AA6D463791D933B97F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F20861FA61324D88CC7D6CCD19583BB1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8013601240EE7FEF7E1E12F6C8A2012 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A326C88C533181ECDC71E19B531061AC /* Foundation.framework in Frameworks */,
+				80560AACB3AC61C4E0EC33B6950A1B6A /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2717290AA936FA3F76008CDE199CF3A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69BF083DD6B165EA4D44E0503153AA86 /* CRBoxInputView.framework */,
+				825477C55255055B2A9E334E767486DE /* Masonry.framework */,
+				5989074CA241AA3916267389356BD019 /* Pods_CRBoxInputView_Example.framework */,
+				8AF9D557645158DDA54F0675938FDF8B /* Pods_CRBoxInputView_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		552CC573730FA4D883FCC3F9BE0E64F0 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C22CDFAD0ECBA2A2CECFDC81DC7391DF /* CRBoxInputView */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		59511511C2B4BC905C933DCC67E365C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6BF35C23E029BF10AE1D3595169AFBCF /* Masonry.framework */,
+				AB02C94D765D376FFAFCAF1BEEEEE566 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		77A7294737875B8AC86AF852B1ED6EE1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				91BD8E194964290634BCBE4BC1A51AB3 /* CRBoxInputView.modulemap */,
+				5F6C40DD790E69C4EE59132B2F45184F /* CRBoxInputView.xcconfig */,
+				E06236DAF6778592FCC29B341F3C4C80 /* CRBoxInputView-dummy.m */,
+				57AE47BEC486F8AEBA45C394D5528AFC /* CRBoxInputView-prefix.pch */,
+				C005D80632AC13CD9F4A83414260F812 /* CRBoxInputView-umbrella.h */,
+				F007AFC828C64CF881C9A9609AE108F9 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/CRBoxInputView";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				552CC573730FA4D883FCC3F9BE0E64F0 /* Development Pods */,
+				59511511C2B4BC905C933DCC67E365C4 /* Frameworks */,
+				E9B49E9D4F6BC02AA78DCF86BCED2145 /* Pods */,
+				2717290AA936FA3F76008CDE199CF3A6 /* Products */,
+				8576957D1486CE062919C46A46133B58 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8576957D1486CE062919C46A46133B58 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EE72AAE44550C01E7B8AA60A34EC0E82 /* Pods-CRBoxInputView_Example */,
+				BBA5CBC247BF6D556C4E8DAB23E66036 /* Pods-CRBoxInputView_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A14C4E315EA6E66793E226BDF5210115 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				C5E4968548905F117237F7F636262E14 /* CRBoxInputView.podspec */,
+				00EC77B3DCCAE6970685F9BA10455F0E /* LICENSE */,
+				95223DADF4FDB7B97A7E9949AA2D9112 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		A2A20986957FCCEF3865AFC2DAE207A8 /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				79BEFB59B86F59C579FF7594DCF78FEB /* MASCompositeConstraint.h */,
+				537638D0C329C86D4ED401237F5D895F /* MASCompositeConstraint.m */,
+				ECBBB506D4D551AB1A637EE3145A459E /* MASConstraint.h */,
+				986CB32629319F7F2256662716334944 /* MASConstraint.m */,
+				77F2CF8861113B6F7AAE7EA65C6A7C1B /* MASConstraint+Private.h */,
+				A02D339E60E114FCC992372E93245BA1 /* MASConstraintMaker.h */,
+				FF3818136FED67BD32E3A7FAEDE4F68F /* MASConstraintMaker.m */,
+				C484EF8499F67EC81CA7E27930A63CDC /* MASLayoutConstraint.h */,
+				611E26C24600589F4729E5EF510272FB /* MASLayoutConstraint.m */,
+				303B58A2959C8EEE96799AD558DDA1D3 /* Masonry.h */,
+				AD04C760F0EB4FE7B23D85D56145A97F /* MASUtilities.h */,
+				96DCAB46CA2931B8140F2639F17404AF /* MASViewAttribute.h */,
+				0925CC604B01F156279E8952DDE3EDDB /* MASViewAttribute.m */,
+				1F0183E721D7FD6AF70B4A911C1B1B95 /* MASViewConstraint.h */,
+				6E4875E63FFAFF84A3CDFE99F28B551E /* MASViewConstraint.m */,
+				5A649F9297535214EF97548C9EA9FA33 /* NSArray+MASAdditions.h */,
+				B1C550CDA10D592ABB6A0383A3509F05 /* NSArray+MASAdditions.m */,
+				F8187F5CAD09C6C6B2B54C65B4A807C9 /* NSArray+MASShorthandAdditions.h */,
+				2F69E835336330FF06E7268D32D667C9 /* NSLayoutConstraint+MASDebugAdditions.h */,
+				A214B89738295B4A4B00EEB1960E8865 /* NSLayoutConstraint+MASDebugAdditions.m */,
+				FF217FE4E512E3883BAD867868CB42D9 /* View+MASAdditions.h */,
+				7EC0A25DD6F58D072A4ACFC92D9237BF /* View+MASAdditions.m */,
+				61881F60AB333EA86CE7881063A4BA60 /* View+MASShorthandAdditions.h */,
+				C6D5C71A7A4B3156186EC98A377E8543 /* ViewController+MASAdditions.h */,
+				3980E01C213ECEDEABAC38C1CFD3946D /* ViewController+MASAdditions.m */,
+				D253588BAFB01A953DA60C10CD597F84 /* Support Files */,
+			);
+			name = Masonry;
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		AB02C94D765D376FFAFCAF1BEEEEE566 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				848A22C69638D55424736A7E57530671 /* Foundation.framework */,
+				0DC31C30AA1B843123575E6EBA38993C /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		BBA5CBC247BF6D556C4E8DAB23E66036 /* Pods-CRBoxInputView_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9461841334B5BBE1C89683978F7B757E /* Info.plist */,
+				111E5C7FFEAB9582D55C17C7D5BAA686 /* Pods-CRBoxInputView_Tests.modulemap */,
+				1B722CE4FD248F018D6A00F26AE4030C /* Pods-CRBoxInputView_Tests-acknowledgements.markdown */,
+				57527C4673F1E6AAF68C51C4C0A2022C /* Pods-CRBoxInputView_Tests-acknowledgements.plist */,
+				27FA41BF00810C49EB5084F7ECF50800 /* Pods-CRBoxInputView_Tests-dummy.m */,
+				EE285EBF6135377321F6A0279D92319C /* Pods-CRBoxInputView_Tests-frameworks.sh */,
+				1B7118E52EC1CC308A567B558B239187 /* Pods-CRBoxInputView_Tests-resources.sh */,
+				F154BC607190AD8382DF783B0ACA21FA /* Pods-CRBoxInputView_Tests-umbrella.h */,
+				D95A07450B66FF3DE4FA6AEE0DE2AB3F /* Pods-CRBoxInputView_Tests.debug.xcconfig */,
+				47243E06051F7943EDD963A7723CEC0E /* Pods-CRBoxInputView_Tests.release.xcconfig */,
+			);
+			name = "Pods-CRBoxInputView_Tests";
+			path = "Target Support Files/Pods-CRBoxInputView_Tests";
+			sourceTree = "<group>";
+		};
+		C22CDFAD0ECBA2A2CECFDC81DC7391DF /* CRBoxInputView */ = {
+			isa = PBXGroup;
+			children = (
+				C87B61DCA1AC086410BCB08CAEC626E7 /* CRBoxFlowLayout.h */,
+				E14989C01E64E02D647D84D60473DA71 /* CRBoxFlowLayout.m */,
+				491D241F8A2B6847803DEDA9B5EC6502 /* CRBoxInputCell.h */,
+				31C8142A9724478E122ED6AA63EF66C7 /* CRBoxInputCell.m */,
+				E959B918D4EEB32C4DD398E2FF6BD730 /* CRBoxInputCellProperty.h */,
+				23E357F4FC59CBBF769FAAD3D6F7FE32 /* CRBoxInputCellProperty.m */,
+				DB28B6A631B42CFA48DC67143493AB6E /* CRBoxInputView.h */,
+				CB648C5ADB296209874EAA9B07050AF0 /* CRBoxInputView.m */,
+				A14C4E315EA6E66793E226BDF5210115 /* Pod */,
+				77A7294737875B8AC86AF852B1ED6EE1 /* Support Files */,
+			);
+			name = CRBoxInputView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		D253588BAFB01A953DA60C10CD597F84 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8223B4B9D2A5B7C0F33D1BC8949FA9F5 /* Info.plist */,
+				36C40591902578632718E317104564A2 /* Masonry.modulemap */,
+				3839A1AD8E883475BF8F8C6274F8A953 /* Masonry.xcconfig */,
+				818E990F262EC48F8DAAFD014D7E9234 /* Masonry-dummy.m */,
+				E77198CEE0CF691E7915471E9F19CD96 /* Masonry-prefix.pch */,
+				1FB8A9BDAB144F118F7F74E1F2B74097 /* Masonry-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Masonry";
+			sourceTree = "<group>";
+		};
+		E9B49E9D4F6BC02AA78DCF86BCED2145 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A2A20986957FCCEF3865AFC2DAE207A8 /* Masonry */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EE72AAE44550C01E7B8AA60A34EC0E82 /* Pods-CRBoxInputView_Example */ = {
+			isa = PBXGroup;
+			children = (
+				94ED53586901C346D84D937CFA3A5AF6 /* Info.plist */,
+				985EA7145B08DC536C6949838C2E241A /* Pods-CRBoxInputView_Example.modulemap */,
+				89FE678B72BCB26DF8890E92E21CB280 /* Pods-CRBoxInputView_Example-acknowledgements.markdown */,
+				D17CB1DE6068CE2E9853579A61F771C4 /* Pods-CRBoxInputView_Example-acknowledgements.plist */,
+				7E62C1BB69595D4C0D245CD4381BA549 /* Pods-CRBoxInputView_Example-dummy.m */,
+				DD014ED2F974DA824028AF03BE22C0E4 /* Pods-CRBoxInputView_Example-frameworks.sh */,
+				F6C3DB1770EDF2C9B2A2D83A8525B3F6 /* Pods-CRBoxInputView_Example-resources.sh */,
+				DF5F65224D57381EECF889FD5F7E4B08 /* Pods-CRBoxInputView_Example-umbrella.h */,
+				9C07E44B0808029442684391B5BA3CFC /* Pods-CRBoxInputView_Example.debug.xcconfig */,
+				67DC6C9B66C37A1AC9A0EB21907CFEEF /* Pods-CRBoxInputView_Example.release.xcconfig */,
+			);
+			name = "Pods-CRBoxInputView_Example";
+			path = "Target Support Files/Pods-CRBoxInputView_Example";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0DF0B8F55DDFD85063CAAFF3C953DC7B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEBD06BFEBD94973277A5D330C7EDD90 /* Pods-CRBoxInputView_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F71EAF518FF5BAC6A9BDB298E21AB82 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43A7BC25E0984F79EAF2579DB48DF085 /* Pods-CRBoxInputView_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAEC241D8C3F56924371EC0DCD3111BD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C718B481EB04B90F5AB7AE6C8AD115B /* CRBoxFlowLayout.h in Headers */,
+				8DD6CBB84DFE11F183554E8F1290DA60 /* CRBoxInputCell.h in Headers */,
+				E69AA99F6884487BC879748237CF6B2C /* CRBoxInputCellProperty.h in Headers */,
+				6FDE85E692AB9874F4E6C28A397139F4 /* CRBoxInputView-umbrella.h in Headers */,
+				69A0929A35D3F912534C7B1FA685C4B5 /* CRBoxInputView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F06CE38A728CD52BE72CFA418AEEEC0D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1978B6D3A85EF18D35A1FAF85DFBC51E /* MASCompositeConstraint.h in Headers */,
+				63A30D4FB7C633BE9F132BB024A72959 /* MASConstraint+Private.h in Headers */,
+				075A8757E98E4076935B014896D42E30 /* MASConstraint.h in Headers */,
+				791EE8661DAB7113DBABD3BC67C1AB15 /* MASConstraintMaker.h in Headers */,
+				7578949EBE561028A94C24D0C919171A /* MASLayoutConstraint.h in Headers */,
+				2EF35894AC7CBA17B23283B2943A9C87 /* Masonry-umbrella.h in Headers */,
+				CA599A9B72C7B39BFFD99675E48674BF /* Masonry.h in Headers */,
+				08CDA2B5F1E3F07C99C550F20C249CDD /* MASUtilities.h in Headers */,
+				0CEEF0C1A463E8B02FF331DFDB3E0BED /* MASViewAttribute.h in Headers */,
+				6987EFDA28BA6B043215EA4DE5A9C7F8 /* MASViewConstraint.h in Headers */,
+				780185266D46E3FDA76374273B9FBF6D /* NSArray+MASAdditions.h in Headers */,
+				DC890DDEB70EAE5B76D10D715488E4BB /* NSArray+MASShorthandAdditions.h in Headers */,
+				003EE7EF3DC6A557E84928BA760CCAB6 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */,
+				DF4F2B7DAD4669186A913CFD025A180E /* View+MASAdditions.h in Headers */,
+				D61D1CFABCEB1AEA146F4BB17B56B52D /* View+MASShorthandAdditions.h in Headers */,
+				66922E8FF9C448581EC2A9F84CE24F19 /* ViewController+MASAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6EF956F43A3AD9E25B4465FF909AC53F /* CRBoxInputView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF8F6A70EB018FC051F6A9652B397DDD /* Build configuration list for PBXNativeTarget "CRBoxInputView" */;
+			buildPhases = (
+				73EAB9D78FBE91A6E7F7582BA6E81B05 /* Sources */,
+				3ACDB1FABCB1C65E7528A66B7C70EBAC /* Frameworks */,
+				DAEC241D8C3F56924371EC0DCD3111BD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A0EEC751F1CF4AE63A222B4FF9221CBE /* PBXTargetDependency */,
+			);
+			name = CRBoxInputView;
+			productName = CRBoxInputView;
+			productReference = 69BF083DD6B165EA4D44E0503153AA86 /* CRBoxInputView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EA032A5FA752630019ABE8196090885F /* Masonry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EB28862BC84A83DFB295D8105397673 /* Build configuration list for PBXNativeTarget "Masonry" */;
+			buildPhases = (
+				715DCD7E4F87AC9D08CF7FD04001B6BA /* Sources */,
+				D8013601240EE7FEF7E1E12F6C8A2012 /* Frameworks */,
+				F06CE38A728CD52BE72CFA418AEEEC0D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Masonry;
+			productName = Masonry;
+			productReference = 825477C55255055B2A9E334E767486DE /* Masonry.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EABE8B5B2EAC922C8E0194624F2E2D46 /* Pods-CRBoxInputView_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 950AC6233672F097D67CFC34EBA6C7FF /* Build configuration list for PBXNativeTarget "Pods-CRBoxInputView_Example" */;
+			buildPhases = (
+				D0D5DC9CF579C495053817CBDE117A9C /* Sources */,
+				5482362225A405AA6D463791D933B97F /* Frameworks */,
+				0F71EAF518FF5BAC6A9BDB298E21AB82 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1661D7111331DE3065C5841D6AEE184F /* PBXTargetDependency */,
+				48ADA2B60FCB0C81AE68368DBD8E2B6B /* PBXTargetDependency */,
+			);
+			name = "Pods-CRBoxInputView_Example";
+			productName = "Pods-CRBoxInputView_Example";
+			productReference = 5989074CA241AA3916267389356BD019 /* Pods_CRBoxInputView_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F88E222F4433DDF1C9D7ADBA8CAB8AB2 /* Pods-CRBoxInputView_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B19035C7B15A969EC1538DC71C870FF2 /* Build configuration list for PBXNativeTarget "Pods-CRBoxInputView_Tests" */;
+			buildPhases = (
+				696A4D769EA5CC98865681239DAA064B /* Sources */,
+				0B738B6EED9F7C424330FEDE034A6A82 /* Frameworks */,
+				0DF0B8F55DDFD85063CAAFF3C953DC7B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-CRBoxInputView_Tests";
+			productName = "Pods-CRBoxInputView_Tests";
+			productReference = 8AF9D557645158DDA54F0675938FDF8B /* Pods_CRBoxInputView_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 2717290AA936FA3F76008CDE199CF3A6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6EF956F43A3AD9E25B4465FF909AC53F /* CRBoxInputView */,
+				EA032A5FA752630019ABE8196090885F /* Masonry */,
+				EABE8B5B2EAC922C8E0194624F2E2D46 /* Pods-CRBoxInputView_Example */,
+				F88E222F4433DDF1C9D7ADBA8CAB8AB2 /* Pods-CRBoxInputView_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		696A4D769EA5CC98865681239DAA064B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				090149A0C6BD2365E2E61906A0EF1616 /* Pods-CRBoxInputView_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		715DCD7E4F87AC9D08CF7FD04001B6BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				696D41B73F472CC2BFFD5B29674813A6 /* MASCompositeConstraint.m in Sources */,
+				485CB5231F152A8D42FD2A4501B41C26 /* MASConstraint.m in Sources */,
+				6118483E53DDB31D0AC1CAC47751733E /* MASConstraintMaker.m in Sources */,
+				582E911DFC61AC67721988DCAAD6DC7C /* MASLayoutConstraint.m in Sources */,
+				2C2B6738B8B95DBFEDC5F277526568A8 /* Masonry-dummy.m in Sources */,
+				8802A55976A878C4D3E8FA273D3A9053 /* MASViewAttribute.m in Sources */,
+				3E52283390C32807B4A1BBAE328378A1 /* MASViewConstraint.m in Sources */,
+				042C1D3C6C28A3C8B35869742B828412 /* NSArray+MASAdditions.m in Sources */,
+				7CDF472639E6A3433AE03DA28741ADC6 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				85BF575F2F1F4C65795C42875EFDB14F /* View+MASAdditions.m in Sources */,
+				64DB4C47C342FE74A5ADF0EAB3F0BDFC /* ViewController+MASAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73EAB9D78FBE91A6E7F7582BA6E81B05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A92C47A023437EFA70848E1D4B4BE02 /* CRBoxFlowLayout.m in Sources */,
+				5B4CFD8196AACD363DC05FF304859E0D /* CRBoxInputCell.m in Sources */,
+				E3B961B596B0A9AF9EE645941CB6DB52 /* CRBoxInputCellProperty.m in Sources */,
+				983EEB5F67002A0DC5252E2074423CC7 /* CRBoxInputView-dummy.m in Sources */,
+				97281687CCD2D9451E4892A875E2023E /* CRBoxInputView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0D5DC9CF579C495053817CBDE117A9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7E1A16632CA8576D7FC1279B515F815 /* Pods-CRBoxInputView_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1661D7111331DE3065C5841D6AEE184F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CRBoxInputView;
+			target = 6EF956F43A3AD9E25B4465FF909AC53F /* CRBoxInputView */;
+			targetProxy = 3F437B07FF6B48E3048002F917A4E36F /* PBXContainerItemProxy */;
+		};
+		48ADA2B60FCB0C81AE68368DBD8E2B6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Masonry;
+			target = EA032A5FA752630019ABE8196090885F /* Masonry */;
+			targetProxy = 06E70B7043F822F8C5A9E19315DB8EB7 /* PBXContainerItemProxy */;
+		};
+		A0EEC751F1CF4AE63A222B4FF9221CBE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Masonry;
+			target = EA032A5FA752630019ABE8196090885F /* Masonry */;
+			targetProxy = 1EB601AA604B60810FF3C28C937905A5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4784EFD05F65E1F513988DE6058D7B49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D95A07450B66FF3DE4FA6AEE0DE2AB3F /* Pods-CRBoxInputView_Tests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CRBoxInputView_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CRBoxInputView_Tests/Pods-CRBoxInputView_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CRBoxInputView_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6C204E59138D4C3EDB14EB5C6147FE68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3839A1AD8E883475BF8F8C6274F8A953 /* Masonry.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Masonry/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
+				PRODUCT_NAME = Masonry;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		71999ED3C91AE96051B2626364D82E7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47243E06051F7943EDD963A7723CEC0E /* Pods-CRBoxInputView_Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CRBoxInputView_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CRBoxInputView_Tests/Pods-CRBoxInputView_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CRBoxInputView_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		73A4C58C76EA6FADE90E016E91B45712 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67DC6C9B66C37A1AC9A0EB21907CFEEF /* Pods-CRBoxInputView_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CRBoxInputView_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CRBoxInputView_Example/Pods-CRBoxInputView_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CRBoxInputView_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		97931927F3DDC0A32151D6C270B286CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F6C40DD790E69C4EE59132B2F45184F /* CRBoxInputView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CRBoxInputView/CRBoxInputView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CRBoxInputView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CRBoxInputView/CRBoxInputView.modulemap";
+				PRODUCT_NAME = CRBoxInputView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B790B79DD9266852A4EDD6CC72374CD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C07E44B0808029442684391B5BA3CFC /* Pods-CRBoxInputView_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CRBoxInputView_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CRBoxInputView_Example/Pods-CRBoxInputView_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CRBoxInputView_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C1D0BFBC77D2383C966C0177209CE114 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3839A1AD8E883475BF8F8C6274F8A953 /* Masonry.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Masonry/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
+				PRODUCT_NAME = Masonry;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C3E37FB098AE76440E29106ADBF00CEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		CA285EA9BF03430D26EB104BB19D1EB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F6C40DD790E69C4EE59132B2F45184F /* CRBoxInputView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CRBoxInputView/CRBoxInputView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CRBoxInputView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CRBoxInputView/CRBoxInputView.modulemap";
+				PRODUCT_NAME = CRBoxInputView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DA03565BE765DB55C6448FB363A44481 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3E37FB098AE76440E29106ADBF00CEB /* Debug */,
+				DA03565BE765DB55C6448FB363A44481 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6EB28862BC84A83DFB295D8105397673 /* Build configuration list for PBXNativeTarget "Masonry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C204E59138D4C3EDB14EB5C6147FE68 /* Debug */,
+				C1D0BFBC77D2383C966C0177209CE114 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		950AC6233672F097D67CFC34EBA6C7FF /* Build configuration list for PBXNativeTarget "Pods-CRBoxInputView_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B790B79DD9266852A4EDD6CC72374CD4 /* Debug */,
+				73A4C58C76EA6FADE90E016E91B45712 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B19035C7B15A969EC1538DC71C870FF2 /* Build configuration list for PBXNativeTarget "Pods-CRBoxInputView_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4784EFD05F65E1F513988DE6058D7B49 /* Debug */,
+				71999ED3C91AE96051B2626364D82E7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF8F6A70EB018FC051F6A9652B397DDD /* Build configuration list for PBXNativeTarget "CRBoxInputView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97931927F3DDC0A32151D6C270B286CE /* Debug */,
+				CA285EA9BF03430D26EB104BB19D1EB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

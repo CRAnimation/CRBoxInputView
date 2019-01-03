@@ -7,9 +7,15 @@
 //
 
 #import "CRViewController.h"
+#import "Masonry.h"
+#import "CRBoxInputView.h"
+
+#define CRBOX_UIColorFromHEX(rgbValue)    [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @interface CRViewController ()
-
+{
+    CRBoxInputView *_boxInputView;
+}
 @end
 
 @implementation CRViewController
@@ -17,8 +23,35 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    [self createUI];
 }
+
+- (void)createUI
+{
+    CGFloat offX = 30;
+    
+    CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
+    cellProperty.cellBgColor = [UIColor clearColor];
+    cellProperty.cellBorderColorSelected = CRBOX_UIColorFromHEX(0x979797);
+    cellProperty.cellCursorColor = CRBOX_UIColorFromHEX(0x979797);
+    cellProperty.cornerRadius = 0;
+    
+    _boxInputView = [CRBoxInputView new];
+    [self.view addSubview:_boxInputView];
+    _boxInputView.codeLength = 6;
+    _boxInputView.ifNeedCursor = YES;
+    _boxInputView.keyBoardType = UIKeyboardTypeNumberPad;
+    _boxInputView.boxInputCellProperty = cellProperty;
+    [_boxInputView loadAndPrepareView];
+    [_boxInputView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.offset(offX);
+        make.right.offset(-offX);
+        make.centerY.offset(0);
+        make.height.mas_equalTo(47);
+    }];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

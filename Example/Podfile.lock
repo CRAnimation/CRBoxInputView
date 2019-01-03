@@ -1,0 +1,19 @@
+PODS:
+  - CRBoxInputView (0.1.0):
+    - Masonry
+  - Masonry (1.1.0)
+
+DEPENDENCIES:
+  - CRBoxInputView (from `../`)
+
+EXTERNAL SOURCES:
+  CRBoxInputView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CRBoxInputView: 04a88c568b716bcd55ebe913131ce1a8fde9270f
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+
+PODFILE CHECKSUM: 513e7fc43cc4d526cb6a402c864cf0a524d92624
+
+COCOAPODS: 1.4.0

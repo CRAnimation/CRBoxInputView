@@ -1,0 +1,27 @@
+{
+  "name": "CRBoxInputView",
+  "version": "0.1.0",
+  "summary": "A short description of CRBoxInputView.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/BearRan/CRBoxInputView",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "BearRan": "648070256@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/BearRan/CRBoxInputView.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "CRBoxInputView/Classes/**/*",
+  "dependencies": {
+    "Masonry": [
+
+    ]
+  }
+}
