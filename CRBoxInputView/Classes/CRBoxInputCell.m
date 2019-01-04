@@ -175,7 +175,19 @@
 {
     if (!_customSecurityView) {
         _customSecurityView = [UIView new];
-        _customSecurityView.backgroundColor = [UIColor orangeColor];
+        _customSecurityView.backgroundColor = [UIColor clearColor];
+        
+        // circleView
+        static CGFloat circleViewWidth = 20;
+        UIView *circleView = [UIView new];
+        circleView.backgroundColor = [UIColor orangeColor];
+        circleView.layer.cornerRadius = circleViewWidth / 2;
+        [_customSecurityView addSubview:circleView];
+        [circleView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.height.mas_equalTo(circleViewWidth);
+            make.centerX.offset(0);
+            make.centerY.offset(0);
+        }];
     }
     
     return _customSecurityView;
