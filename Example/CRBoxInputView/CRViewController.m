@@ -44,6 +44,11 @@
     _boxInputView.keyBoardType = UIKeyboardTypeNumberPad;
     _boxInputView.ifNeedSecurity = YES;
     _boxInputView.customCellProperty = cellProperty;
+    _boxInputView.textDidChangeblock = ^(NSString *text, BOOL isFinished) {
+        if (isFinished) {
+            NSLog(@"--text:%@", text);
+        }
+    };
     [_boxInputView loadAndPrepareView];
     [_boxInputView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(offX);
