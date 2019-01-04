@@ -161,6 +161,8 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     
     CRBoxInputCellProperty *cellProperty = self.cellPropertyArr[index];
     cellProperty.ifShowSecurity = isShow;
+    
+    self.cellPropertyArr;
 }
 
 - (void)closeAllSecurityShow
@@ -235,16 +237,29 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 {
     CRBoxInputCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CRBoxInputCellID forIndexPath:indexPath];
     
-    cell.boxInputCellProperty = self.cellPropertyArr[indexPath.row];
     cell.ifNeedCursor = self.ifNeedCursor;
     
+    // CellProperty
+    CRBoxInputCellProperty *cellProperty = self.cellPropertyArr[indexPath.row];
+    cellProperty.index = indexPath.row;
+    
+    // CustomSecurityView
+    if (self.ifNeedSecurity
+        && cellProperty.securityType == CRBoxSecurityType_CustomView
+        && [_delegate respondsToSelector:@selector(cellCustomSecurityViewAtIndex:)]) {
+        cellProperty.customSecurityView = [_delegate cellCustomSecurityViewAtIndex:indexPath.row];
+    }
+    
+    // setOriginValue
     NSUInteger focusIndex = _valueArr.count;
     cell.selected = indexPath.row == focusIndex ? YES : NO;
     if (_valueArr.count > 0 && indexPath.row <= focusIndex - 1) {
-        [cell quickSetOriginValue:_valueArr[indexPath.row]];
+        cellProperty.originValue = _valueArr[indexPath.row];
     }else{
-        [cell quickSetOriginValue:@""];
+        cellProperty.originValue = @"";
     }
+    
+    cell.boxInputCellProperty = cellProperty;
     
     return cell;
 }

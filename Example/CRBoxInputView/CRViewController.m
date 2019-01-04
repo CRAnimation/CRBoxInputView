@@ -12,9 +12,10 @@
 
 #define CRBOX_UIColorFromHEX(rgbValue)    [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-@interface CRViewController ()
+@interface CRViewController () <CRBoxInputViewDelegate>
 {
     CRBoxInputView *_boxInputView;
+    NSMutableArray *_customSecurityViewArr;
 }
 @end
 
@@ -24,6 +25,8 @@
 {
     [super viewDidLoad];
 	
+    _customSecurityViewArr = [NSMutableArray new];
+    
     [self createUI];
 }
 
@@ -35,7 +38,7 @@
     cellProperty.cellBgColor = [UIColor clearColor];
     cellProperty.cellBorderColorSelected = CRBOX_UIColorFromHEX(0x979797);
     cellProperty.cellCursorColor = CRBOX_UIColorFromHEX(0x979797);
-    cellProperty.cornerRadius = 0;
+    cellProperty.cornerRadius = 7;
     cellProperty.securityType = CRBoxSecurityType_CustomView;
     
     _boxInputView = [CRBoxInputView new];
@@ -45,6 +48,7 @@
     _boxInputView.keyBoardType = UIKeyboardTypeNumberPad;
     _boxInputView.ifNeedSecurity = YES;
     _boxInputView.customCellProperty = cellProperty;
+    _boxInputView.delegate = self;
     _boxInputView.textDidChangeblock = ^(NSString *text, BOOL isFinished) {
         if (isFinished) {
             NSLog(@"--text:%@", text);
@@ -75,10 +79,16 @@
 }
 
 
-- (void)didReceiveMemoryWarning
+#pragma mark - CRBoxInputViewDelegate
+- (UIView *)cellCustomSecurityViewAtIndex:(NSInteger)index
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (_customSecurityViewArr.count <= index) {
+        UIView *testView = [UIView new];
+        testView.backgroundColor = [UIColor redColor];
+        [_customSecurityViewArr addObject:testView];
+    }
+    
+    return _customSecurityViewArr[index];
 }
 
 @end

@@ -71,12 +71,15 @@
 - (void)valueLabelLoadData
 {
     _valueLabel.hidden = NO;
+    [self hideCustomSecurityView];
     
-    if (self.boxInputCellProperty.originValue && self.boxInputCellProperty.originValue.length > 0) {
+    NSLog(@"--cell index:%ld", self.boxInputCellProperty.index);
+    
+    BOOL hasOriginValue = self.boxInputCellProperty.originValue && self.boxInputCellProperty.originValue.length > 0;
+    if (hasOriginValue) {
         if (self.boxInputCellProperty.ifShowSecurity) {
             if (self.boxInputCellProperty.securityType == CRBoxSecurityType_Symbol) {
                 _valueLabel.text = self.boxInputCellProperty.securitySymbol;
-                [self hideCustomSecurityView];
             }else if (self.boxInputCellProperty.securityType == CRBoxSecurityType_CustomView) {
                 _valueLabel.hidden = YES;
                 [self showCustomSecurityView];
@@ -84,11 +87,9 @@
             
         }else{
             _valueLabel.text = self.boxInputCellProperty.originValue;
-            [self hideCustomSecurityView];
         }
     }else{
         _valueLabel.text = @"";
-        [self hideCustomSecurityView];
     }
 }
 
@@ -165,9 +166,18 @@
         _valueLabel.textColor = boxInputCellProperty.cellTextColor;
     }
     
+    if (boxInputCellProperty.customSecurityView) {
+        self.customSecurityView = boxInputCellProperty.customSecurityView;
+    }
+    
     [self valueLabelLoadData];
 }
 
+@synthesize customSecurityView = _customSecurityView;
+- (void)setCustomSecurityView:(UIView *)customSecurityView
+{
+    _customSecurityView = customSecurityView;
+}
 - (UIView *)customSecurityView
 {
     if (!_customSecurityView) {
