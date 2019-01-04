@@ -88,8 +88,6 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     for (int i = 0; i < self.codeLength; i++) {
         [self.cellPropertyArr addObject:[self.customCellProperty copy]];
     }
-    
-    self.cellPropertyArr;
 }
 
 #pragma mark - TextViewEdit
