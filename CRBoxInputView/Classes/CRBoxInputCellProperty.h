@@ -10,6 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger, CRBoxSecurityType) {
+    CRBoxSecurityType_Symbol,
+    CRBoxSecurityType_CustomView,
+};
+
 @interface CRBoxInputCellProperty : NSObject <NSCopying>
 
 // UI
@@ -28,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) BOOL ifShowSecurity;
 @property (copy, nonatomic) NSString *securitySymbol;
 @property (copy, nonatomic) NSString *originValue;
+@property (assign, nonatomic) CRBoxSecurityType securityType;
 
 @end
 

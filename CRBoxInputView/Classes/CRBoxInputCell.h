@@ -20,10 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIView *cursorView;
 @property (assign, nonatomic) BOOL ifNeedCursor;
 
+@property (strong, nonatomic) UIView *customSecurityView;
 @property (strong, nonatomic) CRBoxInputCellProperty *boxInputCellProperty;
-
-// You can rewrite
-- (void)valueLabelLoadData;
 
 // Qiuck set
 - (void)quickSetOriginValue:(NSString *)originValue;

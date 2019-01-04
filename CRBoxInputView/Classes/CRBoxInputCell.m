@@ -68,7 +68,68 @@
     self.boxInputCellProperty = cellProperty;
 }
 
+- (void)valueLabelLoadData
+{
+    _valueLabel.hidden = NO;
+    [self removeCustomSecurityView];
+    
+    if (self.boxInputCellProperty.originValue && self.boxInputCellProperty.originValue.length > 0) {
+        if (self.boxInputCellProperty.ifShowSecurity) {
+            if (self.boxInputCellProperty.securityType == CRBoxSecurityType_Symbol) {
+                _valueLabel.text = self.boxInputCellProperty.securitySymbol;
+            }else if (self.boxInputCellProperty.securityType == CRBoxSecurityType_CustomView) {
+                _valueLabel.hidden = YES;
+                [self addCustomSecurityView];
+            }
+            
+        }else{
+            _valueLabel.text = self.boxInputCellProperty.originValue;
+        }
+    }else{
+        _valueLabel.text = @"";
+    }
+}
+
+#pragma mark - Custom security view
+- (void)addCustomSecurityView
+{
+    [self.customSecurityView removeFromSuperview];
+    [self.contentView addSubview:self.customSecurityView];
+    [self.customSecurityView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
+    }];
+}
+
+- (void)removeCustomSecurityView
+{
+    if (self.boxInputCellProperty.securityType == CRBoxSecurityType_CustomView && self.customSecurityView.superview) {
+        [self.customSecurityView removeFromSuperview];
+    }
+}
+
+#pragma mark - Qiuck set
+- (void)quickSetOriginValue:(NSString *)originValue {
+    self.boxInputCellProperty.originValue = originValue;
+    [self valueLabelLoadData];
+}
+
 #pragma mark - Setter & Getter
+- (CABasicAnimation *)opacityAnimation
+{
+    if (!_opacityAnimation) {
+        _opacityAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+        _opacityAnimation.fromValue = @(1.0);
+        _opacityAnimation.toValue = @(0.0);
+        _opacityAnimation.duration = 0.9;
+        _opacityAnimation.repeatCount = HUGE_VALF;
+        _opacityAnimation.removedOnCompletion = YES;
+        _opacityAnimation.fillMode = kCAFillModeForwards;
+        _opacityAnimation.timingFunction=[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    }
+    
+    return _opacityAnimation;
+}
+
 - (void)setSelected:(BOOL)selected
 {
     if (selected) {
@@ -110,41 +171,14 @@
     [self valueLabelLoadData];
 }
 
-#pragma mark - You can rewrite
-- (void)valueLabelLoadData
+- (UIView *)customSecurityView
 {
-    if (self.boxInputCellProperty.originValue && self.boxInputCellProperty.originValue.length > 0) {
-        if (self.boxInputCellProperty.ifShowSecurity) {
-            _valueLabel.text = self.boxInputCellProperty.securitySymbol;
-        }else{
-            _valueLabel.text = self.boxInputCellProperty.originValue;
-        }
-    }else{
-        _valueLabel.text = @"";
-    }
-}
-
-#pragma mark - Qiuck set
-- (void)quickSetOriginValue:(NSString *)originValue {
-    self.boxInputCellProperty.originValue = originValue;
-    [self valueLabelLoadData];
-}
-
-#pragma mark - Animation
-- (CABasicAnimation *)opacityAnimation
-{
-    if (!_opacityAnimation) {
-        _opacityAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-        _opacityAnimation.fromValue = @(1.0);
-        _opacityAnimation.toValue = @(0.0);
-        _opacityAnimation.duration = 0.9;
-        _opacityAnimation.repeatCount = HUGE_VALF;
-        _opacityAnimation.removedOnCompletion = YES;
-        _opacityAnimation.fillMode = kCAFillModeForwards;
-        _opacityAnimation.timingFunction=[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    if (!_customSecurityView) {
+        _customSecurityView = [UIView new];
+        _customSecurityView.backgroundColor = [UIColor orangeColor];
     }
     
-    return _opacityAnimation;
+    return _customSecurityView;
 }
 
 @end

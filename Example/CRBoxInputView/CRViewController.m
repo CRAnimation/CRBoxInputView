@@ -36,6 +36,7 @@
     cellProperty.cellBorderColorSelected = CRBOX_UIColorFromHEX(0x979797);
     cellProperty.cellCursorColor = CRBOX_UIColorFromHEX(0x979797);
     cellProperty.cornerRadius = 0;
+    cellProperty.securityType = CRBoxSecurityType_CustomView;
     
     _boxInputView = [CRBoxInputView new];
     [self.view addSubview:_boxInputView];

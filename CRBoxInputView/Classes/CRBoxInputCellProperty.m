@@ -32,6 +32,7 @@
         self.ifShowSecurity = NO;
         self.securitySymbol = @"✱";
         self.originValue = @"";
+        self.securityType = CRBoxSecurityType_Symbol;
     }
     
     return self;
@@ -61,6 +62,7 @@
     copy.ifShowSecurity = _ifShowSecurity;
     copy.securitySymbol = [_securitySymbol copy];
     copy.originValue = [_originValue copy];
+    copy.securityType = _securityType;
     
     
     return copy;
