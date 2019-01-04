@@ -23,9 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIView *customSecurityView;
 @property (strong, nonatomic) CRBoxInputCellProperty *boxInputCellProperty;
 
-// Qiuck set
-- (void)quickSetOriginValue:(NSString *)originValue;
-
 @end
 
 NS_ASSUME_NONNULL_END

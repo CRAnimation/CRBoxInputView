@@ -71,46 +71,43 @@
 - (void)valueLabelLoadData
 {
     _valueLabel.hidden = NO;
-    [self removeCustomSecurityView];
     
     if (self.boxInputCellProperty.originValue && self.boxInputCellProperty.originValue.length > 0) {
         if (self.boxInputCellProperty.ifShowSecurity) {
             if (self.boxInputCellProperty.securityType == CRBoxSecurityType_Symbol) {
                 _valueLabel.text = self.boxInputCellProperty.securitySymbol;
+                [self hideCustomSecurityView];
             }else if (self.boxInputCellProperty.securityType == CRBoxSecurityType_CustomView) {
                 _valueLabel.hidden = YES;
-                [self addCustomSecurityView];
+                [self showCustomSecurityView];
             }
             
         }else{
             _valueLabel.text = self.boxInputCellProperty.originValue;
+            [self hideCustomSecurityView];
         }
     }else{
         _valueLabel.text = @"";
+        [self hideCustomSecurityView];
     }
 }
 
 #pragma mark - Custom security view
-- (void)addCustomSecurityView
+- (void)showCustomSecurityView
 {
-    [self.customSecurityView removeFromSuperview];
-    [self.contentView addSubview:self.customSecurityView];
-    [self.customSecurityView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsZero);
-    }];
-}
-
-- (void)removeCustomSecurityView
-{
-    if (self.boxInputCellProperty.securityType == CRBoxSecurityType_CustomView && self.customSecurityView.superview) {
-        [self.customSecurityView removeFromSuperview];
+    if (!self.customSecurityView.superview) {
+        [self.contentView addSubview:self.customSecurityView];
+        [self.customSecurityView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(UIEdgeInsetsZero);
+        }];
     }
+    
+    self.customSecurityView.alpha = 1;
 }
 
-#pragma mark - Qiuck set
-- (void)quickSetOriginValue:(NSString *)originValue {
-    self.boxInputCellProperty.originValue = originValue;
-    [self valueLabelLoadData];
+- (void)hideCustomSecurityView
+{
+    self.customSecurityView.alpha = 0;
 }
 
 #pragma mark - Setter & Getter
