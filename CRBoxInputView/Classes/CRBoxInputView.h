@@ -39,12 +39,6 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
  */
 @property (assign, nonatomic) CGFloat securityDelay;
 
-/**
- 密码符号
- default: ✱
- */
-@property (strong, nonatomic) NSString  *securitySymbol;
-
 @property (assign, nonatomic) UIKeyboardType keyBoardType;
 @property (copy, nonatomic) TextDidChangeblock textDidChangeblock;
 @property (strong, nonatomic) CRBoxFlowLayout *boxFlowLayout;
@@ -52,5 +46,6 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
 
 -(void)loadAndPrepareView;
 -(void)clearAll;
+- (void)quickSetSecuritySymbol:(NSString *)securitySymbol;
 
 @end

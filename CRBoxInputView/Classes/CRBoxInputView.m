@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 
 @implementation CRBoxInputView
 
--(instancetype)initWithFrame:(CGRect)frame{
+- (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
         [self initDefaultValue];
@@ -39,7 +39,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     return self;
 }
 
--(instancetype)init
+- (instancetype)init
 {
     self = [super init];
     if (self) {
@@ -49,11 +49,10 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     return self;
 }
 
--(void)initDefaultValue{
+- (void)initDefaultValue{
     _oldLength = 0;
     self.ifNeedSecurity = NO;
     self.securityDelay = 0.3;
-    self.securitySymbol = @"✱";
     self.codeLength = 4;
     self.ifNeedCursor = YES;
     self.backgroundColor = [UIColor clearColor];
@@ -61,51 +60,48 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     [self beginEdit];
 }
 
--(void)loadAndPrepareView{
+- (void)loadAndPrepareView
+{
     if (_codeLength<=0) {
         NSAssert(NO, @"请输入大于0的验证码位数");
         return;
     }
     
-    [self regenerateCellPropertyArr];
+    [self generateCellPropertyArr];
     
+    // mainCollectionView
     [self addSubview:self.mainCollectionView];
     [self.mainCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
     
-    //添加textView
+    // textView
     [self addSubview:self.textView];
     [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
 }
 
-- (void)regenerateCellPropertyArr
+- (void)generateCellPropertyArr
 {
     [self.cellPropertyArr removeAllObjects];
     for (int i = 0; i < self.codeLength; i++) {
         [self.cellPropertyArr addObject:[self.customCellProperty copy]];
     }
     
-    
-    
-    CRBoxInputCellProperty *cellP0 = self.cellPropertyArr[0];
-    cellP0.originValue = @"123";
-    
     self.cellPropertyArr;
 }
 
 #pragma mark - TextViewEdit
--(void)beginEdit{
+- (void)beginEdit{
     [self.textView becomeFirstResponder];
 }
 
--(void)endEdit{
+- (void)endEdit{
     [self.textView resignFirstResponder];
 }
 
--(void)clearAll{
+- (void)clearAll{
     _oldLength = 0;
     [_valueArr removeAllObjects];
     self.textView.text = @"";
@@ -115,7 +111,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 }
 
 #pragma mark - UITextViewDelegate
--(void)textViewDidChange:(UITextView *)textView{
+- (void)textViewDidChange:(UITextView *)textView{
     
     NSString *verStr = textView.text;
     
@@ -174,9 +170,9 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         return;
     }
     
-    if (_valueArr.count > index && ![_valueArr[index] isEqualToString:self.securitySymbol]) {
-        [_valueArr replaceObjectAtIndex:index withObject:self.securitySymbol];
-    }
+//    if (_valueArr.count > index && ![_valueArr[index] isEqualToString:self.securitySymbol]) {
+//        [_valueArr replaceObjectAtIndex:index withObject:self.securitySymbol];
+//    }
 }
 
 // 延时替换*
@@ -209,18 +205,16 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 }
 
 #pragma mark - UICollectionViewDataSource
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return _codeLength;
 }
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CRBoxInputCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CRBoxInputCellID forIndexPath:indexPath];
     
-    if (_customCellProperty) {
-        cell.boxInputCellProperty = _customCellProperty;
-    }
+    cell.boxInputCellProperty = self.cellPropertyArr[indexPath.row];
     cell.ifNeedCursor = self.ifNeedCursor;
     
     NSUInteger focusIndex = _valueArr.count;
@@ -235,7 +229,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 }
 
 #pragma mark - Setter & Getter
--(UICollectionView *)mainCollectionView
+- (UICollectionView *)mainCollectionView
 {
     if (!_mainCollectionView) {
         _mainCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.boxFlowLayout];
@@ -249,7 +243,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     return _mainCollectionView;
 }
 
--(CRBoxFlowLayout *)boxFlowLayout
+- (CRBoxFlowLayout *)boxFlowLayout
 {
     if (!_boxFlowLayout) {
         _boxFlowLayout = [CRBoxFlowLayout new];
@@ -265,12 +259,12 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     self.boxFlowLayout.itemNum = codeLength;
 }
 
--(void)setKeyBoardType:(UIKeyboardType)keyBoardType{
+- (void)setKeyBoardType:(UIKeyboardType)keyBoardType{
     _keyBoardType = keyBoardType;
     self.textView.keyboardType = keyBoardType;
 }
 
--(CRBoxTextView *)textView{
+- (CRBoxTextView *)textView{
     if (!_textView) {
         _textView = [CRBoxTextView new];
         _textView.tintColor = [UIColor clearColor];
@@ -282,15 +276,13 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     return _textView;
 }
 
-- (void)setSecuritySymbol:(NSString *)securitySymbol
+- (void)quickSetSecuritySymbol:(NSString *)securitySymbol
 {
     if (securitySymbol.length != 1) {
-        _securitySymbol = @"✱";
-    }else{
-        _securitySymbol = securitySymbol;
+        securitySymbol = @"✱";
     }
     
-    self.customCellProperty.securitySymbol = _securitySymbol;
+    self.customCellProperty.securitySymbol = securitySymbol;
 }
 
 - (CRBoxInputCellProperty *)customCellProperty
