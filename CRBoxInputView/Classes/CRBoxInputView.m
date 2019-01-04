@@ -25,6 +25,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 @property (nonatomic, strong) CRBoxTextView *textView;
 @property (nonatomic, strong) UICollectionView *mainCollectionView;
 @property (nonatomic, strong) NSMutableArray <NSString *> *valueArr;
+@property (nonatomic, strong) NSMutableArray <CRBoxInputCellProperty *> *cellPropertyArr;
 
 @end
 
@@ -61,11 +62,12 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 }
 
 -(void)loadAndPrepareView{
-    
     if (_codeLength<=0) {
         NSAssert(NO, @"请输入大于0的验证码位数");
         return;
     }
+    
+    [self regenerateCellPropertyArr];
     
     [self addSubview:self.mainCollectionView];
     [self.mainCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -77,6 +79,21 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
+}
+
+- (void)regenerateCellPropertyArr
+{
+    [self.cellPropertyArr removeAllObjects];
+    for (int i = 0; i < self.codeLength; i++) {
+        [self.cellPropertyArr addObject:[self.customCellProperty copy]];
+    }
+    
+    
+    
+    CRBoxInputCellProperty *cellP0 = self.cellPropertyArr[0];
+    cellP0.originValue = @"123";
+    
+    self.cellPropertyArr;
 }
 
 #pragma mark - TextViewEdit
@@ -201,17 +218,17 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 {
     CRBoxInputCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CRBoxInputCellID forIndexPath:indexPath];
     
-    if (_boxInputCellProperty) {
-        cell.boxInputCellProperty = _boxInputCellProperty;
+    if (_customCellProperty) {
+        cell.boxInputCellProperty = _customCellProperty;
     }
     cell.ifNeedCursor = self.ifNeedCursor;
     
     NSUInteger focusIndex = _valueArr.count;
     cell.selected = indexPath.row == focusIndex ? YES : NO;
     if (_valueArr.count > 0 && indexPath.row <= focusIndex - 1) {
-        cell.valueLabel.text = _valueArr[indexPath.row];
+        [cell quickSetOriginValue:_valueArr[indexPath.row]];
     }else{
-        cell.valueLabel.text = @"";
+        [cell quickSetOriginValue:@""];
     }
     
     return cell;
@@ -272,6 +289,26 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     }else{
         _securitySymbol = securitySymbol;
     }
+    
+    self.customCellProperty.securitySymbol = _securitySymbol;
+}
+
+- (CRBoxInputCellProperty *)customCellProperty
+{
+    if (!_customCellProperty) {
+        _customCellProperty = [CRBoxInputCellProperty new];
+    }
+    
+    return _customCellProperty;
+}
+
+- (NSMutableArray <CRBoxInputCellProperty *> *)cellPropertyArr
+{
+    if (!_cellPropertyArr) {
+        _cellPropertyArr = [NSMutableArray new];
+    }
+    
+    return _cellPropertyArr;
 }
 
 @end

@@ -16,12 +16,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CRBoxInputCell : UICollectionViewCell
 
-@property (strong, nonatomic) UILabel *valueLabel;
-@property (strong, nonatomic) UIView *cursorView; // 光标
-@property (assign, nonatomic) BOOL ifNeedCursor; // 是否需要光标
-@property (strong, nonatomic) CABasicAnimation *opacityAnimation;
+// 光标
+@property (strong, nonatomic) UIView *cursorView;
+@property (assign, nonatomic) BOOL ifNeedCursor;
 
 @property (strong, nonatomic) CRBoxInputCellProperty *boxInputCellProperty;
+
+- (void)quickSetOriginValue:(NSString *)originValue;
+
+// 待重写
+- (void)valueLabelLoadData;
 
 @end
 

@@ -17,7 +17,7 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
 
 /**
  是否需要光标
- default: YES
+ *default: YES
  */
 @property (assign, nonatomic) BOOL ifNeedCursor;
 
@@ -48,7 +48,7 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
 @property (assign, nonatomic) UIKeyboardType keyBoardType;
 @property (copy, nonatomic) TextDidChangeblock textDidChangeblock;
 @property (strong, nonatomic) CRBoxFlowLayout *boxFlowLayout;
-@property (strong, nonatomic) CRBoxInputCellProperty *boxInputCellProperty;
+@property (strong, nonatomic) CRBoxInputCellProperty *customCellProperty;
 
 -(void)loadAndPrepareView;
 -(void)clearAll;

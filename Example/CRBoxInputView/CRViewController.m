@@ -43,7 +43,7 @@
     _boxInputView.ifNeedCursor = YES;
     _boxInputView.keyBoardType = UIKeyboardTypeNumberPad;
     _boxInputView.ifNeedSecurity = YES;
-    _boxInputView.boxInputCellProperty = cellProperty;
+    _boxInputView.customCellProperty = cellProperty;
     [_boxInputView loadAndPrepareView];
     [_boxInputView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(offX);

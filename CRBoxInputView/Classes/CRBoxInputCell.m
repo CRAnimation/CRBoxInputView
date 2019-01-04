@@ -13,6 +13,10 @@
 {
     
 }
+
+@property (strong, nonatomic) UILabel *valueLabel;
+@property (strong, nonatomic) CABasicAnimation *opacityAnimation;
+
 @end
 
 @implementation CRBoxInputCell
@@ -28,10 +32,15 @@
     return self;
 }
 
-- (void)createUI
+- (void)initPara
 {
     self.ifNeedCursor = YES;
     self.userInteractionEnabled = NO;
+}
+
+- (void)createUI
+{
+    [self initPara];
     
     _valueLabel = [UILabel new];
     _valueLabel.font = [UIFont systemFontOfSize:38];
@@ -97,6 +106,23 @@
     if (boxInputCellProperty.cellTextColor) {
         _valueLabel.textColor = boxInputCellProperty.cellTextColor;
     }
+    
+    [self valueLabelLoadData];
+}
+
+- (void)valueLabelLoadData
+{
+    if (self.boxInputCellProperty.ifShowSecurity) {
+        _valueLabel.text = self.boxInputCellProperty.securitySymbol;
+    }else{
+        _valueLabel.text = self.boxInputCellProperty.originValue;
+    }
+}
+
+#pragma mark - Function
+- (void)quickSetOriginValue:(NSString *)originValue {
+    self.boxInputCellProperty.originValue = originValue;
+    [self valueLabelLoadData];
 }
 
 #pragma mark - Animation

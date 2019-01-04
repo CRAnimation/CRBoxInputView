@@ -10,18 +10,24 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CRBoxInputCellProperty : NSObject
+@interface CRBoxInputCellProperty : NSObject <NSCopying>
 
-@property (nonatomic, strong) UIColor *cellBorderColorNormal;
-@property (nonatomic, strong) UIColor *cellBorderColorSelected;
-@property (nonatomic, strong) UIColor *cellBgColor;
-@property (nonatomic, strong) UIColor *cellCursorColor; //光标颜色
-@property (nonatomic, assign) CGFloat cornerRadius;
-@property (nonatomic, assign) CGFloat borderWidth;
+// UI
+@property (copy, nonatomic) UIColor *cellBorderColorNormal;
+@property (copy, nonatomic) UIColor *cellBorderColorSelected;
+@property (copy, nonatomic) UIColor *cellBgColor;
+@property (copy, nonatomic) UIColor *cellCursorColor; //光标颜色
+@property (assign, nonatomic) CGFloat cornerRadius;
+@property (assign, nonatomic) CGFloat borderWidth;
 
 // label
-@property (strong, nonatomic) UIFont *cellFont;
-@property (nonatomic, strong) UIColor *cellTextColor;
+@property (copy, nonatomic) UIFont *cellFont;
+@property (copy, nonatomic) UIColor *cellTextColor;
+
+// Security
+@property (assign, nonatomic) BOOL ifShowSecurity;
+@property (copy, nonatomic) NSString *securitySymbol;
+@property (copy, nonatomic) NSString *originValue;
 
 @end
 
