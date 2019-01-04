@@ -12,10 +12,9 @@
 
 #define CRBOX_UIColorFromHEX(rgbValue)    [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-@interface CRViewController () <CRBoxInputViewDelegate>
+@interface CRViewController ()
 {
     CRBoxInputView *_boxInputView;
-    NSMutableArray *_customSecurityViewArr;
 }
 @end
 
@@ -25,8 +24,6 @@
 {
     [super viewDidLoad];
 	
-    _customSecurityViewArr = [NSMutableArray new];
-    
     [self createUI];
 }
 
@@ -48,7 +45,6 @@
     _boxInputView.keyBoardType = UIKeyboardTypeNumberPad;
     _boxInputView.ifNeedSecurity = YES;
     _boxInputView.customCellProperty = cellProperty;
-    _boxInputView.delegate = self;
     _boxInputView.textDidChangeblock = ^(NSString *text, BOOL isFinished) {
         if (isFinished) {
             NSLog(@"--text:%@", text);
@@ -76,19 +72,6 @@
 - (void)clearBtnEvent
 {
     [_boxInputView clearAll];
-}
-
-
-#pragma mark - CRBoxInputViewDelegate
-- (UIView *)cellCustomSecurityViewAtIndex:(NSInteger)index
-{
-    if (_customSecurityViewArr.count <= index) {
-        UIView *testView = [UIView new];
-        testView.backgroundColor = [UIColor redColor];
-        [_customSecurityViewArr addObject:testView];
-    }
-    
-    return _customSecurityViewArr[index];
 }
 
 @end

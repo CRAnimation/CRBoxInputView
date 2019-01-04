@@ -34,7 +34,6 @@ typedef NS_ENUM(NSInteger, CRBoxSecurityType) {
 @property (copy, nonatomic) NSString *securitySymbol;
 @property (copy, nonatomic) NSString *originValue;
 @property (assign, nonatomic) CRBoxSecurityType securityType;
-@property (strong, nonatomic) UIView *customSecurityView;
 
 // Test
 @property (assign, nonatomic) NSInteger index;

@@ -243,13 +243,6 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     CRBoxInputCellProperty *cellProperty = self.cellPropertyArr[indexPath.row];
     cellProperty.index = indexPath.row;
     
-    // CustomSecurityView
-    if (self.ifNeedSecurity
-        && cellProperty.securityType == CRBoxSecurityType_CustomView
-        && [_delegate respondsToSelector:@selector(cellCustomSecurityViewAtIndex:)]) {
-        cellProperty.customSecurityView = [_delegate cellCustomSecurityViewAtIndex:indexPath.row];
-    }
-    
     // setOriginValue
     NSUInteger focusIndex = _valueArr.count;
     cell.selected = indexPath.row == focusIndex ? YES : NO;

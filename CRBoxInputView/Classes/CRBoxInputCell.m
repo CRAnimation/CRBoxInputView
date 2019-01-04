@@ -73,8 +73,6 @@
     _valueLabel.hidden = NO;
     [self hideCustomSecurityView];
     
-    NSLog(@"--cell index:%ld", self.boxInputCellProperty.index);
-    
     BOOL hasOriginValue = self.boxInputCellProperty.originValue && self.boxInputCellProperty.originValue.length > 0;
     if (hasOriginValue) {
         if (self.boxInputCellProperty.ifShowSecurity) {
@@ -164,10 +162,6 @@
     
     if (boxInputCellProperty.cellTextColor) {
         _valueLabel.textColor = boxInputCellProperty.cellTextColor;
-    }
-    
-    if (boxInputCellProperty.customSecurityView) {
-        self.customSecurityView = boxInputCellProperty.customSecurityView;
     }
     
     [self valueLabelLoadData];

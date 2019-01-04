@@ -13,12 +13,6 @@
 
 typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
 
-@protocol CRBoxInputViewDelegate <NSObject>
-
-- (UIView *)cellCustomSecurityViewAtIndex:(NSInteger)index;
-
-@end
-
 @interface CRBoxInputView : UIView
 
 /**
@@ -49,7 +43,6 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
 @property (copy, nonatomic) TextDidChangeblock textDidChangeblock;
 @property (strong, nonatomic) CRBoxFlowLayout *boxFlowLayout;
 @property (strong, nonatomic) CRBoxInputCellProperty *customCellProperty;
-@property (weak, nonatomic) id <CRBoxInputViewDelegate> delegate;
 
 - (void)loadAndPrepareView;
 - (void)clearAll;
