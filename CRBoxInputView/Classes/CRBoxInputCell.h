@@ -16,16 +16,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CRBoxInputCell : UICollectionViewCell
 
-// 光标
+// cursor
 @property (strong, nonatomic) UIView *cursorView;
 @property (assign, nonatomic) BOOL ifNeedCursor;
 
 @property (strong, nonatomic) CRBoxInputCellProperty *boxInputCellProperty;
 
-- (void)quickSetOriginValue:(NSString *)originValue;
-
-// 待重写
+// You can rewrite
 - (void)valueLabelLoadData;
+
+// Qiuck set
+- (void)quickSetOriginValue:(NSString *)originValue;
 
 @end
 

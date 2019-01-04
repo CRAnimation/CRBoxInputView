@@ -44,8 +44,10 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
 @property (strong, nonatomic) CRBoxFlowLayout *boxFlowLayout;
 @property (strong, nonatomic) CRBoxInputCellProperty *customCellProperty;
 
--(void)loadAndPrepareView;
--(void)clearAll;
+- (void)loadAndPrepareView;
+- (void)clearAll;
+
+// Qiuck set
 - (void)quickSetSecuritySymbol:(NSString *)securitySymbol;
 
 @end

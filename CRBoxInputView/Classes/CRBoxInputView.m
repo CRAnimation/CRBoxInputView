@@ -105,6 +105,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     _oldLength = 0;
     [_valueArr removeAllObjects];
     self.textView.text = @"";
+    [self closeAllSecurityShow];
     [self.mainCollectionView reloadData];
     [self triggerBlock];
     [self beginEdit];
@@ -133,7 +134,9 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     
     // _valueArr
     if (boxTextChangeType == CRBoxTextChangeType_Delete) {
+        [self closeSecurityShowWithIndex:_valueArr.count-1];
         [_valueArr removeLastObject];
+        
     }else if (boxTextChangeType == CRBoxTextChangeType_Insert){
         if (verStr.length > 0) {
             if (_valueArr.count > 0) {
@@ -141,7 +144,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
             }
             NSString *subStr = [verStr substringWithRange:NSMakeRange(verStr.length - 1, 1)];
             [self->_valueArr addObject:subStr];
-            [self delayAsteriskProcess];
+            [self delaySecurityProcess];
         }
     }
     [_mainCollectionView reloadData];
@@ -150,6 +153,28 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     _oldLength = verStr.length;
 }
 
+#pragma mark - Control security show
+- (void)closeSecurityShowWithIndex:(NSInteger)index
+{
+    if (index < 0) {
+        NSAssert(NO, @"index必须大于0");
+        return;
+    }
+    
+    CRBoxInputCellProperty *cellProperty = self.cellPropertyArr[index];
+    cellProperty.ifShowSecurity = NO;
+}
+
+- (void)closeAllSecurityShow
+{
+    [self.cellPropertyArr enumerateObjectsUsingBlock:^(CRBoxInputCellProperty * _Nonnull cellProperty, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (cellProperty.ifShowSecurity == YES) {
+            cellProperty.ifShowSecurity = NO;
+        }
+    }];
+}
+
+#pragma mark - Trigger block
 - (void)triggerBlock
 {
     if (self.textDidChangeblock) {
@@ -159,7 +184,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 }
 
 #pragma mark - Asterisk
-// 替换*
+// 替换密文
 - (void)replaceValueArrToAsteriskWithIndex:(NSInteger)index needEqualToCount:(BOOL)needEqualToCount
 {
     if (!self.ifNeedSecurity) {
@@ -170,13 +195,18 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         return;
     }
     
+    [self.cellPropertyArr enumerateObjectsUsingBlock:^(CRBoxInputCellProperty * _Nonnull cellProperty, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (cellProperty.ifShowSecurity == NO) {
+            cellProperty.ifShowSecurity = YES;
+        }
+    }];
 //    if (_valueArr.count > index && ![_valueArr[index] isEqualToString:self.securitySymbol]) {
 //        [_valueArr replaceObjectAtIndex:index withObject:self.securitySymbol];
 //    }
 }
 
-// 延时替换*
-- (void)delayAsteriskProcess
+// 延时替换密文
+- (void)delaySecurityProcess
 {
     if (!self.ifNeedSecurity) {
         return;
@@ -228,6 +258,16 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     return cell;
 }
 
+#pragma mark - Qiuck set
+- (void)quickSetSecuritySymbol:(NSString *)securitySymbol
+{
+    if (securitySymbol.length != 1) {
+        securitySymbol = @"✱";
+    }
+    
+    self.customCellProperty.securitySymbol = securitySymbol;
+}
+
 #pragma mark - Setter & Getter
 - (UICollectionView *)mainCollectionView
 {
@@ -274,15 +314,6 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         _textView.keyboardType = UIKeyboardTypeDefault;
     }
     return _textView;
-}
-
-- (void)quickSetSecuritySymbol:(NSString *)securitySymbol
-{
-    if (securitySymbol.length != 1) {
-        securitySymbol = @"✱";
-    }
-    
-    self.customCellProperty.securitySymbol = securitySymbol;
 }
 
 - (CRBoxInputCellProperty *)customCellProperty

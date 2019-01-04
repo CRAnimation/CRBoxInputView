@@ -42,7 +42,7 @@
     _boxInputView.codeLength = 6;
     _boxInputView.ifNeedCursor = YES;
     _boxInputView.keyBoardType = UIKeyboardTypeNumberPad;
-    _boxInputView.ifNeedSecurity = YES;
+//    _boxInputView.ifNeedSecurity = YES;
     _boxInputView.customCellProperty = cellProperty;
     [_boxInputView loadAndPrepareView];
     [_boxInputView mas_makeConstraints:^(MASConstraintMaker *make) {

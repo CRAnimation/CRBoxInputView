@@ -110,16 +110,21 @@
     [self valueLabelLoadData];
 }
 
+#pragma mark - You can rewrite
 - (void)valueLabelLoadData
 {
-    if (self.boxInputCellProperty.ifShowSecurity) {
-        _valueLabel.text = self.boxInputCellProperty.securitySymbol;
+    if (self.boxInputCellProperty.originValue && self.boxInputCellProperty.originValue.length > 0) {
+        if (self.boxInputCellProperty.ifShowSecurity) {
+            _valueLabel.text = self.boxInputCellProperty.securitySymbol;
+        }else{
+            _valueLabel.text = self.boxInputCellProperty.originValue;
+        }
     }else{
-        _valueLabel.text = self.boxInputCellProperty.originValue;
+        _valueLabel.text = @"";
     }
 }
 
-#pragma mark - Function
+#pragma mark - Qiuck set
 - (void)quickSetOriginValue:(NSString *)originValue {
     self.boxInputCellProperty.originValue = originValue;
     [self valueLabelLoadData];
