@@ -134,7 +134,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     
     // _valueArr
     if (boxTextChangeType == CRBoxTextChangeType_Delete) {
-        [self closeSecurityShowWithIndex:_valueArr.count-1];
+        [self setSecurityShow:NO index:_valueArr.count-1];
         [_valueArr removeLastObject];
         
     }else if (boxTextChangeType == CRBoxTextChangeType_Insert){
@@ -154,7 +154,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 }
 
 #pragma mark - Control security show
-- (void)closeSecurityShowWithIndex:(NSInteger)index
+- (void)setSecurityShow:(BOOL)isShow index:(NSInteger)index
 {
     if (index < 0) {
         NSAssert(NO, @"index必须大于0");
@@ -162,7 +162,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     }
     
     CRBoxInputCellProperty *cellProperty = self.cellPropertyArr[index];
-    cellProperty.ifShowSecurity = NO;
+    cellProperty.ifShowSecurity = isShow;
 }
 
 - (void)closeAllSecurityShow
@@ -195,14 +195,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         return;
     }
     
-    [self.cellPropertyArr enumerateObjectsUsingBlock:^(CRBoxInputCellProperty * _Nonnull cellProperty, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (cellProperty.ifShowSecurity == NO) {
-            cellProperty.ifShowSecurity = YES;
-        }
-    }];
-//    if (_valueArr.count > index && ![_valueArr[index] isEqualToString:self.securitySymbol]) {
-//        [_valueArr replaceObjectAtIndex:index withObject:self.securitySymbol];
-//    }
+    [self setSecurityShow:YES index:index];
 }
 
 // 延时替换密文
