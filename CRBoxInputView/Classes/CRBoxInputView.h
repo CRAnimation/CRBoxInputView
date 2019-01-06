@@ -47,11 +47,15 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
 
 - (void)loadAndPrepareView;
 - (void)clearAll;
+- (UICollectionView *)mainCollectionView;
 
 // Qiuck set
 - (void)quickSetSecuritySymbol:(NSString *)securitySymbol;
 
+#pragma mark - You can inherit
+- (void)initDefaultValue;
+
 #pragma mark - You can rewrite
-- (CRBoxInputCell *)customCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
+- (UICollectionViewCell *)customCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

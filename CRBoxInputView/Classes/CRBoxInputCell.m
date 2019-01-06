@@ -168,27 +168,34 @@
     [self valueLabelLoadData];
 }
 
-#pragma mark - You can rewrite
 - (UIView *)customSecurityView
 {
     if (!_customSecurityView) {
-        _customSecurityView = [UIView new];
-        _customSecurityView.backgroundColor = [UIColor clearColor];
-        
-        // circleView
-        static CGFloat circleViewWidth = 20;
-        UIView *circleView = [UIView new];
-        circleView.backgroundColor = [UIColor orangeColor];
-        circleView.layer.cornerRadius = circleViewWidth / 2;
-        [_customSecurityView addSubview:circleView];
-        [circleView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.height.mas_equalTo(circleViewWidth);
-            make.centerX.offset(0);
-            make.centerY.offset(0);
-        }];
+        _customSecurityView = [self createCustomSecurityView];
     }
     
     return _customSecurityView;
+}
+
+#pragma mark - You can rewrite
+- (UIView *)createCustomSecurityView
+{
+    UIView *customSecurityView = [UIView new];
+    customSecurityView.backgroundColor = [UIColor clearColor];
+    
+    // circleView
+    static CGFloat circleViewWidth = 20;
+    UIView *circleView = [UIView new];
+    circleView.backgroundColor = [UIColor orangeColor];
+    circleView.layer.cornerRadius = circleViewWidth / 2;
+    [customSecurityView addSubview:circleView];
+    [circleView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.mas_equalTo(circleViewWidth);
+        make.centerX.offset(0);
+        make.centerY.offset(0);
+    }];
+    
+    return customSecurityView;
 }
 
 @end

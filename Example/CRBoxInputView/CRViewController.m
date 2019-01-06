@@ -9,6 +9,7 @@
 #import "CRViewController.h"
 #import "Masonry.h"
 #import "CRBoxInputView.h"
+#import "CRBoxInputView_CustomSecurity.h"
 
 #define CRBOX_UIColorFromHEX(rgbValue)    [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -38,7 +39,7 @@
     cellProperty.cornerRadius = 7;
     cellProperty.securityType = CRBoxSecurityType_CustomView;
     
-    _boxInputView = [CRBoxInputView new];
+    _boxInputView = [CRBoxInputView_CustomSecurity new];
     [self.view addSubview:_boxInputView];
     _boxInputView.codeLength = 6;
     _boxInputView.ifNeedCursor = YES;

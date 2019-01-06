@@ -48,7 +48,9 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     return self;
 }
 
-- (void)initDefaultValue{
+#pragma mark - You can inherit
+- (void)initDefaultValue
+{
     _oldLength = 0;
     self.ifNeedSecurity = NO;
     self.securityDelay = 0.3;
@@ -234,26 +236,30 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CRBoxInputCell *cell = [self customCollectionView:collectionView cellForItemAtIndexPath:indexPath];
+    id tempCell = [self customCollectionView:collectionView cellForItemAtIndexPath:indexPath];
     
-    cell.ifNeedCursor = self.ifNeedCursor;
-    
-    // CellProperty
-    CRBoxInputCellProperty *cellProperty = self.cellPropertyArr[indexPath.row];
-    cellProperty.index = indexPath.row;
-    
-    // setOriginValue
-    NSUInteger focusIndex = _valueArr.count;
-    cell.selected = indexPath.row == focusIndex ? YES : NO;
-    if (_valueArr.count > 0 && indexPath.row <= focusIndex - 1) {
-        cellProperty.originValue = _valueArr[indexPath.row];
-    }else{
-        cellProperty.originValue = @"";
+    if ([tempCell isKindOfClass:[CRBoxInputCell class]]) {
+        
+        CRBoxInputCell *cell = (CRBoxInputCell *)tempCell;
+        cell.ifNeedCursor = self.ifNeedCursor;
+        
+        // CellProperty
+        CRBoxInputCellProperty *cellProperty = self.cellPropertyArr[indexPath.row];
+        cellProperty.index = indexPath.row;
+        
+        // setOriginValue
+        NSUInteger focusIndex = _valueArr.count;
+        cell.selected = indexPath.row == focusIndex ? YES : NO;
+        if (_valueArr.count > 0 && indexPath.row <= focusIndex - 1) {
+            cellProperty.originValue = _valueArr[indexPath.row];
+        }else{
+            cellProperty.originValue = @"";
+        }
+        
+        cell.boxInputCellProperty = cellProperty;
     }
     
-    cell.boxInputCellProperty = cellProperty;
-    
-    return cell;
+    return tempCell;
 }
 
 #pragma mark - Qiuck set
@@ -267,10 +273,9 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 }
 
 #pragma mark - You can rewrite
-- (CRBoxInputCell *)customCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+- (UICollectionViewCell *)customCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CRBoxInputCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CRBoxInputCellID forIndexPath:indexPath];
-    
     return cell;
 }
 
