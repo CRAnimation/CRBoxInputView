@@ -14,17 +14,6 @@
 
 @implementation CRBoxInputCell_CustomSecurity
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    
-    if (self) {
-        NSLog(@"--1");
-    }
-    
-    return self;
-}
-
 - (UIImageView *)createCustomSecurityView
 {
     UIImageView *customSecurityView = [UIImageView new];
