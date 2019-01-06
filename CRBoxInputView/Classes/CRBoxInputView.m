@@ -8,7 +8,6 @@
 
 #import "CRBoxInputView.h"
 #import "Masonry.h"
-#import "CRBoxInputCell.h"
 #import "CRBoxTextView.h"
 
 typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
@@ -235,7 +234,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CRBoxInputCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CRBoxInputCellID forIndexPath:indexPath];
+    CRBoxInputCell *cell = [self customCollectionView:collectionView cellForItemAtIndexPath:indexPath];
     
     cell.ifNeedCursor = self.ifNeedCursor;
     
@@ -265,6 +264,14 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     }
     
     self.customCellProperty.securitySymbol = securitySymbol;
+}
+
+#pragma mark - You can rewrite
+- (CRBoxInputCell *)customCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CRBoxInputCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CRBoxInputCellID forIndexPath:indexPath];
+    
+    return cell;
 }
 
 #pragma mark - Setter & Getter

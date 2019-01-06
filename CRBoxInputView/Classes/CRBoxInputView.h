@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CRBoxFlowLayout.h"
 #import "CRBoxInputCellProperty.h"
+#import "CRBoxInputCell.h"
 @class CRBoxInputView;
 
 typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
@@ -49,5 +50,8 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
 
 // Qiuck set
 - (void)quickSetSecuritySymbol:(NSString *)securitySymbol;
+
+#pragma mark - You can rewrite
+- (CRBoxInputCell *)customCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

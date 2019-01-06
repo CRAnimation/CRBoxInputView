@@ -16,6 +16,7 @@
 
 @property (strong, nonatomic) UILabel *valueLabel;
 @property (strong, nonatomic) CABasicAnimation *opacityAnimation;
+@property (strong, nonatomic) UIView *customSecurityView;
 
 @end
 
@@ -167,11 +168,7 @@
     [self valueLabelLoadData];
 }
 
-@synthesize customSecurityView = _customSecurityView;
-- (void)setCustomSecurityView:(UIView *)customSecurityView
-{
-    _customSecurityView = customSecurityView;
-}
+#pragma mark - You can rewrite
 - (UIView *)customSecurityView
 {
     if (!_customSecurityView) {
