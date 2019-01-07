@@ -45,7 +45,14 @@
         make.centerY.offset(0);
     }];
     
-//    _imageView = [UIImageView]
+    _imageView = [UIImageView new];
+    [_containerView addSubview:_imageView];
+    [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.offset(42);
+        make.top.offset(5);
+        make.width.mas_equalTo(318);
+        make.height.mas_equalTo(90);
+    }];
     
     _lineView = [UIView new];
     _lineView.backgroundColor = color_master;
@@ -78,6 +85,7 @@
 - (void)loadDataWithModel:(CRBoxInputModel *)model
 {
     _nameLabel.text = model.name;
+    _imageView.image = [UIImage imageNamed:model.imageName];
 }
 
 @end
