@@ -416,7 +416,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		001B6C98A043C107D590D749A8245ACC /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AFNetworking.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		001B6C98A043C107D590D749A8245ACC /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		010131748720097680BA56CF7FDD6E1B /* BearActivityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BearActivityManager.h; path = Pod/Tools/BearActivityManager/BearActivityManager.h; sourceTree = "<group>"; };
 		0131940F43A848B730A0FF6FCB35B155 /* CAShapeLayer+BearSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CAShapeLayer+BearSet.m"; path = "Pod/UIAndExtend/BearShapeLayer/CAShapeLayer+BearSet.m"; sourceTree = "<group>"; };
 		017EF57D7565441524053B668E5C8BAE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -436,7 +436,7 @@
 		0B851F209FEC1D8A6CD3D7D5AE52A98B /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+HighlightedWebCache.m"; path = "SDWebImage/UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
 		0C1D75055E77AC7FF2366D27907AEE25 /* Reachability-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Reachability-prefix.pch"; sourceTree = "<group>"; };
 		0C44819A3B4736833475A61A1DBD9AF6 /* CFNetWork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetWork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CFNetWork.framework; sourceTree = DEVELOPER_DIR; };
-		0C834370E37553D1318C5DA9FC0C2442 /* Pods_CRBoxInputView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CRBoxInputView_Tests.framework; path = "Pods-CRBoxInputView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C834370E37553D1318C5DA9FC0C2442 /* Pods_CRBoxInputView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRBoxInputView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CD63CDA465E947337B9FA060DF5B6EB /* SDWebImage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-umbrella.h"; sourceTree = "<group>"; };
 		0CE4E82995C4D2BB0099FE1B6D094347 /* NSImage+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSImage+WebCache.m"; path = "SDWebImage/NSImage+WebCache.m"; sourceTree = "<group>"; };
 		0D4E98E3B001F064F91BACA4EB50570E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
@@ -455,7 +455,7 @@
 		130C2F79E4B280A5086DDB6AFD58A176 /* SDWebImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloader.m; path = SDWebImage/SDWebImageDownloader.m; sourceTree = "<group>"; };
 		13650540D4FBF8D4272F9EBFDDACE256 /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
 		1449FDCD07D7672061195B3A34E49EF4 /* BearSkill-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BearSkill-prefix.pch"; sourceTree = "<group>"; };
-		1488216F67CF3CD445DE6276D3E14F98 /* CRBoxInputView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = CRBoxInputView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1488216F67CF3CD445DE6276D3E14F98 /* CRBoxInputView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = CRBoxInputView.podspec; sourceTree = "<group>"; };
 		14AB9062C3B14F348C86CB296969091F /* GBDeviceInfo_Common.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GBDeviceInfo_Common.m; path = GBDeviceInfo/GBDeviceInfo_Common.m; sourceTree = "<group>"; };
 		15E938276D1F8DEE7778E1A58B0DEAB9 /* Reachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		1734E74C54D81A4676EB738B22A5CB15 /* SDImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = SDWebImage/SDImageCache.h; sourceTree = "<group>"; };
@@ -474,7 +474,7 @@
 		24AD55DA4DE1ADD325F2F3DF8872C0A3 /* CRBoxInputCellProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRBoxInputCellProperty.h; path = CRBoxInputView/Classes/CRBoxInputCellProperty.h; sourceTree = "<group>"; };
 		24D55AF9FA7D5CBE29B87F194A2B01A0 /* SDWebImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SDWebImage.modulemap; sourceTree = "<group>"; };
 		26357C0766701F475E2DB10109FB98D7 /* BearErrorNetAlertManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BearErrorNetAlertManager.m; path = Pod/UIAndExtend/BearErrorNetAlertManager/BearErrorNetAlertManager.m; sourceTree = "<group>"; };
-		26D4AD8538ABE451952AED642523B6D0 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDWebImage.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26D4AD8538ABE451952AED642523B6D0 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FA41BF00810C49EB5084F7ECF50800 /* Pods-CRBoxInputView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CRBoxInputView_Tests-dummy.m"; sourceTree = "<group>"; };
 		292A6918D00F80FEAB1CED45CD5707CD /* UIImage-Helpers.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "UIImage-Helpers.modulemap"; sourceTree = "<group>"; };
 		2ADD522FDB321BAFF8088E9FA93D4759 /* BearActivityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BearActivityManager.m; path = Pod/Tools/BearActivityManager/BearActivityManager.m; sourceTree = "<group>"; };
@@ -525,7 +525,7 @@
 		4AE087C2F853493104C23A63B0A17F42 /* SDWebImageCodersManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCodersManager.h; path = SDWebImage/SDWebImageCodersManager.h; sourceTree = "<group>"; };
 		4B54BD9FCEA020DDF978698CF370B84A /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
 		4BEAC9A6B6837FF06EE6FF283D0494F4 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D3038883FDA293FE4C299AD514794CF /* Pods_CRBoxInputView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CRBoxInputView_Example.framework; path = "Pods-CRBoxInputView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D3038883FDA293FE4C299AD514794CF /* Pods_CRBoxInputView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRBoxInputView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D810915653B63C266F9D1C922755C16 /* BearBaseWKWebVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BearBaseWKWebVC.m; path = Pod/UIAndExtend/BearWebVC/BearBaseWKWebVC.m; sourceTree = "<group>"; };
 		4F2E83CEACBEDCC87B8662631DE5DBE2 /* BearFirstScreenAdView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BearFirstScreenAdView.m; path = Pod/UIAndExtend/BearFirstScreenAdView/BearFirstScreenAdView.m; sourceTree = "<group>"; };
 		4F972B70393D5A3FF1B9AA73BF17058C /* BearUINavigationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BearUINavigationController.m; path = Pod/UIAndExtend/BaseUI/BearUINavigationController.m; sourceTree = "<group>"; };
@@ -558,8 +558,8 @@
 		61B9D717A741D8E4DA5B16322091EB6E /* GBDeviceInfoTypes_Common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GBDeviceInfoTypes_Common.h; path = GBDeviceInfo/GBDeviceInfoTypes_Common.h; sourceTree = "<group>"; };
 		62D6462308F187EE9AD14A21B1CE95B3 /* NSMutableAttributedString+BearSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMutableAttributedString+BearSet.h"; path = "Pod/AttributeString/NSMutableAttributedString+BearSet.h"; sourceTree = "<group>"; };
 		62E1F731C23F0946787C8AC69219A38B /* UITableView+BearStoreCellHeight.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableView+BearStoreCellHeight.h"; path = "Pod/Layout/UITableView+BearStoreCellHeight.h"; sourceTree = "<group>"; };
-		6366A1802C167BB06D946FFD6B4106AF /* UIImage_Helpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UIImage_Helpers.framework; path = "UIImage-Helpers.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		644CADDEFBB91B2C141F7D5A2B2D805A /* BearSkill.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BearSkill.framework; path = BearSkill.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6366A1802C167BB06D946FFD6B4106AF /* UIImage_Helpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIImage_Helpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		644CADDEFBB91B2C141F7D5A2B2D805A /* BearSkill.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BearSkill.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		648878AF5286CBCD2737CDB7DE97BC50 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64BD08AAB0CE175AA9D85CD026814E27 /* SDWebImageCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCoder.m; path = SDWebImage/SDWebImageCoder.m; sourceTree = "<group>"; };
 		64FBED7F582A0D862EA15AEF877BD321 /* SDWebImageCodersManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCodersManager.m; path = SDWebImage/SDWebImageCodersManager.m; sourceTree = "<group>"; };
@@ -598,7 +598,7 @@
 		827544E40D7EEE8BD035213F8860288A /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82CD50807E85ACC55C0F70A515AE93B4 /* MBProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-umbrella.h"; sourceTree = "<group>"; };
 		8304369A4CD01B0AC1CDA7D805A8BF8A /* CRSectionCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRSectionCollectionViewCell.h; path = Pod/UIAndExtend/CRSectionView/CRSectionCollectionViewCell.h; sourceTree = "<group>"; };
-		830A5433CF481605ED7A4AC33C49CDC2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		830A5433CF481605ED7A4AC33C49CDC2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		83A1F1B399C01C3B8830A9E32C9BFF03 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImagePrefetcher.m; path = SDWebImage/SDWebImagePrefetcher.m; sourceTree = "<group>"; };
 		83D9E13EBA8D246B8A9CB3E8C8B5337F /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
 		87C3A3900F9E2D161061A33FE9F87F8B /* AFCompatibilityMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFCompatibilityMacros.h; path = AFNetworking/AFCompatibilityMacros.h; sourceTree = "<group>"; };
@@ -610,18 +610,18 @@
 		8CEF47B9CC8B2D819E7AE62F9B7F4D93 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
 		8D3779948C73490F82249547ABE645CB /* NSButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSButton+WebCache.h"; path = "SDWebImage/NSButton+WebCache.h"; sourceTree = "<group>"; };
 		8D807CEC47D37E132524F8FB537A5E32 /* NSButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSButton+WebCache.m"; path = "SDWebImage/NSButton+WebCache.m"; sourceTree = "<group>"; };
-		8E03CA89C691555D472A5DD0612F7F29 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Reachability.framework; path = Reachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E03CA89C691555D472A5DD0612F7F29 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		900DC654C0BB2159B3CD85981DCC0366 /* AFImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFImageDownloader.h; path = "UIKit+AFNetworking/AFImageDownloader.h"; sourceTree = "<group>"; };
 		90D30C0207645D89CAFD7D732CDF3BCC /* CRBoxInputView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRBoxInputView.m; path = CRBoxInputView/Classes/CRBoxInputView.m; sourceTree = "<group>"; };
 		919D294E1699FC1717EDC7C747A0A7E8 /* SDWebImageImageIOCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageImageIOCoder.h; path = SDWebImage/SDWebImageImageIOCoder.h; sourceTree = "<group>"; };
 		91EFF6E7D6F582AA2006BD4D624362C3 /* UIView+BearSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+BearSet.h"; path = "Pod/Layout/UIView+BearSet.h"; sourceTree = "<group>"; };
 		929E2335DD58666F1FD44D7EF34D435C /* BearBaseViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BearBaseViewController.m; path = Pod/UIAndExtend/BaseUI/BearBaseViewController.m; sourceTree = "<group>"; };
 		933B6FAE19CCE8E4C77A09CD3C53B6A4 /* GBDeviceInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GBDeviceInfo.h; path = GBDeviceInfo/GBDeviceInfo.h; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9461841334B5BBE1C89683978F7B757E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94AC57EAE82F3CE122527519FF16C5CE /* SDWebImageImageIOCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageImageIOCoder.m; path = SDWebImage/SDWebImageImageIOCoder.m; sourceTree = "<group>"; };
 		94ED53586901C346D84D937CFA3A5AF6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		959F9E6C631F823A690C8C8CB972552E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		959F9E6C631F823A690C8C8CB972552E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		96D1EB6214D3F2D686FD46A7A975CDD8 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+ImageContentType.m"; path = "SDWebImage/NSData+ImageContentType.m"; sourceTree = "<group>"; };
 		97121178619584E0F747F48FFA069B7D /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
 		979D5AC2A956A699AD9E94F9006C402D /* GBDeviceInfo-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GBDeviceInfo-prefix.pch"; sourceTree = "<group>"; };
@@ -633,7 +633,7 @@
 		9C07E44B0808029442684391B5BA3CFC /* Pods-CRBoxInputView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CRBoxInputView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9CD35853F5F64F02BB93390FDB168C9B /* BearConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BearConstants.m; path = Pod/Constants/BearConstants.m; sourceTree = "<group>"; };
 		A2047EC037390EA040B3C02A3C3EDF70 /* UITextField+BearLimitLength.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+BearLimitLength.m"; path = "Pod/UIAndExtend/BearExtend/UITextField+BearLimitLength.m"; sourceTree = "<group>"; };
-		A2DCB926B1C332EC1D4E48F7217ED18B /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBProgressHUD.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2DCB926B1C332EC1D4E48F7217ED18B /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36174BC205B71261E7D631B45CC97B7 /* BearAlertManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BearAlertManager.h; path = Pod/UIAndExtend/BearAlertView/BearAlertManager.h; sourceTree = "<group>"; };
 		A47F063B48A0BF0301B62FC959A0E0EF /* BearCutOutView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BearCutOutView.m; path = Pod/UIAndExtend/BearExtend/BearCutOutView.m; sourceTree = "<group>"; };
 		A4CC40E00472D50AA9ECC18A49AC7617 /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
@@ -652,7 +652,7 @@
 		AE343D2A08D36000C1A5588CDC6855BF /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		AF00F0DBDB6DE0178CEFB7B3D296EC79 /* UIImage+ForceDecode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ForceDecode.h"; path = "SDWebImage/UIImage+ForceDecode.h"; sourceTree = "<group>"; };
 		AF3C4B0CACB718E0DBEFA6E495B17CA3 /* UIImage-Helpers-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage-Helpers-prefix.pch"; sourceTree = "<group>"; };
-		AFAC7B9F0122F93453D44DBDF1C56569 /* GBDeviceInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GBDeviceInfo.framework; path = GBDeviceInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFAC7B9F0122F93453D44DBDF1C56569 /* GBDeviceInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GBDeviceInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B25D166CFF28DA38AF45309B20DD69F3 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
 		B2C0C46A99494749C4182E3537B39E99 /* UIImage-Helpers-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage-Helpers-dummy.m"; sourceTree = "<group>"; };
 		B39F8C1A0E963A77FA33E498BAC154A6 /* UIImage-Helpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage-Helpers.h"; path = "UIImage-Helpers/UIImage-Helpers.h"; sourceTree = "<group>"; };
@@ -718,7 +718,7 @@
 		E74E55E2DD9BBC66AEE0211511B275D6 /* BearCutDownTimer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BearCutDownTimer.m; path = Pod/Tools/BearCutDownTimer/BearCutDownTimer.m; sourceTree = "<group>"; };
 		E7C58B56839606D88BC7A0A5CA0181F3 /* MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.xcconfig; sourceTree = "<group>"; };
 		E8C5E06CD11E7BD374769049F8662712 /* BearCustomNaviBarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BearCustomNaviBarView.h; path = Pod/UIAndExtend/BearCustomNaviBarView/BearCustomNaviBarView.h; sourceTree = "<group>"; };
-		E9088705701F5E153EF38C365738D28D /* CRBoxInputView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CRBoxInputView.framework; path = CRBoxInputView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9088705701F5E153EF38C365738D28D /* CRBoxInputView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CRBoxInputView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9B262074595C2B1BD0140C7891657E6 /* Reachability-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Reachability-dummy.m"; sourceTree = "<group>"; };
 		EAFDF3EB8194EDA072877E2949FA6D40 /* BearNetCheckUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BearNetCheckUtils.h; path = Pod/Tools/BearNetCheckUtils/BearNetCheckUtils.h; sourceTree = "<group>"; };
 		EB290FFEE8F103962265817D30AF5B49 /* CRSectionCollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRSectionCollectionViewCell.m; path = Pod/UIAndExtend/CRSectionView/CRSectionCollectionViewCell.m; sourceTree = "<group>"; };
@@ -737,7 +737,7 @@
 		F6C3DB1770EDF2C9B2A2D83A8525B3F6 /* Pods-CRBoxInputView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CRBoxInputView_Example-resources.sh"; sourceTree = "<group>"; };
 		F6D7B83944EBED093E3D06B9A6642C18 /* BearAlertManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BearAlertManager.m; path = Pod/UIAndExtend/BearAlertView/BearAlertManager.m; sourceTree = "<group>"; };
 		F7860A732884CCF811ACA057BE2A9081 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MultiFormat.h"; path = "SDWebImage/UIImage+MultiFormat.h"; sourceTree = "<group>"; };
-		F844A1DF74498BDC8FC52EFB74BD23DD /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F844A1DF74498BDC8FC52EFB74BD23DD /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B2282966F5774DEA6A13F699835D27 /* BearSkill.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BearSkill.modulemap; sourceTree = "<group>"; };
 		F8B7CA05664B00CC1F849EC0D5A441FF /* CRBoxInputCellProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRBoxInputCellProperty.m; path = CRBoxInputView/Classes/CRBoxInputCellProperty.m; sourceTree = "<group>"; };
 		F8B9F43FB7B1E8C4A093B8A70AC5F1D5 /* GBDeviceInfo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GBDeviceInfo-dummy.m"; sourceTree = "<group>"; };
@@ -1089,7 +1089,6 @@
 				B39F8C1A0E963A77FA33E498BAC154A6 /* UIImage-Helpers.h */,
 				69D6025817DA5B8C91F9F24F6A990014 /* Support Files */,
 			);
-			name = "UIImage-Helpers";
 			path = "UIImage-Helpers";
 			sourceTree = "<group>";
 		};
@@ -1104,7 +1103,6 @@
 				56A22FC8CA6D145CF54AF6EE105C1AF1 /* Support Files */,
 				6F1D00697E6CDE7F47E6A67FD79AFD05 /* UIKit */,
 			);
-			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -1212,7 +1210,6 @@
 				40A495186627189727B97EBDFAA36419 /* Core */,
 				2308239205877ECEDD0C06DC37735EB4 /* Support Files */,
 			);
-			name = GBDeviceInfo;
 			path = GBDeviceInfo;
 			sourceTree = "<group>";
 		};
@@ -1263,7 +1260,6 @@
 				FE54AEB1F40591D013F7179C33BF69E8 /* Tools */,
 				ED74F82C17208D55A67C18799B5FC43F /* UIAndExtend */,
 			);
-			name = BearSkill;
 			path = BearSkill;
 			sourceTree = "<group>";
 		};
@@ -1274,7 +1270,6 @@
 				AE343D2A08D36000C1A5588CDC6855BF /* MBProgressHUD.m */,
 				C6D509B6DD3131395B5F35E36B1C9B32 /* Support Files */,
 			);
-			name = MBProgressHUD;
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -1316,7 +1311,6 @@
 				D4D769E4416BD2F34F62A09A9C898199 /* ViewController+MASAdditions.m */,
 				FB7C0B39C68F7553D5A2CF9DE2B5A476 /* Support Files */,
 			);
-			name = Masonry;
 			path = Masonry;
 			sourceTree = "<group>";
 		};
@@ -1512,7 +1506,6 @@
 				0F18A516BA9EB31BF74A9DA05F2F4239 /* Core */,
 				37AC3FD340802E3415D6333FE598722F /* Support Files */,
 			);
-			name = SDWebImage;
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
@@ -1523,7 +1516,6 @@
 				504FD77861267548FA40E5FD4EF1CAA6 /* Reachability.m */,
 				0FC15EBA3BCC07EF5ED6FD096B2679C8 /* Support Files */,
 			);
-			name = Reachability;
 			path = Reachability;
 			sourceTree = "<group>";
 		};

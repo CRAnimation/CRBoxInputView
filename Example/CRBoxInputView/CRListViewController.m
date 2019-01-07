@@ -9,10 +9,11 @@
 #import "CRListViewController.h"
 #import "CRDetailViewController.h"
 #import "CRListVCCell.h"
+#import "CRBoxInputModel.h"
 
 #import "CRBoxInputView.h"
 #import "CRBoxInputView_CustomSecurity.h"
-#import "CRBoxInputModel.h"
+
 
 @interface CRListViewController () <UITableViewDelegate, UITableViewDataSource>
 {

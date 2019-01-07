@@ -56,6 +56,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     self.securityDelay = 0.3;
     self.codeLength = 4;
     self.ifNeedCursor = YES;
+    self.keyBoardType = UIKeyboardTypeNumberPad;
     self.backgroundColor = [UIColor clearColor];
     _valueArr = [NSMutableArray new];
     [self beginEdit];

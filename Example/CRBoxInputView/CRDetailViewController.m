@@ -7,6 +7,7 @@
 //
 
 #import "CRDetailViewController.h"
+#import "CRBoxInputView.h"
 
 @interface CRDetailViewController ()
 {
@@ -16,6 +17,9 @@
     UILabel *_subLabel;
     UIView *_sepLineView;
     UILabel *_descriptionLabel;
+    
+    CRBoxInputView *_boxInputView;
+    UIButton *_verifyBtn;
 }
 @end
 
@@ -110,6 +114,20 @@
         make.centerX.offset(0);
         make.top.equalTo(self->_subLabel.mas_bottom).offset(YY_6(24));
     }];
+    
+    CGFloat btnHeight = YY_6(54);
+    _verifyBtn = [UIButton new];
+    _verifyBtn.layer.cornerRadius = btnHeight / 2.0;
+    _verifyBtn.backgroundColor = color_master;
+    [_verifyBtn setTitle:@"Verify" forState:UIControlStateNormal];
+    [_verifyBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    _verifyBtn.titleLabel.font = FontSize_6(21);
+    [self.view addSubview:_verifyBtn];
+    [_verifyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(XX_6(297));
+        make.height.mas_equalTo(btnHeight);
+        make.centerX.offset(0);
+    }];
 }
 
 - (void)backBtnEvent
@@ -123,6 +141,39 @@
     _boxInputModel = boxInputModel;
     
     _mainLabel.text = boxInputModel.name;
+    
+    switch (boxInputModel.type) {
+        case CRBoxInputModelNormalType:
+            {
+                _boxInputView = [self generateBoxInputView_normal];
+            }
+            break;
+            
+        default:
+            {
+                _boxInputView = [self generateBoxInputView_normal];
+            }
+            break;
+    }
+    [self.view addSubview:_boxInputView];
+    [_boxInputView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(XX_6(262));
+        make.height.mas_equalTo(YY_6(52));
+        make.centerX.offset(0);
+        make.top.equalTo(self->_bigLockImageView.mas_bottom).offset(YY_6(18));
+    }];
+    
+    [_verifyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self->_boxInputView.mas_bottom).offset(YY_6(46));
+    }];
+}
+
+- (CRBoxInputView *)generateBoxInputView_normal
+{
+    CRBoxInputView *_boxInputView = [CRBoxInputView new];
+    [_boxInputView loadAndPrepareView];
+    
+    return _boxInputView;
 }
 
 @end

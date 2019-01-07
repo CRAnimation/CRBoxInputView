@@ -40,7 +40,12 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
  */
 @property (assign, nonatomic) CGFloat securityDelay;
 
+/**
+ 键盘类型
+ default: UIKeyboardTypeNumberPad
+ */
 @property (assign, nonatomic) UIKeyboardType keyBoardType;
+
 @property (copy, nonatomic) TextDidChangeblock textDidChangeblock;
 @property (strong, nonatomic) CRBoxFlowLayout *boxFlowLayout;
 @property (strong, nonatomic) CRBoxInputCellProperty *customCellProperty;
