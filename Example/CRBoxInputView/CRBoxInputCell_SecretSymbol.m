@@ -1,20 +1,20 @@
 //
-//  CRBoxInputCell_Line.m
+//  CRBoxInputCell_SecretSymbol.m
 //  CRBoxInputView_Example
 //
 //  Created by Chobits on 2019/1/7.
 //  Copyright © 2019 BearRan. All rights reserved.
 //
 
-#import "CRBoxInputCell_Line.h"
+#import "CRBoxInputCell_SecretSymbol.h"
 
-@interface CRBoxInputCell_Line ()
+@interface CRBoxInputCell_SecretSymbol ()
 {
     
 }
 @end
 
-@implementation CRBoxInputCell_Line
+@implementation CRBoxInputCell_SecretSymbol
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -45,6 +45,5 @@
     _sepLineView.layer.shadowOffset = CGSizeMake(0, 2);
     _sepLineView.layer.shadowRadius = 4;
 }
-
 
 @end
