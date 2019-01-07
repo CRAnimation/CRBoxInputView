@@ -46,11 +46,12 @@
     }];
     
     _imageView = [UIImageView new];
+    _imageView.contentMode = UIViewContentModeScaleAspectFit;
     [_containerView addSubview:_imageView];
     [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(42);
         make.top.offset(5);
-        make.width.mas_equalTo(318);
+        make.width.mas_equalTo(310);
         make.height.mas_equalTo(90);
     }];
     

@@ -43,37 +43,37 @@
     
     model = [CRBoxInputModel new];
     model.name = @"Normal";
-    model.imageName = @"demoImg";
+    model.imageName = @"demoImg_Normal";
     model.type = CRBoxInputModelNormalType;
     [_dataArr addObject:model];
     
     model = [CRBoxInputModel new];
     model.name = @"Custom Box";
-    model.imageName = @"demoImg";
+    model.imageName = @"demoImg_CustomBox";
     model.type = CRBoxInputModelCustomBoxType;
     [_dataArr addObject:model];
     
     model = [CRBoxInputModel new];
     model.name = @"Line";
-    model.imageName = @"demoImg";
+    model.imageName = @"demoImg_Line";
     model.type = CRBoxInputModelLineType;
     [_dataArr addObject:model];
     
     model = [CRBoxInputModel new];
     model.name = @"Secret Symbol";
-    model.imageName = @"demoImg";
+    model.imageName = @"demoImg_SecretSymbol";
     model.type = CRBoxInputModelSecretSymbolType;
     [_dataArr addObject:model];
     
     model = [CRBoxInputModel new];
     model.name = @"Secret Image";
-    model.imageName = @"demoImg";
+    model.imageName = @"demoImg_SecretImage";
     model.type = CRBoxInputModelSecretImageType;
     [_dataArr addObject:model];
     
     model = [CRBoxInputModel new];
     model.name = @"Secret View";
-    model.imageName = @"demoImg";
+    model.imageName = @"demoImg_SecretView";
     model.type = CRBoxInputModelSecretViewType;
     [_dataArr addObject:model];
 }
