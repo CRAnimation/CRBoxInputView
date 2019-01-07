@@ -11,6 +11,7 @@
 #import "CRBoxInputView_CustomBox.h"
 #import "CRBoxInputView_Line.h"
 #import "CRBoxInputView_SecretSymbol.h"
+#import "CRBoxInputView_SecretImage.h"
 
 @interface CRDetailViewController ()
 {
@@ -170,6 +171,12 @@
             }
             break;
             
+        case CRBoxInputModelSecretImageType:
+            {
+                _boxInputView = [self generateBoxInputView_secretImage];
+            }
+            break;
+            
         default:
             {
                 _boxInputView = [self generateBoxInputView_normal];
@@ -254,6 +261,28 @@
     cellProperty.securitySymbol = @"*";//need
     
     CRBoxInputView_SecretSymbol *_boxInputView = [CRBoxInputView_SecretSymbol new];
+    _boxInputView.ifNeedSecurity = YES;//need
+    _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
+    _boxInputView.customCellProperty = cellProperty;
+    [_boxInputView loadAndPrepareView];
+    
+    return _boxInputView;
+}
+
+#pragma mark - SecretImage
+- (CRBoxInputView_SecretImage *)generateBoxInputView_secretImage
+{
+    CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
+    cellProperty.cellCursorColor = color_FFECEC;
+    cellProperty.cellCursorWidth = 2;
+    cellProperty.cellCursorHeight = YY_6(27);
+    cellProperty.cornerRadius = 0;
+    cellProperty.borderWidth = 0;
+    cellProperty.cellFont = [UIFont boldSystemFontOfSize:24];
+    cellProperty.cellTextColor = color_master;
+    cellProperty.securityType = CRBoxSecurityType_CustomView;//need
+    
+    CRBoxInputView_SecretImage *_boxInputView = [CRBoxInputView_SecretImage new];
     _boxInputView.ifNeedSecurity = YES;//need
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
