@@ -157,7 +157,6 @@
         make.width.mas_equalTo(boxInputCellProperty.cellCursorWidth);
         make.height.mas_equalTo(boxInputCellProperty.cellCursorHeight);
     }];
-    self.backgroundColor = boxInputCellProperty.cellBgColorNormal;
     self.layer.cornerRadius = boxInputCellProperty.cornerRadius;
     self.layer.borderWidth = boxInputCellProperty.borderWidth;
     

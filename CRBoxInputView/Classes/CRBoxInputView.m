@@ -163,8 +163,6 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     
     CRBoxInputCellProperty *cellProperty = self.cellPropertyArr[index];
     cellProperty.ifShowSecurity = isShow;
-    
-    self.cellPropertyArr;
 }
 
 - (void)closeAllSecurityShow
@@ -250,7 +248,6 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         
         // setOriginValue
         NSUInteger focusIndex = _valueArr.count;
-        cell.selected = indexPath.row == focusIndex ? YES : NO;
         if (_valueArr.count > 0 && indexPath.row <= focusIndex - 1) {
             cellProperty.originValue = _valueArr[indexPath.row];
         }else{
@@ -258,6 +255,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         }
         
         cell.boxInputCellProperty = cellProperty;
+        cell.selected = indexPath.row == focusIndex ? YES : NO;
     }
     
     return tempCell;
@@ -289,6 +287,8 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         _mainCollectionView.backgroundColor = [UIColor clearColor];
         _mainCollectionView.delegate = self;
         _mainCollectionView.dataSource = self;
+        _mainCollectionView.layer.masksToBounds = NO;
+        _mainCollectionView.clipsToBounds = NO;
         [_mainCollectionView registerClass:[CRBoxInputCell class] forCellWithReuseIdentifier:CRBoxInputCellID];
     }
     
