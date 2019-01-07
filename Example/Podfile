@@ -4,7 +4,8 @@ platform :ios, '8.0'
 
 target 'CRBoxInputView_Example' do
   pod 'CRBoxInputView', :path => '../'
-
+  pod 'BearSkill', :git => 'https://github.com/BearRan/BearSkill.git', :commit => 'a48be2d'
+  
   target 'CRBoxInputView_Tests' do
     inherit! :search_paths
 

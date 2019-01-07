@@ -84,8 +84,8 @@
     _titleLabel.font = [UIFont systemFontOfSize:24];
     [self.view addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.offset(50);
-        make.left.offset(35);
+        make.top.offset(YY_6(30) + STATUS_HEIGHT);
+        make.left.offset(XX_6(35));
     }];
     
     _mainTableView = [UITableView new];
@@ -94,7 +94,7 @@
     _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_mainTableView];
     [_mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self->_titleLabel.mas_bottom).offset(22);
+        make.top.equalTo(self->_titleLabel.mas_bottom).offset(YY_6(22));
         make.left.right.bottom.offset(0);
     }];
 }
@@ -107,7 +107,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 157;
+    return YY_6(157);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

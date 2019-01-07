@@ -46,7 +46,7 @@
 
 - (void)createUI
 {
-    static CGFloat offXStart = 35;
+    CGFloat offXStart = XX_6(35);
     
     _backBtn = [UIButton new];
     [_backBtn setImage:[UIImage imageNamed:@"backArrow"] forState:UIControlStateNormal];
@@ -54,9 +54,9 @@
     [self.view addSubview:_backBtn];
     [_backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(offXStart);
-        make.top.offset(36);
-        make.width.mas_equalTo(24);
-        make.height.mas_equalTo(22);
+        make.top.offset(YY_6(16) + STATUS_HEIGHT);
+        make.width.mas_equalTo(XX_6(24));
+        make.height.mas_equalTo(XX_6(22));
     }];
     
     _bigLockImageView = [UIImageView new];
@@ -65,8 +65,8 @@
     [_bigLockImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.offset(0);
         make.right.offset(0);
-        make.width.mas_equalTo(154);
-        make.height.mas_equalTo(230);
+        make.width.mas_equalTo(XX_6(154));
+        make.height.mas_equalTo(XX_6(230));
     }];
     
     _mainLabel = [UILabel new];
@@ -84,7 +84,7 @@
     [_sepLineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(offXStart);
         make.top.equalTo(self->_mainLabel.mas_bottom).offset(5);
-        make.width.mas_equalTo(166);
+        make.width.mas_equalTo(XX_6(166));
         make.height.mas_equalTo(2);
     }];
 
@@ -106,9 +106,9 @@
     _descriptionLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:_descriptionLabel];
     [_descriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(303);
+        make.width.mas_equalTo(XX_6(303));
         make.centerX.offset(0);
-        make.top.equalTo(self->_subLabel.mas_bottom).offset(24);
+        make.top.equalTo(self->_subLabel.mas_bottom).offset(YY_6(24));
     }];
 }
 

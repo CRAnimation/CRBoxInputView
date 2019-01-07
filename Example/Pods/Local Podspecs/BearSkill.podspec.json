@@ -1,0 +1,91 @@
+{
+  "name": "BearSkill",
+  "version": "0.2.0",
+  "summary": "BearSkill contain some methods used frequently in project.",
+  "description": "BearSkill contain some methods used frequently in project. And many other methods about layout.",
+  "homepage": "https://github.com/BearRan/BearSkill",
+  "license": "MIT",
+  "authors": {
+    "Bear": "648070256@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/BearRan/BearSkill.git",
+    "tag": "0.2.0"
+  },
+  "resources": "Pod/Sources/*",
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "subspecs": [
+    {
+      "name": "UIAndExtend",
+      "dependencies": {
+        "Masonry": [
+
+        ],
+        "MBProgressHUD": [
+
+        ],
+        "UIImage-Helpers": [
+          "~> 0.0.2"
+        ],
+        "SDWebImage": [
+
+        ]
+      },
+      "source_files": "Pod/UIAndExtend/**/*"
+    },
+    {
+      "name": "Layout",
+      "source_files": "Pod/Layout/*"
+    },
+    {
+      "name": "Constants",
+      "dependencies": {
+        "MBProgressHUD": [
+
+        ]
+      },
+      "source_files": "Pod/Constants/*"
+    },
+    {
+      "name": "AttributeString",
+      "source_files": "Pod/AttributeString/*"
+    },
+    {
+      "name": "BearDefines",
+      "source_files": "Pod/BearDefines/*"
+    },
+    {
+      "name": "Tools",
+      "source_files": "Pod/Tools/**/*",
+      "dependencies": {
+        "Reachability": [
+
+        ]
+      }
+    },
+    {
+      "name": "Request",
+      "dependencies": {
+        "GBDeviceInfo": [
+
+        ],
+        "AFNetworking": [
+
+        ]
+      },
+      "source_files": "Pod/Request/**/*",
+      "frameworks": "CFNetWork",
+      "exclude_files": "Pod/Request/BearBaseRequestManager/BearProxyManager.m",
+      "subspecs": [
+        {
+          "name": "no-arc",
+          "source_files": "Pod/Request/BearBaseRequestManager/BearProxyManager.m",
+          "requires_arc": false
+        }
+      ]
+    }
+  ]
+}
