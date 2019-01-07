@@ -124,8 +124,9 @@
     _verifyBtn = [UIButton new];
     _verifyBtn.layer.cornerRadius = btnHeight / 2.0;
     _verifyBtn.backgroundColor = color_master;
-    [_verifyBtn setTitle:@"Verify" forState:UIControlStateNormal];
+    [_verifyBtn setTitle:@"Clear" forState:UIControlStateNormal];
     [_verifyBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_verifyBtn addTarget:self action:@selector(clearBtnEvent) forControlEvents:UIControlEventTouchUpInside];
     _verifyBtn.titleLabel.font = FontSize_6(21);
     [self.view addSubview:_verifyBtn];
     [_verifyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -320,9 +321,10 @@
     return _boxInputView;
 }
 
-//
-//- (void)clearBtnEvent
-//{
-//    [_boxInputView clearAll];
-//}
+#pragma mark - BtnEvent
+- (void)clearBtnEvent
+{
+    [_boxInputView clearAll];
+}
+
 @end
