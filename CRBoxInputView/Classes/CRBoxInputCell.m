@@ -75,9 +75,9 @@
     BOOL hasOriginValue = self.boxInputCellProperty.originValue && self.boxInputCellProperty.originValue.length > 0;
     if (hasOriginValue) {
         if (self.boxInputCellProperty.ifShowSecurity) {
-            if (self.boxInputCellProperty.securityType == CRBoxSecurityType_Symbol) {
+            if (self.boxInputCellProperty.securityType == CRBoxSecuritySymbolType) {
                 _valueLabel.text = self.boxInputCellProperty.securitySymbol;
-            }else if (self.boxInputCellProperty.securityType == CRBoxSecurityType_CustomView) {
+            }else if (self.boxInputCellProperty.securityType == CRBoxSecurityCustomViewType) {
                 _valueLabel.hidden = YES;
                 [self showCustomSecurityView];
             }

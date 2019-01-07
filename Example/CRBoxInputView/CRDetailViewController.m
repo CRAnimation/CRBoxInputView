@@ -310,7 +310,7 @@
     cellProperty.borderWidth = 0;
     cellProperty.cellFont = [UIFont boldSystemFontOfSize:24];
     cellProperty.cellTextColor = color_master;
-    cellProperty.securityType = CRBoxSecurityType_CustomView;//need
+    cellProperty.securityType = CRBoxSecurityCustomViewType;//need
     
     CRBoxInputView_SecretImage *_boxInputView = [CRBoxInputView_SecretImage new];
     _boxInputView.ifNeedSecurity = YES;//need
@@ -332,7 +332,7 @@
     cellProperty.borderWidth = 0;
     cellProperty.cellFont = [UIFont boldSystemFontOfSize:24];
     cellProperty.cellTextColor = color_master;
-    cellProperty.securityType = CRBoxSecurityType_CustomView;//need
+    cellProperty.securityType = CRBoxSecurityCustomViewType;//need
     
     CRBoxInputView_SecretView *_boxInputView = [CRBoxInputView_SecretView new];
     _boxInputView.ifNeedSecurity = YES;//need

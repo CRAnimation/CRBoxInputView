@@ -11,8 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, CRBoxSecurityType) {
-    CRBoxSecurityType_Symbol,
-    CRBoxSecurityType_CustomView,
+    CRBoxSecuritySymbolType,
+    CRBoxSecurityCustomViewType,
 };
 
 @interface CRBoxInputCellProperty : NSObject <NSCopying>
