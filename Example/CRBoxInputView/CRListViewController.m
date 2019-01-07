@@ -53,6 +53,12 @@
     [_dataArr addObject:model];
     
     model = [CRBoxInputModel new];
+    model.name = @"Custom Box";
+    model.imageName = @"demoImg";
+    model.type = CRBoxInputModelCustomBoxType;
+    [_dataArr addObject:model];
+    
+    model = [CRBoxInputModel new];
     model.name = @"Line";
     model.imageName = @"demoImg";
     model.type = CRBoxInputModelLineType;

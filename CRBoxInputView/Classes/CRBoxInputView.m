@@ -299,7 +299,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 {
     if (!_boxFlowLayout) {
         _boxFlowLayout = [CRBoxFlowLayout new];
-        _boxFlowLayout.itemSize = CGSizeMake(42, 47);
+        _boxFlowLayout.itemSize = CGSizeMake(52, 52);
     }
     
     return _boxFlowLayout;
