@@ -11,6 +11,7 @@
 @interface CRDetailViewController ()
 {
     UIButton *_backBtn;
+    UIImageView *_bigLockImageView;
     UILabel *_mainLabel;
     UILabel *_subLabel;
     UIView *_sepLineView;
@@ -56,6 +57,16 @@
         make.top.offset(36);
         make.width.mas_equalTo(24);
         make.height.mas_equalTo(22);
+    }];
+    
+    _bigLockImageView = [UIImageView new];
+    _bigLockImageView.image = [UIImage imageNamed:@"BigLock"];
+    [self.view addSubview:_bigLockImageView];
+    [_bigLockImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.offset(0);
+        make.right.offset(0);
+        make.width.mas_equalTo(154);
+        make.height.mas_equalTo(230);
     }];
     
     _mainLabel = [UILabel new];
