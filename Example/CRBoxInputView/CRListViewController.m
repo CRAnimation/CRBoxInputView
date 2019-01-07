@@ -1,19 +1,20 @@
 //
-//  CRViewController.m
+//  CRListViewController.m
 //  CRBoxInputView
 //
 //  Created by BearRan on 01/03/2019.
 //  Copyright (c) 2019 BearRan. All rights reserved.
 //
 
-#import "CRViewController.h"
+#import "CRListViewController.h"
 #import "CRDetailViewController.h"
+#import "CRListVCCell.h"
 
 #import "CRBoxInputView.h"
 #import "CRBoxInputView_CustomSecurity.h"
 #import "CRBoxInputModel.h"
 
-@interface CRViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface CRListViewController () <UITableViewDelegate, UITableViewDataSource>
 {
     CRBoxInputView *_boxInputView;
     UITableView *_mainTableView;
@@ -21,7 +22,7 @@
 }
 @end
 
-@implementation CRViewController
+@implementation CRListViewController
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -79,6 +80,7 @@
     _mainTableView = [UITableView new];
     _mainTableView.delegate = self;
     _mainTableView.dataSource = self;
+    _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_mainTableView];
     [_mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);
@@ -99,10 +101,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellId = @"cellId";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    CRListVCCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        cell = [[CRListVCCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
+    
+    CRBoxInputModel *model = _dataArr[indexPath.row];
+    [cell loadDataWithModel:model];
     
     return cell;
 }

@@ -1,5 +1,5 @@
 //
-//  CRViewController.h
+//  CRListViewController.h
 //  CRBoxInputView
 //
 //  Created by BearRan on 01/03/2019.
@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface CRViewController : UIViewController
+@interface CRListViewController : UIViewController
 
 @end

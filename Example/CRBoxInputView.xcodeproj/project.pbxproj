@@ -14,7 +14,7 @@
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* CRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* CRAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* CRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* CRViewController.m */; };
+		6003F5A7195388D20070C39A /* CRListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* CRListViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -26,6 +26,7 @@
 		74047F7021E2F6850063A8C0 /* CRConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 74047F6F21E2F6850063A8C0 /* CRConstant.m */; };
 		74047F7721E2F7BE0063A8C0 /* CRBoxInputModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74047F7621E2F7BE0063A8C0 /* CRBoxInputModel.m */; };
 		74047F7A21E2F9990063A8C0 /* CRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74047F7921E2F9990063A8C0 /* CRDetailViewController.m */; };
+		74047F7D21E2FA810063A8C0 /* CRListVCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74047F7C21E2FA810063A8C0 /* CRListVCCell.m */; };
 		74A3021521E2183900E3C2BA /* CRBoxInputCell_CustomSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A3021421E2183900E3C2BA /* CRBoxInputCell_CustomSecurity.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		BFDF9DDE5B242B0DDE34239F /* Pods_CRBoxInputView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6ADFEF56775AB54CF91EE82 /* Pods_CRBoxInputView_Tests.framework */; };
@@ -54,8 +55,8 @@
 		6003F59B195388D20070C39A /* CRBoxInputView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CRBoxInputView-Prefix.pch"; sourceTree = "<group>"; };
 		6003F59C195388D20070C39A /* CRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* CRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* CRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* CRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRViewController.m; sourceTree = "<group>"; };
+		6003F5A5195388D20070C39A /* CRListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRListViewController.h; sourceTree = "<group>"; };
+		6003F5A6195388D20070C39A /* CRListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRListViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* CRBoxInputView_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CRBoxInputView_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -74,6 +75,8 @@
 		74047F7621E2F7BE0063A8C0 /* CRBoxInputModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRBoxInputModel.m; sourceTree = "<group>"; };
 		74047F7821E2F9990063A8C0 /* CRDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRDetailViewController.h; sourceTree = "<group>"; };
 		74047F7921E2F9990063A8C0 /* CRDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRDetailViewController.m; sourceTree = "<group>"; };
+		74047F7B21E2FA810063A8C0 /* CRListVCCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRListVCCell.h; sourceTree = "<group>"; };
+		74047F7C21E2FA810063A8C0 /* CRListVCCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRListVCCell.m; sourceTree = "<group>"; };
 		74A3021321E2183900E3C2BA /* CRBoxInputCell_CustomSecurity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRBoxInputCell_CustomSecurity.h; sourceTree = "<group>"; };
 		74A3021421E2183900E3C2BA /* CRBoxInputCell_CustomSecurity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRBoxInputCell_CustomSecurity.m; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -162,11 +165,13 @@
 				6003F59D195388D20070C39A /* CRAppDelegate.m */,
 				74047F6E21E2F6850063A8C0 /* CRConstant.h */,
 				74047F6F21E2F6850063A8C0 /* CRConstant.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* CRViewController.h */,
-				6003F5A6195388D20070C39A /* CRViewController.m */,
 				74047F7521E2F7BE0063A8C0 /* CRBoxInputModel.h */,
 				74047F7621E2F7BE0063A8C0 /* CRBoxInputModel.m */,
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				6003F5A5195388D20070C39A /* CRListViewController.h */,
+				6003F5A6195388D20070C39A /* CRListViewController.m */,
+				74047F7B21E2FA810063A8C0 /* CRListVCCell.h */,
+				74047F7C21E2FA810063A8C0 /* CRListVCCell.m */,
 				74047F7821E2F9990063A8C0 /* CRDetailViewController.h */,
 				74047F7921E2F9990063A8C0 /* CRDetailViewController.m */,
 				74047F6B21E2198E0063A8C0 /* CRBoxInputView_CustomSecurity.h */,
@@ -430,12 +435,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74047F7D21E2FA810063A8C0 /* CRListVCCell.m in Sources */,
 				74047F7021E2F6850063A8C0 /* CRConstant.m in Sources */,
 				74047F7721E2F7BE0063A8C0 /* CRBoxInputModel.m in Sources */,
 				74047F7A21E2F9990063A8C0 /* CRDetailViewController.m in Sources */,
 				6003F59E195388D20070C39A /* CRAppDelegate.m in Sources */,
 				74A3021521E2183900E3C2BA /* CRBoxInputCell_CustomSecurity.m in Sources */,
-				6003F5A7195388D20070C39A /* CRViewController.m in Sources */,
+				6003F5A7195388D20070C39A /* CRListViewController.m in Sources */,
 				74047F6D21E2198E0063A8C0 /* CRBoxInputView_CustomSecurity.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
