@@ -1,8 +1,8 @@
 //
-//  CRBoxInputView_CustomSecurity.h
+//  CRBoxInputView_SecretView.h
 //  CRBoxInputView_Example
 //
-//  Created by Chobits on 2019/1/6.
+//  Created by Chobits on 2019/1/7.
 //  Copyright © 2019 BearRan. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CRBoxInputView_CustomSecurity : CRBoxInputView
+@interface CRBoxInputView_SecretView : CRBoxInputView
 
 @end
 

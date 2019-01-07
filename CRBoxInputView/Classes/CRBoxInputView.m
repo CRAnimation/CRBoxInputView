@@ -346,4 +346,9 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     return _cellPropertyArr;
 }
 
+- (NSString *)textValue
+{
+    return _textView.text;
+}
+
 @end

@@ -11,13 +11,8 @@
 #import "CRListVCCell.h"
 #import "CRBoxInputModel.h"
 
-#import "CRBoxInputView.h"
-#import "CRBoxInputView_CustomSecurity.h"
-
-
 @interface CRListViewController () <UITableViewDelegate, UITableViewDataSource>
 {
-    CRBoxInputView *_boxInputView;
     UITableView *_mainTableView;
     UILabel *_titleLabel;
     NSMutableArray *_dataArr;
@@ -139,53 +134,6 @@
     CRDetailViewController *destinationVC = [CRDetailViewController new];
     destinationVC.boxInputModel = model;
     [self.navigationController pushViewController:destinationVC animated:YES];
-}
-
-- (void)createUI1
-{
-    CGFloat offX = 30;
-    
-    CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
-    cellProperty.cellBgColorNormal = [UIColor clearColor];
-    cellProperty.cellBorderColorSelected = CRBOX_UIColorFromHEX(0x979797);
-    cellProperty.cellCursorColor = CRBOX_UIColorFromHEX(0x979797);
-    cellProperty.cornerRadius = 7;
-    cellProperty.securityType = CRBoxSecurityType_CustomView;
-    
-    _boxInputView = [CRBoxInputView_CustomSecurity new];
-    [self.view addSubview:_boxInputView];
-    _boxInputView.codeLength = 6;
-    _boxInputView.ifNeedCursor = YES;
-    _boxInputView.keyBoardType = UIKeyboardTypeNumberPad;
-    _boxInputView.ifNeedSecurity = YES;
-    _boxInputView.customCellProperty = cellProperty;
-    _boxInputView.textDidChangeblock = ^(NSString *text, BOOL isFinished) {
-        if (isFinished) {
-            NSLog(@"--text:%@", text);
-        }
-    };
-    [_boxInputView loadAndPrepareView];
-    [_boxInputView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.offset(offX);
-        make.right.offset(-offX);
-        make.centerY.offset(0);
-        make.height.mas_equalTo(47);
-    }];
-    
-    UIButton *clearBtn = [UIButton new];
-    [clearBtn addTarget:self action:@selector(clearBtnEvent) forControlEvents:UIControlEventTouchUpInside];
-    clearBtn.backgroundColor = [UIColor orangeColor];
-    [self.view addSubview:clearBtn];
-    [clearBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.offset(100);
-        make.width.height.mas_equalTo(100);
-        make.centerX.offset(0);
-    }];
-}
-
-- (void)clearBtnEvent
-{
-    [_boxInputView clearAll];
 }
 
 @end

@@ -49,6 +49,7 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
 @property (copy, nonatomic) TextDidChangeblock textDidChangeblock;
 @property (strong, nonatomic) CRBoxFlowLayout *boxFlowLayout;
 @property (strong, nonatomic) CRBoxInputCellProperty *customCellProperty;
+@property (strong, nonatomic, readonly) NSString  *textValue;
 
 - (void)loadAndPrepareView;
 - (void)clearAll;
