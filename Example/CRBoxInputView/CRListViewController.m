@@ -18,6 +18,7 @@
 {
     CRBoxInputView *_boxInputView;
     UITableView *_mainTableView;
+    UILabel *_titleLabel;
     NSMutableArray *_dataArr;
 }
 @end
@@ -77,13 +78,24 @@
 
 - (void)createUI
 {
+    _titleLabel = [UILabel new];
+    _titleLabel.text = @"CRBoxInputView";
+    _titleLabel.textColor = color_master;
+    _titleLabel.font = [UIFont systemFontOfSize:24];
+    [self.view addSubview:_titleLabel];
+    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.offset(30);
+        make.left.offset(35);
+    }];
+    
     _mainTableView = [UITableView new];
     _mainTableView.delegate = self;
     _mainTableView.dataSource = self;
     _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_mainTableView];
     [_mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsZero);
+        make.top.equalTo(self->_titleLabel.mas_bottom).offset(22);
+        make.left.right.bottom.offset(0);
     }];
 }
 
