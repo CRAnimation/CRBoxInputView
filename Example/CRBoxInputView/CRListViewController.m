@@ -84,7 +84,7 @@
     _titleLabel.font = [UIFont systemFontOfSize:24];
     [self.view addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.offset(30);
+        make.top.offset(50);
         make.left.offset(35);
     }];
     
@@ -130,6 +130,7 @@
 {
     CRBoxInputModel *model = _dataArr[indexPath.row];
     CRDetailViewController *destinationVC = [CRDetailViewController new];
+    destinationVC.boxInputModel = model;
     [self.navigationController pushViewController:destinationVC animated:YES];
 }
 

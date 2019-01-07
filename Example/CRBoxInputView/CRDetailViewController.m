@@ -9,7 +9,13 @@
 #import "CRDetailViewController.h"
 
 @interface CRDetailViewController ()
-
+{
+    UIButton *_backBtn;
+    UILabel *_mainLabel;
+    UILabel *_subLabel;
+    UIView *_sepLineView;
+    UILabel *_descriptionLabel;
+}
 @end
 
 @implementation CRDetailViewController
@@ -18,24 +24,94 @@
 {
     [super viewWillAppear:animated];
     
-    self.navigationController.navigationBarHidden = NO;
+    self.navigationController.navigationBarHidden = YES;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self) {
+        self.view.backgroundColor = [UIColor whiteColor];
+        [self createUI];
+    }
+    
+    return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (void)createUI
+{
+    static CGFloat offXStart = 35;
     
-    self.title = @"Detail";
-    self.view.backgroundColor = [UIColor whiteColor];
+    _backBtn = [UIButton new];
+    [_backBtn setImage:[UIImage imageNamed:@"backArrow"] forState:UIControlStateNormal];
+    [_backBtn addTarget:self action:@selector(backBtnEvent) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_backBtn];
+    [_backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.offset(offXStart);
+        make.top.offset(36);
+        make.width.mas_equalTo(24);
+        make.height.mas_equalTo(22);
+    }];
+    
+    _mainLabel = [UILabel new];
+    _mainLabel.textColor = color_master;
+    _mainLabel.font = [UIFont systemFontOfSize:24];
+    [self.view addSubview:_mainLabel];
+    [_mainLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.offset(offXStart);
+        make.top.equalTo(self->_backBtn.mas_bottom).offset(13);
+    }];
+    
+    _sepLineView = [UIView new];
+    _sepLineView.backgroundColor = color_master;
+    [self.view addSubview:_sepLineView];
+    [_sepLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.offset(offXStart);
+        make.top.equalTo(self->_mainLabel.mas_bottom).offset(5);
+        make.width.mas_equalTo(166);
+        make.height.mas_equalTo(2);
+    }];
+
+    _subLabel = [UILabel new];
+    _subLabel.text = @"CRBoxInputView";
+    _subLabel.textColor = color_master;
+    _subLabel.font = [UIFont boldSystemFontOfSize:14];
+    [self.view addSubview:_subLabel];
+    [_subLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.offset(offXStart);
+        make.top.equalTo(self->_sepLineView.mas_bottom).offset(2);
+    }];
+
+    _descriptionLabel = [UILabel new];
+    _descriptionLabel.textColor = color_master;
+    _descriptionLabel.font = [UIFont boldSystemFontOfSize:16];
+    _descriptionLabel.text = @"Please enter the verification code we sent to your email address";
+    _descriptionLabel.numberOfLines = 0;
+    _descriptionLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:_descriptionLabel];
+    [_descriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(303);
+        make.centerX.offset(0);
+        make.top.equalTo(self->_subLabel.mas_bottom).offset(24);
+    }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)backBtnEvent
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
-*/
+
+#pragma mark - Setter & Getter
+- (void)setBoxInputModel:(CRBoxInputModel *)boxInputModel
+{
+    _boxInputModel = boxInputModel;
+    
+    _mainLabel.text = boxInputModel.name;
+}
 
 @end

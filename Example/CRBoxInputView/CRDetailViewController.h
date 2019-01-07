@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CRBoxInputModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CRDetailViewController : UIViewController
+
+@property (strong, nonatomic) CRBoxInputModel *boxInputModel;
 
 @end
 
