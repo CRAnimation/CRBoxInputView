@@ -26,6 +26,9 @@
     CRBoxInputView *_boxInputView;
     UIButton *_verifyBtn;
 }
+
+@property (strong, nonatomic) UILabel   *valueLabel;
+
 @end
 
 @implementation CRDetailViewController
@@ -110,7 +113,7 @@
     _descriptionLabel = [UILabel new];
     _descriptionLabel.textColor = color_master;
     _descriptionLabel.font = [UIFont boldSystemFontOfSize:16];
-    _descriptionLabel.text = @"Please enter the verification code we sent to your email address";
+    _descriptionLabel.text = @"The verification code you have input is";
     _descriptionLabel.numberOfLines = 0;
     _descriptionLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:_descriptionLabel];
@@ -118,6 +121,16 @@
         make.width.mas_equalTo(XX_6(303));
         make.centerX.offset(0);
         make.top.equalTo(self->_subLabel.mas_bottom).offset(YY_6(24));
+    }];
+    
+    _valueLabel = [UILabel new];
+    _valueLabel.textColor = color_master;
+    _valueLabel.font = [UIFont boldSystemFontOfSize:24];
+    _valueLabel.text = @"Empty";
+    [self.view addSubview:_valueLabel];
+    [_valueLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.offset(0);
+        make.top.equalTo(self->_descriptionLabel.mas_bottom).offset(3);
     }];
     
     CGFloat btnHeight = YY_6(54);
@@ -191,6 +204,15 @@
             }
             break;
     }
+    
+    __weak typeof(self) weakSelf = self;
+    _boxInputView.textDidChangeblock = ^(NSString *text, BOOL isFinished) {
+        if (text.length > 0) {
+            weakSelf.valueLabel.text = text;
+        }else{
+            weakSelf.valueLabel.text = @"Empty";
+        }
+    };
     [self.view addSubview:_boxInputView];
     [_boxInputView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(XX_6(262));
