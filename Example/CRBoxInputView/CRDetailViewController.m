@@ -8,6 +8,7 @@
 
 #import "CRDetailViewController.h"
 #import "CRBoxInputView.h"
+#import "CRBoxInputView_CustomBox.h"
 
 @interface CRDetailViewController ()
 {
@@ -149,6 +150,12 @@
             }
             break;
             
+        case CRBoxInputModelCustomBoxType:
+            {
+                _boxInputView = [self generateBoxInputView_customBox];
+            }
+            break;
+            
         default:
             {
                 _boxInputView = [self generateBoxInputView_normal];
@@ -171,6 +178,24 @@
 - (CRBoxInputView *)generateBoxInputView_normal
 {
     CRBoxInputView *_boxInputView = [CRBoxInputView new];
+    [_boxInputView loadAndPrepareView];
+    
+    return _boxInputView;
+}
+
+- (CRBoxInputView_CustomBox *)generateBoxInputView_customBox
+{
+    CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
+    cellProperty.cellBgColor = color_FFECEC;
+    cellProperty.cellBorderColorSelected = [UIColor whiteColor];
+    cellProperty.cellCursorColor = color_master;
+    cellProperty.cellCursorWidth = 2;
+    cellProperty.cellCursorHeight = YY_6(27);
+    cellProperty.cornerRadius = 4;
+    cellProperty.borderWidth = 0;
+    
+    CRBoxInputView_CustomBox *_boxInputView = [CRBoxInputView_CustomBox new];
+    _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     [_boxInputView loadAndPrepareView];
     
     return _boxInputView;
