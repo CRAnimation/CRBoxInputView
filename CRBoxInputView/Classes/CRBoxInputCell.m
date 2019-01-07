@@ -129,8 +129,10 @@
 {
     if (selected) {
         self.layer.borderColor = self.boxInputCellProperty.cellBorderColorSelected.CGColor;
+        self.backgroundColor = self.boxInputCellProperty.cellBgColorSelected;
     }else{
         self.layer.borderColor = self.boxInputCellProperty.cellBorderColorNormal.CGColor;
+        self.backgroundColor = self.boxInputCellProperty.cellBgColorNormal;
     }
     
     if (_ifNeedCursor) {
@@ -155,7 +157,7 @@
         make.width.mas_equalTo(boxInputCellProperty.cellCursorWidth);
         make.height.mas_equalTo(boxInputCellProperty.cellCursorHeight);
     }];
-    self.backgroundColor = boxInputCellProperty.cellBgColor;
+    self.backgroundColor = boxInputCellProperty.cellBgColorNormal;
     self.layer.cornerRadius = boxInputCellProperty.cornerRadius;
     self.layer.borderWidth = boxInputCellProperty.borderWidth;
     

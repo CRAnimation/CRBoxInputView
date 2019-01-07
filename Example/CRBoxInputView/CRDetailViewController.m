@@ -186,8 +186,8 @@
 - (CRBoxInputView_CustomBox *)generateBoxInputView_customBox
 {
     CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
-    cellProperty.cellBgColor = color_FFECEC;
-    cellProperty.cellBorderColorSelected = [UIColor whiteColor];
+    cellProperty.cellBgColorNormal = color_FFECEC;
+    cellProperty.cellBgColorSelected = [UIColor whiteColor];
     cellProperty.cellCursorColor = color_master;
     cellProperty.cellCursorWidth = 2;
     cellProperty.cellCursorHeight = YY_6(27);
@@ -196,6 +196,7 @@
     
     CRBoxInputView_CustomBox *_boxInputView = [CRBoxInputView_CustomBox new];
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
+    _boxInputView.customCellProperty = cellProperty;
     [_boxInputView loadAndPrepareView];
     
     return _boxInputView;

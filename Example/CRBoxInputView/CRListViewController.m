@@ -146,7 +146,7 @@
     CGFloat offX = 30;
     
     CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
-    cellProperty.cellBgColor = [UIColor clearColor];
+    cellProperty.cellBgColorNormal = [UIColor clearColor];
     cellProperty.cellBorderColorSelected = CRBOX_UIColorFromHEX(0x979797);
     cellProperty.cellCursorColor = CRBOX_UIColorFromHEX(0x979797);
     cellProperty.cornerRadius = 7;
