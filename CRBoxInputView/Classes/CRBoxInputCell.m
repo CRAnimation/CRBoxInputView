@@ -27,7 +27,7 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        [self createUI];
+        [self createUIBase];
     }
     
     return self;
@@ -39,7 +39,7 @@
     self.userInteractionEnabled = NO;
 }
 
-- (void)createUI
+- (void)createUIBase
 {
     [self initPara];
     

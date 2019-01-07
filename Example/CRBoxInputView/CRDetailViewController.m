@@ -9,6 +9,7 @@
 #import "CRDetailViewController.h"
 #import "CRBoxInputView.h"
 #import "CRBoxInputView_CustomBox.h"
+#import "CRBoxInputView_Line.h"
 
 @interface CRDetailViewController ()
 {
@@ -156,6 +157,12 @@
             }
             break;
             
+        case CRBoxInputModelLineType:
+            {
+                _boxInputView = [self generateBoxInputView_line];
+            }
+            break;
+            
         default:
             {
                 _boxInputView = [self generateBoxInputView_normal];
@@ -175,6 +182,7 @@
     }];
 }
 
+#pragma mark - Normal
 - (CRBoxInputView *)generateBoxInputView_normal
 {
     CRBoxInputView *_boxInputView = [CRBoxInputView new];
@@ -183,6 +191,7 @@
     return _boxInputView;
 }
 
+#pragma mark - CustomBox
 - (CRBoxInputView_CustomBox *)generateBoxInputView_customBox
 {
     CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
@@ -193,8 +202,30 @@
     cellProperty.cellCursorHeight = YY_6(27);
     cellProperty.cornerRadius = 4;
     cellProperty.borderWidth = 0;
+    cellProperty.cellFont = [UIFont boldSystemFontOfSize:24];
+    cellProperty.cellTextColor = color_master;
     
     CRBoxInputView_CustomBox *_boxInputView = [CRBoxInputView_CustomBox new];
+    _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
+    _boxInputView.customCellProperty = cellProperty;
+    [_boxInputView loadAndPrepareView];
+    
+    return _boxInputView;
+}
+
+#pragma mark - Line
+- (CRBoxInputView_Line *)generateBoxInputView_line
+{
+    CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
+    cellProperty.cellCursorColor = color_FFECEC;
+    cellProperty.cellCursorWidth = 2;
+    cellProperty.cellCursorHeight = YY_6(27);
+    cellProperty.cornerRadius = 0;
+    cellProperty.borderWidth = 0;
+    cellProperty.cellFont = [UIFont boldSystemFontOfSize:24];
+    cellProperty.cellTextColor = color_master;
+    
+    CRBoxInputView_Line *_boxInputView = [CRBoxInputView_Line new];
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
     [_boxInputView loadAndPrepareView];

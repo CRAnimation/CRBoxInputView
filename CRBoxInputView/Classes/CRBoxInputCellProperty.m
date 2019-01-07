@@ -28,8 +28,8 @@
         self.borderWidth = (0.5);
         
         // label
-//        self.cellFont = nil;
-//        self.cellTextColor = nil;
+        self.cellFont = [UIFont systemFontOfSize:20];
+        self.cellTextColor = [UIColor blackColor];
         
         // Security
         self.ifShowSecurity = NO;
@@ -59,12 +59,8 @@
     copy.borderWidth = _borderWidth;
     
     // label
-    if (_cellFont) {
-        copy.cellFont = [_cellFont copy];
-    }
-    if (_cellTextColor) {
-        copy.cellTextColor = [_cellTextColor copy];
-    }
+    copy.cellFont = [_cellFont copy];
+    copy.cellTextColor = [_cellTextColor copy];
     
     // Security
     copy.ifShowSecurity = _ifShowSecurity;

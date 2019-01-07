@@ -30,6 +30,8 @@
 		74047F8121E30F290063A8C0 /* CRBoxInputView_CustomBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 74047F8021E30F290063A8C0 /* CRBoxInputView_CustomBox.m */; };
 		74047F8421E30F3F0063A8C0 /* CRBoxInputCell_CustomBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 74047F8321E30F3F0063A8C0 /* CRBoxInputCell_CustomBox.m */; };
 		74A3021521E2183900E3C2BA /* CRBoxInputCell_CustomSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A3021421E2183900E3C2BA /* CRBoxInputCell_CustomSecurity.m */; };
+		74BF960021E329CF006ED752 /* CRBoxInputCell_Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 74BF95FF21E329CF006ED752 /* CRBoxInputCell_Line.m */; };
+		74BF960321E329DC006ED752 /* CRBoxInputView_Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 74BF960221E329DC006ED752 /* CRBoxInputView_Line.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		BFDF9DDE5B242B0DDE34239F /* Pods_CRBoxInputView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6ADFEF56775AB54CF91EE82 /* Pods_CRBoxInputView_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -85,6 +87,10 @@
 		74047F8321E30F3F0063A8C0 /* CRBoxInputCell_CustomBox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRBoxInputCell_CustomBox.m; sourceTree = "<group>"; };
 		74A3021321E2183900E3C2BA /* CRBoxInputCell_CustomSecurity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRBoxInputCell_CustomSecurity.h; sourceTree = "<group>"; };
 		74A3021421E2183900E3C2BA /* CRBoxInputCell_CustomSecurity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRBoxInputCell_CustomSecurity.m; sourceTree = "<group>"; };
+		74BF95FE21E329CF006ED752 /* CRBoxInputCell_Line.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRBoxInputCell_Line.h; sourceTree = "<group>"; };
+		74BF95FF21E329CF006ED752 /* CRBoxInputCell_Line.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRBoxInputCell_Line.m; sourceTree = "<group>"; };
+		74BF960121E329DC006ED752 /* CRBoxInputView_Line.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRBoxInputView_Line.h; sourceTree = "<group>"; };
+		74BF960221E329DC006ED752 /* CRBoxInputView_Line.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRBoxInputView_Line.m; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0D464B33EF181564FFD5FE5 /* Pods-CRBoxInputView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRBoxInputView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CRBoxInputView_Tests/Pods-CRBoxInputView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B1646978CFC5DDBCFF7854C6 /* Pods-CRBoxInputView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRBoxInputView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CRBoxInputView_Tests/Pods-CRBoxInputView_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +187,7 @@
 				74047F7821E2F9990063A8C0 /* CRDetailViewController.h */,
 				74047F7921E2F9990063A8C0 /* CRDetailViewController.m */,
 				74047F7E21E30EFE0063A8C0 /* CustomBox */,
+				74BF95FD21E329B6006ED752 /* Line */,
 				74047F6B21E2198E0063A8C0 /* CRBoxInputView_CustomSecurity.h */,
 				74047F6C21E2198E0063A8C0 /* CRBoxInputView_CustomSecurity.m */,
 				74A3021321E2183900E3C2BA /* CRBoxInputCell_CustomSecurity.h */,
@@ -242,6 +249,17 @@
 				74047F8321E30F3F0063A8C0 /* CRBoxInputCell_CustomBox.m */,
 			);
 			name = CustomBox;
+			sourceTree = "<group>";
+		};
+		74BF95FD21E329B6006ED752 /* Line */ = {
+			isa = PBXGroup;
+			children = (
+				74BF960121E329DC006ED752 /* CRBoxInputView_Line.h */,
+				74BF960221E329DC006ED752 /* CRBoxInputView_Line.m */,
+				74BF95FE21E329CF006ED752 /* CRBoxInputCell_Line.h */,
+				74BF95FF21E329CF006ED752 /* CRBoxInputCell_Line.m */,
+			);
+			name = Line;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -468,9 +486,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				74047F7D21E2FA810063A8C0 /* CRListVCCell.m in Sources */,
+				74BF960021E329CF006ED752 /* CRBoxInputCell_Line.m in Sources */,
 				74047F8121E30F290063A8C0 /* CRBoxInputView_CustomBox.m in Sources */,
 				74047F7021E2F6850063A8C0 /* CRConstant.m in Sources */,
 				74047F7721E2F7BE0063A8C0 /* CRBoxInputModel.m in Sources */,
+				74BF960321E329DC006ED752 /* CRBoxInputView_Line.m in Sources */,
 				74047F7A21E2F9990063A8C0 /* CRDetailViewController.m in Sources */,
 				6003F59E195388D20070C39A /* CRAppDelegate.m in Sources */,
 				74047F8421E30F3F0063A8C0 /* CRBoxInputCell_CustomBox.m in Sources */,
