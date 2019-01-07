@@ -7,28 +7,115 @@
 //
 
 #import "CRViewController.h"
-#import "Masonry.h"
+#import "CRDetailViewController.h"
+
 #import "CRBoxInputView.h"
 #import "CRBoxInputView_CustomSecurity.h"
+#import "CRBoxInputModel.h"
 
-#define CRBOX_UIColorFromHEX(rgbValue)    [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-
-@interface CRViewController ()
+@interface CRViewController () <UITableViewDelegate, UITableViewDataSource>
 {
     CRBoxInputView *_boxInputView;
+    UITableView *_mainTableView;
+    NSMutableArray *_dataArr;
 }
 @end
 
 @implementation CRViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBarHidden = YES;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+    
+    [self generateDataArr];
     [self createUI];
 }
 
+- (void)generateDataArr
+{
+    _dataArr = [NSMutableArray new];
+    CRBoxInputModel *model;
+    
+    model = [CRBoxInputModel new];
+    model.name = @"Normal";
+    model.imageName = @"";
+    model.type = CRBoxInputModelNormalType;
+    [_dataArr addObject:model];
+    
+    model = [CRBoxInputModel new];
+    model.name = @"Line";
+    model.imageName = @"";
+    model.type = CRBoxInputModelLineType;
+    [_dataArr addObject:model];
+    
+    model = [CRBoxInputModel new];
+    model.name = @"Secret Symbol";
+    model.imageName = @"";
+    model.type = CRBoxInputModelSecretSymbolType;
+    [_dataArr addObject:model];
+    
+    model = [CRBoxInputModel new];
+    model.name = @"Secret Image";
+    model.imageName = @"";
+    model.type = CRBoxInputModelSecretImageType;
+    [_dataArr addObject:model];
+    
+    model = [CRBoxInputModel new];
+    model.name = @"Secret View";
+    model.imageName = @"";
+    model.type = CRBoxInputModelSecretViewType;
+    [_dataArr addObject:model];
+}
+
 - (void)createUI
+{
+    _mainTableView = [UITableView new];
+    _mainTableView.delegate = self;
+    _mainTableView.dataSource = self;
+    [self.view addSubview:_mainTableView];
+    [_mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
+    }];
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _dataArr.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 157;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellId = @"cellId";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+    }
+    
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CRBoxInputModel *model = _dataArr[indexPath.row];
+    CRDetailViewController *destinationVC = [CRDetailViewController new];
+    [self.navigationController pushViewController:destinationVC animated:YES];
+}
+
+- (void)createUI1
 {
     CGFloat offX = 30;
     
