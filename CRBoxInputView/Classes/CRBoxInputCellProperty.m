@@ -21,6 +21,8 @@
         self.cellBorderColorSelected = [UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1];
         self.cellBgColor = [UIColor whiteColor];
         self.cellCursorColor = [UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1];
+        self.cellCursorWidth = 2;
+        self.cellCursorHeight = 32;
         self.cornerRadius = 4;
         self.borderWidth = (0.5);
         
@@ -49,6 +51,8 @@
     copy.cellBorderColorSelected = [_cellBorderColorSelected copy];
     copy.cellBgColor = [_cellBgColor copy];
     copy.cellCursorColor = [_cellCursorColor copy];
+    copy.cellCursorWidth = _cellCursorWidth;
+    copy.cellCursorHeight = _cellCursorHeight;
     copy.cornerRadius = _cornerRadius;
     copy.borderWidth = _borderWidth;
     

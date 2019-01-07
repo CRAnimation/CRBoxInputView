@@ -22,6 +22,8 @@ typedef NS_ENUM(NSInteger, CRBoxSecurityType) {
 @property (copy, nonatomic) UIColor *cellBorderColorSelected;
 @property (copy, nonatomic) UIColor *cellBgColor;
 @property (copy, nonatomic) UIColor *cellCursorColor; //光标颜色
+@property (assign, nonatomic) CGFloat cellCursorWidth;
+@property (assign, nonatomic) CGFloat cellCursorHeight;
 @property (assign, nonatomic) CGFloat cornerRadius;
 @property (assign, nonatomic) CGFloat borderWidth;
 

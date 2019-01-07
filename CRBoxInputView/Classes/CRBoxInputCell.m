@@ -54,10 +54,8 @@
     _cursorView = [UIView new];
     [self.contentView addSubview:_cursorView];
     [_cursorView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(2);
         make.centerX.offset(0);
-        make.top.offset(5);
-        make.bottom.offset(-5);
+        make.centerY.offset(0);
     }];
     
     [self initCellProperty];
@@ -153,6 +151,10 @@
     _boxInputCellProperty = boxInputCellProperty;
     
     _cursorView.backgroundColor = boxInputCellProperty.cellCursorColor;
+    [_cursorView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(boxInputCellProperty.cellCursorWidth);
+        make.height.mas_equalTo(boxInputCellProperty.cellCursorHeight);
+    }];
     self.backgroundColor = boxInputCellProperty.cellBgColor;
     self.layer.cornerRadius = boxInputCellProperty.cornerRadius;
     self.layer.borderWidth = boxInputCellProperty.borderWidth;
