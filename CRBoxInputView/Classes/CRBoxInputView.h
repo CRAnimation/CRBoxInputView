@@ -17,31 +17,31 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
 @interface CRBoxInputView : UIView
 
 /**
- 是否需要光标
+ ifNeedCursor
  *default: YES
  */
 @property (assign, nonatomic) BOOL ifNeedCursor;
 
 /**
- 验证码的长度
+ codeLength
  default: 4
  */
 @property (nonatomic, assign) NSInteger codeLength;
 
 /**
- 是否启用密码模式
+ ifNeedSecurity
  default: NO
  */
 @property (assign, nonatomic) BOOL ifNeedSecurity;
 
 /**
- 密码模式延时时间
+ show security delay time
  default: 0.3
  */
 @property (assign, nonatomic) CGFloat securityDelay;
 
 /**
- 键盘类型
+ keyBoardType
  default: UIKeyboardTypeNumberPad
  */
 @property (assign, nonatomic) UIKeyboardType keyBoardType;
@@ -58,10 +58,10 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
 // Qiuck set
 - (void)quickSetSecuritySymbol:(NSString *)securitySymbol;
 
-// You can inherit
+// You can inherit and call super
 - (void)initDefaultValue;
 
-// You can rewrite
+// You can inherit and rewrite
 - (UICollectionViewCell *)customCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

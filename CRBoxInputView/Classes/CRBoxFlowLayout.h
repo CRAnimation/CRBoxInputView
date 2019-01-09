@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CRBoxFlowLayout : UICollectionViewFlowLayout
 
-/** 是否需要等间距
+/** ifNeedEqualGap
  * default: YES
  */
 @property (assign, nonatomic) BOOL ifNeedEqualGap;
