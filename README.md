@@ -1,4 +1,4 @@
-![CRBoxInputViewHeadImg.png](/projects/CRBoxInputView/1577c279168d1af6.png "CRBoxInputViewHeadImg.png")
+![CRBoxInputViewHeadImg.png](/ReadmeResources/HeadImg.png "CRBoxInputViewHeadImg.png")
 [![CI Status](https://img.shields.io/travis/BearRan/CRBoxInputView.svg?style=flat)](https://travis-ci.org/BearRan/CRBoxInputView)
 [![Version](https://img.shields.io/cocoapods/v/CRBoxInputView.svg?style=flat)](https://cocoapods.org/pods/CRBoxInputView)
 [![License](https://img.shields.io/cocoapods/l/CRBoxInputView.svg?style=flat)](https://cocoapods.org/pods/CRBoxInputView)
