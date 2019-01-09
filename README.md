@@ -8,7 +8,7 @@
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-![iPhone 8 Copy 2.png](/projects/CRBoxInputView/15780eeb9645c418.png "iPhone 8 Copy 2.png")
+![iPhone 8 Copy 2.png](/ReadmeResources/ScreenShoot.png "iPhone 8 Copy 2.png")
 
 ## Installation
 
@@ -22,18 +22,18 @@ pod 'CRBoxInputView'
 ## Quick Guide
 | Type  | Image |
 | :-------------: | :-------------: |
-| [Base](#Anchor_Base) | ![Normal.png](/projects/CRBoxInputView/1577c4473989e336.png "Normal.png")  |
-| [CustomBox](#Anchor_CustomBox)  | ![CustomBox.png](/projects/CRBoxInputView/1577c437c37f8c67.png "CustomBox.png")  |
-| [Line](#Anchor_Line)  | ![Line.png](/projects/CRBoxInputView/1577c671f1f13055.png "Line.png")  |
-| [SecretSymbol](#Anchor_SecretSymbol)  | ![SecretSymbol.png](/projects/CRBoxInputView/1577e9ad597555e6.png "SecretSymbol.png")  |
-| [SecretImage](#Anchor_SecretImage)  | ![SecretImage.png](/projects/CRBoxInputView/1577e9f676695b3e.png "SecretImage.png")  |
-| [SecretView](#Anchor_SecretView)  | ![SecretView.png](/projects/CRBoxInputView/1577e9f839e97cb5.png "SecretView.png") |
+| [Base](#Anchor_Base) | ![Normal.png](/ReadmeResources/1Normal.png "Normal.png")  |
+| [CustomBox](#Anchor_CustomBox)  | ![CustomBox.png](/ReadmeResources/2CustomBox.png "CustomBox.png")  |
+| [Line](#Anchor_Line)  | ![Line.png](/ReadmeResources/3Line.png "Line.png")  |
+| [SecretSymbol](#Anchor_SecretSymbol)  | ![SecretSymbol.png](/ReadmeResources/4SecretSymbol.png "SecretSymbol.png")  |
+| [SecretImage](#Anchor_SecretImage)  | ![SecretImage.png](/ReadmeResources/5SecretImagel.png "SecretImage.png")  |
+| [SecretView](#Anchor_SecretView)  | ![SecretView.png](/ReadmeResources/6SecretView.png "SecretView.png") |
 
 ## Usage
 
 ### <a id="Anchor_Base"></a>Base
 
-![Normal.png](/projects/CRBoxInputView/1577c4473989e336.png "Normal.png")
+![Normal.png](/ReadmeResources/1Normal.png "Normal.png")
 Insert code where you need.
 ``` objc
 CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
@@ -45,7 +45,7 @@ CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(
 <br/>
 
 ### <a id="Anchor_CustomBox"></a>CustomBox
-![CustomBox.png](/projects/CRBoxInputView/1577c437c37f8c67.png "CustomBox.png")
+![CustomBox.png](/ReadmeResources/2CustomBox.png "CustomBox.png")
 #### Step1:
 Create custom class [reference here.](#Create_custom_class)
 #### Step2:
@@ -90,7 +90,7 @@ boxInputView.customCellProperty = cellProperty;
 <br/>
 
 ### <a id="Anchor_Line"></a>Line
-![Line.png](/projects/CRBoxInputView/1577c671f1f13055.png "Line.png")
+![Line.png](/ReadmeResources/3Line.png "Line.png")
 #### Step1:
 Create custom class [reference here.](#Create_custom_class)
 #### Step2:
@@ -139,7 +139,7 @@ CRBoxInputView_Custom *boxInputView = [[CRBoxInputView_Custom alloc] initWithFra
 <br/>
 
 ### <a id="Anchor_SecretSymbol"></a>SecretSymbol
-![SecretSymbol.png](/projects/CRBoxInputView/1577e9ad597555e6.png "SecretSymbol.png")
+![SecretSymbol.png](/ReadmeResources/4SecretSymbol.png "SecretSymbol.png")
 Insert code where you need.
 ``` objc
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
@@ -156,7 +156,7 @@ boxInputView.customCellProperty = cellProperty;
 <br/>
 
 ### <a id="Anchor_SecretImage"></a>SecretImage
-![SecretImage.png](/projects/CRBoxInputView/1577e9f676695b3e.png "SecretImage.png")
+![SecretImage.png](/ReadmeResources/5SecretImagel.png "SecretImage.png")
 #### Step1:
 Create custom class [reference here.](#Create_custom_class)
 #### Step2:
@@ -195,7 +195,7 @@ boxInputView.ifNeedSecurity = YES;
 <br/>
 
 ### <a id="Anchor_SecretView"></a>SecretView
-![SecretView.png](/projects/CRBoxInputView/1577e9f839e97cb5.png "SecretView.png")
+![SecretView.png](/ReadmeResources/6SecretView.png "SecretView.png")
 #### Step1:
 Create custom class [reference here.](#Create_custom_class)
 #### Step2:
