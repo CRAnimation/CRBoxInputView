@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 TODO: You can use this widget for verify code, password input or phone number input.
                        DESC
 
-  s.homepage         = 'https://github.com/BearRan/CRBoxInputView'
+  s.homepage         = 'https://github.com/CRAnimation/CRBoxInputView'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'BearRan' => '648070256@qq.com' }
