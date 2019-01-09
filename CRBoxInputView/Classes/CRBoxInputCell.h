@@ -16,13 +16,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CRBoxInputCell : UICollectionViewCell
 
-// cursor
+/**
+ cursor
+ You should not use these properties, unless you know what you are doing.
+ */
 @property (strong, nonatomic) UIView *cursorView;
 @property (assign, nonatomic) BOOL ifNeedCursor;
 
+/**
+ boxInputCellProperty
+ You should not use these properties, unless you know what you are doing.
+ */
 @property (strong, nonatomic) CRBoxInputCellProperty *boxInputCellProperty;
 
-// You can rewrite
+// You can inherit and rewrite
 - (UIView *)createCustomSecurityView;
 
 @end
