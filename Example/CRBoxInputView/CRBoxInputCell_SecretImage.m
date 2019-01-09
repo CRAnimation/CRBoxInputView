@@ -42,7 +42,7 @@
 
 - (UIView *)createCustomSecurityView
 {
-    UIView *customSecurityView = [UIImageView new];
+    UIView *customSecurityView = [UIView new];
     
     UIImageView *_lockImgView = [UIImageView new];
     _lockImgView.image = [UIImage imageNamed:@"smallLock"];
