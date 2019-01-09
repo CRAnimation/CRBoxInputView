@@ -5,7 +5,6 @@
 [![Platform](https://img.shields.io/cocoapods/p/CRBoxInputView.svg?style=flat)](https://cocoapods.org/pods/CRBoxInputView)
 
 You can use this widget for verify code, password input or phone number input.
-<br/>
 I hope you can like this!
 
 
@@ -146,6 +145,7 @@ CRBoxInputView_Custom *boxInputView = [[CRBoxInputView_Custom alloc] initWithFra
 
 ### <a id="Anchor_SecretSymbol"></a>SecretSymbol
 ![SecretSymbol.png](/ReadmeResources/4SecretSymbol.png "SecretSymbol.png")
+
 Insert code where you need.
 ``` objc
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
