@@ -42,7 +42,7 @@ CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(
 ```
 
 
-<br/ >
+<br/>
 
 ### <a id="Anchor_CustomBox"></a>CustomBox
 ![CustomBox.png](/projects/CRBoxInputView/1577c437c37f8c67.png "CustomBox.png")
