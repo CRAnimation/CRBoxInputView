@@ -6,7 +6,7 @@
 
 You can use this widget for verify code, password input or phone number input.
 
-<br/ >
+<br/>
 
 I hope you can like this!
 
