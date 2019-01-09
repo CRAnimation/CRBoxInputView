@@ -38,6 +38,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ### <a id="Anchor_Base"></a>Base
 
 ![Normal.png](/ReadmeResources/1Normal.png "Normal.png")
+
 Insert code where you need.
 ``` objc
 CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
@@ -53,8 +54,7 @@ CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(
 #### Step1:
 Create custom class [reference here.](#Create_custom_class)
 #### Step2:
-modify **CRBoxInputCell_Custom** class inherit from `CRBoxInputCell`.
-.m file
+modify **CRBoxInputCell_Custom** class inherit from `CRBoxInputCell`.m file
 ``` objc
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -98,8 +98,7 @@ boxInputView.customCellProperty = cellProperty;
 #### Step1:
 Create custom class [reference here.](#Create_custom_class)
 #### Step2:
-modify **CRBoxInputCell_Custom** class inherit from `CRBoxInputCell`.
-.m file
+modify **CRBoxInputCell_Custom** class inherit from `CRBoxInputCell`.m file
 ``` objc
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -165,8 +164,7 @@ boxInputView.customCellProperty = cellProperty;
 #### Step1:
 Create custom class [reference here.](#Create_custom_class)
 #### Step2:
-modify **CRBoxInputCell_Custom** class inherit from `CRBoxInputCell`.
-.m file
+modify **CRBoxInputCell_Custom** class inherit from `CRBoxInputCell`.m file
 ``` objc
 // Rewrite custom security view in here
 - (UIView *)createCustomSecurityView
@@ -204,8 +202,7 @@ boxInputView.ifNeedSecurity = YES;
 #### Step1:
 Create custom class [reference here.](#Create_custom_class)
 #### Step2:
-modify **CRBoxInputCell_Custom** class inherit from `CRBoxInputCell`.
-.m file
+modify **CRBoxInputCell_Custom** class inherit from `CRBoxInputCell`.m file
 ``` objc
 // Rewrite custom security view in here
 - (UIView *)createCustomSecurityView
