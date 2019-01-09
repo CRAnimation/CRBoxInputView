@@ -10,15 +10,18 @@ You can use this widget for verify code, password input or phone number input.
 
 I hope you can like this!
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-![iPhone 8 Copy 2.png](/ReadmeResources/ScreenShoot1.png "iPhone 8 Copy 2.png")
 
 ## Installation
 
 CRBoxInputView is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
+
+
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+![iPhone 8 Copy 2.png](/ReadmeResources/ScreenShoot1.png "iPhone 8 Copy 2.png")
+
 
 ```ruby
 pod 'CRBoxInputView'
