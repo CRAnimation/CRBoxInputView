@@ -87,7 +87,8 @@ boxInputView.customCellProperty = cellProperty;
 ```
 
 
-<br/ >
+<br/>
+
 ### <a id="Anchor_Line"></a>Line
 ![Line.png](/projects/CRBoxInputView/1577c671f1f13055.png "Line.png")
 #### Step1:
@@ -135,7 +136,8 @@ CRBoxInputView_Custom *boxInputView = [[CRBoxInputView_Custom alloc] initWithFra
 ```
 
 
-<br/ >
+<br/>
+
 ### <a id="Anchor_SecretSymbol"></a>SecretSymbol
 ![SecretSymbol.png](/projects/CRBoxInputView/1577e9ad597555e6.png "SecretSymbol.png")
 Insert code where you need.
@@ -151,7 +153,8 @@ boxInputView.customCellProperty = cellProperty;
 ```
 
 
-<br/ >
+<br/>
+
 ### <a id="Anchor_SecretImage"></a>SecretImage
 ![SecretImage.png](/projects/CRBoxInputView/1577e9f676695b3e.png "SecretImage.png")
 #### Step1:
@@ -189,7 +192,8 @@ boxInputView.ifNeedSecurity = YES;
 ```
 
 
-<br/ >
+<br/>
+
 ### <a id="Anchor_SecretView"></a>SecretView
 ![SecretView.png](/projects/CRBoxInputView/1577e9f839e97cb5.png "SecretView.png")
 #### Step1:
@@ -232,7 +236,8 @@ boxInputView.ifNeedSecurity = YES;
 ```
 
 
-<br/ >
+<br/>
+
 ### <a id="Create_custom_class"></a>Create custom class
 #### Step1:
 Create **CRBoxInputView_Custom** inherit from `CRBoxInputView`.
