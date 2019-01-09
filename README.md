@@ -26,7 +26,7 @@ pod 'CRBoxInputView'
 | [CustomBox](#Anchor_CustomBox)  | ![CustomBox.png](/ReadmeResources/2CustomBox.png "CustomBox.png")  |
 | [Line](#Anchor_Line)  | ![Line.png](/ReadmeResources/3Line.png "Line.png")  |
 | [SecretSymbol](#Anchor_SecretSymbol)  | ![SecretSymbol.png](/ReadmeResources/4SecretSymbol.png "SecretSymbol.png")  |
-| [SecretImage](#Anchor_SecretImage)  | ![SecretImage.png](/ReadmeResources/5SecretImagel.png "SecretImage.png")  |
+| [SecretImage](#Anchor_SecretImage)  | ![SecretImage.png](/ReadmeResources/5SecretImage.png "SecretImage.png")  |
 | [SecretView](#Anchor_SecretView)  | ![SecretView.png](/ReadmeResources/6SecretView.png "SecretView.png") |
 
 ## Usage
@@ -156,7 +156,7 @@ boxInputView.customCellProperty = cellProperty;
 <br/>
 
 ### <a id="Anchor_SecretImage"></a>SecretImage
-![SecretImage.png](/ReadmeResources/5SecretImagel.png "SecretImage.png")
+![SecretImage.png](/ReadmeResources/5SecretImage.png "SecretImage.png")
 #### Step1:
 Create custom class [reference here.](#Create_custom_class)
 #### Step2:
