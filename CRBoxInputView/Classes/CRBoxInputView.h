@@ -58,10 +58,10 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
 // Qiuck set
 - (void)quickSetSecuritySymbol:(NSString *)securitySymbol;
 
-#pragma mark - You can inherit
+// You can inherit
 - (void)initDefaultValue;
 
-#pragma mark - You can rewrite
+// You can rewrite
 - (UICollectionViewCell *)customCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

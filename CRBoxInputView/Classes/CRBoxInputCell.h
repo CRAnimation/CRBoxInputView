@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) CRBoxInputCellProperty *boxInputCellProperty;
 
-#pragma mark - You can rewrite
+// You can rewrite
 - (UIView *)createCustomSecurityView;
 
 @end
