@@ -8,7 +8,7 @@
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-![iPhone 8 Copy 2.png](/ReadmeResources/ScreenShoot.png "iPhone 8 Copy 2.png")
+![iPhone 8 Copy 2.png](/ReadmeResources/ScreenShoot1.png "iPhone 8 Copy 2.png")
 
 ## Installation
 
