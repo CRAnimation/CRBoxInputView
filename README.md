@@ -403,7 +403,7 @@ default: UIKeyboardTypeNumberPad
 ```
 `CRBoxInputCell` class
 ``` objc
-// 你已经在继承的子类中重写父类方法
+// 你可以在继承的子类中重写父类方法
 - (UIView *)createCustomSecurityView;
 ```
 
