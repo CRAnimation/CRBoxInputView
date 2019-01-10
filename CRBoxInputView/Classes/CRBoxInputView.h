@@ -48,7 +48,7 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
 
 /**
  textContentType
- desc: You set this 'nil' or 'UITextContentTypeOneTimeCode' to auto get verify code.
+ desc: You set this 'nil' or 'UITextContentTypeOneTimeCode' to auto fill verify code.
  default: nil
  */
 @property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0);
