@@ -4,26 +4,27 @@
 [![License](https://img.shields.io/cocoapods/l/CRBoxInputView.svg?style=flat)](https://cocoapods.org/pods/CRBoxInputView)
 [![Platform](https://img.shields.io/cocoapods/p/CRBoxInputView.svg?style=flat)](https://cocoapods.org/pods/CRBoxInputView)
 
-该组件可以在短信验证码，密码输入框，或者手机号码输入框这些场景中使用。<br/>希望你可以喜欢！
+You can use this widget for verify code, password input or phone number input.<br/>I hope you can like this!
 
 
-## Pod安装
+## Installation
 
-CRBoxInputView 可以通过 [CocoaPods](https://cocoapods.org). 来安装,  只需简单的在你的 Podfile 中添加如下代码:
+CRBoxInputView is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'CRBoxInputView'
 ```
 
 
-## 示列
+## Example
 
-下载源代码后，可以从Example目录中执行 `pod install`，然后运行Demo。
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
 ![iPhone 8 Copy 2.png](/ReadmeResources/ScreenShoot1.png "iPhone 8 Copy 2.png")
 
 
-## 快速指南
-| 类型  | 示例图片 |
+## Quick Guide
+| Type  | Image |
 | :-------------: | :-------------: |
 | [Base](#Anchor_Base) | ![Normal.png](/ReadmeResources/1Normal.png "Normal.png")  |
 | [CustomBox](#Anchor_CustomBox)  | ![CustomBox.png](/ReadmeResources/2CustomBox.png "CustomBox.png")  |
@@ -32,13 +33,13 @@ pod 'CRBoxInputView'
 | [SecretImage](#Anchor_SecretImage)  | ![SecretImage.png](/ReadmeResources/5SecretImage.png "SecretImage.png")  |
 | [SecretView](#Anchor_SecretView)  | ![SecretView.png](/ReadmeResources/6SecretView.png "SecretView.png") |
 
-## 使用说明
+## Usage
 
 ### <a id="Anchor_Base"></a>Base
 
 ![Normal.png](/ReadmeResources/1Normal.png "Normal.png")
 
-在需要使用的地方插入如下代码
+Insert code where you need.
 ``` objc
 CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
 [boxInputView loadAndPrepareView];
@@ -51,9 +52,9 @@ CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(
 ### <a id="Anchor_CustomBox"></a>CustomBox
 ![CustomBox.png](/ReadmeResources/2CustomBox.png "CustomBox.png")
 #### Step1:
-[参考这里](#Create_custom_class)来创建自定义类
+Create custom class [reference here.](#Create_custom_class)
 #### Step2:
-修改继承自`CRBoxInputCell` 的自定义 **CRBoxInputCell_Custom** 类的 .m 文件
+modify **CRBoxInputCell_Custom** class inherit from `CRBoxInputCell`.m file
 ``` objc
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -70,7 +71,7 @@ return self;
 }
 ```
 #### Step3:
-在需要使用的地方插入如下代码
+Insert code where you need.
 ``` objc
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.cellBgColorNormal = color_FFECEC;
@@ -95,9 +96,9 @@ boxInputView.customCellProperty = cellProperty;
 ### <a id="Anchor_Line"></a>Line
 ![Line.png](/ReadmeResources/3Line.png "Line.png")
 #### Step1:
-[参考这里](#Create_custom_class)来创建自定义类
+Create custom class [reference here.](#Create_custom_class)
 #### Step2:
-修改继承自`CRBoxInputCell` 的自定义 **CRBoxInputCell_Custom** 类的 .m 文件
+modify **CRBoxInputCell_Custom** class inherit from `CRBoxInputCell`.m file
 ``` objc
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -130,7 +131,7 @@ _sepLineView.layer.shadowRadius = 4;
 }
 ```
 #### Step3:
-在需要使用的地方插入如下代码
+Insert code where you need.
 ``` objc
 CRBoxInputView_Custom *boxInputView = [[CRBoxInputView_Custom alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
 [boxInputView loadAndPrepareView];
@@ -143,7 +144,7 @@ CRBoxInputView_Custom *boxInputView = [[CRBoxInputView_Custom alloc] initWithFra
 ### <a id="Anchor_SecretSymbol"></a>SecretSymbol
 ![SecretSymbol.png](/ReadmeResources/4SecretSymbol.png "SecretSymbol.png")
 
-在需要使用的地方插入如下代码
+Insert code where you need.
 ``` objc
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.securitySymbol = @"*";
@@ -161,9 +162,9 @@ boxInputView.customCellProperty = cellProperty;
 ### <a id="Anchor_SecretImage"></a>SecretImage
 ![SecretImage.png](/ReadmeResources/5SecretImage.png "SecretImage.png")
 #### Step1:
-[参考这里](#Create_custom_class)来创建自定义类
+Create custom class [reference here.](#Create_custom_class)
 #### Step2:
-修改继承自`CRBoxInputCell` 的自定义 **CRBoxInputCell_Custom** 类的 .m 文件
+modify **CRBoxInputCell_Custom** class inherit from `CRBoxInputCell`.m file
 ``` objc
 // Rewrite custom security view in here
 - (UIView *)createCustomSecurityView
@@ -184,7 +185,7 @@ return customSecurityView;
 }
 ```
 #### Step3:
-在需要使用的地方插入如下代码
+Insert code where you need.
 ``` objc
 CRBoxInputView_Custom *boxInputView = [[CRBoxInputView_Custom *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
 alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
@@ -199,9 +200,9 @@ boxInputView.ifNeedSecurity = YES;
 ### <a id="Anchor_SecretView"></a>SecretView
 ![SecretView.png](/ReadmeResources/6SecretView.png "SecretView.png")
 #### Step1:
-[参考这里](#Create_custom_class)来创建自定义类
+Create custom class [reference here.](#Create_custom_class)
 #### Step2:
-修改继承自`CRBoxInputCell` 的自定义 **CRBoxInputCell_Custom** 类的 .m 文件
+modify **CRBoxInputCell_Custom** class inherit from `CRBoxInputCell`.m file
 ``` objc
 // Rewrite custom security view in here
 - (UIView *)createCustomSecurityView
@@ -227,7 +228,7 @@ return customSecurityView;
 }
 ```
 #### Step3:
-在需要使用的地方插入如下代码
+Insert code where you need.
 ``` objc
 CRBoxInputView_Custom *boxInputView = [[CRBoxInputView_Custom *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
 alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
@@ -241,7 +242,7 @@ boxInputView.ifNeedSecurity = YES;
 
 ### <a id="Create_custom_class"></a>Create custom class
 #### Step1:
-创建 **CRBoxInputView_Custom** 类，并且继承自 `CRBoxInputView`。
+Create **CRBoxInputView_Custom** inherit from `CRBoxInputView`.
 .h file
 ``` objc
 #import <CRBoxInputView/CRBoxInputView.h>
@@ -275,8 +276,8 @@ return cell;
 ```
 
 #### Step2:
-创建 **CRBoxInputCell_Custom** 类，并且继承自 `CRBoxInputCell`。
-并且定义你自己的 cellId。
+Create **CRBoxInputCell_Custom** inherit from `CRBoxInputCell`.
+And define yourself cellId.
 .h file
 ``` objc
 #import <CRBoxInputView/CRBoxInputView.h>
@@ -314,7 +315,7 @@ return customSecurityView;
 @end
 ```
 
-## 属性和方法
+## Properties And Functions
 `CRBoxInputCellProperty` class
 ``` objc
 // UI
@@ -406,12 +407,12 @@ default: UIKeyboardTypeNumberPad
 - (UIView *)createCustomSecurityView;
 ```
 
-## 作者
+## Author
 
 BearRan, 648070256@qq.com
 
-## 反馈
-如果你在使用这个控件时遇到了问题，可以通过E-mail告诉我，或者为此开一个issuse。
+## Feedback
+If you have any other problems about this widget, you can tell me by send E-mail or open a issuse.
 
 ## License
 

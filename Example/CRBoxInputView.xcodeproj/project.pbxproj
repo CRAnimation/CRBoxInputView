@@ -28,6 +28,7 @@
 		74047F7D21E2FA810063A8C0 /* CRListVCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74047F7C21E2FA810063A8C0 /* CRListVCCell.m */; };
 		74047F8121E30F290063A8C0 /* CRBoxInputView_CustomBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 74047F8021E30F290063A8C0 /* CRBoxInputView_CustomBox.m */; };
 		74047F8421E30F3F0063A8C0 /* CRBoxInputCell_CustomBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 74047F8321E30F3F0063A8C0 /* CRBoxInputCell_CustomBox.m */; };
+		742C1F2E21E6F48200C15F31 /* README_en.md in Resources */ = {isa = PBXBuildFile; fileRef = 742C1F2D21E6F48200C15F31 /* README_en.md */; };
 		74BF960021E329CF006ED752 /* CRBoxInputCell_Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 74BF95FF21E329CF006ED752 /* CRBoxInputCell_Line.m */; };
 		74BF960321E329DC006ED752 /* CRBoxInputView_Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 74BF960221E329DC006ED752 /* CRBoxInputView_Line.m */; };
 		74BF960721E32D82006ED752 /* CRBoxInputView_SecretSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 74BF960621E32D82006ED752 /* CRBoxInputView_SecretSymbol.m */; };
@@ -87,6 +88,7 @@
 		74047F8021E30F290063A8C0 /* CRBoxInputView_CustomBox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRBoxInputView_CustomBox.m; sourceTree = "<group>"; };
 		74047F8221E30F3F0063A8C0 /* CRBoxInputCell_CustomBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRBoxInputCell_CustomBox.h; sourceTree = "<group>"; };
 		74047F8321E30F3F0063A8C0 /* CRBoxInputCell_CustomBox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRBoxInputCell_CustomBox.m; sourceTree = "<group>"; };
+		742C1F2D21E6F48200C15F31 /* README_en.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README_en.md; path = ../README_en.md; sourceTree = "<group>"; };
 		74BF95FE21E329CF006ED752 /* CRBoxInputCell_Line.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRBoxInputCell_Line.h; sourceTree = "<group>"; };
 		74BF95FF21E329CF006ED752 /* CRBoxInputCell_Line.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRBoxInputCell_Line.m; sourceTree = "<group>"; };
 		74BF960121E329DC006ED752 /* CRBoxInputView_Line.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRBoxInputView_Line.h; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			children = (
 				6EA6D92450092A0B1BBE4573 /* CRBoxInputView.podspec */,
 				E3EE18A2CFC537899934585C /* README.md */,
+				742C1F2D21E6F48200C15F31 /* README_en.md */,
 				102FB0EBE9C9927E3B313409 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
@@ -393,6 +396,7 @@
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				742C1F2E21E6F48200C15F31 /* README_en.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
