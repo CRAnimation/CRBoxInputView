@@ -165,7 +165,7 @@ boxInputView.customCellProperty = cellProperty;
 #### Step2:
 修改继承自`CRBoxInputCell` 的自定义 **CRBoxInputCell_Custom** 类的 .m 文件
 ``` objc
-// Rewrite custom security view in here
+// 在这里重写你的security view
 - (UIView *)createCustomSecurityView
 {
 UIView *customSecurityView = [UIView new];
@@ -203,7 +203,7 @@ boxInputView.ifNeedSecurity = YES;
 #### Step2:
 修改继承自`CRBoxInputCell` 的自定义 **CRBoxInputCell_Custom** 类的 .m 文件
 ``` objc
-// Rewrite custom security view in here
+// 在这里重写你的security view
 - (UIView *)createCustomSecurityView
 {
 UIView *customSecurityView = [UIImageView new];
@@ -260,11 +260,11 @@ boxInputView.ifNeedSecurity = YES;
 {
 [super initDefaultValue];
 
-// CollectionView Register Class
+// CollectionView 注册 Class
 [[self mainCollectionView] registerClass:[CRBoxInputCell_Custom class] forCellWithReuseIdentifier:CRBoxInputCell_CustomID];
 }
 
-// Rewrite this method
+// 重写这个方法
 - (CRBoxInputCell_Custom *)customCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
 CRBoxInputCell_Custom *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CRBoxInputCell_CustomID forIndexPath:indexPath];
@@ -281,7 +281,7 @@ return cell;
 ``` objc
 #import <CRBoxInputView/CRBoxInputView.h>
 
-// Define yourself cellId
+// 定义你自己的 cellId
 #define CRBoxInputCell_CustomID @"CRBoxInputCell_CustomID"
 
 @interface CRBoxInputCell_Custom : CRBoxInputCell
@@ -298,13 +298,13 @@ return cell;
 self = [super initWithFrame:frame];
 
 if (self) {
-// You can code here
+// 在此处编写你的代码
 }
 
 return self;
 }
 
-// You can create custom security view in here
+// 你可以在这里创建你的security view
 - (UIView *)createCustomSecurityView
 {
 UIView *customSecurityView = [UIView new];
@@ -341,7 +341,7 @@ self.securityType = CRBoxSecuritySymbolType;
 
 `CRBoxFlowLayout` class
 ``` objc
-/** ifNeedEqualGap
+/** 是否需要等间距
 * default: YES
 */
 @property (assign, nonatomic) BOOL ifNeedEqualGap;
@@ -352,31 +352,31 @@ self.securityType = CRBoxSecuritySymbolType;
 `CRBoxInputView` class
 ``` objc
 /**
-ifNeedCursor
+是否需要光标
 *default: YES
 */
 @property (assign, nonatomic) BOOL ifNeedCursor;
 
 /**
-codeLength
+验证码长度
 default: 4
 */
 @property (nonatomic, assign) NSInteger codeLength;
 
 /**
-ifNeedSecurity
+是否开启密文模式
 default: NO
 */
 @property (assign, nonatomic) BOOL ifNeedSecurity;
 
 /**
-show security delay time
+显示密文的延时时间
 default: 0.3
 */
 @property (assign, nonatomic) CGFloat securityDelay;
 
 /**
-keyBoardType
+键盘类型
 default: UIKeyboardTypeNumberPad
 */
 @property (assign, nonatomic) UIKeyboardType keyBoardType;
@@ -390,19 +390,19 @@ default: UIKeyboardTypeNumberPad
 - (void)clearAll;
 - (UICollectionView *)mainCollectionView;
 
-// Qiuck set
+// 快速设置
 - (void)quickSetSecuritySymbol:(NSString *)securitySymbol;
 
-// You can inherit and call super
+// 你已经在继承的子类中调用父类方法
 - (void)initDefaultValue;
 
-// You can inherit and rewrite
+// 你已经在继承的子类中重写父类方法
 - (UICollectionViewCell *)customCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 ```
 `CRBoxInputCell` class
 ``` objc
-// You can inherit and rewrite
+// 你已经在继承的子类中重写父类方法
 - (UIView *)createCustomSecurityView;
 ```
 
