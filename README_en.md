@@ -4,8 +4,9 @@
 [![License](https://img.shields.io/cocoapods/l/CRBoxInputView.svg?style=flat)](https://cocoapods.org/pods/CRBoxInputView)
 [![Platform](https://img.shields.io/cocoapods/p/CRBoxInputView.svg?style=flat)](https://cocoapods.org/pods/CRBoxInputView)
 
-You can use this widget for verify code, password input or phone number input.<br/>I hope you can like this!
+> You can use this widget for verify code, password input or phone number input.<br/>I hope you can like this!
 
+### [中文文档](https://github.com/CRAnimation/CRBoxInputView) [/ English](https://github.com/CRAnimation/CRBoxInputView/blob/master/README_en.md)
 
 ## Installation
 
