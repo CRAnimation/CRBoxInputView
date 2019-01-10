@@ -394,10 +394,10 @@ default: UIKeyboardTypeNumberPad
 // 快速设置
 - (void)quickSetSecuritySymbol:(NSString *)securitySymbol;
 
-// 你已经在继承的子类中调用父类方法
+// 你可以在继承的子类中调用父类方法
 - (void)initDefaultValue;
 
-// 你已经在继承的子类中重写父类方法
+// 你可以在继承的子类中重写父类方法
 - (UICollectionViewCell *)customCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 ```
