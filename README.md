@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/CRBoxInputView.svg?style=flat)](https://cocoapods.org/pods/CRBoxInputView)
 [![Platform](https://img.shields.io/cocoapods/p/CRBoxInputView.svg?style=flat)](https://cocoapods.org/pods/CRBoxInputView)
 
-> 该组件可以在短信验证码，密码输入框，或者手机号码输入框这些场景中使用。<br/>希望你可以喜欢！
+> 该组件可以在短信验证码，密码输入框，或者手机号码输入框这些场景中使用。支持iOS12短信验证码自动填充。<br/>希望你可以喜欢！
 
 ### [中文文档](https://github.com/CRAnimation/CRBoxInputView#Header_Start) [/ English](https://github.com/CRAnimation/CRBoxInputView/blob/master/README_en.md#Header_Start)
 
@@ -381,6 +381,13 @@ default: 0.3
 default: UIKeyboardTypeNumberPad
 */
 @property (assign, nonatomic) UIKeyboardType keyBoardType;
+
+/**
+textContentType
+desc: 你可以设置为 'nil' 或者 'UITextContentTypeOneTimeCode' 来自动获取短信验证码
+default: nil
+*/
+@property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0);
 
 @property (copy, nonatomic) TextDidChangeblock textDidChangeblock;
 @property (strong, nonatomic) CRBoxFlowLayout *boxFlowLayout;

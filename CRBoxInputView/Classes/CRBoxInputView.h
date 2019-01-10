@@ -46,11 +46,17 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
  */
 @property (assign, nonatomic) UIKeyboardType keyBoardType;
 
+/**
+ textContentType
+ desc: You set this 'nil' or 'UITextContentTypeOneTimeCode' to auto get verify code.
+ default: nil
+ */
+@property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0);
+
 @property (copy, nonatomic) TextDidChangeblock textDidChangeblock;
 @property (strong, nonatomic) CRBoxFlowLayout *boxFlowLayout;
 @property (strong, nonatomic) CRBoxInputCellProperty *customCellProperty;
 @property (strong, nonatomic, readonly) NSString  *textValue;
-@property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0); // default is nil
 
 - (void)loadAndPrepareView;
 - (void)clearAll;
