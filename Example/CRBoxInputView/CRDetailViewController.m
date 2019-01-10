@@ -232,6 +232,12 @@
     CRBoxInputView *_boxInputView = [CRBoxInputView new];
     [_boxInputView loadAndPrepareView];
     
+    if (@available(iOS 12.0, *)) {
+        _boxInputView.textContentType = UITextContentTypeOneTimeCode;
+    }else if (@available(iOS 10.0, *)) {
+        _boxInputView.textContentType = @"one-time-code";
+    }
+    
     return _boxInputView;
 }
 

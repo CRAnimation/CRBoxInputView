@@ -50,6 +50,7 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
 @property (strong, nonatomic) CRBoxFlowLayout *boxFlowLayout;
 @property (strong, nonatomic) CRBoxInputCellProperty *customCellProperty;
 @property (strong, nonatomic, readonly) NSString  *textValue;
+@property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0); // default is nil
 
 - (void)loadAndPrepareView;
 - (void)clearAll;

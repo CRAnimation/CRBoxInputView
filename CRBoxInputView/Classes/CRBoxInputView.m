@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     CRBoxTextChangeType_Delete,
 };
 
-@interface CRBoxInputView () <UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface CRBoxInputView () <UICollectionViewDataSource, UICollectionViewDelegate>
 {
     NSInteger _oldLength;
 }
@@ -323,10 +323,16 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         _textView.tintColor = [UIColor clearColor];
         _textView.backgroundColor = [UIColor clearColor];
         _textView.textColor = [UIColor clearColor];
-        _textView.delegate = self;
-        _textView.keyboardType = UIKeyboardTypeDefault;
+        [_textView addTarget:self action:@selector(textDidChange:) forControlEvents:UIControlEventEditingChanged];
     }
     return _textView;
+}
+
+- (void)setTextContentType:(UITextContentType)textContentType
+{
+    _textContentType = textContentType;
+    
+    _textView.textContentType = textContentType;
 }
 
 - (CRBoxInputCellProperty *)customCellProperty
