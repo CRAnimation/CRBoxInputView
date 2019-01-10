@@ -1,4 +1,4 @@
-![CRBoxInputViewHeadImg.png](/ReadmeResources/HeadImg.png "CRBoxInputViewHeadImg.png")
+<a id="Header_Start"></a> ![CRBoxInputViewHeadImg.png](/ReadmeResources/HeadImg.png "CRBoxInputViewHeadImg.png")
 [![CI Status](https://img.shields.io/travis/CRAnimation/CRBoxInputView.svg?style=flat)](https://travis-ci.org/CRAnimation/CRBoxInputView)
 [![Version](https://img.shields.io/cocoapods/v/CRBoxInputView.svg?style=flat)](https://cocoapods.org/pods/CRBoxInputView)
 [![License](https://img.shields.io/cocoapods/l/CRBoxInputView.svg?style=flat)](https://cocoapods.org/pods/CRBoxInputView)
@@ -6,7 +6,7 @@
 
 > 该组件可以在短信验证码，密码输入框，或者手机号码输入框这些场景中使用。<br/>希望你可以喜欢！
 
-### [中文文档](https://github.com/CRAnimation/CRBoxInputView) [/ English](https://github.com/CRAnimation/CRBoxInputView/blob/master/README_en.md)
+### [中文文档](https://github.com/CRAnimation/CRBoxInputView#Header_Start) [/ English](https://github.com/CRAnimation/CRBoxInputView/blob/master/README_en.md#Header_Start)
 
 ## Pod安装
 
