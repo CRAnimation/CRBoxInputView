@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CRBoxTextView : UITextView
+@interface CRBoxTextView : UITextField
 
 @end
 

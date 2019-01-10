@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     CRBoxTextChangeType_Delete,
 };
 
-@interface CRBoxInputView () <UITextViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface CRBoxInputView () <UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 {
     NSInteger _oldLength;
 }
@@ -111,10 +111,11 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     [self beginEdit];
 }
 
-#pragma mark - UITextViewDelegate
-- (void)textViewDidChange:(UITextView *)textView{
+#pragma mark - UITextFieldDidChange
+- (void)textDidChange:(UITextField *)textField{
     
-    NSString *verStr = textView.text;
+    NSString *verStr = textField.text;
+    NSLog(@"--verStr:%@", verStr);
     
     //有空格去掉空格
     verStr = [verStr stringByReplacingOccurrencesOfString:@" " withString:@""];
@@ -122,7 +123,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         verStr = [verStr substringToIndex:_codeLength];
         [self endEdit];
     }
-    textView.text = verStr;
+    textField.text = verStr;
     
     // 判断删除/增加
     CRBoxTextChangeType boxTextChangeType = CRBoxTextChangeType_NoChange;

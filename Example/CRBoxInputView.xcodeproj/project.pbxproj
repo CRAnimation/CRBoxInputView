@@ -363,6 +363,9 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = BearRan;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = LSACC47SM4;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -703,6 +706,7 @@
 			baseConfigurationReference = 6D9D5D624E57BA27B51291DE /* Pods-CRBoxInputView_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LSACC47SM4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CRBoxInputView/CRBoxInputView-Prefix.pch";
 				INFOPLIST_FILE = "CRBoxInputView/CRBoxInputView-Info.plist";
@@ -718,6 +722,7 @@
 			baseConfigurationReference = F4A12C5401D340D7B141BBA9 /* Pods-CRBoxInputView_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LSACC47SM4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CRBoxInputView/CRBoxInputView-Prefix.pch";
 				INFOPLIST_FILE = "CRBoxInputView/CRBoxInputView-Info.plist";
