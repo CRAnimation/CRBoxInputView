@@ -415,6 +415,10 @@ default: nil
 - (UIView *)createCustomSecurityView;
 ```
 
+## Other Problems
+
+- [pod search unable find a pod（already solved）](https://github.com/CRAnimation/CRBoxInputView/issues/1 "pod search unable find a pod") 
+
 ## Author
 
 BearRan, 648070256@qq.com
