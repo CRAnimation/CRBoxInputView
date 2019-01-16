@@ -48,7 +48,7 @@ CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(
 // 获取值
 // 方法1, 当输入文字变化时触发回调block
 boxInputView.textDidChangeblock = ^(NSString *text, BOOL isFinished) {
-NSLog(@"text:%@", text);
+    NSLog(@"text:%@", text);
 };
 
 // 方法2, 普通的只读属性

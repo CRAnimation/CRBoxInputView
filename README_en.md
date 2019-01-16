@@ -49,7 +49,7 @@ CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(
 // Get value
 // func1, call back block when input text did change
 boxInputView.textDidChangeblock = ^(NSString *text, BOOL isFinished) {
-NSLog(@"text:%@", text);
+    NSLog(@"text:%@", text);
 };
 
 // func2, normal readonly property
