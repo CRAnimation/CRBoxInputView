@@ -6,7 +6,7 @@
 
 > 该组件可以在短信验证码，密码输入框，或者手机号码输入框这些场景中使用。支持iOS12短信验证码自动填充。<br/>希望你可以喜欢！
 
-### [中文文档](https://github.com/CRAnimation/CRBoxInputView#Header_Start) [/ English](https://github.com/CRAnimation/CRBoxInputView/blob/master/README_en.md#Header_Start)
+### [中文文档](https://github.com/CRAnimation/CRBoxInputView#Header_Start) [/ English Document](https://github.com/CRAnimation/CRBoxInputView/blob/master/README_en.md#Header_Start)
 
 ## Pod安装
 
