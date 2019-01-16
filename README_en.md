@@ -45,6 +45,15 @@ Insert code where you need.
 CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
 [boxInputView loadAndPrepareView];
 [self.view addSubview:boxInputView];
+
+// Get value
+// func1, call back block when input text did change
+boxInputView.textDidChangeblock = ^(NSString *text, BOOL isFinished) {
+NSLog(@"text:%@", text);
+};
+
+// func2, normal readonly property
+NSLog(@"textValue:%@", boxInputView.textValue);
 ```
 
 

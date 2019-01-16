@@ -44,6 +44,15 @@ pod 'CRBoxInputView'
 CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
 [boxInputView loadAndPrepareView];
 [self.view addSubview:boxInputView];
+
+// 获取值
+// 方法1, 当输入文字变化时触发回调block
+boxInputView.textDidChangeblock = ^(NSString *text, BOOL isFinished) {
+NSLog(@"text:%@", text);
+};
+
+// 方法2, 普通的只读属性
+NSLog(@"textValue:%@", boxInputView.textValue);
 ```
 
 
