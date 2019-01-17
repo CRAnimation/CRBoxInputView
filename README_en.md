@@ -436,6 +436,7 @@ default: nil
 ## Other Problems
 
 - [pod search unable find a pod（already solved）](https://github.com/CRAnimation/CRBoxInputView/issues/1 "pod search unable find a pod") 
+- [pod installation failed， [!] Unable to find a specification for CRBoxInputView（already solved）](https://github.com/CRAnimation/CRBoxInputView/issues/2 "pod installation failed， [!] Unable to find a specification for CRBoxInputView")
 
 ## Author
 

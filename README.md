@@ -433,7 +433,8 @@ default: nil
 
 ## 其他问题
 
-- [pod search 搜索不到库（已解决）](https://github.com/CRAnimation/CRBoxInputView/issues/1 "pod search 搜索不到库") 
+- [pod search 搜索不到库（已解决）](https://github.com/CRAnimation/CRBoxInputView/issues/1 "pod search 搜索不到库")
+- [pod 安装失败， [!] Unable to find a specification for CRBoxInputView（已解决）](https://github.com/CRAnimation/CRBoxInputView/issues/2 "pod 安装失败， [!] Unable to find a specification for CRBoxInputView")
 
 ## 作者
 
