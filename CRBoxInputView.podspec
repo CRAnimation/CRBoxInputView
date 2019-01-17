@@ -30,7 +30,7 @@ TODO: You can use this widget for verify code, password input or phone number in
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'CRBoxInputView/Classes/**/*'
+  s.source_files = 'PodCode/Classes/**/*'
   
   # s.resource_bundles = {
   #   'CRBoxInputView' => ['CRBoxInputView/Assets/*.png']

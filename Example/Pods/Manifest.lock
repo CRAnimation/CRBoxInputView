@@ -41,7 +41,7 @@ PODS:
     - MBProgressHUD
     - SDWebImage
     - UIImage-Helpers (~> 0.0.2)
-  - CRBoxInputView (0.1.0):
+  - CRBoxInputView (0.1.2):
     - Masonry
   - GBDeviceInfo (5.4.0):
     - GBDeviceInfo/Core (= 5.4.0)
@@ -73,7 +73,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   BearSkill: 4fc922b50c46157b9f8eb15dff19e9904137187b
-  CRBoxInputView: 04a88c568b716bcd55ebe913131ce1a8fde9270f
+  CRBoxInputView: b1c7f0bfad4e309bd0aed7e5b93c14e676747e8d
   GBDeviceInfo: ae80eb4243d67e2c68d9290a136593da35071382
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
