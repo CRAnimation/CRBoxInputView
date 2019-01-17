@@ -74,7 +74,7 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		6D9D5D624E57BA27B51291DE /* Pods-CRBoxInputView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRBoxInputView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CRBoxInputView_Example/Pods-CRBoxInputView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		6EA6D92450092A0B1BBE4573 /* CRBoxInputView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CRBoxInputView.podspec; path = ../CRBoxInputView.podspec; sourceTree = "<group>"; };
+		6EA6D92450092A0B1BBE4573 /* CRBoxInputView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CRBoxInputView.podspec; path = ../CRBoxInputView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74047F6E21E2F6850063A8C0 /* CRConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRConstant.h; sourceTree = "<group>"; };
 		74047F6F21E2F6850063A8C0 /* CRConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRConstant.m; sourceTree = "<group>"; };
