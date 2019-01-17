@@ -11,8 +11,9 @@
 ## Feature
 -  Support verify code auto fill in iOS12
 -  Support Masonry
--  Support Security Type
--  Support Custom Security Image / View
+-  Support security type
+-  Support custom security image / view
+-  Support iOS8  and over
 
 > You can use this widget for verify code, password input or phone number input.<br/>I hope you can like this!
 
