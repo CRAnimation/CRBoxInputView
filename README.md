@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/CRBoxInputView.svg?style=flat)](https://cocoapods.org/pods/CRBoxInputView)
 [![Platform](https://img.shields.io/cocoapods/p/CRBoxInputView.svg?style=flat)](https://cocoapods.org/pods/CRBoxInputView)
 
-该组件有以下特点
+## 组件特点
 - 支持iOS12短信验证码自动填充
 - 支持Masonry
 - 支持密文显示
