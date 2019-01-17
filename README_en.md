@@ -4,9 +4,18 @@
 [![License](https://img.shields.io/cocoapods/l/CRBoxInputView.svg?style=flat)](https://cocoapods.org/pods/CRBoxInputView)
 [![Platform](https://img.shields.io/cocoapods/p/CRBoxInputView.svg?style=flat)](https://cocoapods.org/pods/CRBoxInputView)
 
-> You can use this widget for verify code, password input or phone number input. It support verify code auto fill in iOS12.<br/>I hope you can like this!
 
 ### [中文文档](https://github.com/CRAnimation/CRBoxInputView#Header_Start) [/ English Document](https://github.com/CRAnimation/CRBoxInputView/blob/master/README_en.md#Header_Start)
+
+
+## Feature
+-  Support verify code auto fill in iOS12
+-  Support Masonry
+-  Support Security Type
+-  Support Custom Security Image / View
+
+> You can use this widget for verify code, password input or phone number input.<br/>I hope you can like this!
+
 
 ## Installation
 
