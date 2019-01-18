@@ -278,7 +278,7 @@
     CRBoxInputView_Line *_boxInputView = [CRBoxInputView_Line new];
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
-    [_boxInputView loadAndPrepareView];
+    [_boxInputView loadAndPrepareViewWithBeginEdit:NO];
     
     return _boxInputView;
 }
