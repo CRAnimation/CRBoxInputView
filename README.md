@@ -51,7 +51,7 @@ pod 'CRBoxInputView'
 在需要使用的地方插入如下代码
 ``` objc
 CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
-[boxInputView loadAndPrepareView];
+[boxInputView loadAndPrepareViewWithBeginEdit:YES]; // BeginEdit:是否自动启用编辑模式
 [self.view addSubview:boxInputView];
 
 // 获取值
@@ -59,9 +59,12 @@ CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(
 boxInputView.textDidChangeblock = ^(NSString *text, BOOL isFinished) {
     NSLog(@"text:%@", text);
 };
-
 // 方法2, 普通的只读属性
 NSLog(@"textValue:%@", boxInputView.textValue);
+
+// 清空
+[boxInputView clearAllWithBeginEdit:YES]; // BeginEdit:清空后是否自动启用编辑模式
+
 ```
 
 
@@ -412,8 +415,22 @@ default: nil
 @property (strong, nonatomic) CRBoxInputCellProperty *customCellProperty;
 @property (strong, nonatomic, readonly) NSString  *textValue;
 
+/**
+装载数据和准备界面
+beginEdit: 自动开启编辑模式
+default: YES
+*/
 - (void)loadAndPrepareView;
+- (void)loadAndPrepareViewWithBeginEdit:(BOOL)beginEdit;
+
+/**
+清空输入
+beginEdit: 自动开启编辑模式
+default: YES
+*/
 - (void)clearAll;
+- (void)clearAllWithBeginEdit:(BOOL)beginEdit;
+
 - (UICollectionView *)mainCollectionView;
 
 // 快速设置

@@ -53,7 +53,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 Insert code where you need.
 ``` objc
 CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
-[boxInputView loadAndPrepareView];
+[boxInputView loadAndPrepareViewWithBeginEdit:YES]; // BeginEdit: If need begin edit.
 [self.view addSubview:boxInputView];
 
 // Get value
@@ -61,9 +61,11 @@ CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(
 boxInputView.textDidChangeblock = ^(NSString *text, BOOL isFinished) {
     NSLog(@"text:%@", text);
 };
-
 // func2, normal readonly property
 NSLog(@"textValue:%@", boxInputView.textValue);
+
+// Clear all
+[boxInputView clearAllWithBeginEdit:YES]; // BeginEdit: If need begin edit after clear all.
 ```
 
 
@@ -416,6 +418,23 @@ default: nil
 
 - (void)loadAndPrepareView;
 - (void)clearAll;
+
+/**
+loadAndPrepareView
+beginEdit: If need begin edit
+default: YES
+*/
+- (void)loadAndPrepareView;
+- (void)loadAndPrepareViewWithBeginEdit:(BOOL)beginEdit;
+
+/**
+clearAll
+beginEdit: If need begin edit
+default: YES
+*/
+- (void)clearAll;
+- (void)clearAllWithBeginEdit:(BOOL)beginEdit;
+
 - (UICollectionView *)mainCollectionView;
 
 // Qiuck set
