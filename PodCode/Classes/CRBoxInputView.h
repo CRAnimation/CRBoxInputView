@@ -62,7 +62,10 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
 - (void)loadAndPrepareView;
 - (void)loadAndPrepareViewWithBeginEdit:(BOOL)beginEdit;
 
+// clearAll is default beginEdit to YES.
 - (void)clearAll;
+- (void)clearAllWithBeginEdit:(BOOL)beginEdit;
+
 - (UICollectionView *)mainCollectionView;
 
 // Qiuck set
