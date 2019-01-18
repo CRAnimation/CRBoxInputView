@@ -59,10 +59,14 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     self.keyBoardType = UIKeyboardTypeNumberPad;
     self.backgroundColor = [UIColor clearColor];
     _valueArr = [NSMutableArray new];
-    [self beginEdit];
 }
 
 - (void)loadAndPrepareView
+{
+    [self loadAndPrepareViewWithBeginEdit:YES];
+}
+
+- (void)loadAndPrepareViewWithBeginEdit:(BOOL)beginEdit
 {
     if (_codeLength<=0) {
         NSAssert(NO, @"请输入大于0的验证码位数");
@@ -82,6 +86,10 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
+    
+    if (beginEdit) {
+        [self beginEdit];
+    }
 }
 
 - (void)generateCellPropertyArr

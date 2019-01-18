@@ -58,7 +58,10 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
 @property (strong, nonatomic) CRBoxInputCellProperty *customCellProperty;
 @property (strong, nonatomic, readonly) NSString  *textValue;
 
+// loadAndPrepareView is default beginEdit to YES.
 - (void)loadAndPrepareView;
+- (void)loadAndPrepareViewWithBeginEdit:(BOOL)beginEdit;
+
 - (void)clearAll;
 - (UICollectionView *)mainCollectionView;
 
