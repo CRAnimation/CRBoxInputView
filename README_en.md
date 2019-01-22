@@ -457,8 +457,8 @@ default: YES
 
 - [pod search unable find a pod（already solved）](https://github.com/CRAnimation/CRBoxInputView/issues/1 "pod search unable find a pod") 
 - [pod installation failed， [!] Unable to find a specification for CRBoxInputView（already solved）](https://github.com/CRAnimation/CRBoxInputView/issues/2 "pod installation failed， [!] Unable to find a specification for CRBoxInputView")
--Plsease use it start with v0.1.5, and you can install normally through `pod install`.
--In Early vesions, I have some problems about install. Sorry for it. 
+- Plsease use it start with v0.1.5, and you can install normally through `pod install`.
+- In Early vesions, I have some problems about install. Sorry for it. 
 
 ## Author
 

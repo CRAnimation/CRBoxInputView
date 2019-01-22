@@ -453,8 +453,8 @@ default: YES
 
 - [pod search 搜索不到库（已解决）](https://github.com/CRAnimation/CRBoxInputView/issues/1 "pod search 搜索不到库")
 - [pod 安装失败， [!] Unable to find a specification for CRBoxInputView（已解决）](https://github.com/CRAnimation/CRBoxInputView/issues/2 "pod 安装失败， [!] Unable to find a specification for CRBoxInputView")
--请小伙伴从0.1.5版本开始使用,`pod install`可以正常安装。
--在早期版本中存在一些安装的问题，我为由此带来的不便感到抱歉。
+- 请小伙伴从0.1.5版本开始使用,`pod install`可以正常安装。
+- 在早期版本中存在一些安装的问题，我为由此带来的不便感到抱歉。
 
 ## 作者
 
