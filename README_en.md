@@ -10,7 +10,7 @@
 
 ## Feature
 -  Support verify code auto fill in iOS12
--  Support Masonry
+-  Support `Masonry`
 -  Support security type
 -  Support custom security image / view
 -  Support iOS8  and over
