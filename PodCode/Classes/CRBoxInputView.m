@@ -181,8 +181,8 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     }
     [_mainCollectionView reloadData];
     
-    [self triggerBlock];
     _oldLength = verStr.length;
+    [self triggerBlock];
 }
 
 #pragma mark - Control security show
