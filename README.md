@@ -51,6 +51,7 @@ pod 'CRBoxInputView', '0.1.6'
 在需要使用的地方插入如下代码
 ``` objc
 CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
+boxInputView.codeLength = 4;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES]; // BeginEdit:是否自动启用编辑模式
 [self.view addSubview:boxInputView];
 

@@ -53,6 +53,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 Insert code where you need.
 ``` objc
 CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
+boxInputView.codeLength = 4;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES]; // BeginEdit: If need begin edit.
 [self.view addSubview:boxInputView];
 
