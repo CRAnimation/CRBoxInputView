@@ -176,6 +176,14 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
             }
             NSString *subStr = [verStr substringWithRange:NSMakeRange(verStr.length - 1, 1)];
             [self->_valueArr addObject:subStr];
+//            [_valueArr removeAllObjects];
+//            
+//            [verStr enumerateSubstringsInRange:NSMakeRange(0, verStr.length) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
+//                
+//                [_valueArr addObject:substring];
+//                
+//            }];
+            
             [self delaySecurityProcess];
         }
     }
