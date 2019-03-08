@@ -146,6 +146,8 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 #pragma mark - UITextFieldDidChange
 - (void)textDidChange:(UITextField *)textField{
     
+    __weak typeof(self) weakSelf = self;
+    
     NSString *verStr = textField.text;
     
     //有空格去掉空格
@@ -174,15 +176,13 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
             if (_valueArr.count > 0) {
                 [self replaceValueArrToAsteriskWithIndex:_valueArr.count - 1 needEqualToCount:NO];
             }
-            NSString *subStr = [verStr substringWithRange:NSMakeRange(verStr.length - 1, 1)];
-            [self->_valueArr addObject:subStr];
-//            [_valueArr removeAllObjects];
-//            
-//            [verStr enumerateSubstringsInRange:NSMakeRange(0, verStr.length) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
-//                
-//                [_valueArr addObject:substring];
-//                
-//            }];
+//            NSString *subStr = [verStr substringWithRange:NSMakeRange(verStr.length - 1, 1)];
+//            [self->_valueArr addObject:subStr];
+            [_valueArr removeAllObjects];
+            
+            [verStr enumerateSubstringsInRange:NSMakeRange(0, verStr.length) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
+                [weakSelf.valueArr addObject:substring];
+            }];
             
             [self delaySecurityProcess];
         }
