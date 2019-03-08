@@ -24,7 +24,7 @@ CRBoxInputView is available through [CocoaPods](https://cocoapods.org). To insta
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'CRBoxInputView', '0.1.6'
+pod 'CRBoxInputView', '0.1.7'
 ```
 
 
@@ -458,7 +458,7 @@ default: YES
 
 - [pod search unable find a pod（already solved）](https://github.com/CRAnimation/CRBoxInputView/issues/1 "pod search unable find a pod") 
 - [pod installation failed， [!] Unable to find a specification for CRBoxInputView（already solved）](https://github.com/CRAnimation/CRBoxInputView/issues/2 "pod installation failed， [!] Unable to find a specification for CRBoxInputView")
-- Please use it start with v0.1.6, and you can install normally through `pod install`.
+- Please use it start with v0.1.7, and you can install normally through `pod install`.
 - In Early vesions, it have some problems about install. Sorry for it. 
 
 ## Author
