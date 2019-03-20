@@ -344,8 +344,10 @@ return customSecurityView;
 // UI
 self.cellBorderColorNormal = [UIColor colorWithRed:228/255.0 green:228/255.0 blue:228/255.0 alpha:1];
 self.cellBorderColorSelected = [UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1];
+self.cellBorderColorFilled = nil;
 self.cellBgColorNormal = [UIColor whiteColor];
 self.cellBgColorSelected = [UIColor whiteColor];
+self.cellBgColorFilled = nil;
 self.cellCursorColor = [UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1];
 self.cellCursorWidth = 2;
 self.cellCursorHeight = 32;
@@ -458,8 +460,6 @@ default: YES
 
 - [pod search unable find a pod（already solved）](https://github.com/CRAnimation/CRBoxInputView/issues/1 "pod search unable find a pod") 
 - [pod installation failed， [!] Unable to find a specification for CRBoxInputView（already solved）](https://github.com/CRAnimation/CRBoxInputView/issues/2 "pod installation failed， [!] Unable to find a specification for CRBoxInputView")
-- Please use it start with v0.1.7, and you can install normally through `pod install`.
-- In Early vesions, it have some problems about install. Sorry for it. 
 
 ## Author
 
