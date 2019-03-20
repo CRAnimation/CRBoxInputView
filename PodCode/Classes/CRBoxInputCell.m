@@ -131,8 +131,19 @@
         self.layer.borderColor = self.boxInputCellProperty.cellBorderColorSelected.CGColor;
         self.backgroundColor = self.boxInputCellProperty.cellBgColorSelected;
     }else{
-        self.layer.borderColor = self.boxInputCellProperty.cellBorderColorNormal.CGColor;
-        self.backgroundColor = self.boxInputCellProperty.cellBgColorNormal;
+        BOOL hasFill = _valueLabel.text.length > 0 ? YES : NO;
+        UIColor *cellBorderColor = self.boxInputCellProperty.cellBorderColorNormal;
+        UIColor *cellBackgroundColor = self.boxInputCellProperty.cellBgColorNormal;
+        if (hasFill) {
+            if (self.boxInputCellProperty.cellBorderColorFilled) {
+                cellBorderColor = self.boxInputCellProperty.cellBorderColorFilled;
+            }
+            if (self.boxInputCellProperty.cellBgColorFilled) {
+                cellBackgroundColor = self.boxInputCellProperty.cellBgColorFilled;
+            }
+        }
+        self.layer.borderColor = cellBorderColor.CGColor;
+        self.backgroundColor = cellBackgroundColor;
     }
     
     if (_ifNeedCursor) {
