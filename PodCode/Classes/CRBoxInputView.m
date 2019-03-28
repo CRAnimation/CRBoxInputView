@@ -7,7 +7,7 @@
 //
 
 #import "CRBoxInputView.h"
-#import "Masonry.h"
+#import <Masonry/Masonry.h>
 #import "CRBoxTextView.h"
 
 typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
