@@ -435,7 +435,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CRBoxInputView_Example/Pods-CRBoxInputView_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-CRBoxInputView_Example/Pods-CRBoxInputView_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/BearSkill/BearSkill.framework",
 				"${BUILT_PRODUCTS_DIR}/CRBoxInputView/CRBoxInputView.framework",
@@ -460,7 +460,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CRBoxInputView_Example/Pods-CRBoxInputView_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CRBoxInputView_Example/Pods-CRBoxInputView_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EB4630AF3CA185A7A1637A59 /* [CP] Check Pods Manifest.lock */ = {
