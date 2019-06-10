@@ -31,6 +31,9 @@
         self.cornerRadius = 4;
         self.borderWidth = (0.5);
         
+        // line
+        self.showLine = NO;
+        
         // label
         self.cellFont = [UIFont systemFontOfSize:20];
         self.cellTextColor = [UIColor blackColor];
@@ -76,6 +79,9 @@
     copy.cellCursorHeight = _cellCursorHeight;
     copy.cornerRadius = _cornerRadius;
     copy.borderWidth = _borderWidth;
+    
+    // line
+    copy.showLine = _showLine;
     
     // label
     copy.cellFont = [_cellFont copy];

@@ -272,6 +272,7 @@
     cellProperty.borderWidth = 0;
     cellProperty.cellFont = [UIFont boldSystemFontOfSize:24];
     cellProperty.cellTextColor = color_master;
+    cellProperty.showLine = YES;
     
     CRBoxInputView *_boxInputView = [CRBoxInputView new];
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
@@ -292,6 +293,7 @@
     cellProperty.borderWidth = 0;
     cellProperty.cellFont = [UIFont boldSystemFontOfSize:24];
     cellProperty.cellTextColor = color_master;
+    cellProperty.showLine = YES;
     cellProperty.securitySymbol = @"*";//need
     
     CRBoxInputView *_boxInputView = [CRBoxInputView new];
@@ -314,6 +316,7 @@
     cellProperty.borderWidth = 0;
     cellProperty.cellFont = [UIFont boldSystemFontOfSize:24];
     cellProperty.cellTextColor = color_master;
+    cellProperty.showLine = YES;
     cellProperty.securityType = CRBoxSecurityCustomViewType;//need
     cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
         return [CRSecrectImageView new];
@@ -339,6 +342,7 @@
     cellProperty.borderWidth = 0;
     cellProperty.cellFont = [UIFont boldSystemFontOfSize:24];
     cellProperty.cellTextColor = color_master;
+    cellProperty.showLine = YES;
     cellProperty.securityType = CRBoxSecurityCustomViewType;//need
     
     CRBoxInputView *_boxInputView = [CRBoxInputView new];

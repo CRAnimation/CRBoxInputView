@@ -190,7 +190,7 @@
 - (UIView *)customSecurityView
 {
     if (!_customSecurityView) {
-        NSAssert(_boxInputCellProperty.customSecurityViewBlock, @"customSecurityViewBlock不能为空！");
+        NSAssert(_boxInputCellProperty.customSecurityViewBlock, @"customSecurityViewBlock can not be null！");
         if(_boxInputCellProperty.customSecurityViewBlock){
             _customSecurityView = _boxInputCellProperty.customSecurityViewBlock();
         }
@@ -201,7 +201,8 @@
 
 - (void)layoutSubviews
 {
-    if (!_lineView && _boxInputCellProperty.customLineViewBlock) {
+    if (_boxInputCellProperty.showLine && !_lineView) {
+        NSAssert(_boxInputCellProperty.customLineViewBlock, @"customLineViewBlock can not be null！");
         _lineView = _boxInputCellProperty.customLineViewBlock();
         [self.contentView addSubview:_lineView];
         [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {

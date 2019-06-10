@@ -38,6 +38,9 @@ typedef CRLineView *_Nonnull(^CustomLineViewBlock)(void);
 @property (copy, nonatomic) UIFont *cellFont;
 @property (copy, nonatomic) UIColor *cellTextColor;
 
+// line
+@property (assign, nonatomic) BOOL showLine;
+
 // Security
 @property (assign, nonatomic) BOOL ifShowSecurity;
 @property (copy, nonatomic) NSString *securitySymbol;
