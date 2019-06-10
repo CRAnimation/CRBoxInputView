@@ -201,6 +201,8 @@
 
 - (void)layoutSubviews
 {
+    __weak typeof(self) weakSelf = self;
+    
     if (_boxInputCellProperty.showLine && !_lineView) {
         NSAssert(_boxInputCellProperty.customLineViewBlock, @"customLineViewBlock can not be null！");
         _lineView = _boxInputCellProperty.customLineViewBlock();
@@ -208,6 +210,10 @@
         [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.bottom.offset(0);
         }];
+    }
+    
+    if (_boxInputCellProperty.configCellShadowBlock) {
+        _boxInputCellProperty.configCellShadowBlock(weakSelf.layer);
     }
     
     [super layoutSubviews];

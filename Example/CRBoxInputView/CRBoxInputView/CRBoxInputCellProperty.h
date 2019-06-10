@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger, CRBoxSecurityType) {
 
 typedef UIView *_Nonnull(^CustomSecurityViewBlock)(void);
 typedef CRLineView *_Nonnull(^CustomLineViewBlock)(void);
+typedef void(^ConfigCellShadowBlock)(CALayer *layer);
 
 @interface CRBoxInputCellProperty : NSObject <NSCopying>
 
@@ -50,6 +51,7 @@ typedef CRLineView *_Nonnull(^CustomLineViewBlock)(void);
 // Block
 @property (copy, nonatomic) CustomSecurityViewBlock customSecurityViewBlock;
 @property (copy, nonatomic) CustomLineViewBlock customLineViewBlock;
+@property (copy, nonatomic) ConfigCellShadowBlock configCellShadowBlock;
 
 // Test
 @property (assign, nonatomic) NSInteger index;

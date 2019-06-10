@@ -51,6 +51,7 @@
         self.customLineViewBlock = ^CRLineView * _Nonnull{
             return [CRLineView new];
         };
+        self.configCellShadowBlock = nil;
         
         // Test
         self.index = 0;
@@ -96,6 +97,9 @@
     // Block
     copy.customSecurityViewBlock = [_customSecurityViewBlock copy];
     copy.customLineViewBlock = [_customLineViewBlock copy];
+    if (_configCellShadowBlock) {
+        copy.configCellShadowBlock = [_configCellShadowBlock copy];
+    }
     
     // Test
     copy.index = _index;

@@ -8,7 +8,6 @@
 
 #import "CRDetailViewController.h"
 #import "CRBoxInputView.h"
-#import "CRBoxInputView_CustomBox.h"
 #import "CRLineView.h"
 #import "CRSecrectImageView.h"
 
@@ -240,7 +239,7 @@
 }
 
 #pragma mark - CustomBox
-- (CRBoxInputView_CustomBox *)generateBoxInputView_customBox
+- (CRBoxInputView *)generateBoxInputView_customBox
 {
     CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
     cellProperty.cellBgColorNormal = color_FFECEC;
@@ -252,8 +251,14 @@
     cellProperty.borderWidth = 0;
     cellProperty.cellFont = [UIFont boldSystemFontOfSize:24];
     cellProperty.cellTextColor = color_master;
+    cellProperty.configCellShadowBlock = ^(CALayer * _Nonnull layer) {
+        layer.shadowColor = [color_master colorWithAlphaComponent:0.2].CGColor;
+        layer.shadowOpacity = 1;
+        layer.shadowOffset = CGSizeMake(0, 2);
+        layer.shadowRadius = 4;
+    };
     
-    CRBoxInputView_CustomBox *_boxInputView = [CRBoxInputView_CustomBox new];
+    CRBoxInputView *_boxInputView = [CRBoxInputView new];
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
     [_boxInputView loadAndPrepareView];
