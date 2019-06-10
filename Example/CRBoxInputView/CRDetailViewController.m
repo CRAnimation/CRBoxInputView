@@ -324,7 +324,11 @@
     cellProperty.showLine = YES;
     cellProperty.securityType = CRBoxSecurityCustomViewType;//need
     cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
-        return [CRSecrectImageView new];
+        CRSecrectImageView *secrectImageView = [CRSecrectImageView new];
+        secrectImageView.image = [UIImage imageNamed:@"backArrow"];
+        secrectImageView.imageWidth = 30;
+        secrectImageView.imageHeight = 30;
+        return secrectImageView;
     };
     
     CRBoxInputView *_boxInputView = [CRBoxInputView new];

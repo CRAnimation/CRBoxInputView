@@ -8,6 +8,12 @@
 
 #import "CRSecrectImageView.h"
 
+@interface CRSecrectImageView()
+{
+    UIImageView *_lockImgView;
+}
+@end
+
 @implementation CRSecrectImageView
 
 - (instancetype)init
@@ -21,7 +27,7 @@
 
 - (void)createUI
 {
-    UIImageView *_lockImgView = [UIImageView new];
+    _lockImgView = [UIImageView new];
     _lockImgView.image = [UIImage imageNamed:@"smallLock"];
     [self addSubview:_lockImgView];
     [_lockImgView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -29,6 +35,29 @@
         make.centerY.offset(0);
         make.width.mas_equalTo(XX_6(23));
         make.height.mas_equalTo(XX_6(27));
+    }];
+}
+
+#pragma mark - Setter & Getter
+- (void)setImage:(UIImage *)image
+{
+    _image = image;
+    _lockImgView.image = image;
+}
+
+- (void)setImageWidth:(CGFloat)imageWidth
+{
+    _imageWidth = imageWidth;
+    [_lockImgView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(imageWidth);
+    }];
+}
+
+- (void)setImageHeight:(CGFloat)imageHeight
+{
+    _imageHeight = imageHeight;
+    [_lockImgView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(imageHeight);
     }];
 }
 

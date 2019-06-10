@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CRSecrectImageView : UIView
 
+@property (strong, nonatomic) UIImage   *image;
+@property (assign, nonatomic) CGFloat   imageWidth;
+@property (assign, nonatomic) CGFloat   imageHeight;
+
 @end
 
 NS_ASSUME_NONNULL_END
