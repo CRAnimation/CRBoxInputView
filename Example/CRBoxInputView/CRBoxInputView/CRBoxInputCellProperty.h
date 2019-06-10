@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CRLineView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +17,7 @@ typedef NS_ENUM(NSInteger, CRBoxSecurityType) {
 };
 
 typedef UIView *_Nonnull(^CustomSecurityViewBlock)(void);
-typedef UIView *_Nonnull(^CustomLineViewBlock)(void);
+typedef CRLineView *_Nonnull(^CustomLineViewBlock)(void);
 
 @interface CRBoxInputCellProperty : NSObject <NSCopying>
 

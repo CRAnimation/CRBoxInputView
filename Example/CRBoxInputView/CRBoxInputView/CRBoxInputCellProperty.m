@@ -16,6 +16,8 @@
     
     if (self) {
         
+        __weak typeof(self) weakSelf = self;
+        
         // UI
         self.cellBorderColorNormal = [UIColor colorWithRed:228/255.0 green:228/255.0 blue:228/255.0 alpha:1];
         self.cellBorderColorSelected = [UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1];
@@ -40,7 +42,14 @@
         self.securityType = CRBoxSecuritySymbolType;
         
         // Block
+        self.customLineViewBlock = ^CRLineView * _Nonnull{
+            return [CRLineView new];
+        };
+        self.customSecurityViewBlock = ^UIView * _Nonnull{
+            return [weakSelf defaultCustomSecurityView];
+        };
         
+        // Test
         self.index = 0;
     }
     
@@ -80,10 +89,32 @@
     
     // Block
     copy.customLineViewBlock = [_customLineViewBlock copy];
+    copy.customSecurityViewBlock = [_customSecurityViewBlock copy];
     
+    // Test
     copy.index = _index;
     
     return copy;
+}
+
+- (UIView *)defaultCustomSecurityView
+{
+    UIView *customSecurityView = [UIView new];
+    customSecurityView.backgroundColor = [UIColor clearColor];
+    
+    // circleView
+    static CGFloat circleViewWidth = 20;
+    UIView *circleView = [UIView new];
+    circleView.backgroundColor = color_master;
+    circleView.layer.cornerRadius = 4;
+    [customSecurityView addSubview:circleView];
+    [circleView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.mas_equalTo(circleViewWidth);
+        make.centerX.offset(0);
+        make.centerY.offset(0);
+    }];
+    
+    return customSecurityView;
 }
 
 @end

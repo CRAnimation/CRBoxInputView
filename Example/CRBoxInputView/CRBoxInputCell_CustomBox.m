@@ -10,9 +10,4 @@
 
 @implementation CRBoxInputCell_CustomBox
 
-- (void)placeSubViews
-{
-    [super placeSubViews];
-}
-
 @end

@@ -329,7 +329,7 @@
 }
 
 #pragma mark - SecretView
-- (CRBoxInputView_SecretView *)generateBoxInputView_secretView
+- (CRBoxInputView *)generateBoxInputView_secretView
 {
     CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
     cellProperty.cellCursorColor = color_FFECEC;
@@ -341,11 +341,7 @@
     cellProperty.cellTextColor = color_master;
     cellProperty.securityType = CRBoxSecurityCustomViewType;//need
     
-    cellProperty.customLineViewBlock = ^UIView * _Nonnull{
-        return [CRLineView new];
-    };
-    
-    CRBoxInputView_SecretView *_boxInputView = [CRBoxInputView_SecretView new];
+    CRBoxInputView *_boxInputView = [CRBoxInputView new];
     _boxInputView.ifNeedSecurity = YES;//need
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;

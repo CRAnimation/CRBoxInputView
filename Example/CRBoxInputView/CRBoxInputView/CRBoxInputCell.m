@@ -187,43 +187,17 @@
 - (UIView *)customSecurityView
 {
     if (!_customSecurityView) {
-        if(_createCustomSecurityViewBlock){
-            _customSecurityView = _createCustomSecurityViewBlock();
-        }else{
-            _customSecurityView = [self defaultCustomSecurityView];
+        NSAssert(_boxInputCellProperty.customSecurityViewBlock, @"customSecurityViewBlock不能为空！");
+        if(_boxInputCellProperty.customSecurityViewBlock){
+            _customSecurityView = _boxInputCellProperty.customSecurityViewBlock();
         }
     }
     
     return _customSecurityView;
 }
 
-- (UIView *)defaultCustomSecurityView
-{
-    UIView *customSecurityView = [UIView new];
-    customSecurityView.backgroundColor = [UIColor clearColor];
-    
-    // circleView
-    static CGFloat circleViewWidth = 20;
-    UIView *circleView = [UIView new];
-    circleView.backgroundColor = [UIColor orangeColor];
-    circleView.layer.cornerRadius = circleViewWidth / 2;
-    [customSecurityView addSubview:circleView];
-    [circleView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(circleViewWidth);
-        make.centerX.offset(0);
-        make.centerY.offset(0);
-    }];
-    
-    return customSecurityView;
-}
-
 - (void)layoutSubviews
 {
-    if (_placeSubViewBlock) {
-        __weak typeof(self) weakSelf = self;
-        _placeSubViewBlock(weakSelf);
-    }
-    
     if (!_lineView && _boxInputCellProperty.customLineViewBlock) {
         _lineView = _boxInputCellProperty.customLineViewBlock();
         [self.contentView addSubview:_lineView];
@@ -232,14 +206,7 @@
         }];
     }
     
-    [self placeSubViews];
-    
     [super layoutSubviews];
-}
-
-#pragma mark - You can rewrite
-- (void)placeSubViews
-{
 }
 
 @end

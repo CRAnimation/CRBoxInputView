@@ -26,9 +26,6 @@
 //    cell.placeSubViewBlock = ^(UIView * _Nonnull contentView) {
 //        [weakSelf addSepLineView:contentView];
 //    };
-    cell.createCustomSecurityViewBlock = ^UIView * _Nonnull{
-        return [weakSelf myCustomSecurityView];
-    };
     
     return cell;
 }
