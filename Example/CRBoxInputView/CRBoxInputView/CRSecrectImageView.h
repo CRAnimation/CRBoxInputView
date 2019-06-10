@@ -1,16 +1,16 @@
 //
-//  CRBoxInputView_Line.h
+//  CRSecrectImageView.h
 //  CRBoxInputView_Example
 //
-//  Created by Chobits on 2019/1/7.
+//  Created by Chobits on 2019/6/10.
 //  Copyright © 2019 BearRan. All rights reserved.
 //
 
-#import "CRBoxInputView.h"
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CRBoxInputView_Line : CRBoxInputView
+@interface CRSecrectImageView : UIView
 
 @end
 

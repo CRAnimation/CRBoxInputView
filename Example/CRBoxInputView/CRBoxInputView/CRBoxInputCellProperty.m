@@ -42,11 +42,11 @@
         self.securityType = CRBoxSecuritySymbolType;
         
         // Block
-        self.customLineViewBlock = ^CRLineView * _Nonnull{
-            return [CRLineView new];
-        };
         self.customSecurityViewBlock = ^UIView * _Nonnull{
             return [weakSelf defaultCustomSecurityView];
+        };
+        self.customLineViewBlock = ^CRLineView * _Nonnull{
+            return [CRLineView new];
         };
         
         // Test
@@ -88,8 +88,8 @@
     copy.securityType = _securityType;
     
     // Block
-    copy.customLineViewBlock = [_customLineViewBlock copy];
     copy.customSecurityViewBlock = [_customSecurityViewBlock copy];
+    copy.customLineViewBlock = [_customLineViewBlock copy];
     
     // Test
     copy.index = _index;

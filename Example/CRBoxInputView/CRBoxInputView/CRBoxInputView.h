@@ -53,10 +53,10 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
  */
 @property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0);
 
-@property (copy, nonatomic) TextDidChangeblock textDidChangeblock;
-@property (strong, nonatomic) CRBoxFlowLayout *boxFlowLayout;
-@property (strong, nonatomic) CRBoxInputCellProperty *customCellProperty;
-@property (strong, nonatomic, readonly) NSString  *textValue;
+@property (copy, nonatomic) TextDidChangeblock _Nullable textDidChangeblock;
+@property (strong, nonatomic) CRBoxFlowLayout * _Nullable boxFlowLayout;
+@property (strong, nonatomic) CRBoxInputCellProperty * _Nullable customCellProperty;
+@property (strong, nonatomic, readonly) NSString  * _Nullable textValue;
 
 // loadAndPrepareView is default beginEdit to YES.
 - (void)loadAndPrepareView;
@@ -66,15 +66,15 @@ typedef void(^TextDidChangeblock)(NSString *text, BOOL isFinished);
 - (void)clearAll;
 - (void)clearAllWithBeginEdit:(BOOL)beginEdit;
 
-- (UICollectionView *)mainCollectionView;
+- (UICollectionView *_Nullable)mainCollectionView;
 
 // Qiuck set
-- (void)quickSetSecuritySymbol:(NSString *)securitySymbol;
+- (void)quickSetSecuritySymbol:(NSString *_Nullable)securitySymbol;
 
 // You can inherit and call super
 - (void)initDefaultValue;
 
 // You can inherit and rewrite
-- (UICollectionViewCell *)customCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
+- (UICollectionViewCell *)customCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *_Nullable)indexPath;
 
 @end

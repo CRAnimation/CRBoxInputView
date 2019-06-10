@@ -107,7 +107,10 @@
 
 - (void)hideCustomSecurityView
 {
-    self.customSecurityView.alpha = 0;
+    // Must add this judge. Otherwise _customSecurityView maybe null, and cause error.
+    if (_customSecurityView) {
+        self.customSecurityView.alpha = 0;
+    }
 }
 
 #pragma mark - Setter & Getter
