@@ -267,7 +267,7 @@ boxInputView.ifNeedSecurity = YES;
 创建 **CRBoxInputView_Custom** 类，并且继承自 `CRBoxInputView`。
 .h file
 ``` objc
-#import <CRBoxInputView/CRBoxInputView.h>
+#import "CRBoxInputView.h"
 
 @interface CRBoxInputView_Custom : CRBoxInputView
 @end
@@ -302,7 +302,7 @@ return cell;
 并且定义你自己的 cellId。
 .h file
 ``` objc
-#import <CRBoxInputView/CRBoxInputView.h>
+#import "CRBoxInputView.h"
 
 // 定义你自己的 cellId
 #define CRBoxInputCell_CustomID @"CRBoxInputCell_CustomID"

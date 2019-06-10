@@ -268,7 +268,7 @@ boxInputView.ifNeedSecurity = YES;
 Create **CRBoxInputView_Custom** inherit from `CRBoxInputView`.
 .h file
 ``` objc
-#import <CRBoxInputView/CRBoxInputView.h>
+#import "CRBoxInputView.h"
 
 @interface CRBoxInputView_Custom : CRBoxInputView
 @end
@@ -303,7 +303,7 @@ Create **CRBoxInputCell_Custom** inherit from `CRBoxInputCell`.
 And define yourself cellId.
 .h file
 ``` objc
-#import <CRBoxInputView/CRBoxInputView.h>
+#import "CRBoxInputView.h"
 
 // Define yourself cellId
 #define CRBoxInputCell_CustomID @"CRBoxInputCell_CustomID"

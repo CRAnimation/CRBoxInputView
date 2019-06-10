@@ -37,6 +37,11 @@
 {
     self.ifNeedCursor = YES;
     self.userInteractionEnabled = NO;
+    
+    __weak typeof(self) weakSelf = self;
+    self.createCustomSecurityViewBlock = ^UIView * _Nonnull{
+        return [weakSelf defaultCustomSecurityView];
+    };
 }
 
 - (void)createUIBase
@@ -185,14 +190,13 @@
 - (UIView *)customSecurityView
 {
     if (!_customSecurityView) {
-        _customSecurityView = [self createCustomSecurityView];
+        _customSecurityView = _createCustomSecurityViewBlock();
     }
     
     return _customSecurityView;
 }
 
-#pragma mark - You can rewrite
-- (UIView *)createCustomSecurityView
+- (UIView *)defaultCustomSecurityView
 {
     UIView *customSecurityView = [UIView new];
     customSecurityView.backgroundColor = [UIColor clearColor];
@@ -210,6 +214,23 @@
     }];
     
     return customSecurityView;
+}
+
+- (void)layoutSubviews
+{
+    if (_placeSubViewBlock) {
+        __weak typeof(self) weakSelf = self;
+        _placeSubViewBlock(weakSelf);
+    }
+    
+    [self placeSubViews];
+    
+    [super layoutSubviews];
+}
+
+#pragma mark - You can rewrite
+- (void)placeSubViews
+{
 }
 
 @end

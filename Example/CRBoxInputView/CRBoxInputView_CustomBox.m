@@ -20,6 +20,13 @@
 - (CRBoxInputCell_CustomBox *)customCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CRBoxInputCell_CustomBox *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CRBoxInputCell_CustomBoxID forIndexPath:indexPath];
+    cell.placeSubViewBlock = ^(UIView * _Nonnull contentView) {
+        contentView.layer.shadowColor = [color_master colorWithAlphaComponent:0.2].CGColor;
+        contentView.layer.shadowOpacity = 1;
+        contentView.layer.shadowOffset = CGSizeMake(0, 2);
+        contentView.layer.shadowRadius = 4;
+    };
+    
     return cell;
 }
 

@@ -6,7 +6,7 @@
 //  Copyright © 2019 BearRan. All rights reserved.
 //
 
-#import <CRBoxInputView/CRBoxInputView.h>
+#import "CRBoxInputView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

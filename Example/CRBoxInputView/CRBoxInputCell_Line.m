@@ -16,15 +16,11 @@
 
 @implementation CRBoxInputCell_Line
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (void)placeSubViews
 {
-    self = [super initWithFrame:frame];
+    [super placeSubViews];
     
-    if (self) {
-        [self addSepLineView];
-    }
-    
-    return self;
+    [self addSepLineView];
 }
 
 - (void)addSepLineView

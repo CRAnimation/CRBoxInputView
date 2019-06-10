@@ -7,7 +7,7 @@
 //
 
 #import "CRDetailViewController.h"
-#import <CRBoxInputView/CRBoxInputView.h>
+#import "CRBoxInputView.h"
 #import "CRBoxInputView_CustomBox.h"
 #import "CRBoxInputView_Line.h"
 #import "CRBoxInputView_SecretSymbol.h"

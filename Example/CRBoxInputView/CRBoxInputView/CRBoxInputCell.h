@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 #define CRBoxCursoryAnimationKey @"CRBoxCursoryAnimationKey"
 #define CRBoxInputCellID @"CRBoxInputCellID"
 
+typedef void(^PlaceSubViewBlock)(UIView *contentView);
+typedef UIView *_Nonnull(^CreateCustomSecurityViewBlock)(void);
+
 @interface CRBoxInputCell : UICollectionViewCell
 
 /**
@@ -28,9 +31,11 @@ NS_ASSUME_NONNULL_BEGIN
  You should not use these properties, unless you know what you are doing.
  */
 @property (strong, nonatomic) CRBoxInputCellProperty *boxInputCellProperty;
+@property (copy, nonatomic) PlaceSubViewBlock placeSubViewBlock;
+@property (copy, nonatomic) CreateCustomSecurityViewBlock createCustomSecurityViewBlock;
 
 // You can inherit and rewrite
-- (UIView *)createCustomSecurityView;
+- (void)placeSubViews;
 
 @end
 

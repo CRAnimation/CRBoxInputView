@@ -7,6 +7,7 @@
 //
 
 #import "CRBoxInputCell_SecretView.h"
+#import "CRLineView.h"
 
 @implementation CRBoxInputCell_SecretView
 
@@ -15,32 +16,28 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        [self addSepLineView];
+        __weak typeof(self) weakSelf = self;
+        self.placeSubViewBlock = ^(UIView * _Nonnull contentView) {
+            [weakSelf addSepLineView:contentView];
+        };
+        self.createCustomSecurityViewBlock = ^UIView * _Nonnull{
+            return [weakSelf myCustomSecurityView];
+        };
     }
     
     return self;
 }
 
-- (void)addSepLineView
+- (void)addSepLineView:(UIView *)contentView
 {
-    static CGFloat sepLineViewHeight = 4;
-    
-    UIView *_sepLineView = [UIView new];
-    _sepLineView.backgroundColor = color_master;
-    _sepLineView.layer.cornerRadius = sepLineViewHeight / 2.0;
-    [self.contentView addSubview:_sepLineView];
+    UIView *_sepLineView = [CRLineView new];
+    [contentView addSubview:_sepLineView];
     [_sepLineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.offset(0);
-        make.height.mas_equalTo(sepLineViewHeight);
     }];
-    
-    _sepLineView.layer.shadowColor = [color_master colorWithAlphaComponent:0.2].CGColor;
-    _sepLineView.layer.shadowOpacity = 1;
-    _sepLineView.layer.shadowOffset = CGSizeMake(0, 2);
-    _sepLineView.layer.shadowRadius = 4;
 }
 
-- (UIView *)createCustomSecurityView
+- (UIView *)myCustomSecurityView
 {
     UIView *customSecurityView = [UIImageView new];
     
