@@ -288,15 +288,17 @@
 			isa = PBXGroup;
 			children = (
 				7463303822AE74AF00494815 /* CRBoxInputCellProperty.h */,
-				7463303922AE74AF00494815 /* CRBoxInputCell.m */,
-				7463303A22AE74AF00494815 /* CRBoxInputView.m */,
-				7463303B22AE74AF00494815 /* CRBoxFlowLayout.m */,
-				7463303C22AE74AF00494815 /* CRBoxTextView.m */,
-				7463303D22AE74AF00494815 /* CRBoxInputCell.h */,
 				7463303E22AE74AF00494815 /* CRBoxInputCellProperty.m */,
 				7463303F22AE74AF00494815 /* CRBoxInputView.h */,
+				7463303A22AE74AF00494815 /* CRBoxInputView.m */,
+				7463303D22AE74AF00494815 /* CRBoxInputCell.h */,
+				7463303922AE74AF00494815 /* CRBoxInputCell.m */,
 				7463304022AE74AF00494815 /* CRBoxFlowLayout.h */,
+				7463303B22AE74AF00494815 /* CRBoxFlowLayout.m */,
 				7463304122AE74AF00494815 /* CRBoxTextView.h */,
+				7463303C22AE74AF00494815 /* CRBoxTextView.m */,
+				7463302422AE6A6500494815 /* CRLineView.h */,
+				7463302522AE6A6500494815 /* CRLineView.m */,
 			);
 			path = CRBoxInputView;
 			sourceTree = "<group>";
@@ -341,8 +343,6 @@
 				74BF961421E333ED006ED752 /* CRBoxInputView_SecretView.m */,
 				74BF961621E333F9006ED752 /* CRBoxInputCell_SecretView.h */,
 				74BF961721E333F9006ED752 /* CRBoxInputCell_SecretView.m */,
-				7463302422AE6A6500494815 /* CRLineView.h */,
-				7463302522AE6A6500494815 /* CRLineView.m */,
 			);
 			name = SecretView;
 			sourceTree = "<group>";

@@ -13,6 +13,7 @@
 #import "CRBoxInputView_SecretSymbol.h"
 #import "CRBoxInputView_SecretImage.h"
 #import "CRBoxInputView_SecretView.h"
+#import "CRLineView.h"
 
 @interface CRDetailViewController ()
 {
@@ -339,6 +340,10 @@
     cellProperty.cellFont = [UIFont boldSystemFontOfSize:24];
     cellProperty.cellTextColor = color_master;
     cellProperty.securityType = CRBoxSecurityCustomViewType;//need
+    
+    cellProperty.customLineViewBlock = ^UIView * _Nonnull{
+        return [CRLineView new];
+    };
     
     CRBoxInputView_SecretView *_boxInputView = [CRBoxInputView_SecretView new];
     _boxInputView.ifNeedSecurity = YES;//need

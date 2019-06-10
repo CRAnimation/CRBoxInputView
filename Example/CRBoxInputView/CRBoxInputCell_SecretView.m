@@ -16,13 +16,13 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        __weak typeof(self) weakSelf = self;
-        self.placeSubViewBlock = ^(UIView * _Nonnull contentView) {
-            [weakSelf addSepLineView:contentView];
-        };
-        self.createCustomSecurityViewBlock = ^UIView * _Nonnull{
-            return [weakSelf myCustomSecurityView];
-        };
+//        __weak typeof(self) weakSelf = self;
+//        self.placeSubViewBlock = ^(UIView * _Nonnull contentView) {
+//            [weakSelf addSepLineView:contentView];
+//        };
+//        self.createCustomSecurityViewBlock = ^UIView * _Nonnull{
+//            return [weakSelf myCustomSecurityView];
+//        };
     }
     
     return self;

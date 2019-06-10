@@ -18,6 +18,8 @@
 @property (strong, nonatomic) CABasicAnimation *opacityAnimation;
 @property (strong, nonatomic) UIView *customSecurityView;
 
+@property (strong, nonatomic) UIView *lineView;
+
 @end
 
 @implementation CRBoxInputCell
@@ -37,11 +39,6 @@
 {
     self.ifNeedCursor = YES;
     self.userInteractionEnabled = NO;
-    
-    __weak typeof(self) weakSelf = self;
-    self.createCustomSecurityViewBlock = ^UIView * _Nonnull{
-        return [weakSelf defaultCustomSecurityView];
-    };
 }
 
 - (void)createUIBase
@@ -190,7 +187,11 @@
 - (UIView *)customSecurityView
 {
     if (!_customSecurityView) {
-        _customSecurityView = _createCustomSecurityViewBlock();
+        if(_createCustomSecurityViewBlock){
+            _customSecurityView = _createCustomSecurityViewBlock();
+        }else{
+            _customSecurityView = [self defaultCustomSecurityView];
+        }
     }
     
     return _customSecurityView;
@@ -221,6 +222,14 @@
     if (_placeSubViewBlock) {
         __weak typeof(self) weakSelf = self;
         _placeSubViewBlock(weakSelf);
+    }
+    
+    if (!_lineView && _boxInputCellProperty.customLineViewBlock) {
+        _lineView = _boxInputCellProperty.customLineViewBlock();
+        [self.contentView addSubview:_lineView];
+        [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.bottom.offset(0);
+        }];
     }
     
     [self placeSubViews];

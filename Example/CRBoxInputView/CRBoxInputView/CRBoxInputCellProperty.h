@@ -15,6 +15,9 @@ typedef NS_ENUM(NSInteger, CRBoxSecurityType) {
     CRBoxSecurityCustomViewType,
 };
 
+typedef UIView *_Nonnull(^CustomSecurityViewBlock)(void);
+typedef UIView *_Nonnull(^CustomLineViewBlock)(void);
+
 @interface CRBoxInputCellProperty : NSObject <NSCopying>
 
 // UI
@@ -39,6 +42,10 @@ typedef NS_ENUM(NSInteger, CRBoxSecurityType) {
 @property (copy, nonatomic) NSString *securitySymbol;
 @property (copy, nonatomic) NSString *originValue;
 @property (assign, nonatomic) CRBoxSecurityType securityType;
+
+// Block
+@property (copy, nonatomic) CustomSecurityViewBlock customSecurityViewBlock;
+@property (copy, nonatomic) CustomLineViewBlock customLineViewBlock;
 
 // Test
 @property (assign, nonatomic) NSInteger index;

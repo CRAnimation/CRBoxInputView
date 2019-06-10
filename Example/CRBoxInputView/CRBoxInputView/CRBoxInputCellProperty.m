@@ -39,6 +39,8 @@
         self.originValue = @"";
         self.securityType = CRBoxSecuritySymbolType;
         
+        // Block
+        
         self.index = 0;
     }
     
@@ -76,6 +78,8 @@
     copy.originValue = [_originValue copy];
     copy.securityType = _securityType;
     
+    // Block
+    copy.customLineViewBlock = [_customLineViewBlock copy];
     
     copy.index = _index;
     
