@@ -199,28 +199,151 @@ boxInputView.customCellProperty = cellProperty;
 ## 属性和方法
 `CRBoxInputCellProperty` class
 ``` objc
-// UI
-self.cellBorderColorNormal = [UIColor colorWithRed:228/255.0 green:228/255.0 blue:228/255.0 alpha:1];
-self.cellBorderColorSelected = [UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1];
-self.cellBorderColorFilled = nil;
-self.cellBgColorNormal = [UIColor whiteColor];
-self.cellBgColorSelected = [UIColor whiteColor];
-self.cellBgColorFilled = nil;
-self.cellCursorColor = [UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1];
-self.cellCursorWidth = 2;
-self.cellCursorHeight = 32;
-self.cornerRadius = 4;
-self.borderWidth = (0.5);
+#pragma mark - UI
+/**
+cell边框宽度
+默认：0.5
+*/
+@property (assign, nonatomic) CGFloat borderWidth;
 
-// label
-self.cellFont = [UIFont systemFontOfSize:20];
-self.cellTextColor = [UIColor blackColor];
+/**
+cell边框颜色
+状态：未选中状态时
+默认：[UIColor colorWithRed:228/255.0 green:228/255.0 blue:228/255.0 alpha:1]
+*/
+@property (copy, nonatomic) UIColor *cellBorderColorNormal;
 
-// Security
-self.ifShowSecurity = NO;
-self.securitySymbol = @"✱";
-self.originValue = @"";
-self.securityType = CRBoxSecuritySymbolType;
+/**
+cell边框颜色
+状态：选中状态时
+默认：[UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1]
+*/
+@property (copy, nonatomic) UIColor *cellBorderColorSelected;
+
+/**
+cell边框颜色
+状态：无填充文字，未选中状态时
+默认：与cellBorderColorFilled相同
+*/
+@property (copy, nonatomic) UIColor *__nullable cellBorderColorFilled;
+
+/**
+cell背景颜色
+状态：无填充文字，未选中状态时
+默认：[UIColor whiteColor]
+*/
+@property (copy, nonatomic) UIColor *cellBgColorNormal;
+
+/**
+cell背景颜色
+状态：选中状态时
+默认：[UIColor whiteColor]
+*/
+@property (copy, nonatomic) UIColor *cellBgColorSelected;
+
+/**
+cell背景颜色
+状态：填充文字后，未选中状态时
+默认：与cellBgColorFilled相同
+*/
+@property (copy, nonatomic) UIColor *__nullable cellBgColorFilled;
+
+
+/**
+光标颜色
+默认： [UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1]
+*/
+@property (copy, nonatomic) UIColor *cellCursorColor;
+
+/**
+光标宽度
+默认： 2
+*/
+@property (assign, nonatomic) CGFloat cellCursorWidth;
+
+/**
+光标高度
+默认： 32
+*/
+@property (assign, nonatomic) CGFloat cellCursorHeight;
+
+/**
+圆角
+默认： 4
+*/
+@property (assign, nonatomic) CGFloat cornerRadius;
+
+
+
+#pragma mark - line
+/**
+显示下划线
+默认： NO
+*/
+@property (assign, nonatomic) BOOL showLine;
+
+
+
+#pragma mark - label
+/**
+字体/字号
+默认：[UIFont systemFontOfSize:20];
+*/
+@property (copy, nonatomic) UIFont *cellFont;
+
+/**
+字体颜色
+默认：[UIColor blackColor];
+*/
+@property (copy, nonatomic) UIColor *cellTextColor;
+
+
+
+#pragma mark - Security
+/**
+是否密文显示
+默认：NO
+*/
+@property (assign, nonatomic) BOOL ifShowSecurity;
+
+/**
+密文符号
+默认：✱
+说明：只有ifShowSecurity=YES时，有效
+*/
+@property (copy, nonatomic) NSString *securitySymbol;
+
+/**
+默认填充值
+默认：空
+说明：在输入框没有内容时，会显示该值。
+*/
+@property (copy, nonatomic) NSString *originValue;
+
+/**
+密文类型
+默认：CRBoxSecuritySymbolType
+类型说明：
+CRBoxSecuritySymbolType 符号类型，根据securitySymbol，originValue的内容来显示
+CRBoxSecurityCustomViewType 自定义View类型，可以自定义密文状态下的图片，View
+*/
+@property (assign, nonatomic) CRBoxSecurityType securityType;
+
+
+
+#pragma mark - Block
+/**
+自定义密文View回调
+*/
+@property (copy, nonatomic) CustomSecurityViewBlock customSecurityViewBlock;
+/**
+自定义下划线回调
+*/
+@property (copy, nonatomic) CustomLineViewBlock customLineViewBlock;
+/**
+自定义阴影回调
+*/
+@property (copy, nonatomic) ConfigCellShadowBlock __nullable configCellShadowBlock;
 ```
 
 `CRBoxFlowLayout` class
@@ -237,48 +360,56 @@ self.securityType = CRBoxSecuritySymbolType;
 ``` objc
 /**
 是否需要光标
-*default: YES
+ifNeedCursor
+default: YES
 */
 @property (assign, nonatomic) BOOL ifNeedCursor;
 
 /**
 验证码长度
+codeLength
 default: 4
 */
 @property (nonatomic, assign) NSInteger codeLength;
 
 /**
 是否开启密文模式
+ifNeedSecurity
 default: NO
 */
 @property (assign, nonatomic) BOOL ifNeedSecurity;
 
 /**
 显示密文的延时时间
+securityDelay
+desc: show security delay time
 default: 0.3
 */
 @property (assign, nonatomic) CGFloat securityDelay;
 
 /**
 键盘类型
+keyBoardType
 default: UIKeyboardTypeNumberPad
 */
 @property (assign, nonatomic) UIKeyboardType keyBoardType;
 
 /**
 textContentType
-desc: 你可以设置为 'nil' 或者 'UITextContentTypeOneTimeCode' 来自动获取短信验证码
+描述: 你可以设置为 'nil' 或者 'UITextContentTypeOneTimeCode' 来自动获取短信验证码
+desc: You set this 'nil' or 'UITextContentTypeOneTimeCode' to auto fill verify code.
 default: nil
 */
 @property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0);
 
-@property (copy, nonatomic) TextDidChangeblock textDidChangeblock;
-@property (strong, nonatomic) CRBoxFlowLayout *boxFlowLayout;
-@property (strong, nonatomic) CRBoxInputCellProperty *customCellProperty;
-@property (strong, nonatomic, readonly) NSString  *textValue;
+@property (copy, nonatomic) TextDidChangeblock _Nullable textDidChangeblock;
+@property (strong, nonatomic) CRBoxFlowLayout * _Nullable boxFlowLayout;
+@property (strong, nonatomic) CRBoxInputCellProperty * _Nullable customCellProperty;
+@property (strong, nonatomic, readonly) NSString  * _Nullable textValue;
 
 /**
 装载数据和准备界面
+desc: Load and prepareView
 beginEdit: 自动开启编辑模式
 default: YES
 */
@@ -287,27 +418,31 @@ default: YES
 
 /**
 清空输入
+desc: Clear all
 beginEdit: 自动开启编辑模式
 default: YES
 */
 - (void)clearAll;
 - (void)clearAllWithBeginEdit:(BOOL)beginEdit;
 
-- (UICollectionView *)mainCollectionView;
+- (UICollectionView *_Nullable)mainCollectionView;
 
 // 快速设置
-- (void)quickSetSecuritySymbol:(NSString *)securitySymbol;
+// Qiuck set
+- (void)quickSetSecuritySymbol:(NSString *_Nullable)securitySymbol;
 
 // 你可以在继承的子类中调用父类方法
+// You can inherit and call super
 - (void)initDefaultValue;
 
 // 你可以在继承的子类中重写父类方法
-- (UICollectionViewCell *)customCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
-
+// You can inherit and rewrite
+- (UICollectionViewCell *_Nullable)customCollectionView:(UICollectionView *_Nullable)collectionView cellForItemAtIndexPath:(NSIndexPath *_Nullable)indexPath;
 ```
 `CRBoxInputCell` class
 ``` objc
 // 你可以在继承的子类中重写父类方法
+// You can inherit and rewrite
 - (UIView *)createCustomSecurityView;
 ```
 

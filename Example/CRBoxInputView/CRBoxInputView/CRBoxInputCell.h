@@ -29,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (strong, nonatomic) CRBoxInputCellProperty *boxInputCellProperty;
 
+// 你可以在继承的子类中重写父类方法
 // You can inherit and rewrite
 - (UIView *)createCustomSecurityView __deprecated_msg("Please use `customSecurityViewBlock` in CRBoxInputCellProperty.");
 
