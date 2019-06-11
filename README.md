@@ -17,6 +17,15 @@
 > 该组件适用于短信验证码，密码输入框，手机号码输入框这些场景。<br/>希望你可以喜欢！
 
 
+## 重大更新！！！
+从1.0.0版本开始，无需通过继承的方式使用。通过`CRBoxInputCellProperty`的对应Block，即可快速自定义需求。
+``` objc
+customSecurityViewBlock //自定义密文View
+customLineViewBlock //自定义下划线
+configCellShadowBlock //自定义阴影
+```
+
+
 ## Pod安装
 
 CRBoxInputView 可以通过 [CocoaPods](https://cocoapods.org). 来安装,  只需简单的在你的 Podfile 中添加如下代码:
