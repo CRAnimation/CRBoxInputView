@@ -47,10 +47,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Usage
 
 ### <a id="Anchor_Base"></a>Base
-
 ![Normal.png](/ReadmeResources/1Normal.png "Normal.png")
-
-Insert code where you need.
 ``` objc
 CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
 boxInputView.codeLength = 4;
@@ -129,8 +126,6 @@ boxInputView.customCellProperty = cellProperty;
 
 ### <a id="Anchor_SecretSymbol"></a>SecretSymbol
 ![SecretSymbol.png](/ReadmeResources/4SecretSymbol.png "SecretSymbol.png")
-
-Insert code where you need.
 ``` objc
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.securitySymbol = @"*"; //Optional
