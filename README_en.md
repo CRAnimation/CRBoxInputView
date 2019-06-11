@@ -18,6 +18,16 @@
 > You can use this widget for verify code, password input or phone number input.<br/>I hope you can like this!
 
 
+## Critical Updates!!!
+We can config custom view, not need to throw the inherit way from the version 1.0.0. You can config custom view with block in `CRBoxInputCellProperty`.
+``` objc
+customSecurityViewBlock //Custom security view
+customLineViewBlock     //Custom line
+configCellShadowBlock   //Custom shadow
+```
+>This update compatibility with the earlier version
+
+
 ## Installation
 
 CRBoxInputView is available through [CocoaPods](https://cocoapods.org). To install
