@@ -87,10 +87,10 @@ cellProperty.borderWidth = 0;
 cellProperty.cellFont = [UIFont boldSystemFontOfSize:24];
 cellProperty.cellTextColor = color_master;
 cellProperty.configCellShadowBlock = ^(CALayer * _Nonnull layer) {
-layer.shadowColor = [color_master colorWithAlphaComponent:0.2].CGColor;
-layer.shadowOpacity = 1;
-layer.shadowOffset = CGSizeMake(0, 2);
-layer.shadowRadius = 4;
+    layer.shadowColor = [color_master colorWithAlphaComponent:0.2].CGColor;
+    layer.shadowOpacity = 1;
+    layer.shadowOffset = CGSizeMake(0, 2);
+    layer.shadowRadius = 4;
 };
 
 CRBoxInputView *boxInputView = [CRBoxInputView new];
