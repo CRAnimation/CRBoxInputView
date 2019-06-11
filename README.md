@@ -114,10 +114,10 @@ cellProperty.customLineViewBlock = ^CRLineView * _Nonnull{
     [lineView.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(4);
         make.left.right.bottom.offset(0);
-    }];//可选
+    }];
 
     return lineView;
-};
+};//可选
 
 CRBoxInputView *boxInputView = [CRBoxInputView new];
 boxInputView.customCellProperty = cellProperty;
@@ -157,7 +157,7 @@ cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
     secrectImageView.imageHeight = 27;
     
     return secrectImageView;
-};//可选
+};//必需
 
 CRBoxInputView *boxInputView = [CRBoxInputView new];
 boxInputView.ifNeedSecurity = YES;//必需
