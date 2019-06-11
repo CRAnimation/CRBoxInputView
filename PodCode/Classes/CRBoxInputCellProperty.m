@@ -7,6 +7,7 @@
 //
 
 #import "CRBoxInputCellProperty.h"
+#import <Masonry/Masonry.h>
 
 @implementation CRBoxInputCellProperty
 
@@ -115,7 +116,7 @@
     // circleView
     static CGFloat circleViewWidth = 20;
     UIView *circleView = [UIView new];
-    circleView.backgroundColor = color_master;
+    circleView.backgroundColor = [UIColor blackColor];
     circleView.layer.cornerRadius = 4;
     [customSecurityView addSubview:circleView];
     [circleView mas_makeConstraints:^(MASConstraintMaker *make) {

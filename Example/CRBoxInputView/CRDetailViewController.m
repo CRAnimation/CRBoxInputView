@@ -7,9 +7,9 @@
 //
 
 #import "CRDetailViewController.h"
-#import "CRBoxInputView.h"
-#import "CRLineView.h"
-#import "CRSecrectImageView.h"
+#import <CRBoxInputView/CRBoxInputView.h>
+#import <CRBoxInputView/CRLineView.h>
+#import <CRBoxInputView/CRSecrectImageView.h>
 
 @interface CRDetailViewController ()
 {

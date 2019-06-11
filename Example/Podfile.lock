@@ -41,6 +41,8 @@ PODS:
     - MBProgressHUD
     - SDWebImage
     - UIImage-Helpers (~> 0.0.2)
+  - CRBoxInputView (1.0.0):
+    - Masonry
   - GBDeviceInfo (5.4.0):
     - GBDeviceInfo/Core (= 5.4.0)
   - GBDeviceInfo/Core (5.4.0)
@@ -54,6 +56,7 @@ PODS:
 
 DEPENDENCIES:
   - BearSkill (from `https://github.com/BearRan/BearSkill.git`, commit `a48be2d`)
+  - CRBoxInputView (from `../`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -69,6 +72,8 @@ EXTERNAL SOURCES:
   BearSkill:
     :commit: a48be2d
     :git: https://github.com/BearRan/BearSkill.git
+  CRBoxInputView:
+    :path: "../"
 
 CHECKOUT OPTIONS:
   BearSkill:
@@ -78,6 +83,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   BearSkill: 4fc922b50c46157b9f8eb15dff19e9904137187b
+  CRBoxInputView: f80bc0d5bf3946a49130f889b770d0134f1433ea
   GBDeviceInfo: ae80eb4243d67e2c68d9290a136593da35071382
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
@@ -85,6 +91,6 @@ SPEC CHECKSUMS:
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   UIImage-Helpers: 06b04a42bdd222844035602e87e936765c80f620
 
-PODFILE CHECKSUM: fe12a4934055b6fc3ddaa88233c8e1a36988b275
+PODFILE CHECKSUM: 2aa126a91dc1d811d5e80dc7dac43c15d8ef27d8
 
 COCOAPODS: 1.6.1

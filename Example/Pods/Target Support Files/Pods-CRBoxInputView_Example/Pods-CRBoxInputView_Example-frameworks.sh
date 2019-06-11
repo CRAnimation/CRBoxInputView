@@ -155,6 +155,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BearSkill/BearSkill.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CRBoxInputView/CRBoxInputView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GBDeviceInfo/GBDeviceInfo.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
@@ -165,6 +166,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BearSkill/BearSkill.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CRBoxInputView/CRBoxInputView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GBDeviceInfo/GBDeviceInfo.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"

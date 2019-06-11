@@ -27,13 +27,6 @@
 		74047F7A21E2F9990063A8C0 /* CRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74047F7921E2F9990063A8C0 /* CRDetailViewController.m */; };
 		74047F7D21E2FA810063A8C0 /* CRListVCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74047F7C21E2FA810063A8C0 /* CRListVCCell.m */; };
 		742C1F2E21E6F48200C15F31 /* README_en.md in Resources */ = {isa = PBXBuildFile; fileRef = 742C1F2D21E6F48200C15F31 /* README_en.md */; };
-		7463302622AE6A6500494815 /* CRLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7463302522AE6A6500494815 /* CRLineView.m */; };
-		7463304222AE74B000494815 /* CRBoxInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7463303922AE74AF00494815 /* CRBoxInputCell.m */; };
-		7463304322AE74B000494815 /* CRBoxInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7463303A22AE74AF00494815 /* CRBoxInputView.m */; };
-		7463304422AE74B000494815 /* CRBoxFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7463303B22AE74AF00494815 /* CRBoxFlowLayout.m */; };
-		7463304522AE74B000494815 /* CRBoxTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7463303C22AE74AF00494815 /* CRBoxTextView.m */; };
-		7463304622AE74B000494815 /* CRBoxInputCellProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 7463303E22AE74AF00494815 /* CRBoxInputCellProperty.m */; };
-		7463304922AE9EC300494815 /* CRSecrectImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7463304822AE9EC300494815 /* CRSecrectImageView.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		BFDF9DDE5B242B0DDE34239F /* Pods_CRBoxInputView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6ADFEF56775AB54CF91EE82 /* Pods_CRBoxInputView_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -82,20 +75,6 @@
 		74047F7B21E2FA810063A8C0 /* CRListVCCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRListVCCell.h; sourceTree = "<group>"; };
 		74047F7C21E2FA810063A8C0 /* CRListVCCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRListVCCell.m; sourceTree = "<group>"; };
 		742C1F2D21E6F48200C15F31 /* README_en.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README_en.md; path = ../README_en.md; sourceTree = "<group>"; };
-		7463302422AE6A6500494815 /* CRLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRLineView.h; sourceTree = "<group>"; };
-		7463302522AE6A6500494815 /* CRLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRLineView.m; sourceTree = "<group>"; };
-		7463303822AE74AF00494815 /* CRBoxInputCellProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBoxInputCellProperty.h; sourceTree = "<group>"; };
-		7463303922AE74AF00494815 /* CRBoxInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBoxInputCell.m; sourceTree = "<group>"; };
-		7463303A22AE74AF00494815 /* CRBoxInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBoxInputView.m; sourceTree = "<group>"; };
-		7463303B22AE74AF00494815 /* CRBoxFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBoxFlowLayout.m; sourceTree = "<group>"; };
-		7463303C22AE74AF00494815 /* CRBoxTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBoxTextView.m; sourceTree = "<group>"; };
-		7463303D22AE74AF00494815 /* CRBoxInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBoxInputCell.h; sourceTree = "<group>"; };
-		7463303E22AE74AF00494815 /* CRBoxInputCellProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBoxInputCellProperty.m; sourceTree = "<group>"; };
-		7463303F22AE74AF00494815 /* CRBoxInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBoxInputView.h; sourceTree = "<group>"; };
-		7463304022AE74AF00494815 /* CRBoxFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBoxFlowLayout.h; sourceTree = "<group>"; };
-		7463304122AE74AF00494815 /* CRBoxTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBoxTextView.h; sourceTree = "<group>"; };
-		7463304722AE9EC300494815 /* CRSecrectImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRSecrectImageView.h; sourceTree = "<group>"; };
-		7463304822AE9EC300494815 /* CRSecrectImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRSecrectImageView.m; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0D464B33EF181564FFD5FE5 /* Pods-CRBoxInputView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRBoxInputView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CRBoxInputView_Tests/Pods-CRBoxInputView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B1646978CFC5DDBCFF7854C6 /* Pods-CRBoxInputView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRBoxInputView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CRBoxInputView_Tests/Pods-CRBoxInputView_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -191,7 +170,6 @@
 				74047F7C21E2FA810063A8C0 /* CRListVCCell.m */,
 				74047F7821E2F9990063A8C0 /* CRDetailViewController.h */,
 				74047F7921E2F9990063A8C0 /* CRDetailViewController.m */,
-				7463303722AE74AF00494815 /* CRBoxInputView */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -239,27 +217,6 @@
 				102FB0EBE9C9927E3B313409 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
-			sourceTree = "<group>";
-		};
-		7463303722AE74AF00494815 /* CRBoxInputView */ = {
-			isa = PBXGroup;
-			children = (
-				7463303822AE74AF00494815 /* CRBoxInputCellProperty.h */,
-				7463303E22AE74AF00494815 /* CRBoxInputCellProperty.m */,
-				7463303F22AE74AF00494815 /* CRBoxInputView.h */,
-				7463303A22AE74AF00494815 /* CRBoxInputView.m */,
-				7463303D22AE74AF00494815 /* CRBoxInputCell.h */,
-				7463303922AE74AF00494815 /* CRBoxInputCell.m */,
-				7463304022AE74AF00494815 /* CRBoxFlowLayout.h */,
-				7463303B22AE74AF00494815 /* CRBoxFlowLayout.m */,
-				7463304122AE74AF00494815 /* CRBoxTextView.h */,
-				7463303C22AE74AF00494815 /* CRBoxTextView.m */,
-				7463302422AE6A6500494815 /* CRLineView.h */,
-				7463302522AE6A6500494815 /* CRLineView.m */,
-				7463304722AE9EC300494815 /* CRSecrectImageView.h */,
-				7463304822AE9EC300494815 /* CRSecrectImageView.m */,
-			);
-			path = CRBoxInputView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,6 +349,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-CRBoxInputView_Example/Pods-CRBoxInputView_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/BearSkill/BearSkill.framework",
+				"${BUILT_PRODUCTS_DIR}/CRBoxInputView/CRBoxInputView.framework",
 				"${BUILT_PRODUCTS_DIR}/GBDeviceInfo/GBDeviceInfo.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
@@ -403,6 +361,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BearSkill.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CRBoxInputView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GBDeviceInfo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
@@ -441,19 +400,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				74047F7D21E2FA810063A8C0 /* CRListVCCell.m in Sources */,
-				7463304422AE74B000494815 /* CRBoxFlowLayout.m in Sources */,
-				7463304622AE74B000494815 /* CRBoxInputCellProperty.m in Sources */,
 				74047F7021E2F6850063A8C0 /* CRConstant.m in Sources */,
 				74047F7721E2F7BE0063A8C0 /* CRBoxInputModel.m in Sources */,
-				7463302622AE6A6500494815 /* CRLineView.m in Sources */,
-				7463304222AE74B000494815 /* CRBoxInputCell.m in Sources */,
-				7463304522AE74B000494815 /* CRBoxTextView.m in Sources */,
 				74047F7A21E2F9990063A8C0 /* CRDetailViewController.m in Sources */,
 				6003F59E195388D20070C39A /* CRAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* CRListViewController.m in Sources */,
-				7463304322AE74B000494815 /* CRBoxInputView.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				7463304922AE9EC300494815 /* CRSecrectImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

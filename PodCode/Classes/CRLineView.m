@@ -7,6 +7,7 @@
 //
 
 #import "CRLineView.h"
+#import <Masonry/Masonry.h>
 
 @interface CRLineView()
 {
@@ -31,14 +32,14 @@
     
     _lineView = [UIView new];
     [self addSubview:_lineView];
-    _lineView.backgroundColor = color_master;
+    _lineView.backgroundColor = [UIColor blackColor];
     _lineView.layer.cornerRadius = sepLineViewHeight / 2.0;
     [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(sepLineViewHeight);
         make.left.right.bottom.offset(0);
     }];
     
-    _lineView.layer.shadowColor = [color_master colorWithAlphaComponent:0.2].CGColor;
+    _lineView.layer.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:0.2].CGColor;
     _lineView.layer.shadowOpacity = 1;
     _lineView.layer.shadowOffset = CGSizeMake(0, 2);
     _lineView.layer.shadowRadius = 4;

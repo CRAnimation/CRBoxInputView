@@ -7,6 +7,7 @@
 //
 
 #import "CRSecrectImageView.h"
+#import <Masonry/Masonry.h>
 
 @interface CRSecrectImageView()
 {
@@ -33,8 +34,8 @@
     [_lockImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.offset(0);
         make.centerY.offset(0);
-        make.width.mas_equalTo(XX_6(23));
-        make.height.mas_equalTo(XX_6(27));
+        make.width.mas_equalTo(23);
+        make.height.mas_equalTo(27);
     }];
 }
 

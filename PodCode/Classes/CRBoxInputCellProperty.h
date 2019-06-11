@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CRLineView.h"
+#import <CRBoxInputView/CRLineView.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
