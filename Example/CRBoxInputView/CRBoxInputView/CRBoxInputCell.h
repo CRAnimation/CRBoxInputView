@@ -29,6 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (strong, nonatomic) CRBoxInputCellProperty *boxInputCellProperty;
 
+// You can inherit and rewrite
+- (UIView *)createCustomSecurityView __deprecated_msg("Please use `customSecurityViewBlock` in CRBoxInputCellProperty.");
+
 @end
 
 NS_ASSUME_NONNULL_END
