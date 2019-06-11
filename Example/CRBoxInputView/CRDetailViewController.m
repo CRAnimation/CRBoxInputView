@@ -278,6 +278,18 @@
     cellProperty.cellFont = [UIFont boldSystemFontOfSize:24];
     cellProperty.cellTextColor = color_master;
     cellProperty.showLine = YES;
+    cellProperty.customLineViewBlock = ^CRLineView * _Nonnull{
+        CRLineView *lineView = [CRLineView new];
+        lineView.lineView.backgroundColor = [UIColor orangeColor];
+        [lineView.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(10);
+            make.width.mas_equalTo(30);
+            make.bottom.offset(0);
+            make.centerX.offset(0);
+        }];
+        
+        return lineView;
+    };
     
     CRBoxInputView *_boxInputView = [CRBoxInputView new];
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));

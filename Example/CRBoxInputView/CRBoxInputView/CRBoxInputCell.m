@@ -208,7 +208,7 @@
         _lineView = _boxInputCellProperty.customLineViewBlock();
         [self.contentView addSubview:_lineView];
         [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.bottom.offset(0);
+            make.left.right.bottom.top.offset(0);
         }];
     }
     

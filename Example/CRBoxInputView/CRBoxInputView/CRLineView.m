@@ -8,6 +8,12 @@
 
 #import "CRLineView.h"
 
+@interface CRLineView()
+{
+    
+}
+@end
+
 @implementation CRLineView
 
 - (instancetype)init
@@ -23,16 +29,19 @@
 {
     static CGFloat sepLineViewHeight = 4;
     
-    self.backgroundColor = color_master;
-    self.layer.cornerRadius = sepLineViewHeight / 2.0;
-    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+    _lineView = [UIView new];
+    [self addSubview:_lineView];
+    _lineView.backgroundColor = color_master;
+    _lineView.layer.cornerRadius = sepLineViewHeight / 2.0;
+    [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(sepLineViewHeight);
+        make.left.right.bottom.offset(0);
     }];
     
-    self.layer.shadowColor = [color_master colorWithAlphaComponent:0.2].CGColor;
-    self.layer.shadowOpacity = 1;
-    self.layer.shadowOffset = CGSizeMake(0, 2);
-    self.layer.shadowRadius = 4;
+    _lineView.layer.shadowColor = [color_master colorWithAlphaComponent:0.2].CGColor;
+    _lineView.layer.shadowOpacity = 1;
+    _lineView.layer.shadowOffset = CGSizeMake(0, 2);
+    _lineView.layer.shadowRadius = 4;
 }
 
 @end
