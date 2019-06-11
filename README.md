@@ -104,7 +104,7 @@ boxInputView.customCellProperty = cellProperty;
 ![Line.png](/ReadmeResources/3Line.png "Line.png")
 ``` objc
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
-cellProperty.showLine = YES;//必需
+cellProperty.showLine = YES; //必需
 cellProperty.customLineViewBlock = ^CRLineView * _Nonnull{
     CRLineView *lineView = [CRLineView new];
     lineView.lineView.backgroundColor = color_master;
@@ -114,7 +114,7 @@ cellProperty.customLineViewBlock = ^CRLineView * _Nonnull{
     }];
 
     return lineView;
-};//可选
+}; //可选
 
 CRBoxInputView *boxInputView = [CRBoxInputView new];
 boxInputView.customCellProperty = cellProperty;
@@ -129,10 +129,10 @@ boxInputView.customCellProperty = cellProperty;
 
 ``` objc
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
-cellProperty.securitySymbol = @"*";//可选
+cellProperty.securitySymbol = @"*"; //可选
 
 CRBoxInputView *boxInputView = [CRBoxInputView new];
-boxInputView.ifNeedSecurity = YES;//必需
+boxInputView.ifNeedSecurity = YES; //必需
 boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
@@ -144,7 +144,7 @@ boxInputView.customCellProperty = cellProperty;
 ![SecretImage.png](/ReadmeResources/5SecretImage.png "SecretImage.png")
 ``` objc
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
-cellProperty.securityType = CRBoxSecurityCustomViewType;//必需
+cellProperty.securityType = CRBoxSecurityCustomViewType; //必需
 cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
     CRSecrectImageView *secrectImageView = [CRSecrectImageView new];
     secrectImageView.image = [UIImage imageNamed:@"smallLock"];
@@ -152,10 +152,10 @@ cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
     secrectImageView.imageHeight = 27;
     
     return secrectImageView;
-};//必需
+}; //必需
 
 CRBoxInputView *boxInputView = [CRBoxInputView new];
-boxInputView.ifNeedSecurity = YES;//必需
+boxInputView.ifNeedSecurity = YES; //必需
 boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
@@ -167,7 +167,7 @@ boxInputView.customCellProperty = cellProperty;
 ![SecretView.png](/ReadmeResources/6SecretView.png "SecretView.png")
 ``` objc
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
-cellProperty.securityType = CRBoxSecurityCustomViewType;//必需
+cellProperty.securityType = CRBoxSecurityCustomViewType; //必需
 cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
     UIView *customSecurityView = [UIView new];
     customSecurityView.backgroundColor = [UIColor clearColor];
@@ -185,10 +185,10 @@ cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
     }];
 
     return customSecurityView;
-};//可选
+}; //可选
 
 CRBoxInputView *boxInputView = [CRBoxInputView new];
-boxInputView.ifNeedSecurity = YES;//必需
+boxInputView.ifNeedSecurity = YES; //必需
 boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```

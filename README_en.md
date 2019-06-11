@@ -54,6 +54,7 @@ Insert code where you need.
 ``` objc
 CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
 boxInputView.codeLength = 4;
+boxInputView.keyBoardType = UIKeyboardTypeNumberPad;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES]; // BeginEdit: If need begin edit.
 [self.view addSubview:boxInputView];
 
@@ -67,6 +68,7 @@ NSLog(@"textValue:%@", boxInputView.textValue);
 
 // Clear all
 [boxInputView clearAllWithBeginEdit:YES]; // BeginEdit: If need begin edit after clear all.
+
 ```
 
 
@@ -74,43 +76,28 @@ NSLog(@"textValue:%@", boxInputView.textValue);
 
 ### <a id="Anchor_CustomBox"></a>CustomBox
 ![CustomBox.png](/ReadmeResources/2CustomBox.png "CustomBox.png")
-#### Step1:
-Create custom class [reference here.](#Create_custom_class)
-#### Step2:
-modify **CRBoxInputCell_Custom** class inherit from `CRBoxInputCell`.m file
-``` objc
-- (instancetype)initWithFrame:(CGRect)frame
-{
-self = [super initWithFrame:frame];
-
-if (self) {
-self.layer.shadowColor = [color_master colorWithAlphaComponent:0.2].CGColor;
-self.layer.shadowOpacity = 1;
-self.layer.shadowOffset = CGSizeMake(0, 2);
-self.layer.shadowRadius = 4;
-}
-
-return self;
-}
-```
-#### Step3:
-Insert code where you need.
 ``` objc
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.cellBgColorNormal = color_FFECEC;
 cellProperty.cellBgColorSelected = [UIColor whiteColor];
 cellProperty.cellCursorColor = color_master;
 cellProperty.cellCursorWidth = 2;
-cellProperty.cellCursorHeight = YY_6(27);
+cellProperty.cellCursorHeight = 30;
 cellProperty.cornerRadius = 4;
 cellProperty.borderWidth = 0;
 cellProperty.cellFont = [UIFont boldSystemFontOfSize:24];
 cellProperty.cellTextColor = color_master;
+cellProperty.configCellShadowBlock = ^(CALayer * _Nonnull layer) {
+    layer.shadowColor = [color_master colorWithAlphaComponent:0.2].CGColor;
+    layer.shadowOpacity = 1;
+    layer.shadowOffset = CGSizeMake(0, 2);
+    layer.shadowRadius = 4;
+};
 
-CRBoxInputView_Custom *boxInputView = [[CRBoxInputView_Custom alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
+CRBoxInputView *boxInputView = [CRBoxInputView new];
 boxInputView.boxFlowLayout.itemSize = CGSizeMake(50, 50);
 boxInputView.customCellProperty = cellProperty;
-[boxInputView loadAndPrepareView];
+[boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
 
 
@@ -118,47 +105,23 @@ boxInputView.customCellProperty = cellProperty;
 
 ### <a id="Anchor_Line"></a>Line
 ![Line.png](/ReadmeResources/3Line.png "Line.png")
-#### Step1:
-Create custom class [reference here.](#Create_custom_class)
-#### Step2:
-modify **CRBoxInputCell_Custom** class inherit from `CRBoxInputCell`.m file
 ``` objc
-- (instancetype)initWithFrame:(CGRect)frame
-{
-self = [super initWithFrame:frame];
+CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
+cellProperty.showLine = YES; //Required
+cellProperty.customLineViewBlock = ^CRLineView * _Nonnull{
+    CRLineView *lineView = [CRLineView new];
+    lineView.lineView.backgroundColor = color_master;
+    [lineView.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(4);
+        make.left.right.bottom.offset(0);
+    }];
 
-if (self) {
-[self addSepLineView];
-}
+    return lineView;
+}; //Optional
 
-return self;
-}
-
-- (void)addSepLineView
-{
-static CGFloat sepLineViewHeight = 4;
-
-UIView *_sepLineView = [UIView new];
-_sepLineView.backgroundColor = color_master;
-_sepLineView.layer.cornerRadius = sepLineViewHeight / 2.0;
-[self.contentView addSubview:_sepLineView];
-[_sepLineView mas_makeConstraints:^(MASConstraintMaker *make) {
-make.left.right.bottom.offset(0);
-make.height.mas_equalTo(sepLineViewHeight);
-}];
-
-_sepLineView.layer.shadowColor = [color_master colorWithAlphaComponent:0.2].CGColor;
-_sepLineView.layer.shadowOpacity = 1;
-_sepLineView.layer.shadowOffset = CGSizeMake(0, 2);
-_sepLineView.layer.shadowRadius = 4;
-}
-```
-#### Step3:
-Insert code where you need.
-``` objc
-CRBoxInputView_Custom *boxInputView = [[CRBoxInputView_Custom alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
-[boxInputView loadAndPrepareView];
-[self.view addSubview:boxInputView];
+CRBoxInputView *boxInputView = [CRBoxInputView new];
+boxInputView.customCellProperty = cellProperty;
+[boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
 
 
@@ -170,13 +133,12 @@ CRBoxInputView_Custom *boxInputView = [[CRBoxInputView_Custom alloc] initWithFra
 Insert code where you need.
 ``` objc
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
-cellProperty.securitySymbol = @"*";
+cellProperty.securitySymbol = @"*"; //Optional
 
-CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
-boxInputView.ifNeedSecurity = YES;
+CRBoxInputView *boxInputView = [CRBoxInputView new];
+boxInputView.ifNeedSecurity = YES; //Required
 boxInputView.customCellProperty = cellProperty;
-[boxInputView loadAndPrepareView];
-[self.view addSubview:boxInputView];
+[boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
 
 
@@ -184,37 +146,22 @@ boxInputView.customCellProperty = cellProperty;
 
 ### <a id="Anchor_SecretImage"></a>SecretImage
 ![SecretImage.png](/ReadmeResources/5SecretImage.png "SecretImage.png")
-#### Step1:
-Create custom class [reference here.](#Create_custom_class)
-#### Step2:
-modify **CRBoxInputCell_Custom** class inherit from `CRBoxInputCell`.m file
 ``` objc
-// Rewrite custom security view in here
-- (UIView *)createCustomSecurityView
-{
-UIView *customSecurityView = [UIView new];
+CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
+cellProperty.securityType = CRBoxSecurityCustomViewType; //Required
+cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
+    CRSecrectImageView *secrectImageView = [CRSecrectImageView new];
+    secrectImageView.image = [UIImage imageNamed:@"smallLock"];
+    secrectImageView.imageWidth = 23;
+    secrectImageView.imageHeight = 27;
 
-UIImageView *_lockImgView = [UIImageView new];
-_lockImgView.image = [UIImage imageNamed:@"smallLock"];
-[customSecurityView addSubview:_lockImgView];
-[_lockImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-make.centerX.offset(0);
-make.centerY.offset(0);
-make.width.mas_equalTo(XX_6(23));
-make.height.mas_equalTo(XX_6(27));
-}];
+    return secrectImageView;
+}; //Required
 
-return customSecurityView;
-}
-```
-#### Step3:
-Insert code where you need.
-``` objc
-CRBoxInputView_Custom *boxInputView = [[CRBoxInputView_Custom *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
-alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
-boxInputView.ifNeedSecurity = YES;
-[boxInputView loadAndPrepareView];
-[self.view addSubview:boxInputView];
+CRBoxInputView *boxInputView = [CRBoxInputView new];
+boxInputView.ifNeedSecurity = YES; //Required
+boxInputView.customCellProperty = cellProperty;
+[boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
 
 
@@ -222,147 +169,113 @@ boxInputView.ifNeedSecurity = YES;
 
 ### <a id="Anchor_SecretView"></a>SecretView
 ![SecretView.png](/ReadmeResources/6SecretView.png "SecretView.png")
-#### Step1:
-Create custom class [reference here.](#Create_custom_class)
-#### Step2:
-modify **CRBoxInputCell_Custom** class inherit from `CRBoxInputCell`.m file
 ``` objc
-// Rewrite custom security view in here
-- (UIView *)createCustomSecurityView
-{
-UIView *customSecurityView = [UIImageView new];
+CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
+cellProperty.securityType = CRBoxSecurityCustomViewType; //Required
+cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
+    UIView *customSecurityView = [UIView new];
+    customSecurityView.backgroundColor = [UIColor clearColor];
 
-UIView *rectangleView = [UIView new];
-rectangleView.layer.cornerRadius = 4;
-rectangleView.backgroundColor = color_master;
-[customSecurityView addSubview:rectangleView];
-[rectangleView mas_makeConstraints:^(MASConstraintMaker *make) {
-make.centerX.offset(0);
-make.centerY.offset(0);
-make.width.height.mas_equalTo(XX_6(24));
-}];
+    // circleView
+    static CGFloat circleViewWidth = 20;
+    UIView *circleView = [UIView new];
+    circleView.backgroundColor = color_master;
+    circleView.layer.cornerRadius = 4;
+    [customSecurityView addSubview:circleView];
+    [circleView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.mas_equalTo(circleViewWidth);
+        make.centerX.offset(0);
+        make.centerY.offset(0);
+    }];
 
-rectangleView.layer.shadowColor = [color_master colorWithAlphaComponent:0.2].CGColor;
-rectangleView.layer.shadowOpacity = 1;
-rectangleView.layer.shadowOffset = CGSizeMake(0, 2);
-rectangleView.layer.shadowRadius = 4;
+    return customSecurityView;
+}; //Optional
 
-return customSecurityView;
-}
-```
-#### Step3:
-Insert code where you need.
-``` objc
-CRBoxInputView_Custom *boxInputView = [[CRBoxInputView_Custom *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
-alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
-boxInputView.ifNeedSecurity = YES;
-[boxInputView loadAndPrepareView];
-[self.view addSubview:boxInputView];
+CRBoxInputView *boxInputView = [CRBoxInputView new];
+boxInputView.ifNeedSecurity = YES; //Required
+boxInputView.customCellProperty = cellProperty;
+[boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
 
 
 <br/>
 
-### <a id="Create_custom_class"></a>Create custom class
-#### Step1:
-Create **CRBoxInputView_Custom** inherit from `CRBoxInputView`.
-.h file
-``` objc
-#import "CRBoxInputView.h"
-
-@interface CRBoxInputView_Custom : CRBoxInputView
-@end
-```
-.m file
-``` objc
-#import "CRBoxInputView_Custom.h"
-#import "CRBoxInputCell_Custom.h"
-
-@implementation CRBoxInputView_Custom
-
-- (void)initDefaultValue
-{
-[super initDefaultValue];
-
-// CollectionView Register Class
-[[self mainCollectionView] registerClass:[CRBoxInputCell_Custom class] forCellWithReuseIdentifier:CRBoxInputCell_CustomID];
-}
-
-// Rewrite this method
-- (CRBoxInputCell_Custom *)customCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-CRBoxInputCell_Custom *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CRBoxInputCell_CustomID forIndexPath:indexPath];
-return cell;
-}
-
-@end
-```
-
-#### Step2:
-Create **CRBoxInputCell_Custom** inherit from `CRBoxInputCell`.
-And define yourself cellId.
-.h file
-``` objc
-#import "CRBoxInputView.h"
-
-// Define yourself cellId
-#define CRBoxInputCell_CustomID @"CRBoxInputCell_CustomID"
-
-@interface CRBoxInputCell_Custom : CRBoxInputCell
-@end
-```
-.m file
-``` objc
-#import "CRBoxInputCell_Custom.h"
-
-@implementation CRBoxInputCell_Custom
-
-- (instancetype)initWithFrame:(CGRect)frame
-{
-self = [super initWithFrame:frame];
-
-if (self) {
-// You can code here
-}
-
-return self;
-}
-
-// You can create custom security view in here
-- (UIView *)createCustomSecurityView
-{
-UIView *customSecurityView = [UIView new];
-return customSecurityView;
-}
-
-@end
-```
-
 ## Properties And Functions
 `CRBoxInputCellProperty` class
 ``` objc
-// UI
-self.cellBorderColorNormal = [UIColor colorWithRed:228/255.0 green:228/255.0 blue:228/255.0 alpha:1];
-self.cellBorderColorSelected = [UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1];
-self.cellBorderColorFilled = nil;
-self.cellBgColorNormal = [UIColor whiteColor];
-self.cellBgColorSelected = [UIColor whiteColor];
-self.cellBgColorFilled = nil;
-self.cellCursorColor = [UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1];
-self.cellCursorWidth = 2;
-self.cellCursorHeight = 32;
-self.cornerRadius = 4;
-self.borderWidth = (0.5);
+#pragma mark - UI
+/**
+borderWidth
+default：0.5
+*/
+@property (assign, nonatomic) CGFloat borderWidth;
 
-// label
-self.cellFont = [UIFont systemFontOfSize:20];
-self.cellTextColor = [UIColor blackColor];
+/**
+cell border color
+state：while not selected
+default：[UIColor colorWithRed:228/255.0 green:228/255.0 blue:228/255.0 alpha:1]
+*/
+@property (copy, nonatomic) UIColor *cellBorderColorNormal;
 
-// Security
-self.ifShowSecurity = NO;
-self.securitySymbol = @"✱";
-self.originValue = @"";
-self.securityType = CRBoxSecuritySymbolType;
+/**
+cell border color
+state：while selected
+default：[UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1]
+*/
+@property (copy, nonatomic) UIColor *cellBorderColorSelected;
+
+/**
+cell border color
+state：while not contain text, and not selected
+default：same value with 'cellBorderColorFilled'
+*/
+@property (copy, nonatomic) UIColor *__nullable cellBorderColorFilled;
+
+/**
+cell background color
+state：while not contain text, and not selected
+default：[UIColor whiteColor]
+*/
+@property (copy, nonatomic) UIColor *cellBgColorNormal;
+
+/**
+cell background color
+state：while selected
+default：[UIColor whiteColor]
+*/
+@property (copy, nonatomic) UIColor *cellBgColorSelected;
+
+/**
+cell background color
+state：while contain text, and not selected
+default：same value with 'cellBgColorFilled'
+*/
+@property (copy, nonatomic) UIColor *__nullable cellBgColorFilled;
+
+
+/**
+cellCursorColor
+default： [UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1]
+*/
+@property (copy, nonatomic) UIColor *cellCursorColor;
+
+/**
+cellCursorWidth
+default： 2
+*/
+@property (assign, nonatomic) CGFloat cellCursorWidth;
+
+/**
+cellCursorHeight
+default： 32
+*/
+@property (assign, nonatomic) CGFloat cellCursorHeight;
+
+/**
+cornerRadius
+default： 4
+*/
+@property (assign, nonatomic) CGFloat cornerRadius;
 ```
 
 `CRBoxFlowLayout` class
