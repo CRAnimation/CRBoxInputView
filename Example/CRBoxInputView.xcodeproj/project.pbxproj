@@ -296,28 +296,44 @@
 		7463304A22AF317C00494815 /* early */ = {
 			isa = PBXGroup;
 			children = (
+				7463306922AF31DA00494815 /* CustomBox */,
+				7463306A22AF329E00494815 /* line */,
 				7463304B22AF317C00494815 /* CRBoxInputCell_SecretView.m */,
 				7463304C22AF317C00494815 /* CRBoxInputCell_SecretSymbol.m */,
 				7463304D22AF317C00494815 /* CRBoxInputView_SecretImage.m */,
 				7463304E22AF317C00494815 /* CRBoxInputCell_SecretImage.h */,
-				7463304F22AF317C00494815 /* CRBoxInputCell_CustomBox.m */,
-				7463305022AF317C00494815 /* CRBoxInputView_Line.m */,
 				7463305122AF317C00494815 /* CRBoxInputView_SecretView.h */,
-				7463305222AF317C00494815 /* CRBoxInputView_CustomBox.m */,
 				7463305322AF317C00494815 /* CRBoxInputView_SecretSymbol.h */,
-				7463305422AF317C00494815 /* CRBoxInputCell_Line.h */,
 				7463305522AF317C00494815 /* CRBoxInputView_SecretImage.h */,
 				7463305622AF317C00494815 /* CRBoxInputCell_SecretSymbol.h */,
 				7463305722AF317C00494815 /* CRBoxInputCell_SecretView.h */,
-				7463305822AF317C00494815 /* CRBoxInputView_Line.h */,
-				7463305922AF317C00494815 /* CRBoxInputCell_CustomBox.h */,
 				7463305A22AF317C00494815 /* CRBoxInputCell_SecretImage.m */,
 				7463305B22AF317C00494815 /* CRBoxInputView_SecretView.m */,
-				7463305C22AF317C00494815 /* CRBoxInputCell_Line.m */,
 				7463305D22AF317C00494815 /* CRBoxInputView_SecretSymbol.m */,
-				7463305E22AF317C00494815 /* CRBoxInputView_CustomBox.h */,
 			);
 			path = early;
+			sourceTree = "<group>";
+		};
+		7463306922AF31DA00494815 /* CustomBox */ = {
+			isa = PBXGroup;
+			children = (
+				7463305E22AF317C00494815 /* CRBoxInputView_CustomBox.h */,
+				7463305222AF317C00494815 /* CRBoxInputView_CustomBox.m */,
+				7463305922AF317C00494815 /* CRBoxInputCell_CustomBox.h */,
+				7463304F22AF317C00494815 /* CRBoxInputCell_CustomBox.m */,
+			);
+			path = CustomBox;
+			sourceTree = "<group>";
+		};
+		7463306A22AF329E00494815 /* line */ = {
+			isa = PBXGroup;
+			children = (
+				7463305822AF317C00494815 /* CRBoxInputView_Line.h */,
+				7463305022AF317C00494815 /* CRBoxInputView_Line.m */,
+				7463305422AF317C00494815 /* CRBoxInputCell_Line.h */,
+				7463305C22AF317C00494815 /* CRBoxInputCell_Line.m */,
+			);
+			path = line;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -190,12 +190,12 @@
 - (UIView *)customSecurityView
 {
     if (!_customSecurityView) {
-        NSAssert(_boxInputCellProperty.customSecurityViewBlock, @"customSecurityViewBlock can not be null！");
         // Compatiable for 0.19 verion and earlier.
         if ([self respondsToSelector:@selector(createCustomSecurityView)]) {
             _customSecurityView = [self createCustomSecurityView];
         }
         else if(_boxInputCellProperty.customSecurityViewBlock){
+            NSAssert(_boxInputCellProperty.customSecurityViewBlock, @"customSecurityViewBlock can not be null！");
             _customSecurityView = _boxInputCellProperty.customSecurityViewBlock();
         }
     }

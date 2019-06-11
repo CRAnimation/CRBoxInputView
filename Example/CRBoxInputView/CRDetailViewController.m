@@ -11,6 +11,10 @@
 #import "CRLineView.h"
 #import "CRSecrectImageView.h"
 
+
+#import "CRBoxInputView_CustomBox.h"
+#import "CRBoxInputView_Line.h"
+
 @interface CRDetailViewController ()
 {
     UIButton *_backBtn;
@@ -239,7 +243,35 @@
 }
 
 #pragma mark - CustomBox
-- (CRBoxInputView *)generateBoxInputView_customBox
+//- (CRBoxInputView *)generateBoxInputView_customBox
+//{
+//    CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
+//    cellProperty.cellBgColorNormal = color_FFECEC;
+//    cellProperty.cellBgColorSelected = [UIColor whiteColor];
+//    cellProperty.cellCursorColor = color_master;
+//    cellProperty.cellCursorWidth = 2;
+//    cellProperty.cellCursorHeight = YY_6(27);
+//    cellProperty.cornerRadius = 4;
+//    cellProperty.borderWidth = 0;
+//    cellProperty.cellFont = [UIFont boldSystemFontOfSize:24];
+//    cellProperty.cellTextColor = color_master;
+//    cellProperty.configCellShadowBlock = ^(CALayer * _Nonnull layer) {
+//        layer.shadowColor = [color_master colorWithAlphaComponent:0.2].CGColor;
+//        layer.shadowOpacity = 1;
+//        layer.shadowOffset = CGSizeMake(0, 2);
+//        layer.shadowRadius = 4;
+//    };
+//
+//    CRBoxInputView *_boxInputView = [CRBoxInputView new];
+//    _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
+//    _boxInputView.customCellProperty = cellProperty;
+//    [_boxInputView loadAndPrepareView];
+//
+//    return _boxInputView;
+//}
+
+// early
+- (CRBoxInputView_CustomBox *)generateBoxInputView_customBox
 {
     CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
     cellProperty.cellBgColorNormal = color_FFECEC;
@@ -251,14 +283,14 @@
     cellProperty.borderWidth = 0;
     cellProperty.cellFont = [UIFont boldSystemFontOfSize:24];
     cellProperty.cellTextColor = color_master;
-    cellProperty.configCellShadowBlock = ^(CALayer * _Nonnull layer) {
-        layer.shadowColor = [color_master colorWithAlphaComponent:0.2].CGColor;
-        layer.shadowOpacity = 1;
-        layer.shadowOffset = CGSizeMake(0, 2);
-        layer.shadowRadius = 4;
-    };
+//    cellProperty.configCellShadowBlock = ^(CALayer * _Nonnull layer) {
+//        layer.shadowColor = [color_master colorWithAlphaComponent:0.2].CGColor;
+//        layer.shadowOpacity = 1;
+//        layer.shadowOffset = CGSizeMake(0, 2);
+//        layer.shadowRadius = 4;
+//    };
     
-    CRBoxInputView *_boxInputView = [CRBoxInputView new];
+    CRBoxInputView_CustomBox *_boxInputView = [CRBoxInputView_CustomBox new];
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
     [_boxInputView loadAndPrepareView];
@@ -267,7 +299,37 @@
 }
 
 #pragma mark - Line
-- (CRBoxInputView *)generateBoxInputView_line
+//- (CRBoxInputView *)generateBoxInputView_line
+//{
+//    CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
+//    cellProperty.cellCursorColor = color_FFECEC;
+//    cellProperty.cellCursorWidth = 2;
+//    cellProperty.cellCursorHeight = YY_6(27);
+//    cellProperty.cornerRadius = 0;
+//    cellProperty.borderWidth = 0;
+//    cellProperty.cellFont = [UIFont boldSystemFontOfSize:24];
+//    cellProperty.cellTextColor = color_master;
+//    cellProperty.showLine = YES;
+//    cellProperty.customLineViewBlock = ^CRLineView * _Nonnull{
+//        CRLineView *lineView = [CRLineView new];
+//        lineView.lineView.backgroundColor = color_master;
+//        [lineView.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//            make.height.mas_equalTo(4);
+//            make.left.right.bottom.offset(0);
+//        }];
+//
+//        return lineView;
+//    };
+//
+//    CRBoxInputView *_boxInputView = [CRBoxInputView new];
+//    _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
+//    _boxInputView.customCellProperty = cellProperty;
+//    [_boxInputView loadAndPrepareViewWithBeginEdit:NO];
+//
+//    return _boxInputView;
+//}
+
+- (CRBoxInputView_Line *)generateBoxInputView_line
 {
     CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
     cellProperty.cellCursorColor = color_FFECEC;
@@ -277,19 +339,19 @@
     cellProperty.borderWidth = 0;
     cellProperty.cellFont = [UIFont boldSystemFontOfSize:24];
     cellProperty.cellTextColor = color_master;
-    cellProperty.showLine = YES;
-    cellProperty.customLineViewBlock = ^CRLineView * _Nonnull{
-        CRLineView *lineView = [CRLineView new];
-        lineView.lineView.backgroundColor = color_master;
-        [lineView.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(4);
-            make.left.right.bottom.offset(0);
-        }];
-        
-        return lineView;
-    };
+//    cellProperty.showLine = YES;
+//    cellProperty.customLineViewBlock = ^CRLineView * _Nonnull{
+//        CRLineView *lineView = [CRLineView new];
+//        lineView.lineView.backgroundColor = color_master;
+//        [lineView.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//            make.height.mas_equalTo(4);
+//            make.left.right.bottom.offset(0);
+//        }];
+//
+//        return lineView;
+//    };
     
-    CRBoxInputView *_boxInputView = [CRBoxInputView new];
+    CRBoxInputView_Line *_boxInputView = [CRBoxInputView_Line new];
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
     [_boxInputView loadAndPrepareViewWithBeginEdit:NO];
