@@ -151,11 +151,12 @@ boxInputView.customCellProperty = cellProperty;
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.securityType = CRBoxSecurityCustomViewType;//必需
 cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
-CRSecrectImageView *secrectImageView = [CRSecrectImageView new];
-secrectImageView.image = [UIImage imageNamed:@"smallLock"];
-secrectImageView.imageWidth = 23;
-secrectImageView.imageHeight = 27;
-return secrectImageView;
+    CRSecrectImageView *secrectImageView = [CRSecrectImageView new];
+    secrectImageView.image = [UIImage imageNamed:@"smallLock"];
+    secrectImageView.imageWidth = 23;
+    secrectImageView.imageHeight = 27;
+    
+    return secrectImageView;
 };//可选
 
 CRBoxInputView *boxInputView = [CRBoxInputView new];
