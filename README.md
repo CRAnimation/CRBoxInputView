@@ -48,7 +48,6 @@ pod 'CRBoxInputView', '1.0.0'
 
 ![Normal.png](/ReadmeResources/1Normal.png "Normal.png")
 
-在需要使用的地方插入如下代码
 ``` objc
 CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
 boxInputView.codeLength = 4;// 不设置时，默认4
@@ -74,7 +73,6 @@ NSLog(@"textValue:%@", boxInputView.textValue);
 
 ### <a id="Anchor_CustomBox"></a>CustomBox
 ![CustomBox.png](/ReadmeResources/2CustomBox.png "CustomBox.png")
-#### 使用:
 ``` objc
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.cellBgColorNormal = color_FFECEC;
