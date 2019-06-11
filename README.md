@@ -51,7 +51,8 @@ pod 'CRBoxInputView', '1.0.0'
 在需要使用的地方插入如下代码
 ``` objc
 CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
-boxInputView.codeLength = 4;
+boxInputView.codeLength = 4;// 不设置时，默认4
+boxInputView.keyBoardType = UIKeyboardTypeNumberPad;// 不设置时，默认UIKeyboardTypeNumberPad
 [boxInputView loadAndPrepareViewWithBeginEdit:YES]; // BeginEdit:是否自动启用编辑模式
 [self.view addSubview:boxInputView];
 
@@ -73,43 +74,29 @@ NSLog(@"textValue:%@", boxInputView.textValue);
 
 ### <a id="Anchor_CustomBox"></a>CustomBox
 ![CustomBox.png](/ReadmeResources/2CustomBox.png "CustomBox.png")
-#### Step1:
-[参考这里](#Create_custom_class)来创建自定义类
-#### Step2:
-修改继承自`CRBoxInputCell` 的自定义 **CRBoxInputCell_Custom** 类的 .m 文件
-``` objc
-- (instancetype)initWithFrame:(CGRect)frame
-{
-self = [super initWithFrame:frame];
-
-if (self) {
-self.layer.shadowColor = [color_master colorWithAlphaComponent:0.2].CGColor;
-self.layer.shadowOpacity = 1;
-self.layer.shadowOffset = CGSizeMake(0, 2);
-self.layer.shadowRadius = 4;
-}
-
-return self;
-}
-```
-#### Step3:
-在需要使用的地方插入如下代码
+#### 使用:
 ``` objc
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.cellBgColorNormal = color_FFECEC;
 cellProperty.cellBgColorSelected = [UIColor whiteColor];
 cellProperty.cellCursorColor = color_master;
 cellProperty.cellCursorWidth = 2;
-cellProperty.cellCursorHeight = YY_6(27);
+cellProperty.cellCursorHeight = 30;
 cellProperty.cornerRadius = 4;
 cellProperty.borderWidth = 0;
 cellProperty.cellFont = [UIFont boldSystemFontOfSize:24];
 cellProperty.cellTextColor = color_master;
+cellProperty.configCellShadowBlock = ^(CALayer * _Nonnull layer) {
+layer.shadowColor = [color_master colorWithAlphaComponent:0.2].CGColor;
+layer.shadowOpacity = 1;
+layer.shadowOffset = CGSizeMake(0, 2);
+layer.shadowRadius = 4;
+};
 
-CRBoxInputView_Custom *boxInputView = [[CRBoxInputView_Custom alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
+CRBoxInputView *boxInputView = [CRBoxInputView new];
 boxInputView.boxFlowLayout.itemSize = CGSizeMake(50, 50);
 boxInputView.customCellProperty = cellProperty;
-[boxInputView loadAndPrepareView];
+[boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
 
 
@@ -117,47 +104,24 @@ boxInputView.customCellProperty = cellProperty;
 
 ### <a id="Anchor_Line"></a>Line
 ![Line.png](/ReadmeResources/3Line.png "Line.png")
-#### Step1:
-[参考这里](#Create_custom_class)来创建自定义类
-#### Step2:
-修改继承自`CRBoxInputCell` 的自定义 **CRBoxInputCell_Custom** 类的 .m 文件
+#### 使用:
 ``` objc
-- (instancetype)initWithFrame:(CGRect)frame
-{
-self = [super initWithFrame:frame];
-
-if (self) {
-[self addSepLineView];
-}
-
-return self;
-}
-
-- (void)addSepLineView
-{
-static CGFloat sepLineViewHeight = 4;
-
-UIView *_sepLineView = [UIView new];
-_sepLineView.backgroundColor = color_master;
-_sepLineView.layer.cornerRadius = sepLineViewHeight / 2.0;
-[self.contentView addSubview:_sepLineView];
-[_sepLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
+cellProperty.showLine = YES;//必需
+cellProperty.customLineViewBlock = ^CRLineView * _Nonnull{
+CRLineView *lineView = [CRLineView new];
+lineView.lineView.backgroundColor = color_master;
+[lineView.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
+make.height.mas_equalTo(4);
 make.left.right.bottom.offset(0);
-make.height.mas_equalTo(sepLineViewHeight);
-}];
+}];//可选
 
-_sepLineView.layer.shadowColor = [color_master colorWithAlphaComponent:0.2].CGColor;
-_sepLineView.layer.shadowOpacity = 1;
-_sepLineView.layer.shadowOffset = CGSizeMake(0, 2);
-_sepLineView.layer.shadowRadius = 4;
-}
-```
-#### Step3:
-在需要使用的地方插入如下代码
-``` objc
-CRBoxInputView_Custom *boxInputView = [[CRBoxInputView_Custom alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
-[boxInputView loadAndPrepareView];
-[self.view addSubview:boxInputView];
+return lineView;
+};
+
+CRBoxInputView *boxInputView = [CRBoxInputView new];
+boxInputView.customCellProperty = cellProperty;
+[boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
 
 
@@ -166,16 +130,15 @@ CRBoxInputView_Custom *boxInputView = [[CRBoxInputView_Custom alloc] initWithFra
 ### <a id="Anchor_SecretSymbol"></a>SecretSymbol
 ![SecretSymbol.png](/ReadmeResources/4SecretSymbol.png "SecretSymbol.png")
 
-在需要使用的地方插入如下代码
+#### 使用:
 ``` objc
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
-cellProperty.securitySymbol = @"*";
+cellProperty.securitySymbol = @"*";//可选
 
-CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
-boxInputView.ifNeedSecurity = YES;
+CRBoxInputView *boxInputView = [CRBoxInputView new];
+boxInputView.ifNeedSecurity = YES;//必需
 boxInputView.customCellProperty = cellProperty;
-[boxInputView loadAndPrepareView];
-[self.view addSubview:boxInputView];
+[boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
 
 
@@ -183,37 +146,22 @@ boxInputView.customCellProperty = cellProperty;
 
 ### <a id="Anchor_SecretImage"></a>SecretImage
 ![SecretImage.png](/ReadmeResources/5SecretImage.png "SecretImage.png")
-#### Step1:
-[参考这里](#Create_custom_class)来创建自定义类
-#### Step2:
-修改继承自`CRBoxInputCell` 的自定义 **CRBoxInputCell_Custom** 类的 .m 文件
+#### 使用:
 ``` objc
-// 在这里重写你的security view
-- (UIView *)createCustomSecurityView
-{
-UIView *customSecurityView = [UIView new];
+CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
+cellProperty.securityType = CRBoxSecurityCustomViewType;//必需
+cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
+CRSecrectImageView *secrectImageView = [CRSecrectImageView new];
+secrectImageView.image = [UIImage imageNamed:@"smallLock"];
+secrectImageView.imageWidth = 23;
+secrectImageView.imageHeight = 27;
+return secrectImageView;
+};//可选
 
-UIImageView *_lockImgView = [UIImageView new];
-_lockImgView.image = [UIImage imageNamed:@"smallLock"];
-[customSecurityView addSubview:_lockImgView];
-[_lockImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-make.centerX.offset(0);
-make.centerY.offset(0);
-make.width.mas_equalTo(XX_6(23));
-make.height.mas_equalTo(XX_6(27));
-}];
-
-return customSecurityView;
-}
-```
-#### Step3:
-在需要使用的地方插入如下代码
-``` objc
-CRBoxInputView_Custom *boxInputView = [[CRBoxInputView_Custom *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
-alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
-boxInputView.ifNeedSecurity = YES;
-[boxInputView loadAndPrepareView];
-[self.view addSubview:boxInputView];
+CRBoxInputView *boxInputView = [CRBoxInputView new];
+boxInputView.ifNeedSecurity = YES;//必需
+boxInputView.customCellProperty = cellProperty;
+[boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
 
 
@@ -221,121 +169,37 @@ boxInputView.ifNeedSecurity = YES;
 
 ### <a id="Anchor_SecretView"></a>SecretView
 ![SecretView.png](/ReadmeResources/6SecretView.png "SecretView.png")
-#### Step1:
-[参考这里](#Create_custom_class)来创建自定义类
-#### Step2:
-修改继承自`CRBoxInputCell` 的自定义 **CRBoxInputCell_Custom** 类的 .m 文件
+#### 使用:
 ``` objc
-// 在这里重写你的security view
-- (UIView *)createCustomSecurityView
-{
-UIView *customSecurityView = [UIImageView new];
+CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
+cellProperty.securityType = CRBoxSecurityCustomViewType;//必需
+cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
+UIView *customSecurityView = [UIView new];
+customSecurityView.backgroundColor = [UIColor clearColor];
 
-UIView *rectangleView = [UIView new];
-rectangleView.layer.cornerRadius = 4;
-rectangleView.backgroundColor = color_master;
-[customSecurityView addSubview:rectangleView];
-[rectangleView mas_makeConstraints:^(MASConstraintMaker *make) {
+// circleView
+static CGFloat circleViewWidth = 20;
+UIView *circleView = [UIView new];
+circleView.backgroundColor = color_master;
+circleView.layer.cornerRadius = 4;
+[customSecurityView addSubview:circleView];
+[circleView mas_makeConstraints:^(MASConstraintMaker *make) {
+make.width.height.mas_equalTo(circleViewWidth);
 make.centerX.offset(0);
 make.centerY.offset(0);
-make.width.height.mas_equalTo(XX_6(24));
 }];
 
-rectangleView.layer.shadowColor = [color_master colorWithAlphaComponent:0.2].CGColor;
-rectangleView.layer.shadowOpacity = 1;
-rectangleView.layer.shadowOffset = CGSizeMake(0, 2);
-rectangleView.layer.shadowRadius = 4;
-
 return customSecurityView;
-}
-```
-#### Step3:
-在需要使用的地方插入如下代码
-``` objc
-CRBoxInputView_Custom *boxInputView = [[CRBoxInputView_Custom *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
-alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
-boxInputView.ifNeedSecurity = YES;
-[boxInputView loadAndPrepareView];
-[self.view addSubview:boxInputView];
+};//可选
+
+CRBoxInputView *boxInputView = [CRBoxInputView new];
+boxInputView.ifNeedSecurity = YES;//必需
+boxInputView.customCellProperty = cellProperty;
+[boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
 
 
 <br/>
-
-### <a id="Create_custom_class"></a>Create custom class
-#### Step1:
-创建 **CRBoxInputView_Custom** 类，并且继承自 `CRBoxInputView`。
-.h file
-``` objc
-#import "CRBoxInputView.h"
-
-@interface CRBoxInputView_Custom : CRBoxInputView
-@end
-```
-.m file
-``` objc
-#import "CRBoxInputView_Custom.h"
-#import "CRBoxInputCell_Custom.h"
-
-@implementation CRBoxInputView_Custom
-
-- (void)initDefaultValue
-{
-[super initDefaultValue];
-
-// CollectionView 注册 Class
-[[self mainCollectionView] registerClass:[CRBoxInputCell_Custom class] forCellWithReuseIdentifier:CRBoxInputCell_CustomID];
-}
-
-// 重写这个方法
-- (CRBoxInputCell_Custom *)customCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-CRBoxInputCell_Custom *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CRBoxInputCell_CustomID forIndexPath:indexPath];
-return cell;
-}
-
-@end
-```
-
-#### Step2:
-创建 **CRBoxInputCell_Custom** 类，并且继承自 `CRBoxInputCell`。
-并且定义你自己的 cellId。
-.h file
-``` objc
-#import "CRBoxInputView.h"
-
-// 定义你自己的 cellId
-#define CRBoxInputCell_CustomID @"CRBoxInputCell_CustomID"
-
-@interface CRBoxInputCell_Custom : CRBoxInputCell
-@end
-```
-.m file
-``` objc
-#import "CRBoxInputCell_Custom.h"
-
-@implementation CRBoxInputCell_Custom
-
-- (instancetype)initWithFrame:(CGRect)frame
-{
-self = [super initWithFrame:frame];
-
-if (self) {
-// 在此处编写你的代码
-}
-
-return self;
-}
-
-// 你可以在这里创建你的security view
-- (UIView *)createCustomSecurityView
-{
-UIView *customSecurityView = [UIView new];
-return customSecurityView;
-}
-
-@end
-```
 
 ## 属性和方法
 `CRBoxInputCellProperty` class
