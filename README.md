@@ -102,7 +102,6 @@ boxInputView.customCellProperty = cellProperty;
 
 ### <a id="Anchor_Line"></a>Line
 ![Line.png](/ReadmeResources/3Line.png "Line.png")
-#### 使用:
 ``` objc
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.showLine = YES;//必需
@@ -128,7 +127,6 @@ boxInputView.customCellProperty = cellProperty;
 ### <a id="Anchor_SecretSymbol"></a>SecretSymbol
 ![SecretSymbol.png](/ReadmeResources/4SecretSymbol.png "SecretSymbol.png")
 
-#### 使用:
 ``` objc
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.securitySymbol = @"*";//可选
@@ -144,7 +142,6 @@ boxInputView.customCellProperty = cellProperty;
 
 ### <a id="Anchor_SecretImage"></a>SecretImage
 ![SecretImage.png](/ReadmeResources/5SecretImage.png "SecretImage.png")
-#### 使用:
 ``` objc
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.securityType = CRBoxSecurityCustomViewType;//必需
@@ -168,7 +165,6 @@ boxInputView.customCellProperty = cellProperty;
 
 ### <a id="Anchor_SecretView"></a>SecretView
 ![SecretView.png](/ReadmeResources/6SecretView.png "SecretView.png")
-#### 使用:
 ``` objc
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.securityType = CRBoxSecurityCustomViewType;//必需
