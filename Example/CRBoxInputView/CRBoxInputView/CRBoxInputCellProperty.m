@@ -19,6 +19,7 @@
         __weak typeof(self) weakSelf = self;
         
         // UI
+        self.borderWidth = (0.5);
         self.cellBorderColorNormal = [UIColor colorWithRed:228/255.0 green:228/255.0 blue:228/255.0 alpha:1];
         self.cellBorderColorSelected = [UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1];
         self.cellBorderColorFilled = nil;
@@ -29,7 +30,6 @@
         self.cellCursorWidth = 2;
         self.cellCursorHeight = 32;
         self.cornerRadius = 4;
-        self.borderWidth = (0.5);
         
         // line
         self.showLine = NO;
@@ -65,6 +65,7 @@
     CRBoxInputCellProperty *copy = [[self class] allocWithZone:zone];
     
     // UI
+    copy.borderWidth = _borderWidth;
     copy.cellBorderColorNormal = [_cellBorderColorNormal copy];
     copy.cellBorderColorSelected = [_cellBorderColorSelected copy];
     if (_cellBorderColorFilled) {
@@ -79,7 +80,6 @@
     copy.cellCursorWidth = _cellCursorWidth;
     copy.cellCursorHeight = _cellCursorHeight;
     copy.cornerRadius = _cornerRadius;
-    copy.borderWidth = _borderWidth;
     
     // line
     copy.showLine = _showLine;

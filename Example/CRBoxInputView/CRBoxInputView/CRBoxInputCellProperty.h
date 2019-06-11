@@ -22,38 +22,100 @@ typedef void(^ConfigCellShadowBlock)(CALayer *layer);
 
 @interface CRBoxInputCellProperty : NSObject <NSCopying>
 
-// UI
-@property (copy, nonatomic) UIColor *cellBorderColorNormal;
-@property (copy, nonatomic) UIColor *cellBorderColorSelected;
-@property (copy, nonatomic) UIColor *__nullable cellBorderColorFilled;
-@property (copy, nonatomic) UIColor *cellBgColorNormal;
-@property (copy, nonatomic) UIColor *cellBgColorSelected;
-@property (copy, nonatomic) UIColor *__nullable cellBgColorFilled;
-@property (copy, nonatomic) UIColor *cellCursorColor; //光标颜色
-@property (assign, nonatomic) CGFloat cellCursorWidth;
-@property (assign, nonatomic) CGFloat cellCursorHeight;
-@property (assign, nonatomic) CGFloat cornerRadius;
+#pragma mark - UI
+
+/**
+ cell边框宽度
+ 默认：0.5
+ */
 @property (assign, nonatomic) CGFloat borderWidth;
 
-// label
+/**
+ cell边框颜色
+ 状态：未选中状态时
+ 默认：[UIColor colorWithRed:228/255.0 green:228/255.0 blue:228/255.0 alpha:1]
+ */
+@property (copy, nonatomic) UIColor *cellBorderColorNormal;
+
+/**
+ cell边框颜色
+ 状态：选中状态时
+ 默认：[UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1]
+ */
+@property (copy, nonatomic) UIColor *cellBorderColorSelected;
+
+/**
+ cell边框颜色
+ 状态：无填充文字，未选中状态时
+ 默认：与cellBorderColorFilled相同
+ */
+@property (copy, nonatomic) UIColor *__nullable cellBorderColorFilled;
+
+/**
+ cell背景颜色
+ 状态：无填充文字，未选中状态时
+ 默认：[UIColor whiteColor]
+ */
+@property (copy, nonatomic) UIColor *cellBgColorNormal;
+
+/**
+ cell背景颜色
+ 状态：选中状态时
+ 默认：[UIColor whiteColor]
+ */
+@property (copy, nonatomic) UIColor *cellBgColorSelected;
+
+/**
+ cell背景颜色
+ 状态：填充文字后，未选中状态时
+ 默认：与cellBgColorFilled相同
+ */
+@property (copy, nonatomic) UIColor *__nullable cellBgColorFilled;
+
+
+/**
+ 光标颜色
+ 默认： [UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1]
+ */
+@property (copy, nonatomic) UIColor *cellCursorColor;
+
+/**
+ 光标宽度
+ 默认： 2
+ */
+@property (assign, nonatomic) CGFloat cellCursorWidth;
+
+/**
+ 光标高度
+ 默认： 32
+ */
+@property (assign, nonatomic) CGFloat cellCursorHeight;
+
+/**
+ 圆角
+ 默认： 4
+ */
+@property (assign, nonatomic) CGFloat cornerRadius;
+
+#pragma mark - label
 @property (copy, nonatomic) UIFont *cellFont;
 @property (copy, nonatomic) UIColor *cellTextColor;
 
-// line
+#pragma mark - line
 @property (assign, nonatomic) BOOL showLine;
 
-// Security
+#pragma mark - Security
 @property (assign, nonatomic) BOOL ifShowSecurity;
 @property (copy, nonatomic) NSString *securitySymbol;
 @property (copy, nonatomic) NSString *originValue;
 @property (assign, nonatomic) CRBoxSecurityType securityType;
 
-// Block
+#pragma mark - Block
 @property (copy, nonatomic) CustomSecurityViewBlock customSecurityViewBlock;
 @property (copy, nonatomic) CustomLineViewBlock customLineViewBlock;
 @property (copy, nonatomic) ConfigCellShadowBlock __nullable configCellShadowBlock;
 
-// Test
+#pragma mark - Test
 @property (assign, nonatomic) NSInteger index;
 
 @end
