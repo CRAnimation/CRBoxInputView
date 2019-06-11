@@ -18,13 +18,13 @@
 
 
 ## 重大更新！！！
-从1.0.0版本开始，无需通过继承的方式使用。通过`CRBoxInputCellProperty`的对应Block，即可快速自定义需求。
+从1.0.0版本开始，无需通过继承的方式使用。通过设置`CRBoxInputCellProperty`中的对应Block，即可快速自定义需求。
 ``` objc
 customSecurityViewBlock //自定义密文View
-customLineViewBlock //自定义下划线
-configCellShadowBlock //自定义阴影
+customLineViewBlock     //自定义下划线
+configCellShadowBlock   //自定义阴影
 ```
-
+>此更新兼容1.0.0之前的版本
 
 ## Pod安装
 
