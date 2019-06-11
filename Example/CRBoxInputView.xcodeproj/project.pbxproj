@@ -298,18 +298,9 @@
 			children = (
 				7463306922AF31DA00494815 /* CustomBox */,
 				7463306A22AF329E00494815 /* line */,
-				7463304B22AF317C00494815 /* CRBoxInputCell_SecretView.m */,
-				7463304C22AF317C00494815 /* CRBoxInputCell_SecretSymbol.m */,
-				7463304D22AF317C00494815 /* CRBoxInputView_SecretImage.m */,
-				7463304E22AF317C00494815 /* CRBoxInputCell_SecretImage.h */,
-				7463305122AF317C00494815 /* CRBoxInputView_SecretView.h */,
-				7463305322AF317C00494815 /* CRBoxInputView_SecretSymbol.h */,
-				7463305522AF317C00494815 /* CRBoxInputView_SecretImage.h */,
-				7463305622AF317C00494815 /* CRBoxInputCell_SecretSymbol.h */,
-				7463305722AF317C00494815 /* CRBoxInputCell_SecretView.h */,
-				7463305A22AF317C00494815 /* CRBoxInputCell_SecretImage.m */,
-				7463305B22AF317C00494815 /* CRBoxInputView_SecretView.m */,
-				7463305D22AF317C00494815 /* CRBoxInputView_SecretSymbol.m */,
+				7463306B22AF337300494815 /* SecrectSymbol */,
+				7463306C22AF340200494815 /* SecrectImage */,
+				7463306D22AF347B00494815 /* SecrectView */,
 			);
 			path = early;
 			sourceTree = "<group>";
@@ -334,6 +325,39 @@
 				7463305C22AF317C00494815 /* CRBoxInputCell_Line.m */,
 			);
 			path = line;
+			sourceTree = "<group>";
+		};
+		7463306B22AF337300494815 /* SecrectSymbol */ = {
+			isa = PBXGroup;
+			children = (
+				7463305322AF317C00494815 /* CRBoxInputView_SecretSymbol.h */,
+				7463305D22AF317C00494815 /* CRBoxInputView_SecretSymbol.m */,
+				7463305622AF317C00494815 /* CRBoxInputCell_SecretSymbol.h */,
+				7463304C22AF317C00494815 /* CRBoxInputCell_SecretSymbol.m */,
+			);
+			path = SecrectSymbol;
+			sourceTree = "<group>";
+		};
+		7463306C22AF340200494815 /* SecrectImage */ = {
+			isa = PBXGroup;
+			children = (
+				7463305522AF317C00494815 /* CRBoxInputView_SecretImage.h */,
+				7463304D22AF317C00494815 /* CRBoxInputView_SecretImage.m */,
+				7463304E22AF317C00494815 /* CRBoxInputCell_SecretImage.h */,
+				7463305A22AF317C00494815 /* CRBoxInputCell_SecretImage.m */,
+			);
+			path = SecrectImage;
+			sourceTree = "<group>";
+		};
+		7463306D22AF347B00494815 /* SecrectView */ = {
+			isa = PBXGroup;
+			children = (
+				7463305122AF317C00494815 /* CRBoxInputView_SecretView.h */,
+				7463305B22AF317C00494815 /* CRBoxInputView_SecretView.m */,
+				7463305722AF317C00494815 /* CRBoxInputCell_SecretView.h */,
+				7463304B22AF317C00494815 /* CRBoxInputCell_SecretView.m */,
+			);
+			path = SecrectView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
