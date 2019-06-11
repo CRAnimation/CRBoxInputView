@@ -227,7 +227,7 @@
 - (CRBoxInputView *)generateBoxInputView_normal
 {
     CRBoxInputView *_boxInputView = [CRBoxInputView new];
-    [_boxInputView loadAndPrepareView];
+    [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
     
     if (@available(iOS 12.0, *)) {
         _boxInputView.textContentType = UITextContentTypeOneTimeCode;
@@ -261,7 +261,7 @@
     CRBoxInputView *_boxInputView = [CRBoxInputView new];
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
-    [_boxInputView loadAndPrepareView];
+    [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
 
     return _boxInputView;
 }
@@ -292,7 +292,7 @@
     CRBoxInputView *_boxInputView = [CRBoxInputView new];
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
-    [_boxInputView loadAndPrepareViewWithBeginEdit:NO];
+    [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
 
     return _boxInputView;
 }
@@ -315,7 +315,7 @@
     _boxInputView.ifNeedSecurity = YES;//need
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
-    [_boxInputView loadAndPrepareView];
+    [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
 
     return _boxInputView;
 }
@@ -345,7 +345,7 @@
     _boxInputView.ifNeedSecurity = YES;//need
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
-    [_boxInputView loadAndPrepareView];
+    [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
 
     return _boxInputView;
 }
@@ -386,7 +386,7 @@
     _boxInputView.ifNeedSecurity = YES;//need
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
-    [_boxInputView loadAndPrepareView];
+    [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
 
     return _boxInputView;
 }
