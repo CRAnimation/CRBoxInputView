@@ -51,7 +51,7 @@ typedef void(^ConfigCellShadowBlock)(CALayer *layer);
 // Block
 @property (copy, nonatomic) CustomSecurityViewBlock customSecurityViewBlock;
 @property (copy, nonatomic) CustomLineViewBlock customLineViewBlock;
-@property (copy, nonatomic) ConfigCellShadowBlock configCellShadowBlock;
+@property (copy, nonatomic) ConfigCellShadowBlock __nullable configCellShadowBlock;
 
 // Test
 @property (assign, nonatomic) NSInteger index;

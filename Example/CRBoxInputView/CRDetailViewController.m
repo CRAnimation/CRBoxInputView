@@ -280,12 +280,10 @@
     cellProperty.showLine = YES;
     cellProperty.customLineViewBlock = ^CRLineView * _Nonnull{
         CRLineView *lineView = [CRLineView new];
-        lineView.lineView.backgroundColor = [UIColor orangeColor];
+        lineView.lineView.backgroundColor = color_master;
         [lineView.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(10);
-            make.width.mas_equalTo(30);
-            make.bottom.offset(0);
-            make.centerX.offset(0);
+            make.height.mas_equalTo(4);
+            make.left.right.bottom.offset(0);
         }];
         
         return lineView;
@@ -337,9 +335,9 @@
     cellProperty.securityType = CRBoxSecurityCustomViewType;//need
     cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
         CRSecrectImageView *secrectImageView = [CRSecrectImageView new];
-        secrectImageView.image = [UIImage imageNamed:@"backArrow"];
-        secrectImageView.imageWidth = 30;
-        secrectImageView.imageHeight = 30;
+        secrectImageView.image = [UIImage imageNamed:@"smallLock"];
+        secrectImageView.imageWidth = 23;
+        secrectImageView.imageHeight = 27;
         return secrectImageView;
     };
     
@@ -365,6 +363,24 @@
     cellProperty.cellTextColor = color_master;
     cellProperty.showLine = YES;
     cellProperty.securityType = CRBoxSecurityCustomViewType;//need
+    cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
+        UIView *customSecurityView = [UIView new];
+        customSecurityView.backgroundColor = [UIColor clearColor];
+        
+        // circleView
+        static CGFloat circleViewWidth = 20;
+        UIView *circleView = [UIView new];
+        circleView.backgroundColor = color_master;
+        circleView.layer.cornerRadius = 4;
+        [customSecurityView addSubview:circleView];
+        [circleView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.height.mas_equalTo(circleViewWidth);
+            make.centerX.offset(0);
+            make.centerY.offset(0);
+        }];
+        
+        return customSecurityView;
+    };
     
     CRBoxInputView *_boxInputView = [CRBoxInputView new];
     _boxInputView.ifNeedSecurity = YES;//need
