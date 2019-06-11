@@ -109,14 +109,14 @@ boxInputView.customCellProperty = cellProperty;
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.showLine = YES;//必需
 cellProperty.customLineViewBlock = ^CRLineView * _Nonnull{
-CRLineView *lineView = [CRLineView new];
-lineView.lineView.backgroundColor = color_master;
-[lineView.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
-make.height.mas_equalTo(4);
-make.left.right.bottom.offset(0);
-}];//可选
+    CRLineView *lineView = [CRLineView new];
+    lineView.lineView.backgroundColor = color_master;
+    [lineView.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(4);
+        make.left.right.bottom.offset(0);
+    }];//可选
 
-return lineView;
+    return lineView;
 };
 
 CRBoxInputView *boxInputView = [CRBoxInputView new];
@@ -174,22 +174,22 @@ boxInputView.customCellProperty = cellProperty;
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.securityType = CRBoxSecurityCustomViewType;//必需
 cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
-UIView *customSecurityView = [UIView new];
-customSecurityView.backgroundColor = [UIColor clearColor];
+    UIView *customSecurityView = [UIView new];
+    customSecurityView.backgroundColor = [UIColor clearColor];
 
-// circleView
-static CGFloat circleViewWidth = 20;
-UIView *circleView = [UIView new];
-circleView.backgroundColor = color_master;
-circleView.layer.cornerRadius = 4;
-[customSecurityView addSubview:circleView];
-[circleView mas_makeConstraints:^(MASConstraintMaker *make) {
-make.width.height.mas_equalTo(circleViewWidth);
-make.centerX.offset(0);
-make.centerY.offset(0);
-}];
+    // circleView
+    static CGFloat circleViewWidth = 20;
+    UIView *circleView = [UIView new];
+    circleView.backgroundColor = color_master;
+    circleView.layer.cornerRadius = 4;
+    [customSecurityView addSubview:circleView];
+    [circleView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.mas_equalTo(circleViewWidth);
+        make.centerX.offset(0);
+        make.centerY.offset(0);
+    }];
 
-return customSecurityView;
+    return customSecurityView;
 };//可选
 
 CRBoxInputView *boxInputView = [CRBoxInputView new];
