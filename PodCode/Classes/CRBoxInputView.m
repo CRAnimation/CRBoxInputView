@@ -35,6 +35,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     self = [super initWithFrame:frame];
     if (self) {
         [self initDefaultValue];
+        [self addNotificationObserver];
     }
     return self;
 }
@@ -44,9 +45,28 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     self = [super init];
     if (self) {
         [self initDefaultValue];
+        [self addNotificationObserver];
     }
     
     return self;
+}
+
+#pragma mark - Notification Observer
+- (void)addNotificationObserver
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
+}
+
+- (void)applicationWillResignActive:(NSNotification *)notification
+{
+    // 触发home按下，光标动画移除
+}
+
+- (void)applicationDidBecomeActive:(NSNotification *)notification
+{
+    // 重新进来后响应，光标动画重新开始
+    [_mainCollectionView reloadData];
 }
 
 #pragma mark - You can inherit
