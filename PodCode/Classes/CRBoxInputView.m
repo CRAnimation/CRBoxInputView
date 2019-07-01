@@ -423,4 +423,14 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     return _textView.text;
 }
 
+- (void)setInputAccessoryView:(UIView *)inputAccessoryView
+{
+    self.textView.inputAccessoryView = inputAccessoryView;
+}
+
+- (UIView *)inputAccessoryView
+{
+    return self.textView.inputAccessoryView;
+}
+
 @end

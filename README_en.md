@@ -336,6 +336,7 @@ default: nil
 @property (strong, nonatomic) CRBoxFlowLayout *boxFlowLayout;
 @property (strong, nonatomic) CRBoxInputCellProperty *customCellProperty;
 @property (strong, nonatomic, readonly) NSString  *textValue;
+@property (strong, nonatomic) UIView * _Nullable inputAccessoryView;
 
 - (void)loadAndPrepareView;
 - (void)clearAll;
