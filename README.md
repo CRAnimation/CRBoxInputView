@@ -24,14 +24,14 @@ customSecurityViewBlock //自定义密文View
 customLineViewBlock     //自定义下划线
 configCellShadowBlock   //自定义阴影
 ```
->此更新兼容1.0.1之前的版本
+>此更新兼容1.0.0之前的版本
 
 ## Pod安装
 
 CRBoxInputView 可以通过 [CocoaPods](https://cocoapods.org). 来安装,  只需简单的在你的 Podfile 中添加如下代码:
 
 ```ruby
-pod 'CRBoxInputView', '1.0.1'
+pod 'CRBoxInputView', '1.0.2'
 ```
 
 
