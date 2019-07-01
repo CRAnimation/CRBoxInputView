@@ -8,7 +8,7 @@
 
 #import "CRBoxInputView.h"
 #import <Masonry/Masonry.h>
-#import "CRBoxTextView.h"
+
 
 typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     CRBoxTextChangeType_NoChange,
@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     BOOL _ifNeedBeginEdit;
 }
 
-@property (nonatomic, strong) CRBoxTextView *textView;
+
 @property (nonatomic, strong) UICollectionView *mainCollectionView;
 @property (nonatomic, strong) NSMutableArray <NSString *> *valueArr;
 @property (nonatomic, strong) NSMutableArray <CRBoxInputCellProperty *> *cellPropertyArr;

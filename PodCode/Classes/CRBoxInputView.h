@@ -10,6 +10,8 @@
 #import "CRBoxFlowLayout.h"
 #import "CRBoxInputCellProperty.h"
 #import "CRBoxInputCell.h"
+#import "CRBoxTextView.h"
+
 @class CRBoxInputView;
 
 typedef void(^TextDidChangeblock)(NSString * _Nullable text, BOOL isFinished);
@@ -60,6 +62,7 @@ typedef void(^TextDidChangeblock)(NSString * _Nullable text, BOOL isFinished);
  */
 @property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0);
 
+@property (nonatomic, strong) CRBoxTextView *textView;
 @property (copy, nonatomic) TextDidChangeblock _Nullable textDidChangeblock;
 @property (strong, nonatomic) CRBoxFlowLayout * _Nullable boxFlowLayout;
 @property (strong, nonatomic) CRBoxInputCellProperty * _Nullable customCellProperty;
