@@ -45,6 +45,7 @@ pod 'CRBoxInputView', '1.0.3'
 | 类型  | 示例图片 |
 | :-------------: | :-------------: |
 | [Base](#Anchor_Base) | ![Normal.png](/ReadmeResources/1Normal.png "Normal.png")  |
+| [Placeholder](#Anchor_Placeholder) | ![Placeholder.png](/ReadmeResources/Add1_Placeholder.png "Placeholder.png")  |
 | [CustomBox](#Anchor_CustomBox)  | ![CustomBox.png](/ReadmeResources/2CustomBox.png "CustomBox.png")  |
 | [Line](#Anchor_Line)  | ![Line.png](/ReadmeResources/3Line.png "Line.png")  |
 | [SecretSymbol](#Anchor_SecretSymbol)  | ![SecretSymbol.png](/ReadmeResources/4SecretSymbol.png "SecretSymbol.png")  |
@@ -54,9 +55,7 @@ pod 'CRBoxInputView', '1.0.3'
 ## 使用说明
 
 ### <a id="Anchor_Base"></a>Base
-
 ![Normal.png](/ReadmeResources/1Normal.png "Normal.png")
-
 ``` objc
 CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
 boxInputView.codeLength = 4;// 不设置时，默认4
@@ -75,6 +74,16 @@ NSLog(@"textValue:%@", boxInputView.textValue);
 // 清空
 [boxInputView clearAllWithBeginEdit:YES]; // BeginEdit:清空后是否自动启用编辑模式
 
+```
+
+
+### <a id="Anchor_Placeholder"></a>Placeholder
+![Placeholder.png](/ReadmeResources/Add1_Placeholder.png "Placeholder.png")
+``` objc
+CRBoxInputView *_boxInputView = [CRBoxInputView new];
+_boxInputView.ifNeedCursor = NO; //可选
+_boxInputView.placeholderText = @"唱跳篮球"; //必需
+[_boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
 
 
