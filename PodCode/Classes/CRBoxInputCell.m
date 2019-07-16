@@ -113,10 +113,13 @@
         defaultTextConfig();
     }else{
         BOOL hasPlaceholderText = self.boxInputCellProperty.cellPlaceholderText && self.boxInputCellProperty.cellPlaceholderText.length > 0;
+        // 有占位字符
         if (hasPlaceholderText) {
             _valueLabel.text = self.boxInputCellProperty.cellPlaceholderText;
             placeholderTextConfig();
-        }else{
+        }
+        // 空
+        else{
             _valueLabel.text = @"";
             defaultTextConfig();
         }

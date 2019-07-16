@@ -61,9 +61,9 @@ typedef void(^TextDidChangeblock)(NSString * _Nullable text, BOOL isFinished);
 @property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0);
 
 /**
- 默认填充值
- 默认：nil
+ 占位字符填充值
  说明：在对应的输入框没有内容时，会显示该值。
+ 默认：nil
  */
 @property (strong, nonatomic) NSString  * _Nullable placeholderText;
 

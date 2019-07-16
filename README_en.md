@@ -332,6 +332,13 @@ default: nil
 */
 @property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0);
 
+/**
+placeholderText
+desc: Will show when specific cell is empty, if placeholder text have value.
+default：nil
+*/
+@property (strong, nonatomic) NSString  * _Nullable placeholderText;
+
 @property (copy, nonatomic) TextDidChangeblock textDidChangeblock;
 @property (strong, nonatomic) CRBoxFlowLayout *boxFlowLayout;
 @property (strong, nonatomic) CRBoxInputCellProperty *customCellProperty;

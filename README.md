@@ -333,6 +333,21 @@ CRBoxSecurityCustomViewType 自定义View类型，可以自定义密文状态下
 
 
 
+#pragma mark - Placeholder
+/**
+占位符字体颜色
+默认：[UIColor colorWithRed:114/255.0 green:126/255.0 blue:124/255.0 alpha:0.3];
+*/
+@property (copy, nonatomic) UIColor *cellPlaceholderTextColor;
+
+/**
+占位符字体/字号
+默认：[UIFont systemFontOfSize:20];
+*/
+@property (copy, nonatomic) UIFont *cellPlaceholderFont;
+
+
+
 #pragma mark - Block
 /**
 自定义密文View回调
@@ -403,6 +418,13 @@ desc: You set this 'nil' or 'UITextContentTypeOneTimeCode' to auto fill verify c
 default: nil
 */
 @property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0);
+
+/**
+占位字符填充值
+说明：在对应的输入框没有内容时，会显示该值。
+默认：nil
+*/
+@property (strong, nonatomic) NSString  * _Nullable placeholderText;
 
 @property (copy, nonatomic) TextDidChangeblock _Nullable textDidChangeblock;
 @property (strong, nonatomic) CRBoxFlowLayout * _Nullable boxFlowLayout;
