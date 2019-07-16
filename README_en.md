@@ -19,7 +19,7 @@
 
 
 ## Critical Updates!!!
-We can config custom view, not need to throw the inherit way from the version 1.0.3. You can config custom view with block in `CRBoxInputCellProperty`.
+We can config custom view, not need to throw the inherit way from the version 1.1.0. You can config custom view with block in `CRBoxInputCellProperty`.
 ``` objc
 customSecurityViewBlock //Custom security view
 customLineViewBlock     //Custom line
@@ -34,7 +34,7 @@ CRBoxInputView is available through [CocoaPods](https://cocoapods.org). To insta
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'CRBoxInputView', '1.0.3'
+pod 'CRBoxInputView', '1.1.0'
 ```
 
 
