@@ -143,6 +143,8 @@ typedef void(^ConfigCellShadowBlock)(CALayer *layer);
  */
 @property (copy, nonatomic) NSString *originValue;
 
+@property (strong, nonatomic) NSString  *placeholderText;
+
 /**
  密文类型
  默认：CRBoxSecuritySymbolType
