@@ -49,7 +49,7 @@
     
     model = [CRBoxInputModel new];
     model.name = @"Placeholder";
-    model.imageName = @"demoImg_Normal";
+    model.imageName = @"demoImg_Placeholder";
     model.type = CRBoxInputModelPlaceholderType;
     [_dataArr addObject:model];
     
