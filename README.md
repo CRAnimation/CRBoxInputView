@@ -87,6 +87,7 @@ _boxInputView.ifNeedCursor = NO; //可选
 _boxInputView.placeholderText = @"露可娜娜"; //必需
 [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
+> Ps:有一回，一个逗比队友，被对面娜可露露抓急了，口误喊成了“露可娜娜”。。。
 
 
 <br/>
