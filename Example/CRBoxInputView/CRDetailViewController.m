@@ -248,7 +248,7 @@
 {
     CRBoxInputView *_boxInputView = [CRBoxInputView new];
     _boxInputView.ifNeedCursor = NO;
-    _boxInputView.placeholderText = @"唱跳篮球";
+    _boxInputView.placeholderText = @"露可娜娜";
     [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
     
     return _boxInputView;

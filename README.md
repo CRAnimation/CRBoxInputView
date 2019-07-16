@@ -82,7 +82,7 @@ NSLog(@"textValue:%@", boxInputView.textValue);
 ``` objc
 CRBoxInputView *_boxInputView = [CRBoxInputView new];
 _boxInputView.ifNeedCursor = NO; //可选
-_boxInputView.placeholderText = @"唱跳篮球"; //必需
+_boxInputView.placeholderText = @"露可娜娜"; //必需
 [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
 
