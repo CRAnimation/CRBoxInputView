@@ -326,8 +326,9 @@ cell背景颜色
 默认填充值
 默认：空
 说明：在输入框没有内容时，会显示该值。
+示例：“-”
 */
-@property (copy, nonatomic) NSString *originValue;
+@property (strong, nonatomic) NSString  *placeholderText;
 
 /**
 密文类型

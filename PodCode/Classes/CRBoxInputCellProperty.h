@@ -136,13 +136,19 @@ typedef void(^ConfigCellShadowBlock)(CALayer *layer);
  */
 @property (copy, nonatomic) NSString *securitySymbol;
 
+
+/**
+ 保存当前显示的字符
+ 禁止修改该值，除非你知道该怎么使用它。
+ */
+@property (copy, nonatomic) NSString *originValue;
+
 /**
  默认填充值
  默认：空
  说明：在输入框没有内容时，会显示该值。
+ 示例：“-”
  */
-@property (copy, nonatomic) NSString *originValue;
-
 @property (strong, nonatomic) NSString  *placeholderText;
 
 /**
