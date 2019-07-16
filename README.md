@@ -82,9 +82,14 @@ NSLog(@"textValue:%@", boxInputView.textValue);
 ### <a id="Anchor_Placeholder"></a>Placeholder
 ![Placeholder.png](/ReadmeResources/Add1_Placeholder0.png "Placeholder.png")
 ``` objc
+CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
+cellProperty.cellPlaceholderTextColor = [UIColor colorWithRed:114/255.0 green:116/255.0 blue:124/255.0 alpha:0.3]; //可选
+cellProperty.cellPlaceholderFont = [UIFont systemFontOfSize:20]; //可选
+
 CRBoxInputView *boxInputView = [CRBoxInputView new];
 boxInputView.ifNeedCursor = NO; //可选
 boxInputView.placeholderText = @"露可娜娜"; //必需
+boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
 > Ps:有一回，一个逗比队友，被对面娜可露露抓急了，口误喊成了“露可娜娜”。。。

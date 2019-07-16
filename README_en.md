@@ -85,9 +85,14 @@ NSLog(@"textValue:%@", boxInputView.textValue);
 ### <a id="Anchor_Placeholder"></a>Placeholder
 ![Placeholder.png](/ReadmeResources/Add1_Placeholder0.png "Placeholder.png")
 ``` objc
+CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
+cellProperty.cellPlaceholderTextColor = [UIColor colorWithRed:114/255.0 green:116/255.0 blue:124/255.0 alpha:0.3]; //optional
+cellProperty.cellPlaceholderFont = [UIFont systemFontOfSize:20]; //optional
+
 CRBoxInputView *boxInputView = [CRBoxInputView new];
 boxInputView.ifNeedCursor = NO; //optional
 boxInputView.placeholderText = @"露可娜娜"; //required
+boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
 

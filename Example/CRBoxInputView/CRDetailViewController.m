@@ -246,9 +246,14 @@
 
 - (CRBoxInputView *)generateBoxInputView_placeholder
 {
+    CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
+    cellProperty.cellPlaceholderTextColor = [UIColor colorWithRed:114/255.0 green:116/255.0 blue:124/255.0 alpha:0.3];
+    cellProperty.cellPlaceholderFont = [UIFont systemFontOfSize:20];
+    
     CRBoxInputView *_boxInputView = [CRBoxInputView new];
     _boxInputView.ifNeedCursor = NO;
     _boxInputView.placeholderText = @"露可娜娜";
+    _boxInputView.customCellProperty = cellProperty;
     [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
     
     return _boxInputView;
