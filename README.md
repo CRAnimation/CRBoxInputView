@@ -45,7 +45,7 @@ pod 'CRBoxInputView', '1.0.3'
 | 类型  | 示例图片 |
 | :-------------: | :-------------: |
 | [Base](#Anchor_Base) | ![Normal.png](/ReadmeResources/1Normal.png "Normal.png")  |
-| [Placeholder](#Anchor_Placeholder) | ![Placeholder.png](/ReadmeResources/Add1_Placeholder.png "Placeholder.png")  |
+| [Placeholder](#Anchor_Placeholder) | ![Placeholder.png](/ReadmeResources/Add1_Placeholder0.png "Placeholder.png")  |
 | [CustomBox](#Anchor_CustomBox)  | ![CustomBox.png](/ReadmeResources/2CustomBox.png "CustomBox.png")  |
 | [Line](#Anchor_Line)  | ![Line.png](/ReadmeResources/3Line.png "Line.png")  |
 | [SecretSymbol](#Anchor_SecretSymbol)  | ![SecretSymbol.png](/ReadmeResources/4SecretSymbol.png "SecretSymbol.png")  |
@@ -78,7 +78,7 @@ NSLog(@"textValue:%@", boxInputView.textValue);
 
 
 ### <a id="Anchor_Placeholder"></a>Placeholder
-![Placeholder.png](/ReadmeResources/Add1_Placeholder.png "Placeholder.png")
+![Placeholder.png](/ReadmeResources/Add1_Placeholder0.png "Placeholder.png")
 ``` objc
 CRBoxInputView *_boxInputView = [CRBoxInputView new];
 _boxInputView.ifNeedCursor = NO; //可选
