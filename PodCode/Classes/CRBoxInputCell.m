@@ -88,7 +88,12 @@
             _valueLabel.text = self.boxInputCellProperty.originValue;
         }
     }else{
-        _valueLabel.text = @"";
+        BOOL hasPlaceholderText = self.boxInputCellProperty.placeholderText && self.boxInputCellProperty.placeholderText.length > 0;
+        if (hasPlaceholderText) {
+            _valueLabel.text = self.boxInputCellProperty.placeholderText;
+        }else{
+            _valueLabel.text = @"";
+        }
     }
 }
 

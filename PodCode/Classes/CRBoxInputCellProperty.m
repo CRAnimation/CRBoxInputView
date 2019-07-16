@@ -45,6 +45,9 @@
         self.originValue = @"";
         self.securityType = CRBoxSecuritySymbolType;
         
+        // Placeholder
+        self.placeholderText = nil;
+        
         // Block
         self.customSecurityViewBlock = ^UIView * _Nonnull{
             return [weakSelf defaultCustomSecurityView];
@@ -94,6 +97,11 @@
     copy.securitySymbol = [_securitySymbol copy];
     copy.originValue = [_originValue copy];
     copy.securityType = _securityType;
+    
+    // Placeholder
+    if (_placeholderText) {
+        copy.placeholderText = [_placeholderText copy];
+    }
     
     // Block
     copy.customSecurityViewBlock = [_customSecurityViewBlock copy];

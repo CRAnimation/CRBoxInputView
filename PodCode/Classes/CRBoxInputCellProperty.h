@@ -136,10 +136,9 @@ typedef void(^ConfigCellShadowBlock)(CALayer *layer);
  */
 @property (copy, nonatomic) NSString *securitySymbol;
 
-
 /**
  保存当前显示的字符
- 禁止修改该值，除非你知道该怎么使用它。
+ 禁止修改该值！！！（除非你知道该怎么使用它。）
  */
 @property (copy, nonatomic) NSString *originValue;
 
@@ -151,6 +150,15 @@ typedef void(^ConfigCellShadowBlock)(CALayer *layer);
  CRBoxSecurityCustomViewType 自定义View类型，可以自定义密文状态下的图片，View
  */
 @property (assign, nonatomic) CRBoxSecurityType securityType;
+
+
+
+#pragma mark - Placeholder
+/**
+ 默认填充值
+ 禁止修改该值！！！（除非你知道该怎么使用它。）
+ */
+@property (strong, nonatomic) NSString  *placeholderText;
 
 
 

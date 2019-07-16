@@ -246,9 +246,13 @@
 
 - (CRBoxInputView *)generateBoxInputView_placeholder
 {
+    CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
+//    cellProperty
+    
     CRBoxInputView *_boxInputView = [CRBoxInputView new];
     _boxInputView.ifNeedCursor = NO;
-    _boxInputView.placeholderText = @"厚积薄发";
+//    _boxInputView.placeholderText = @"野生沙雕";
+    _boxInputView.placeholderText = @"野生";
     [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
     
     return _boxInputView;
