@@ -155,10 +155,22 @@ typedef void(^ConfigCellShadowBlock)(CALayer *layer);
 
 #pragma mark - Placeholder
 /**
- 默认填充值
+ 占位符默认填充值
  禁止修改该值！！！（除非你知道该怎么使用它。）
  */
-@property (strong, nonatomic) NSString  *placeholderText;
+@property (strong, nonatomic) NSString  *__nullable cellPlaceholderText;
+
+/**
+ 占位符字体颜色
+ 默认：[UIColor colorWithRed:114/255.0 green:126/255.0 blue:124/255.0 alpha:0.3];
+ */
+@property (copy, nonatomic) UIColor *cellPlaceholderTextColor;
+
+/**
+ 占位符字体/字号
+ 默认：[UIFont systemFontOfSize:20];
+ */
+@property (copy, nonatomic) UIFont *cellPlaceholderFont;
 
 
 

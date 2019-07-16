@@ -46,7 +46,9 @@
         self.securityType = CRBoxSecuritySymbolType;
         
         // Placeholder
-        self.placeholderText = nil;
+        self.cellPlaceholderText = nil;
+        self.cellPlaceholderTextColor = [UIColor colorWithRed:114/255.0 green:116/255.0 blue:124/255.0 alpha:0.3];
+        self.cellPlaceholderFont = [UIFont systemFontOfSize:20];
         
         // Block
         self.customSecurityViewBlock = ^UIView * _Nonnull{
@@ -99,9 +101,11 @@
     copy.securityType = _securityType;
     
     // Placeholder
-    if (_placeholderText) {
-        copy.placeholderText = [_placeholderText copy];
+    if (_cellPlaceholderText) {
+        copy.cellPlaceholderText = [_cellPlaceholderText copy];
     }
+    copy.cellPlaceholderTextColor = [_cellPlaceholderTextColor copy];
+    copy.cellPlaceholderFont = [_cellPlaceholderFont copy];
     
     // Block
     copy.customSecurityViewBlock = [_customSecurityViewBlock copy];

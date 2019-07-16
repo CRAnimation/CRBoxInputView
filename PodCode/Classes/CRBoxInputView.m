@@ -309,7 +309,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         NSString *currentPlaceholderStr = nil;
         if (_placeholderText.length > indexPath.row) {
             currentPlaceholderStr = [_placeholderText substringWithRange:NSMakeRange(indexPath.row, 1)];
-            cellProperty.placeholderText = currentPlaceholderStr;
+            cellProperty.cellPlaceholderText = currentPlaceholderStr;
         }
         
         // setOriginValue

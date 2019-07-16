@@ -74,6 +74,29 @@
     _valueLabel.hidden = NO;
     [self hideCustomSecurityView];
     
+    // 默认字体配置
+    __weak typeof(self) weakSelf = self;
+    void (^defaultTextConfig)(void) = ^{
+        if (weakSelf.boxInputCellProperty.cellFont) {
+            weakSelf.valueLabel.font = weakSelf.boxInputCellProperty.cellFont;
+        }
+        
+        if (weakSelf.boxInputCellProperty.cellTextColor) {
+            weakSelf.valueLabel.textColor = weakSelf.boxInputCellProperty.cellTextColor;
+        }
+    };
+    
+    // 占位字符字体配置
+    void (^placeholderTextConfig)(void) = ^{
+        if (weakSelf.boxInputCellProperty.cellFont) {
+            weakSelf.valueLabel.font = weakSelf.boxInputCellProperty.cellPlaceholderFont;
+        }
+        
+        if (weakSelf.boxInputCellProperty.cellTextColor) {
+            weakSelf.valueLabel.textColor = weakSelf.boxInputCellProperty.cellPlaceholderTextColor;
+        }
+    };
+    
     BOOL hasOriginValue = self.boxInputCellProperty.originValue && self.boxInputCellProperty.originValue.length > 0;
     if (hasOriginValue) {
         if (self.boxInputCellProperty.ifShowSecurity) {
@@ -87,14 +110,19 @@
         }else{
             _valueLabel.text = self.boxInputCellProperty.originValue;
         }
+        defaultTextConfig();
     }else{
-        BOOL hasPlaceholderText = self.boxInputCellProperty.placeholderText && self.boxInputCellProperty.placeholderText.length > 0;
+        BOOL hasPlaceholderText = self.boxInputCellProperty.cellPlaceholderText && self.boxInputCellProperty.cellPlaceholderText.length > 0;
         if (hasPlaceholderText) {
-            _valueLabel.text = self.boxInputCellProperty.placeholderText;
+            _valueLabel.text = self.boxInputCellProperty.cellPlaceholderText;
+            placeholderTextConfig();
         }else{
             _valueLabel.text = @"";
+            defaultTextConfig();
         }
     }
+    
+    
 }
 
 #pragma mark - Custom security view
@@ -180,14 +208,6 @@
     }];
     self.layer.cornerRadius = boxInputCellProperty.cornerRadius;
     self.layer.borderWidth = boxInputCellProperty.borderWidth;
-    
-    if (boxInputCellProperty.cellFont) {
-        _valueLabel.font = boxInputCellProperty.cellFont;
-    }
-    
-    if (boxInputCellProperty.cellTextColor) {
-        _valueLabel.textColor = boxInputCellProperty.cellTextColor;
-    }
     
     [self valueLabelLoadData];
 }
