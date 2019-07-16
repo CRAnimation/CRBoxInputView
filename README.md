@@ -82,10 +82,10 @@ NSLog(@"textValue:%@", boxInputView.textValue);
 ### <a id="Anchor_Placeholder"></a>Placeholder
 ![Placeholder.png](/ReadmeResources/Add1_Placeholder0.png "Placeholder.png")
 ``` objc
-CRBoxInputView *_boxInputView = [CRBoxInputView new];
-_boxInputView.ifNeedCursor = NO; //可选
-_boxInputView.placeholderText = @"露可娜娜"; //必需
-[_boxInputView loadAndPrepareViewWithBeginEdit:YES];
+CRBoxInputView *boxInputView = [CRBoxInputView new];
+boxInputView.ifNeedCursor = NO; //可选
+boxInputView.placeholderText = @"露可娜娜"; //必需
+[boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
 > Ps:有一回，一个逗比队友，被对面娜可露露抓急了，口误喊成了“露可娜娜”。。。
 

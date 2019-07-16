@@ -85,10 +85,10 @@ NSLog(@"textValue:%@", boxInputView.textValue);
 ### <a id="Anchor_Placeholder"></a>Placeholder
 ![Placeholder.png](/ReadmeResources/Add1_Placeholder0.png "Placeholder.png")
 ``` objc
-CRBoxInputView *_boxInputView = [CRBoxInputView new];
-_boxInputView.ifNeedCursor = NO; //optional
-_boxInputView.placeholderText = @"露可娜娜"; //required
-[_boxInputView loadAndPrepareViewWithBeginEdit:YES];
+CRBoxInputView *boxInputView = [CRBoxInputView new];
+boxInputView.ifNeedCursor = NO; //optional
+boxInputView.placeholderText = @"露可娜娜"; //required
+[boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
 
 
