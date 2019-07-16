@@ -48,6 +48,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 | Type  | Image |
 | :-------------: | :-------------: |
 | [Base](#Anchor_Base) | ![Normal.png](/ReadmeResources/1Normal.png "Normal.png")  |
+| [Placeholder](#Anchor_Placeholder) | ![Placeholder.png](/ReadmeResources/Add1_Placeholder0.png "Placeholder.png")  |
 | [CustomBox](#Anchor_CustomBox)  | ![CustomBox.png](/ReadmeResources/2CustomBox.png "CustomBox.png")  |
 | [Line](#Anchor_Line)  | ![Line.png](/ReadmeResources/3Line.png "Line.png")  |
 | [SecretSymbol](#Anchor_SecretSymbol)  | ![SecretSymbol.png](/ReadmeResources/4SecretSymbol.png "SecretSymbol.png")  |
@@ -76,6 +77,18 @@ NSLog(@"textValue:%@", boxInputView.textValue);
 // Clear all
 [boxInputView clearAllWithBeginEdit:YES]; // BeginEdit: If need begin edit after clear all.
 
+```
+
+
+<br/>
+
+### <a id="Anchor_Placeholder"></a>Placeholder
+![Placeholder.png](/ReadmeResources/Add1_Placeholder0.png "Placeholder.png")
+``` objc
+CRBoxInputView *_boxInputView = [CRBoxInputView new];
+_boxInputView.ifNeedCursor = NO; //optional
+_boxInputView.placeholderText = @"露可娜娜"; //required
+[_boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
 
 
