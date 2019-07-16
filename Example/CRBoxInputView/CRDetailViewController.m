@@ -165,6 +165,12 @@
             }
             break;
             
+        case CRBoxInputModelPlaceholderType:
+            {
+                _boxInputView = [self generateBoxInputView_placeholder];
+            }
+            break;
+            
         case CRBoxInputModelCustomBoxType:
             {
                 _boxInputView = [self generateBoxInputView_customBox];
@@ -234,6 +240,16 @@
     }else if (@available(iOS 10.0, *)) {
         _boxInputView.textContentType = @"one-time-code";
     }
+    
+    return _boxInputView;
+}
+
+- (CRBoxInputView *)generateBoxInputView_placeholder
+{
+    CRBoxInputView *_boxInputView = [CRBoxInputView new];
+    _boxInputView.ifNeedCursor = NO;
+    _boxInputView.placeholderText = @"厚积薄发";
+    [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
     
     return _boxInputView;
 }

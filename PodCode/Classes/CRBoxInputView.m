@@ -306,13 +306,18 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         CRBoxInputCellProperty *cellProperty = self.cellPropertyArr[indexPath.row];
         cellProperty.index = indexPath.row;
         
+        NSString *currentPlaceholderStr = nil;
+        if (_placeholderText.length > indexPath.row) {
+            currentPlaceholderStr = [_placeholderText substringWithRange:NSMakeRange(indexPath.row, 1)];
+        }
+        
         // setOriginValue
         NSUInteger focusIndex = _valueArr.count;
         if (_valueArr.count > 0 && indexPath.row <= focusIndex - 1) {
             cellProperty.originValue = _valueArr[indexPath.row];
         }
-        else if (cellProperty.placeholderText.length > 0){
-            cellProperty.originValue = cellProperty.placeholderText;
+        else if (currentPlaceholderStr){
+            cellProperty.originValue = currentPlaceholderStr;
         }
         else{
             cellProperty.originValue = @"";

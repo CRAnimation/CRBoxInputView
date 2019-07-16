@@ -144,14 +144,6 @@ typedef void(^ConfigCellShadowBlock)(CALayer *layer);
 @property (copy, nonatomic) NSString *originValue;
 
 /**
- 默认填充值
- 默认：空
- 说明：在输入框没有内容时，会显示该值。
- 示例：“-”
- */
-@property (strong, nonatomic) NSString  *placeholderText;
-
-/**
  密文类型
  默认：CRBoxSecuritySymbolType
  类型说明：

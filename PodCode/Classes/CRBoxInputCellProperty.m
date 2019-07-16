@@ -43,7 +43,6 @@
         self.ifShowSecurity = NO;
         self.securitySymbol = @"✱";
         self.originValue = @"";
-        self.placeholderText = @"";
         self.securityType = CRBoxSecuritySymbolType;
         
         // Block
@@ -94,7 +93,6 @@
     copy.ifShowSecurity = _ifShowSecurity;
     copy.securitySymbol = [_securitySymbol copy];
     copy.originValue = [_originValue copy];
-    copy.placeholderText = [_placeholderText copy];
     copy.securityType = _securityType;
     
     // Block
