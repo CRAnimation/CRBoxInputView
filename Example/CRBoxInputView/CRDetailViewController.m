@@ -22,7 +22,10 @@
     
     CRBoxInputView *_boxInputView;
     UIButton *_verifyBtn;
-    UIButton *_securityBtn;
+    
+    UIView *_ifNeedSecurityView;
+    UILabel *_ifNeedSecurityLabel;
+    UIImageView *_ifNeedSecurityIcon;
 }
 
 @property (strong, nonatomic) UILabel   *valueLabel;
@@ -146,14 +149,41 @@
         make.centerX.offset(0);
     }];
     
-    _securityBtn = [UIButton new];
-    [_securityBtn addTarget:self action:@selector(securityBtnEvent) forControlEvents:UIControlEventTouchUpInside];
-    _securityBtn.backgroundColor = [UIColor orangeColor];
-    [self.view addSubview:_securityBtn];
-    [_securityBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(50);
+    [self createIfNeedSecurityControlView];
+}
+
+- (void)createIfNeedSecurityControlView
+{
+    _ifNeedSecurityView = [UIView new];
+//    _ifNeedSecurityView.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:_ifNeedSecurityView];
+    [_ifNeedSecurityView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.offset(0);
-        make.top.equalTo(self->_verifyBtn.mas_bottom).offset(20);
+        make.top.equalTo(self->_verifyBtn.mas_bottom).offset(21);
+    }];
+    
+    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(securityBtnEvent)];
+    [_ifNeedSecurityView addGestureRecognizer:tapGR];
+    
+    _ifNeedSecurityLabel = [UILabel new];
+    [_ifNeedSecurityView addSubview:_ifNeedSecurityLabel];
+    _ifNeedSecurityLabel.text = @"IfNeedSecurity:";
+    _ifNeedSecurityLabel.font = FontSize_6(16);
+    _ifNeedSecurityLabel.textColor = color_master;
+    [_ifNeedSecurityLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.offset(0);
+        make.top.offset(0);
+        make.bottom.offset(0);
+    }];
+    
+    _ifNeedSecurityIcon = [UIImageView new];
+    _ifNeedSecurityIcon.image = [UIImage imageNamed:@"eyeOpen"];
+    [_ifNeedSecurityView addSubview:_ifNeedSecurityIcon];
+    [_ifNeedSecurityIcon mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.offset(7).equalTo(self->_ifNeedSecurityLabel.mas_right);
+        make.right.offset(0);
+        make.centerY.offset(0);
+        make.width.height.mas_equalTo(XX_6(25));
     }];
 }
 
@@ -164,8 +194,12 @@
 
 - (void)securityBtnEvent
 {
-    NSLog(@"--1");
     _boxInputView.ifNeedSecurity = !_boxInputView.ifNeedSecurity;
+    if (_boxInputView.ifNeedSecurity) {
+        _ifNeedSecurityIcon.image = [UIImage imageNamed:@"eyeClose"];
+    }else{
+        _ifNeedSecurityIcon.image = [UIImage imageNamed:@"eyeOpen"];
+    }
 }
 
 #pragma mark - Setter & Getter
