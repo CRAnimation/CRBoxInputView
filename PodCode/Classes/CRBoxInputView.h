@@ -32,7 +32,9 @@ typedef void(^TextDidChangeblock)(NSString * _Nullable text, BOOL isFinished);
 
 /**
  是否开启密文模式
+ 描述：你可以在任何时候修改该属性，并且已经存在的文字会自动刷新。
  ifNeedSecurity
+ desc: You can change this property anytime. And the existing texts can be refreshed automatically.
  default: NO
  */
 @property (assign, nonatomic) BOOL ifNeedSecurity;
