@@ -327,6 +327,7 @@ default: 4
 
 /**
 ifNeedSecurity
+desc: You can change this property anytime. And the existing texts can be refreshed automatically.
 default: NO
 */
 @property (assign, nonatomic) BOOL ifNeedSecurity;

@@ -408,6 +408,7 @@ default: 4
 
 /**
 是否开启密文模式
+描述：你可以在任何时候修改该属性，并且已经存在的文字会自动刷新。
 ifNeedSecurity
 default: NO
 */
