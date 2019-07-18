@@ -38,7 +38,7 @@ pod 'CRBoxInputView', '1.1.0'
 ## 示列
 
 下载源代码后，可以从Example目录中执行 `pod install`，然后运行Demo。
-![iPhone 8 Copy 2.png](/ReadmeResources/ScreenShoot1.png "iPhone 8 Copy 2.png")
+![iPhone 8 Copy 2.png](/ReadmeResources/ScreenShoot2.png "iPhone 8 Copy 2.png")
 
 
 ## 快速指南
