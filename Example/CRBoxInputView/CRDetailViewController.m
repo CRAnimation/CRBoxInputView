@@ -22,6 +22,7 @@
     
     CRBoxInputView *_boxInputView;
     UIButton *_verifyBtn;
+    UIButton *_securityBtn;
 }
 
 @property (strong, nonatomic) UILabel   *valueLabel;
@@ -144,11 +145,27 @@
         make.height.mas_equalTo(btnHeight);
         make.centerX.offset(0);
     }];
+    
+    _securityBtn = [UIButton new];
+    [_securityBtn addTarget:self action:@selector(securityBtnEvent) forControlEvents:UIControlEventTouchUpInside];
+    _securityBtn.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:_securityBtn];
+    [_securityBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.mas_equalTo(50);
+        make.centerX.offset(0);
+        make.top.equalTo(self->_verifyBtn.mas_bottom).offset(20);
+    }];
 }
 
 - (void)backBtnEvent
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)securityBtnEvent
+{
+    NSLog(@"--1");
+    _boxInputView.ifNeedSecurity = !_boxInputView.ifNeedSecurity;
 }
 
 #pragma mark - Setter & Getter

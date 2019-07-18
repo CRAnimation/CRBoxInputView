@@ -154,7 +154,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     _oldLength = 0;
     [_valueArr removeAllObjects];
     self.textView.text = @"";
-    [self closeAllSecurityShow];
+    [self allSecurityClose];
     [self.mainCollectionView reloadData];
     [self triggerBlock];
     
@@ -225,7 +225,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     cellProperty.ifShowSecurity = isShow;
 }
 
-- (void)closeAllSecurityShow
+- (void)allSecurityClose
 {
     [self.cellPropertyArr enumerateObjectsUsingBlock:^(CRBoxInputCellProperty * _Nonnull cellProperty, NSUInteger idx, BOOL * _Nonnull stop) {
         if (cellProperty.ifShowSecurity == YES) {
@@ -233,6 +233,16 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         }
     }];
 }
+
+- (void)allSecurityOpen
+{
+    [self.cellPropertyArr enumerateObjectsUsingBlock:^(CRBoxInputCellProperty * _Nonnull cellProperty, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (cellProperty.ifShowSecurity == NO) {
+            cellProperty.ifShowSecurity = YES;
+        }
+    }];
+}
+
 
 #pragma mark - Trigger block
 - (void)triggerBlock
@@ -439,6 +449,20 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 - (UIView *)inputAccessoryView
 {
     return _inputAccessoryView;
+}
+
+- (void)setIfNeedSecurity:(BOOL)ifNeedSecurity
+{
+    _ifNeedSecurity = ifNeedSecurity;
+    
+    if (ifNeedSecurity == YES) {
+        [self allSecurityOpen];
+    }else{
+        [self allSecurityClose];
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self->_mainCollectionView reloadData];
+    });
 }
 
 @end
