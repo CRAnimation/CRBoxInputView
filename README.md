@@ -158,7 +158,7 @@ CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.securitySymbol = @"*"; //可选
 
 CRBoxInputView *boxInputView = [CRBoxInputView new];
-boxInputView.ifNeedSecurity = YES; //必需
+boxInputView.ifNeedSecurity = YES; //必需（你可以在任何时候修改该属性，并且已经存在的文字会自动刷新。）
 boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
@@ -181,7 +181,7 @@ cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
 }; //必需
 
 CRBoxInputView *boxInputView = [CRBoxInputView new];
-boxInputView.ifNeedSecurity = YES; //必需
+boxInputView.ifNeedSecurity = YES; //必需（你可以在任何时候修改该属性，并且已经存在的文字会自动刷新。）
 boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
@@ -214,7 +214,7 @@ cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
 }; //可选
 
 CRBoxInputView *boxInputView = [CRBoxInputView new];
-boxInputView.ifNeedSecurity = YES; //必需
+boxInputView.ifNeedSecurity = YES; //必需（你可以在任何时候修改该属性，并且已经存在的文字会自动刷新。）
 boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```

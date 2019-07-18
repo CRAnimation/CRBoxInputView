@@ -159,7 +159,7 @@ CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.securitySymbol = @"*"; //Optional
 
 CRBoxInputView *boxInputView = [CRBoxInputView new];
-boxInputView.ifNeedSecurity = YES; //Required
+boxInputView.ifNeedSecurity = YES; //Required (You can change this property anytime. And the existing texts can be refreshed automatically.)
 boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
@@ -182,7 +182,7 @@ cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
 }; //Required
 
 CRBoxInputView *boxInputView = [CRBoxInputView new];
-boxInputView.ifNeedSecurity = YES; //Required
+boxInputView.ifNeedSecurity = YES; //Required (You can change this property anytime. And the existing texts can be refreshed automatically.)
 boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
@@ -215,7 +215,7 @@ cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
 }; //Optional
 
 CRBoxInputView *boxInputView = [CRBoxInputView new];
-boxInputView.ifNeedSecurity = YES; //Required
+boxInputView.ifNeedSecurity = YES; //Required (You can change this property anytime. And the existing texts can be refreshed automatically.)
 boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
