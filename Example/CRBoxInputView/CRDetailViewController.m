@@ -352,7 +352,8 @@
     cellProperty.showLine = YES;
     cellProperty.customLineViewBlock = ^CRLineView * _Nonnull{
         CRLineView *lineView = [CRLineView new];
-        lineView.lineView.backgroundColor = color_master;
+        lineView.colorNormal = color_master;
+        lineView.colorSelected = [UIColor blueColor];
         [lineView.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(4);
             make.left.right.bottom.offset(0);

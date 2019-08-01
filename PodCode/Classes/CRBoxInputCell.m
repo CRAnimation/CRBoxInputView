@@ -8,6 +8,7 @@
 
 #import "CRBoxInputCell.h"
 #import <Masonry/Masonry.h>
+#import "CRLineView.h"
 
 @interface CRBoxInputCell ()
 {
@@ -18,7 +19,7 @@
 @property (strong, nonatomic) CABasicAnimation *opacityAnimation;
 @property (strong, nonatomic) UIView *customSecurityView;
 
-@property (strong, nonatomic) UIView *lineView;
+@property (strong, nonatomic) CRLineView *lineView;
 
 @end
 
@@ -185,6 +186,14 @@
         }
         self.layer.borderColor = cellBorderColor.CGColor;
         self.backgroundColor = cellBackgroundColor;
+    }
+    
+    if (_lineView) {
+        if (!selected && _lineView.colorNormal) {
+            _lineView.lineView.backgroundColor = _lineView.colorNormal;
+        }else if (selected && _lineView.colorSelected){
+            _lineView.lineView.backgroundColor = _lineView.colorSelected;
+        }
     }
     
     if (_ifNeedCursor) {

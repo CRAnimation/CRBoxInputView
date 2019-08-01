@@ -14,6 +14,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) UIView    *lineView;
 
+/**
+ 下划线颜色
+ 状态：未选中状态时
+ 默认：null
+ */
+@property (copy, nonatomic) UIColor *colorNormal;
+
+/**
+ 下划线颜色
+ 状态：选中状态时
+ 默认：null
+ */
+@property (copy, nonatomic) UIColor *colorSelected;
+
 - (instancetype)initWithFrame:(CGRect)frame UNAVAILABLE_ATTRIBUTE;
 
 @end
