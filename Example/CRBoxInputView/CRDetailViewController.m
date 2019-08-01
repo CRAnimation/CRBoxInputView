@@ -353,7 +353,7 @@
     cellProperty.customLineViewBlock = ^CRLineView * _Nonnull{
         CRLineView *lineView = [CRLineView new];
         lineView.underlineColorNormal = color_master;
-        lineView.underlineColorSelected = color_FFECEC;
+        lineView.underlineColorSelected = [color_master colorWithAlphaComponent:0.55];
         [lineView.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(4);
             make.left.right.bottom.offset(0);

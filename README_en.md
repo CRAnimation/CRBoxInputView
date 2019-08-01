@@ -135,7 +135,8 @@ CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.showLine = YES; //Required
 cellProperty.customLineViewBlock = ^CRLineView * _Nonnull{
     CRLineView *lineView = [CRLineView new];
-    lineView.lineView.backgroundColor = color_master;
+    lineView.underlineColorNormal = color_master;
+    lineView.underlineColorSelected = [color_master colorWithAlphaComponent:0.55];
     [lineView.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(4);
         make.left.right.bottom.offset(0);
@@ -399,6 +400,25 @@ default: YES
 ``` objc
 // You can inherit and rewrite
 - (UIView *)createCustomSecurityView;
+```
+
+`CRLineView` class
+``` objc
+@property (strong, nonatomic) UIView    *lineView;
+
+/**
+underlineColor
+state：while unselected
+default：[UIColor colorWithRed:49/255.0 green:51/255.0 blue:64/255.0 alpha:1]
+*/
+@property (copy, nonatomic) UIColor *underlineColorNormal;
+
+/**
+underlineColor
+state：while selected
+default：[UIColor colorWithRed:49/255.0 green:51/255.0 blue:64/255.0 alpha:1]
+*/
+@property (copy, nonatomic) UIColor *underlineColorSelected;
 ```
 
 ## Other Problems
