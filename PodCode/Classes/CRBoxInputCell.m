@@ -193,6 +193,8 @@
             _lineView.lineView.backgroundColor = _lineView.colorNormal;
         }else if (selected && _lineView.colorSelected){
             _lineView.lineView.backgroundColor = _lineView.colorSelected;
+        }else{
+            _lineView.lineView.backgroundColor = CRColorMaster;
         }
     }
     

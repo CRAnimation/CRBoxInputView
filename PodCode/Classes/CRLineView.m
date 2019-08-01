@@ -21,6 +21,8 @@
 {
     self = [super init];
     if (self) {
+        _colorNormal = CRColorMaster;
+        _colorSelected = CRColorMaster;
         [self createUI];
     }
     return self;
@@ -32,7 +34,7 @@
     
     _lineView = [UIView new];
     [self addSubview:_lineView];
-    _lineView.backgroundColor = [UIColor blackColor];
+    _lineView.backgroundColor = _colorNormal;
     _lineView.layer.cornerRadius = sepLineViewHeight / 2.0;
     [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(sepLineViewHeight);
