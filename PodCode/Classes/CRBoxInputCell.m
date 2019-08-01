@@ -189,10 +189,10 @@
     }
     
     if (_lineView) {
-        if (!selected && _lineView.colorNormal) {
-            _lineView.lineView.backgroundColor = _lineView.colorNormal;
-        }else if (selected && _lineView.colorSelected){
-            _lineView.lineView.backgroundColor = _lineView.colorSelected;
+        if (!selected && _lineView.underlineColorNormal) {
+            _lineView.lineView.backgroundColor = _lineView.underlineColorNormal;
+        }else if (selected && _lineView.underlineColorSelected){
+            _lineView.lineView.backgroundColor = _lineView.underlineColorSelected;
         }else{
             _lineView.lineView.backgroundColor = CRColorMaster;
         }
