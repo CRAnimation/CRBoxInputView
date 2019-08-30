@@ -210,7 +210,10 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     [_mainCollectionView reloadData];
     
     _oldLength = verStr.length;
-    [self triggerBlock];
+    
+    if (boxTextChangeType != CRBoxTextChangeType_NoChange) {
+        [self triggerBlock];
+    }
 }
 
 #pragma mark - Control security show
