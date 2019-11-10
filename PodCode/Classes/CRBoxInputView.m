@@ -22,6 +22,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     BOOL _ifNeedBeginEdit;
 }
 
+@property (nonatomic, strong) UITapGestureRecognizer *tapGR;
 @property (nonatomic, strong) CRBoxTextView *textView;
 @property (nonatomic, strong) UICollectionView *mainCollectionView;
 @property (nonatomic, strong) NSMutableArray <NSString *> *valueArr;
@@ -110,6 +111,9 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         make.width.height.mas_equalTo(0);
         make.left.top.mas_equalTo(0);
     }];
+    
+    // tap
+    [self addGestureRecognizer:self.tapGR];
     
     if (beginEdit) {
         [self beginEdit];
@@ -365,6 +369,15 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 }
 
 #pragma mark - Setter & Getter
+- (UITapGestureRecognizer *)tapGR
+{
+    if (!_tapGR) {
+        _tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(beginEdit)];
+    }
+    
+    return _tapGR;
+}
+
 - (UICollectionView *)mainCollectionView
 {
     if (!_mainCollectionView) {
