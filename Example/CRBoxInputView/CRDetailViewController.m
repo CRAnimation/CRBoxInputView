@@ -12,21 +12,20 @@
 #import <CRBoxInputView/CRSecrectImageView.h>
 
 @interface CRDetailViewController ()
-{
-    UIButton *_backBtn;
-    UIImageView *_bigLockImageView;
-    UILabel *_mainLabel;
-    UILabel *_subLabel;
-    UIView *_sepLineView;
-    UILabel *_descriptionLabel;
-    
-    CRBoxInputView *_boxInputView;
-    UIButton *_verifyBtn;
-    
-    UIView *_ifNeedSecurityView;
-    UILabel *_ifNeedSecurityLabel;
-    UIImageView *_ifNeedSecurityIcon;
-}
+
+@property(nonatomic, strong) UIButton *backBtn;
+@property(nonatomic, strong) UIImageView *bigLockImageView;
+@property(nonatomic, strong) UILabel *mainLabel;
+@property(nonatomic, strong) UILabel *subLabel;
+@property(nonatomic, strong) UIView *sepLineView;
+@property(nonatomic, strong) UILabel *descriptionLabel;
+
+@property(nonatomic, strong) CRBoxInputView *boxInputView;
+@property(nonatomic, strong) UIButton *verifyBtn;
+
+@property(nonatomic, strong) UIView *ifNeedSecurityView;
+@property(nonatomic, strong) UILabel *ifNeedSecurityLabel;
+@property(nonatomic, strong) UIImageView *ifNeedSecurityIcon;
 
 @property (strong, nonatomic) UILabel   *valueLabel;
 
@@ -59,6 +58,7 @@
 
 - (void)createUI
 {
+    __weak __typeof(self)weakSelf = self;
     CGFloat offXStart = XX_6(35);
     
     _backBtn = [UIButton new];
@@ -87,16 +87,18 @@
     _mainLabel.font = [UIFont systemFontOfSize:24];
     [self.view addSubview:_mainLabel];
     [_mainLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
         make.left.offset(offXStart);
-        make.top.equalTo(self->_backBtn.mas_bottom).offset(13);
+        make.top.equalTo(strongSelf.backBtn.mas_bottom).offset(13);
     }];
     
     _sepLineView = [UIView new];
     _sepLineView.backgroundColor = color_master;
     [self.view addSubview:_sepLineView];
     [_sepLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
         make.left.offset(offXStart);
-        make.top.equalTo(self->_mainLabel.mas_bottom).offset(5);
+        make.top.equalTo(strongSelf.mainLabel.mas_bottom).offset(5);
         make.width.mas_equalTo(XX_6(166));
         make.height.mas_equalTo(2);
     }];
@@ -107,8 +109,9 @@
     _subLabel.font = [UIFont boldSystemFontOfSize:14];
     [self.view addSubview:_subLabel];
     [_subLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
         make.left.offset(offXStart);
-        make.top.equalTo(self->_sepLineView.mas_bottom).offset(2);
+        make.top.equalTo(strongSelf.sepLineView.mas_bottom).offset(2);
     }];
 
     _descriptionLabel = [UILabel new];
@@ -119,9 +122,10 @@
     _descriptionLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:_descriptionLabel];
     [_descriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
         make.width.mas_equalTo(XX_6(303));
         make.centerX.offset(0);
-        make.top.equalTo(self->_subLabel.mas_bottom).offset(YY_6(24));
+        make.top.equalTo(strongSelf.subLabel.mas_bottom).offset(YY_6(24));
     }];
     
     _valueLabel = [UILabel new];
@@ -130,8 +134,9 @@
     _valueLabel.text = @"Empty";
     [self.view addSubview:_valueLabel];
     [_valueLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
         make.centerX.offset(0);
-        make.top.equalTo(self->_descriptionLabel.mas_bottom).offset(3);
+        make.top.equalTo(strongSelf.descriptionLabel.mas_bottom).offset(3);
     }];
     
     CGFloat btnHeight = YY_6(54);
@@ -154,12 +159,15 @@
 
 - (void)createIfNeedSecurityControlView
 {
+    __weak __typeof(self)weakSelf = self;
+    
     _ifNeedSecurityView = [UIView new];
 //    _ifNeedSecurityView.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:_ifNeedSecurityView];
     [_ifNeedSecurityView mas_makeConstraints:^(MASConstraintMaker *make) {
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
         make.centerX.offset(0);
-        make.top.equalTo(self->_verifyBtn.mas_bottom).offset(21);
+        make.top.equalTo(strongSelf.verifyBtn.mas_bottom).offset(21);
     }];
     
     UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(securityBtnEvent)];
@@ -180,7 +188,8 @@
     _ifNeedSecurityIcon.image = [UIImage imageNamed:@"eyeOpen"];
     [_ifNeedSecurityView addSubview:_ifNeedSecurityIcon];
     [_ifNeedSecurityIcon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.offset(7).equalTo(self->_ifNeedSecurityLabel.mas_right);
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        make.left.offset(7).equalTo(strongSelf.ifNeedSecurityLabel.mas_right);
         make.right.offset(0);
         make.centerY.offset(0);
         make.width.height.mas_equalTo(XX_6(25));
@@ -259,24 +268,27 @@
             break;
     }
     
-    __weak typeof(self) weakSelf = self;
+    __weak __typeof(self)weakSelf = self;
     _boxInputView.textDidChangeblock = ^(NSString *text, BOOL isFinished) {
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
         if (text.length > 0) {
-            weakSelf.valueLabel.text = text;
+            strongSelf.valueLabel.text = text;
         }else{
-            weakSelf.valueLabel.text = @"Empty";
+            strongSelf.valueLabel.text = @"Empty";
         }
     };
     [self.view addSubview:_boxInputView];
     [_boxInputView mas_makeConstraints:^(MASConstraintMaker *make) {
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
         make.width.mas_equalTo(XX_6(262));
         make.height.mas_equalTo(YY_6(52));
         make.centerX.offset(0);
-        make.top.equalTo(self->_bigLockImageView.mas_bottom).offset(YY_6(18));
+        make.top.equalTo(strongSelf.bigLockImageView.mas_bottom).offset(YY_6(18));
     }];
     
     [_verifyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self->_boxInputView.mas_bottom).offset(YY_6(46));
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        make.top.equalTo(strongSelf.boxInputView.mas_bottom).offset(YY_6(46));
     }];
 }
 

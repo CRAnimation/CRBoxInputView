@@ -203,11 +203,12 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
                 [self replaceValueArrToAsteriskWithIndex:_valueArr.count - 1 needEqualToCount:NO];
             }
 //            NSString *subStr = [verStr substringWithRange:NSMakeRange(verStr.length - 1, 1)];
-//            [self->_valueArr addObject:subStr];
+//            [strongSelf.valueArr addObject:subStr];
             [_valueArr removeAllObjects];
             
             [verStr enumerateSubstringsInRange:NSMakeRange(0, verStr.length) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
-                [weakSelf.valueArr addObject:substring];
+                __strong __typeof(weakSelf)strongSelf = weakSelf;
+                [strongSelf.valueArr addObject:substring];
             }];
             
             [self delaySecurityProcess];
@@ -284,12 +285,13 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         return;
     }
     
-    __weak typeof(self) weakSelf = self;
+    __weak __typeof(self)weakSelf = self;
     [self delayAfter:_securityDelay dealBlock:^{
-        if (self->_valueArr.count > 0) {
-            [weakSelf replaceValueArrToAsteriskWithIndex:self->_valueArr.count-1 needEqualToCount:YES];
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        if (strongSelf.valueArr.count > 0) {
+            [strongSelf replaceValueArrToAsteriskWithIndex:strongSelf.valueArr.count-1 needEqualToCount:YES];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_mainCollectionView reloadData];
+                [strongSelf.mainCollectionView reloadData];
             });
         }
     }];
@@ -480,7 +482,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         [self allSecurityClose];
     }
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self->_mainCollectionView reloadData];
+        [self.mainCollectionView reloadData];
     });
 }
 
