@@ -22,6 +22,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     BOOL _ifNeedBeginEdit;
 }
 
+@property (nonatomic, strong) UITapGestureRecognizer *tapGR;
 @property (nonatomic, strong) CRBoxTextView *textView;
 @property (nonatomic, strong) UICollectionView *mainCollectionView;
 @property (nonatomic, strong) NSMutableArray <NSString *> *valueArr;
@@ -106,8 +107,13 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     // textView
     [self addSubview:self.textView];
     [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsZero);
+//        make.edges.mas_equalTo(UIEdgeInsetsZero);
+        make.width.height.mas_equalTo(0);
+        make.left.top.mas_equalTo(0);
     }];
+    
+    // tap
+    [self addGestureRecognizer:self.tapGR];
     
     if (beginEdit) {
         [self beginEdit];
@@ -197,11 +203,12 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
                 [self replaceValueArrToAsteriskWithIndex:_valueArr.count - 1 needEqualToCount:NO];
             }
 //            NSString *subStr = [verStr substringWithRange:NSMakeRange(verStr.length - 1, 1)];
-//            [self->_valueArr addObject:subStr];
+//            [strongSelf.valueArr addObject:subStr];
             [_valueArr removeAllObjects];
             
             [verStr enumerateSubstringsInRange:NSMakeRange(0, verStr.length) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
-                [weakSelf.valueArr addObject:substring];
+                __strong __typeof(weakSelf)strongSelf = weakSelf;
+                [strongSelf.valueArr addObject:substring];
             }];
             
             [self delaySecurityProcess];
@@ -278,12 +285,13 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         return;
     }
     
-    __weak typeof(self) weakSelf = self;
+    __weak __typeof(self)weakSelf = self;
     [self delayAfter:_securityDelay dealBlock:^{
-        if (self->_valueArr.count > 0) {
-            [weakSelf replaceValueArrToAsteriskWithIndex:self->_valueArr.count-1 needEqualToCount:YES];
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        if (strongSelf.valueArr.count > 0) {
+            [strongSelf replaceValueArrToAsteriskWithIndex:strongSelf.valueArr.count-1 needEqualToCount:YES];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_mainCollectionView reloadData];
+                [strongSelf.mainCollectionView reloadData];
             });
         }
     }];
@@ -363,6 +371,15 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 }
 
 #pragma mark - Setter & Getter
+- (UITapGestureRecognizer *)tapGR
+{
+    if (!_tapGR) {
+        _tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(beginEdit)];
+    }
+    
+    return _tapGR;
+}
+
 - (UICollectionView *)mainCollectionView
 {
     if (!_mainCollectionView) {
@@ -403,9 +420,10 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 - (CRBoxTextView *)textView{
     if (!_textView) {
         _textView = [CRBoxTextView new];
-        _textView.tintColor = [UIColor clearColor];
-        _textView.backgroundColor = [UIColor clearColor];
-        _textView.textColor = [UIColor clearColor];
+//        _textView.alpha = 0.1;
+//        _textView.tintColor = [UIColor clearColor];
+//        _textView.backgroundColor = [UIColor clearColor];
+//        _textView.textColor = [UIColor clearColor];
         _textView.delegate = self;
         [_textView addTarget:self action:@selector(textDidChange:) forControlEvents:UIControlEventEditingChanged];
     }
@@ -464,7 +482,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         [self allSecurityClose];
     }
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self->_mainCollectionView reloadData];
+        [self.mainCollectionView reloadData];
     });
 }
 
