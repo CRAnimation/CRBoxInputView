@@ -228,173 +228,77 @@ boxInputView.customCellProperty = cellProperty;
 `CRBoxInputCellProperty` class
 ``` objc
 #pragma mark - UI
-/**
-borderWidth
-default：0.5
-*/
 @property (assign, nonatomic) CGFloat borderWidth;
-
-/**
-cell border color
-state：while not selected
-default：[UIColor colorWithRed:228/255.0 green:228/255.0 blue:228/255.0 alpha:1]
-*/
 @property (copy, nonatomic) UIColor *cellBorderColorNormal;
-
-/**
-cell border color
-state：while selected
-default：[UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1]
-*/
 @property (copy, nonatomic) UIColor *cellBorderColorSelected;
-
-/**
-cell border color
-state：while not contain text, and not selected
-default：same value with 'cellBorderColorFilled'
-*/
 @property (copy, nonatomic) UIColor *__nullable cellBorderColorFilled;
-
-/**
-cell background color
-state：while not contain text, and not selected
-default：[UIColor whiteColor]
-*/
 @property (copy, nonatomic) UIColor *cellBgColorNormal;
-
-/**
-cell background color
-state：while selected
-default：[UIColor whiteColor]
-*/
 @property (copy, nonatomic) UIColor *cellBgColorSelected;
-
-/**
-cell background color
-state：while contain text, and not selected
-default：same value with 'cellBgColorFilled'
-*/
 @property (copy, nonatomic) UIColor *__nullable cellBgColorFilled;
+@property (assign, nonatomic) CGFloat cornerRadius;
 
-
-/**
-cellCursorColor
-default： [UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1]
-*/
+#pragma mark - cursor
 @property (copy, nonatomic) UIColor *cellCursorColor;
-
-/**
-cellCursorWidth
-default： 2
-*/
 @property (assign, nonatomic) CGFloat cellCursorWidth;
-
-/**
-cellCursorHeight
-default： 32
-*/
 @property (assign, nonatomic) CGFloat cellCursorHeight;
 
-/**
-cornerRadius
-default： 4
-*/
-@property (assign, nonatomic) CGFloat cornerRadius;
+#pragma mark - line
+@property (assign, nonatomic) BOOL showLine;
+
+#pragma mark - label
+@property (copy, nonatomic) UIFont *cellFont;
+@property (copy, nonatomic) UIColor *cellTextColor;
+
+#pragma mark - Security
+@property (assign, nonatomic) BOOL ifShowSecurity;
+@property (copy, nonatomic) NSString *securitySymbol;
+@property (assign, nonatomic) CRBoxSecurityType securityType;
+
+#pragma mark - Placeholder
+@property (copy, nonatomic) UIColor *cellPlaceholderTextColor;
+@property (copy, nonatomic) UIFont *cellPlaceholderFont;
+
+#pragma mark - Block
+@property (copy, nonatomic) CustomSecurityViewBlock customSecurityViewBlock;
+@property (copy, nonatomic) CustomLineViewBlock customLineViewBlock;
+@property (copy, nonatomic) ConfigCellShadowBlock __nullable configCellShadowBlock;
 ```
 
 `CRBoxFlowLayout` class
 ``` objc
-/** ifNeedEqualGap
-* default: YES
-*/
 @property (assign, nonatomic) BOOL ifNeedEqualGap;
-
 @property (assign, nonatomic) NSInteger itemNum;
 ```
 
 `CRBoxInputView` class
 ``` objc
-/**
-ifNeedCursor
-*default: YES
-*/
-@property (assign, nonatomic) BOOL ifNeedCursor;
-
-/**
-codeLength
-default: 4
-*/
-@property (nonatomic, assign) NSInteger codeLength;
-
-/**
-ifNeedSecurity
-desc: You can change this property anytime. And the existing texts can be refreshed automatically.
-default: NO
-*/
+// Security
 @property (assign, nonatomic) BOOL ifNeedSecurity;
-
-/**
-show security delay time
-default: 0.3
-*/
 @property (assign, nonatomic) CGFloat securityDelay;
 
-/**
-keyBoardType
-default: UIKeyboardTypeNumberPad
-*/
+@property (assign, nonatomic) BOOL ifNeedCursor;
+@property (nonatomic, assign) NSInteger codeLength;
 @property (assign, nonatomic) UIKeyboardType keyBoardType;
-
-/**
-textContentType
-desc: You set this 'nil' or 'UITextContentTypeOneTimeCode' to auto fill verify code.
-default: nil
-*/
 @property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0);
-
-/**
-placeholderText
-desc: Will show when specific cell is empty, if placeholder text have value.
-default：nil
-*/
 @property (strong, nonatomic) NSString  * _Nullable placeholderText;
 
-@property (copy, nonatomic) TextDidChangeblock textDidChangeblock;
-@property (strong, nonatomic) CRBoxFlowLayout *boxFlowLayout;
-@property (strong, nonatomic) CRBoxInputCellProperty *customCellProperty;
-@property (strong, nonatomic, readonly) NSString  *textValue;
+@property (copy, nonatomic) TextDidChangeblock _Nullable textDidChangeblock;
+@property (strong, nonatomic) CRBoxFlowLayout * _Nullable boxFlowLayout;
+@property (strong, nonatomic) CRBoxInputCellProperty * _Nullable customCellProperty;
+@property (strong, nonatomic, readonly) NSString  * _Nullable textValue;
 @property (strong, nonatomic) UIView * _Nullable inputAccessoryView;
 
 - (void)loadAndPrepareView;
-- (void)clearAll;
-
-/**
-loadAndPrepareView
-beginEdit: If need begin edit
-default: YES
-*/
-- (void)loadAndPrepareView;
 - (void)loadAndPrepareViewWithBeginEdit:(BOOL)beginEdit;
-
-/**
-clearAll
-beginEdit: If need begin edit
-default: YES
-*/
 - (void)clearAll;
 - (void)clearAllWithBeginEdit:(BOOL)beginEdit;
 
-- (UICollectionView *)mainCollectionView;
-
-// Qiuck set
-- (void)quickSetSecuritySymbol:(NSString *)securitySymbol;
+- (UICollectionView *_Nullable)mainCollectionView;
+- (void)quickSetSecuritySymbol:(NSString *_Nullable)securitySymbol;
 
 // You can inherit and call super
 - (void)initDefaultValue;
-
-// You can inherit and rewrite
-- (UICollectionViewCell *)customCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
-
+- (UICollectionViewCell *_Nullable)customCollectionView:(UICollectionView *_Nullable)collectionView cellForItemAtIndexPath:(NSIndexPath *_Nullable)indexPath;
 ```
 `CRBoxInputCell` class
 ``` objc
@@ -406,18 +310,7 @@ default: YES
 ``` objc
 @property (strong, nonatomic) UIView    *lineView;
 
-/**
-underlineColor
-state：while unselected
-default：[UIColor colorWithRed:49/255.0 green:51/255.0 blue:64/255.0 alpha:1]
-*/
 @property (copy, nonatomic) UIColor *underlineColorNormal;
-
-/**
-underlineColor
-state：while selected
-default：[UIColor colorWithRed:49/255.0 green:51/255.0 blue:64/255.0 alpha:1]
-*/
 @property (copy, nonatomic) UIColor *underlineColorSelected;
 ```
 

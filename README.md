@@ -227,144 +227,35 @@ boxInputView.customCellProperty = cellProperty;
 `CRBoxInputCellProperty` class
 ``` objc
 #pragma mark - UI
-/**
-cell边框宽度
-默认：0.5
-*/
 @property (assign, nonatomic) CGFloat borderWidth;
-
-/**
-cell边框颜色
-状态：未选中状态时
-默认：[UIColor colorWithRed:228/255.0 green:228/255.0 blue:228/255.0 alpha:1]
-*/
 @property (copy, nonatomic) UIColor *cellBorderColorNormal;
-
-/**
-cell边框颜色
-状态：选中状态时
-默认：[UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1]
-*/
 @property (copy, nonatomic) UIColor *cellBorderColorSelected;
-
-/**
-cell边框颜色
-状态：无填充文字，未选中状态时
-默认：与cellBorderColorFilled相同
-*/
 @property (copy, nonatomic) UIColor *__nullable cellBorderColorFilled;
-
-/**
-cell背景颜色
-状态：无填充文字，未选中状态时
-默认：[UIColor whiteColor]
-*/
 @property (copy, nonatomic) UIColor *cellBgColorNormal;
-
-/**
-cell背景颜色
-状态：选中状态时
-默认：[UIColor whiteColor]
-*/
 @property (copy, nonatomic) UIColor *cellBgColorSelected;
-
-/**
-cell背景颜色
-状态：填充文字后，未选中状态时
-默认：与cellBgColorFilled相同
-*/
 @property (copy, nonatomic) UIColor *__nullable cellBgColorFilled;
-
-
-/**
-光标颜色
-默认： [UIColor colorWithRed:255/255.0 green:70/255.0 blue:62/255.0 alpha:1]
-*/
-@property (copy, nonatomic) UIColor *cellCursorColor;
-
-/**
-光标宽度
-默认： 2
-*/
-@property (assign, nonatomic) CGFloat cellCursorWidth;
-
-/**
-光标高度
-默认： 32
-*/
-@property (assign, nonatomic) CGFloat cellCursorHeight;
-
-/**
-圆角
-默认： 4
-*/
 @property (assign, nonatomic) CGFloat cornerRadius;
 
-
+#pragma mark - cursor(光标)
+@property (copy, nonatomic) UIColor *cellCursorColor;
+@property (assign, nonatomic) CGFloat cellCursorWidth;
+@property (assign, nonatomic) CGFloat cellCursorHeight;
 
 #pragma mark - line
-/**
-显示下划线
-默认： NO
-*/
 @property (assign, nonatomic) BOOL showLine;
 
-
-
 #pragma mark - label
-/**
-字体/字号
-默认：[UIFont systemFontOfSize:20];
-*/
 @property (copy, nonatomic) UIFont *cellFont;
-
-/**
-字体颜色
-默认：[UIColor blackColor];
-*/
 @property (copy, nonatomic) UIColor *cellTextColor;
 
-
-
 #pragma mark - Security
-/**
-是否密文显示
-默认：NO
-*/
 @property (assign, nonatomic) BOOL ifShowSecurity;
-
-/**
-密文符号
-默认：✱
-说明：只有ifShowSecurity=YES时，有效
-*/
 @property (copy, nonatomic) NSString *securitySymbol;
-
-/**
-密文类型
-默认：CRBoxSecuritySymbolType
-类型说明：
-CRBoxSecuritySymbolType 符号类型，根据securitySymbol，originValue的内容来显示
-CRBoxSecurityCustomViewType 自定义View类型，可以自定义密文状态下的图片，View
-*/
 @property (assign, nonatomic) CRBoxSecurityType securityType;
 
-
-
 #pragma mark - Placeholder
-/**
-占位符字体颜色
-默认：[UIColor colorWithRed:114/255.0 green:126/255.0 blue:124/255.0 alpha:0.3];
-*/
 @property (copy, nonatomic) UIColor *cellPlaceholderTextColor;
-
-/**
-占位符字体/字号
-默认：[UIFont systemFontOfSize:20];
-*/
 @property (copy, nonatomic) UIFont *cellPlaceholderFont;
-
-
 
 #pragma mark - Block
 /**
@@ -383,66 +274,20 @@ CRBoxSecurityCustomViewType 自定义View类型，可以自定义密文状态下
 
 `CRBoxFlowLayout` class
 ``` objc
-/** 是否需要等间距
-* default: YES
-*/
 @property (assign, nonatomic) BOOL ifNeedEqualGap;
-
 @property (assign, nonatomic) NSInteger itemNum;
 ```
 
 `CRBoxInputView` class
 ``` objc
-/**
-是否需要光标
-ifNeedCursor
-default: YES
-*/
-@property (assign, nonatomic) BOOL ifNeedCursor;
-
-/**
-验证码长度
-codeLength
-default: 4
-*/
-@property (nonatomic, assign) NSInteger codeLength;
-
-/**
-是否开启密文模式
-描述：你可以在任何时候修改该属性，并且已经存在的文字会自动刷新。
-ifNeedSecurity
-default: NO
-*/
+// Security
 @property (assign, nonatomic) BOOL ifNeedSecurity;
-
-/**
-显示密文的延时时间
-securityDelay
-desc: show security delay time
-default: 0.3
-*/
 @property (assign, nonatomic) CGFloat securityDelay;
 
-/**
-键盘类型
-keyBoardType
-default: UIKeyboardTypeNumberPad
-*/
+@property (assign, nonatomic) BOOL ifNeedCursor;
+@property (nonatomic, assign) NSInteger codeLength;
 @property (assign, nonatomic) UIKeyboardType keyBoardType;
-
-/**
-textContentType
-描述: 你可以设置为 'nil' 或者 'UITextContentTypeOneTimeCode' 来自动获取短信验证码
-desc: You set this 'nil' or 'UITextContentTypeOneTimeCode' to auto fill verify code.
-default: nil
-*/
 @property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0);
-
-/**
-占位字符填充值
-说明：在对应的输入框没有内容时，会显示该值。
-默认：nil
-*/
 @property (strong, nonatomic) NSString  * _Nullable placeholderText;
 
 @property (copy, nonatomic) TextDidChangeblock _Nullable textDidChangeblock;
@@ -451,36 +296,17 @@ default: nil
 @property (strong, nonatomic, readonly) NSString  * _Nullable textValue;
 @property (strong, nonatomic) UIView * _Nullable inputAccessoryView;
 
-/**
-装载数据和准备界面
-desc: Load and prepareView
-beginEdit: 自动开启编辑模式
-default: YES
-*/
 - (void)loadAndPrepareView;
 - (void)loadAndPrepareViewWithBeginEdit:(BOOL)beginEdit;
-
-/**
-清空输入
-desc: Clear all
-beginEdit: 自动开启编辑模式
-default: YES
-*/
 - (void)clearAll;
 - (void)clearAllWithBeginEdit:(BOOL)beginEdit;
 
 - (UICollectionView *_Nullable)mainCollectionView;
-
-// 快速设置
-// Qiuck set
 - (void)quickSetSecuritySymbol:(NSString *_Nullable)securitySymbol;
 
 // 你可以在继承的子类中调用父类方法
 // You can inherit and call super
 - (void)initDefaultValue;
-
-// 你可以在继承的子类中重写父类方法
-// You can inherit and rewrite
 - (UICollectionViewCell *_Nullable)customCollectionView:(UICollectionView *_Nullable)collectionView cellForItemAtIndexPath:(NSIndexPath *_Nullable)indexPath;
 ```
 `CRBoxInputCell` class
@@ -494,18 +320,7 @@ default: YES
 ``` objc
 @property (strong, nonatomic) UIView    *lineView;
 
-/**
-下划线颜色
-状态：未选中状态时
-默认：[UIColor colorWithRed:49/255.0 green:51/255.0 blue:64/255.0 alpha:1]
-*/
 @property (copy, nonatomic) UIColor *underlineColorNormal;
-
-/**
-下划线颜色
-状态：选中状态时
-默认：[UIColor colorWithRed:49/255.0 green:51/255.0 blue:64/255.0 alpha:1]
-*/
 @property (copy, nonatomic) UIColor *underlineColorSelected;
 ```
 
