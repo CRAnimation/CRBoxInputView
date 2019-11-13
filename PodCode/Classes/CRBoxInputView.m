@@ -106,7 +106,6 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     // textView
     [self addSubview:self.textView];
     [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.mas_equalTo(UIEdgeInsetsZero);
         make.width.height.mas_equalTo(0);
         make.left.top.mas_equalTo(0);
     }];

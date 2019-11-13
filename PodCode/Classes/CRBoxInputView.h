@@ -50,19 +50,22 @@ typedef void(^TextDidChangeblock)(NSString * _Nullable text, BOOL isFinished);
 @property (assign, nonatomic) CGFloat securityDelay;
 
 /**
- 键盘类型
+ 键盘类型（已弃用，请使用textView.keyBoardType）
  keyBoardType
  default: UIKeyboardTypeNumberPad
  */
-@property (assign, nonatomic) UIKeyboardType keyBoardType;
+@property (assign, nonatomic) UIKeyboardType keyBoardType __deprecated_msg("Please use `textView.keyBoardType` property.");
 
 /**
- textContentType
+ textContentType（已弃用，请使用textView.textContentType）
  描述: 你可以设置为 'nil' 或者 'UITextContentTypeOneTimeCode' 来自动获取短信验证码
  desc: You set this 'nil' or 'UITextContentTypeOneTimeCode' to auto fill verify code.
  default: nil
  */
-@property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0);
+@property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0) __deprecated_msg("Please use `textView.textContentType` property.");
+
+// 已弃用，请使用textView.inputAccessoryView
+@property (strong, nonatomic) UIView * _Nullable inputAccessoryView __deprecated_msg("Please use `textView.inputAccessoryView` property.");
 
 /**
  占位字符填充值
@@ -71,12 +74,12 @@ typedef void(^TextDidChangeblock)(NSString * _Nullable text, BOOL isFinished);
  */
 @property (strong, nonatomic) NSString  * _Nullable placeholderText;
 
-@property (nonatomic, strong, readonly) CRBoxTextView *textView;
+@property (nonatomic, strong, readonly) CRBoxTextView * _Nullable textView;
 @property (copy, nonatomic) TextDidChangeblock _Nullable textDidChangeblock;
 @property (strong, nonatomic) CRBoxFlowLayout * _Nullable boxFlowLayout;
 @property (strong, nonatomic) CRBoxInputCellProperty * _Nullable customCellProperty;
 @property (strong, nonatomic, readonly) NSString  * _Nullable textValue;
-@property (strong, nonatomic) UIView * _Nullable inputAccessoryView;
+
 
 /**
  装载数据和准备界面
