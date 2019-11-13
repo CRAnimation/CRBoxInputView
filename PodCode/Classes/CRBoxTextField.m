@@ -1,13 +1,13 @@
 //
-//  CRBoxTextView.m
+//  CRBoxTextField.m
 //  CRBoxInputView
 //
 //  Created by Chobits on 2019/1/3.
 //
 
-#import "CRBoxTextView.h"
+#import "CRBoxTextField.h"
 
-@implementation CRBoxTextView
+@implementation CRBoxTextField
 
 /**
  * /禁止可被粘贴复制

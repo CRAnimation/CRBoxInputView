@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 }
 
 @property (nonatomic, strong) UITapGestureRecognizer *tapGR;
-@property (nonatomic, strong, readwrite) CRBoxTextView *textView;
+@property (nonatomic, strong, readwrite) CRBoxTextField *textField;
 @property (nonatomic, strong) UICollectionView *mainCollectionView;
 @property (nonatomic, strong) NSMutableArray <NSString *> *valueArr;
 @property (nonatomic, strong) NSMutableArray <CRBoxInputCellProperty *> *cellPropertyArr;
@@ -104,8 +104,8 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     }];
     
     // textView
-    [self addSubview:self.textView];
-    [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self addSubview:self.textField];
+    [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(0);
         make.left.top.mas_equalTo(0);
     }];
@@ -141,11 +141,11 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 
 #pragma mark - TextViewEdit
 - (void)beginEdit{
-    [self.textView becomeFirstResponder];
+    [self.textField becomeFirstResponder];
 }
 
 - (void)endEdit{
-    [self.textView resignFirstResponder];
+    [self.textField resignFirstResponder];
 }
 
 - (void)clearAll
@@ -157,7 +157,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 {
     _oldLength = 0;
     [_valueArr removeAllObjects];
-    self.textView.text = @"";
+    self.textField.text = @"";
     [self allSecurityClose];
     [self.mainCollectionView reloadData];
     [self triggerBlock];
@@ -257,7 +257,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 {
     if (self.textDidChangeblock) {
         BOOL isFinished = _valueArr.count == _codeLength ? YES : NO;
-        self.textDidChangeblock(_textView.text, isFinished);
+        self.textDidChangeblock(_textField.text, isFinished);
     }
 }
 
@@ -412,27 +412,28 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 
 - (void)setKeyBoardType:(UIKeyboardType)keyBoardType{
     _keyBoardType = keyBoardType;
-    self.textView.keyboardType = keyBoardType;
+    self.textField.keyboardType = keyBoardType;
 }
 
-- (CRBoxTextView *)textView{
-    if (!_textView) {
-        _textView = [CRBoxTextView new];
-//        _textView.alpha = 0.1;
-//        _textView.tintColor = [UIColor clearColor];
-//        _textView.backgroundColor = [UIColor clearColor];
-//        _textView.textColor = [UIColor clearColor];
-        _textView.delegate = self;
-        [_textView addTarget:self action:@selector(textDidChange:) forControlEvents:UIControlEventEditingChanged];
+- (CRBoxTextField *)textField
+{
+    if (!_textField) {
+        _textField = [CRBoxTextField new];
+//        _textField.alpha = 0.1;
+//        _textField.tintColor = [UIColor clearColor];
+//        _textField.backgroundColor = [UIColor clearColor];
+//        _textField.textColor = [UIColor clearColor];
+        _textField.delegate = self;
+        [_textField addTarget:self action:@selector(textDidChange:) forControlEvents:UIControlEventEditingChanged];
     }
-    return _textView;
+    return _textField;
 }
 
 - (void)setTextContentType:(UITextContentType)textContentType
 {
     _textContentType = textContentType;
     
-    _textView.textContentType = textContentType;
+    _textField.textContentType = textContentType;
 }
 
 - (CRBoxInputCellProperty *)customCellProperty
@@ -455,14 +456,14 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 
 - (NSString *)textValue
 {
-    return _textView.text;
+    return _textField.text;
 }
 
 @synthesize inputAccessoryView = _inputAccessoryView;
 - (void)setInputAccessoryView:(UIView *)inputAccessoryView
 {
     _inputAccessoryView = inputAccessoryView;
-    self.textView.inputAccessoryView = _inputAccessoryView;
+    self.textField.inputAccessoryView = _inputAccessoryView;
 }
 
 - (UIView *)inputAccessoryView

@@ -14,7 +14,7 @@
 #import "CRBoxInputCell.h"
 #import "CRBoxInputCellProperty.h"
 #import "CRBoxInputView.h"
-#import "CRBoxTextView.h"
+#import "CRBoxTextField.h"
 #import "CRLineView.h"
 #import "CRSecrectImageView.h"
 

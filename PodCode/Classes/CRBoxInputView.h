@@ -10,7 +10,7 @@
 #import "CRBoxFlowLayout.h"
 #import "CRBoxInputCellProperty.h"
 #import "CRBoxInputCell.h"
-#import "CRBoxTextView.h"
+#import "CRBoxTextField.h"
 
 @class CRBoxInputView;
 
@@ -50,22 +50,22 @@ typedef void(^TextDidChangeblock)(NSString * _Nullable text, BOOL isFinished);
 @property (assign, nonatomic) CGFloat securityDelay;
 
 /**
- 键盘类型（已弃用，请使用textView.keyBoardType）
+ 键盘类型（已弃用，请使用textField.keyBoardType）
  keyBoardType
  default: UIKeyboardTypeNumberPad
  */
-@property (assign, nonatomic) UIKeyboardType keyBoardType __deprecated_msg("Please use `textView.keyBoardType` property.");
+@property (assign, nonatomic) UIKeyboardType keyBoardType __deprecated_msg("Please use `textField.keyBoardType` property.");
 
 /**
- textContentType（已弃用，请使用textView.textContentType）
+ textContentType（已弃用，请使用textField.textContentType）
  描述: 你可以设置为 'nil' 或者 'UITextContentTypeOneTimeCode' 来自动获取短信验证码
  desc: You set this 'nil' or 'UITextContentTypeOneTimeCode' to auto fill verify code.
  default: nil
  */
-@property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0) __deprecated_msg("Please use `textView.textContentType` property.");
+@property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0) __deprecated_msg("Please use `textField.textContentType` property.");
 
-// 已弃用，请使用textView.inputAccessoryView
-@property (strong, nonatomic) UIView * _Nullable inputAccessoryView __deprecated_msg("Please use `textView.inputAccessoryView` property.");
+// 已弃用，请使用textField.inputAccessoryView
+@property (strong, nonatomic) UIView * _Nullable inputAccessoryView __deprecated_msg("Please use `textField.inputAccessoryView` property.");
 
 /**
  占位字符填充值
@@ -74,7 +74,7 @@ typedef void(^TextDidChangeblock)(NSString * _Nullable text, BOOL isFinished);
  */
 @property (strong, nonatomic) NSString  * _Nullable placeholderText;
 
-@property (nonatomic, strong, readonly) CRBoxTextView * _Nullable textView;
+@property (nonatomic, strong, readonly) CRBoxTextField * _Nullable textField;
 @property (copy, nonatomic) TextDidChangeblock _Nullable textDidChangeblock;
 @property (strong, nonatomic) CRBoxFlowLayout * _Nullable boxFlowLayout;
 @property (strong, nonatomic) CRBoxInputCellProperty * _Nullable customCellProperty;

@@ -1,5 +1,5 @@
 //
-//  CRBoxTextView.h
+//  CRBoxTextField.h
 //  CRBoxInputView
 //
 //  Created by Chobits on 2019/1/3.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CRBoxTextView : UITextField
+@interface CRBoxTextField : UITextField
 
 @end
 
