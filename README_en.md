@@ -62,7 +62,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ``` objc
 CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
 boxInputView.codeLength = 4;
-boxInputView.keyBoardType = UIKeyboardTypeNumberPad;
+boxInputView.textField.keyBoardType = UIKeyboardTypeNumberPad;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES]; // BeginEdit: If need begin edit.
 [self.view addSubview:boxInputView];
 
@@ -343,14 +343,16 @@ default: 0.3
 keyBoardType
 default: UIKeyboardTypeNumberPad
 */
-@property (assign, nonatomic) UIKeyboardType keyBoardType;
+@property (assign, nonatomic) UIKeyboardType keyBoardType __deprecated_msg("Please use `textField.keyBoardType` property.");
 
 /**
 textContentType
 desc: You set this 'nil' or 'UITextContentTypeOneTimeCode' to auto fill verify code.
 default: nil
 */
-@property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0);
+@property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0) __deprecated_msg("Please use `textField.textContentType` property.");
+
+@property (strong, nonatomic) UIView * _Nullable inputAccessoryView __deprecated_msg("Please use `textField.inputAccessoryView` property.");
 
 /**
 placeholderText
@@ -359,11 +361,11 @@ default：nil
 */
 @property (strong, nonatomic) NSString  * _Nullable placeholderText;
 
+@property (nonatomic, strong, readonly) CRBoxTextField * _Nullable textField;
 @property (copy, nonatomic) TextDidChangeblock textDidChangeblock;
 @property (strong, nonatomic) CRBoxFlowLayout *boxFlowLayout;
 @property (strong, nonatomic) CRBoxInputCellProperty *customCellProperty;
 @property (strong, nonatomic, readonly) NSString  *textValue;
-@property (strong, nonatomic) UIView * _Nullable inputAccessoryView;
 
 - (void)loadAndPrepareView;
 - (void)clearAll;
