@@ -224,7 +224,7 @@ boxInputView.customCellProperty = cellProperty;
 <br/>
 
 ## 属性和方法
-`CRBoxInputCellProperty` class
+`CRBoxInputCellProperty`
 ``` objc
 #pragma mark - UI
 @property (assign, nonatomic) CGFloat borderWidth;
@@ -272,13 +272,13 @@ boxInputView.customCellProperty = cellProperty;
 @property (copy, nonatomic) ConfigCellShadowBlock __nullable configCellShadowBlock;
 ```
 
-`CRBoxFlowLayout` class
+`CRBoxFlowLayout`
 ``` objc
 @property (assign, nonatomic) BOOL ifNeedEqualGap;
 @property (assign, nonatomic) NSInteger itemNum;
 ```
 
-`CRBoxInputView` class
+`CRBoxInputView`
 ``` objc
 // Security
 @property (assign, nonatomic) BOOL ifNeedSecurity;
@@ -309,14 +309,14 @@ boxInputView.customCellProperty = cellProperty;
 - (void)initDefaultValue;
 - (UICollectionViewCell *_Nullable)customCollectionView:(UICollectionView *_Nullable)collectionView cellForItemAtIndexPath:(NSIndexPath *_Nullable)indexPath;
 ```
-`CRBoxInputCell` class
+`CRBoxInputCell`
 ``` objc
 // 你可以在继承的子类中重写父类方法
 // You can inherit and rewrite
 - (UIView *)createCustomSecurityView;
 ```
 
-`CRLineView` class
+`CRLineView`
 ``` objc
 @property (strong, nonatomic) UIView    *lineView;
 
