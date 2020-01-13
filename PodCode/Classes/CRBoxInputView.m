@@ -52,11 +52,20 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     return self;
 }
 
+- (void)dealloc
+{
+    [self removeNotificationObserver];
+}
+
 #pragma mark - Notification Observer
 - (void)addNotificationObserver
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
+}
+
+- (void)removeNotificationObserver {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)applicationWillResignActive:(NSNotification *)notification
