@@ -364,9 +364,9 @@
     cellProperty.showLine = YES;
     cellProperty.customLineViewBlock = ^CRLineView * _Nonnull{
         CRLineView *lineView = [CRLineView new];
-        lineView.underlineColorNormal = color_master;
-        lineView.underlineColorSelected = [color_master colorWithAlphaComponent:0.55];
-        lineView.underlineColorFilled = [UIColor blueColor];
+        lineView.underlineColorNormal = [color_master colorWithAlphaComponent:0.3];
+        lineView.underlineColorSelected = [color_master colorWithAlphaComponent:0.7];
+        lineView.underlineColorFilled = color_master;
         [lineView.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(4);
             make.left.right.bottom.offset(0);

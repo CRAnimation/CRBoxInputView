@@ -19,7 +19,7 @@
 
 
 ## Critical Updates!!!
-We can config custom view, not need to throw the inherit way from the version 1.1.5. You can config custom view with block in `CRBoxInputCellProperty`.
+We can config custom view, not need to throw the inherit way from the version 1.1.6. You can config custom view with block in `CRBoxInputCellProperty`.
 ``` objc
 customSecurityViewBlock //Custom security view
 customLineViewBlock     //Custom line
@@ -34,7 +34,7 @@ CRBoxInputView is available through [CocoaPods](https://cocoapods.org). To insta
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'CRBoxInputView', '1.1.5'
+pod 'CRBoxInputView', '1.1.6'
 ```
 
 
@@ -135,8 +135,9 @@ CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.showLine = YES; //Required
 cellProperty.customLineViewBlock = ^CRLineView * _Nonnull{
     CRLineView *lineView = [CRLineView new];
-    lineView.underlineColorNormal = color_master;
-    lineView.underlineColorSelected = [color_master colorWithAlphaComponent:0.55];
+    lineView.underlineColorNormal = [color_master colorWithAlphaComponent:0.3];
+    lineView.underlineColorSelected = [color_master colorWithAlphaComponent:0.7];
+    lineView.underlineColorFilled = color_master;
     [lineView.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(4);
         make.left.right.bottom.offset(0);
@@ -312,6 +313,7 @@ boxInputView.customCellProperty = cellProperty;
 
 @property (copy, nonatomic) UIColor *underlineColorNormal;
 @property (copy, nonatomic) UIColor *underlineColorSelected;
+@property (copy, nonatomic) UIColor *underlineColorFilled;
 ```
 
 ## Other Problems

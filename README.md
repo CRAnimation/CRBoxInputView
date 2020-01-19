@@ -31,7 +31,7 @@ configCellShadowBlock   //自定义阴影
 CRBoxInputView 可以通过 [CocoaPods](https://cocoapods.org). 来安装,  只需简单的在你的 Podfile 中添加如下代码:
 
 ```ruby
-pod 'CRBoxInputView', '1.1.5'
+pod 'CRBoxInputView', '1.1.6'
 ```
 
 
@@ -133,8 +133,9 @@ CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.showLine = YES; //必需
 cellProperty.customLineViewBlock = ^CRLineView * _Nonnull{
     CRLineView *lineView = [CRLineView new];
-    lineView.underlineColorNormal = color_master;
-    lineView.underlineColorSelected = [color_master colorWithAlphaComponent:0.55];
+    lineView.underlineColorNormal = [color_master colorWithAlphaComponent:0.3];
+    lineView.underlineColorSelected = [color_master colorWithAlphaComponent:0.7];
+    lineView.underlineColorFilled = color_master;
     [lineView.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(4);
         make.left.right.bottom.offset(0);
@@ -322,6 +323,7 @@ boxInputView.customCellProperty = cellProperty;
 
 @property (copy, nonatomic) UIColor *underlineColorNormal;
 @property (copy, nonatomic) UIColor *underlineColorSelected;
+@property (copy, nonatomic) UIColor *underlineColorFilled;
 ```
 
 ## 其他问题
