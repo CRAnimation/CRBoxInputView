@@ -189,11 +189,25 @@
     }
     
     if (_lineView) {
-        if (!selected && _lineView.underlineColorNormal) {
-            _lineView.lineView.backgroundColor = _lineView.underlineColorNormal;
-        }else if (selected && _lineView.underlineColorSelected){
+        // 未选中
+        if (!selected) {
+            if (self.boxInputCellProperty.originValue.length > 0 && _lineView.underlineColorFilled) {
+                // 有内容
+                _lineView.lineView.backgroundColor = _lineView.underlineColorFilled;
+            }else if (_lineView.underlineColorNormal) {
+                // 无内容
+                _lineView.lineView.backgroundColor = _lineView.underlineColorNormal;
+            }else{
+                // 默认
+                _lineView.lineView.backgroundColor = CRColorMaster;
+            }
+        }
+        // 已选中
+        else if (selected && _lineView.underlineColorSelected){
             _lineView.lineView.backgroundColor = _lineView.underlineColorSelected;
-        }else{
+        }
+        // 默认
+        else{
             _lineView.lineView.backgroundColor = CRColorMaster;
         }
     }

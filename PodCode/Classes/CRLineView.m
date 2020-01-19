@@ -23,6 +23,7 @@
     if (self) {
         _underlineColorNormal = CRColorMaster;
         _underlineColorSelected = CRColorMaster;
+        _underlineColorFilled = CRColorMaster;
         [self createUI];
     }
     return self;
