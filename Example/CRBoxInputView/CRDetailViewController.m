@@ -401,7 +401,9 @@
     _boxInputView.ifNeedSecurity = YES;//need
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
-    [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
+    [_boxInputView loadAndPrepareViewWithBeginEdit:NO];
+    
+    [_boxInputView reloadInputString:@"5678"];
 
     return _boxInputView;
 }

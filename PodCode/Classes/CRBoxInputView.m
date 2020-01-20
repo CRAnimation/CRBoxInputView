@@ -150,7 +150,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 {
     if (![self.textView.text isEqualToString:value]) {
         self.textView.text = value;
-        [self textDidChange:self.textView];
+        [self baseTextDidChange:self.textView manualInvoke:YES];
     }
 }
 
@@ -196,7 +196,15 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 }
 
 #pragma mark - UITextFieldDidChange
-- (void)textDidChange:(UITextField *)textField{
+- (void)textDidChange:(UITextField *)textField {
+    [self baseTextDidChange:textField manualInvoke:NO];
+}
+
+/**
+ * textDidChange基操作
+ * manualInvoke：是否为手动调用
+ */
+- (void)baseTextDidChange:(UITextField *)textField manualInvoke:(BOOL)manualInvoke  {
     
     __weak typeof(self) weakSelf = self;
     
@@ -237,7 +245,15 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
                 [strongSelf.valueArr addObject:substring];
             }];
             
-            [self delaySecurityProcess];
+            if (self.ifNeedSecurity) {
+                if (manualInvoke) {
+                    // 处理所有秘文
+                    [self delaySecurityProcessAll];
+                }else {
+                    // 只处理最后一个秘文
+                    [self delaySecurityProcessLastOne];
+                }
+            }
         }
     }
     [_mainCollectionView reloadData];
@@ -253,7 +269,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 - (void)setSecurityShow:(BOOL)isShow index:(NSInteger)index
 {
     if (index < 0) {
-        NSAssert(NO, @"index必须大于0");
+        NSAssert(NO, @"index必须大于等于0");
         return;
     }
     
@@ -291,6 +307,10 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 
 #pragma mark - Asterisk
 // 替换密文
+/**
+ * 替换密文
+ * needEqualToCount：是否只替换最后一个
+ */
 - (void)replaceValueArrToAsteriskWithIndex:(NSInteger)index needEqualToCount:(BOOL)needEqualToCount
 {
     if (!self.ifNeedSecurity) {
@@ -304,15 +324,11 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     [self setSecurityShow:YES index:index];
 }
 
-// 延时替换密文
-- (void)delaySecurityProcess
+// 延时替换最后一个密文
+- (void)delaySecurityProcessLastOne
 {
-    if (!self.ifNeedSecurity) {
-        return;
-    }
-    
     __weak __typeof(self)weakSelf = self;
-    [self delayAfter:_securityDelay dealBlock:^{
+    [self delayAfter:self.securityDelay dealBlock:^{
         __strong __typeof(weakSelf)strongSelf = weakSelf;
         if (strongSelf.valueArr.count > 0) {
             [strongSelf replaceValueArrToAsteriskWithIndex:strongSelf.valueArr.count-1 needEqualToCount:YES];
@@ -321,6 +337,18 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
             });
         }
     }];
+}
+
+// 延时替换所有一个密文
+- (void)delaySecurityProcessAll
+{
+    __weak __typeof(self)weakSelf = self;
+    [self.valueArr enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        [strongSelf replaceValueArrToAsteriskWithIndex:idx needEqualToCount:NO];
+    }];
+    
+    [self.mainCollectionView reloadData];
 }
 
 #pragma mark - DelayBlock
