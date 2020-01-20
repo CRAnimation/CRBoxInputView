@@ -269,14 +269,17 @@
     }
     
     __weak __typeof(self)weakSelf = self;
-    _boxInputView.textDidChangeblock = ^(NSString *text, BOOL isFinished) {
-        __strong __typeof(weakSelf)strongSelf = weakSelf;
-        if (text.length > 0) {
-            strongSelf.valueLabel.text = text;
-        }else{
-            strongSelf.valueLabel.text = @"Empty";
-        }
-    };
+    if (!_boxInputView.textDidChangeblock) {
+        _boxInputView.textDidChangeblock = ^(NSString *text, BOOL isFinished) {
+            __strong __typeof(weakSelf)strongSelf = weakSelf;
+            if (text.length > 0) {
+                strongSelf.valueLabel.text = text;
+            }else{
+                strongSelf.valueLabel.text = @"Empty";
+            }
+        };
+    }
+    
     [self.view addSubview:_boxInputView];
     [_boxInputView mas_makeConstraints:^(MASConstraintMaker *make) {
         __strong __typeof(weakSelf)strongSelf = weakSelf;
@@ -403,8 +406,18 @@
     _boxInputView.customCellProperty = cellProperty;
     [_boxInputView loadAndPrepareViewWithBeginEdit:NO];
     
+    __weak __typeof(self)weakSelf = self;
+    _boxInputView.textDidChangeblock = ^(NSString *text, BOOL isFinished) {
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        if (text.length > 0) {
+            strongSelf.valueLabel.text = text;
+        }else{
+            strongSelf.valueLabel.text = @"Empty";
+        }
+    };
+    
     [_boxInputView reloadInputString:@"5678"];
-
+    
     return _boxInputView;
 }
 
