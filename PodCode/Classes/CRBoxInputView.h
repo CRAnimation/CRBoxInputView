@@ -76,6 +76,13 @@ typedef void(^TextEditStatusChangeblock)(CRTextEditStatus editStatus);
  */
 @property (strong, nonatomic) NSString  * _Nullable placeholderText;
 
+/**
+ 弹出键盘时，是否清空所有输入
+ 只有在输入的字数等于codeLength时，生效
+ default: NO
+ */
+@property (assign, nonatomic) BOOL ifClearAllInBeginEditing;
+
 @property (copy, nonatomic) TextDidChangeblock _Nullable textDidChangeblock;
 @property (copy, nonatomic) TextEditStatusChangeblock _Nullable textEditStatusChangeblock;
 @property (strong, nonatomic) CRBoxFlowLayout * _Nullable boxFlowLayout;

@@ -159,6 +159,10 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 {
     _ifNeedBeginEdit = YES;
     
+    if (self.ifClearAllInBeginEditing && self.textValue.length == self.codeLength) {
+        [self clearAll];
+    }
+    
     if (self.textEditStatusChangeblock) {
         self.textEditStatusChangeblock(CRTextEditStatus_BeginEdit);
     }

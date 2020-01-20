@@ -416,6 +416,7 @@
         }
     };
     
+    _boxInputView.ifClearAllInBeginEditing = YES;
     [_boxInputView reloadInputString:@"5678"];
     
     return _boxInputView;
