@@ -158,22 +158,36 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     _ifNeedBeginEdit = YES;
+    
+    if (self.textEditStatusChangeblock) {
+        self.textEditStatusChangeblock(CRTextEditStatus_BeginEdit);
+    }
+    
     [self.mainCollectionView reloadData];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     _ifNeedBeginEdit = NO;
+    
+    if (self.textEditStatusChangeblock) {
+        self.textEditStatusChangeblock(CRTextEditStatus_EndEdit);
+    }
+    
     [self.mainCollectionView reloadData];
 }
 
 #pragma mark - TextViewEdit
 - (void)beginEdit{
-    [self.textView becomeFirstResponder];
+    if (![self.textView isFirstResponder]) {
+        [self.textView becomeFirstResponder];
+    }
 }
 
 - (void)endEdit{
-    [self.textView resignFirstResponder];
+    if ([self.textView isFirstResponder]) {
+        [self.textView resignFirstResponder];
+    }
 }
 
 - (void)clearAll

@@ -12,7 +12,14 @@
 #import "CRBoxInputCell.h"
 @class CRBoxInputView;
 
+typedef NS_ENUM(NSInteger, CRTextEditStatus) {
+    CRTextEditStatus_Idle,
+    CRTextEditStatus_BeginEdit,
+    CRTextEditStatus_EndEdit,
+};
+
 typedef void(^TextDidChangeblock)(NSString * _Nullable text, BOOL isFinished);
+typedef void(^TextEditStatusChangeblock)(CRTextEditStatus editStatus);
 
 @interface CRBoxInputView : UIView
 
@@ -70,6 +77,7 @@ typedef void(^TextDidChangeblock)(NSString * _Nullable text, BOOL isFinished);
 @property (strong, nonatomic) NSString  * _Nullable placeholderText;
 
 @property (copy, nonatomic) TextDidChangeblock _Nullable textDidChangeblock;
+@property (copy, nonatomic) TextEditStatusChangeblock _Nullable textEditStatusChangeblock;
 @property (strong, nonatomic) CRBoxFlowLayout * _Nullable boxFlowLayout;
 @property (strong, nonatomic) CRBoxInputCellProperty * _Nullable customCellProperty;
 @property (strong, nonatomic, readonly) NSString  * _Nullable textValue;
