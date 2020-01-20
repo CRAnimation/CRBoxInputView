@@ -99,7 +99,10 @@ typedef void(^TextEditStatusChangeblock)(CRTextEditStatus editStatus);
 - (void)loadAndPrepareView;
 - (void)loadAndPrepareViewWithBeginEdit:(BOOL)beginEdit;
 
-// 重载输入的数据
+/**
+ 重载输入的数据（用来设置预设数据）
+ desc:Reload string. (You can use this function to set deault value)
+ */
 - (void)reloadInputString:(NSString *_Nullable)value;
 
 /**

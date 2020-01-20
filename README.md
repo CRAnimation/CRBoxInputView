@@ -10,6 +10,7 @@
 ## Tip
 - 若图片加载不出来，请尝试开全局梯子
 - 如果好用，有劳点下Star。您的支持是我最大的动力！
+- 建议使用前运行Demo。常用功能在Demo中都有体现。
 
 
 ## 组件特点
@@ -167,7 +168,10 @@ cellProperty.securitySymbol = @"*"; //可选
 CRBoxInputView *boxInputView = [CRBoxInputView new];
 boxInputView.ifNeedSecurity = YES; //必需（你可以在任何时候修改该属性，并且已经存在的文字会自动刷新。）
 boxInputView.customCellProperty = cellProperty;
-[boxInputView loadAndPrepareViewWithBeginEdit:YES];
+[boxInputView loadAndPrepareViewWithBeginEdit:NO];
+
+_boxInputView.ifClearAllInBeginEditing = YES;
+[_boxInputView reloadInputString:@"5678"];
 ```
 
 
@@ -295,8 +299,10 @@ boxInputView.customCellProperty = cellProperty;
 @property (assign, nonatomic) UIKeyboardType keyBoardType;
 @property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0);
 @property (strong, nonatomic) NSString  * _Nullable placeholderText;
+@property (assign, nonatomic) BOOL ifClearAllInBeginEditing;
 
 @property (copy, nonatomic) TextDidChangeblock _Nullable textDidChangeblock;
+@property (copy, nonatomic) TextEditStatusChangeblock _Nullable textEditStatusChangeblock;
 @property (strong, nonatomic) CRBoxFlowLayout * _Nullable boxFlowLayout;
 @property (strong, nonatomic) CRBoxInputCellProperty * _Nullable customCellProperty;
 @property (strong, nonatomic, readonly) NSString  * _Nullable textValue;
@@ -304,6 +310,7 @@ boxInputView.customCellProperty = cellProperty;
 
 - (void)loadAndPrepareView;
 - (void)loadAndPrepareViewWithBeginEdit:(BOOL)beginEdit;
+- (void)reloadInputString:(NSString *_Nullable)value; // 重载输入的数据（用来设置预设数据）
 - (void)clearAll;
 - (void)clearAllWithBeginEdit:(BOOL)beginEdit;
 

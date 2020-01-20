@@ -163,7 +163,10 @@ cellProperty.securitySymbol = @"*"; //Optional
 CRBoxInputView *boxInputView = [CRBoxInputView new];
 boxInputView.ifNeedSecurity = YES; //Required (You can change this property anytime. And the existing texts can be refreshed automatically.)
 boxInputView.customCellProperty = cellProperty;
-[boxInputView loadAndPrepareViewWithBeginEdit:YES];
+[boxInputView loadAndPrepareViewWithBeginEdit:NO];
+
+_boxInputView.ifClearAllInBeginEditing = YES;
+[_boxInputView reloadInputString:@"5678"];
 ```
 
 
@@ -282,8 +285,10 @@ boxInputView.customCellProperty = cellProperty;
 @property (assign, nonatomic) UIKeyboardType keyBoardType;
 @property (null_unspecified,nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0);
 @property (strong, nonatomic) NSString  * _Nullable placeholderText;
+@property (assign, nonatomic) BOOL ifClearAllInBeginEditing;
 
 @property (copy, nonatomic) TextDidChangeblock _Nullable textDidChangeblock;
+@property (copy, nonatomic) TextEditStatusChangeblock _Nullable textEditStatusChangeblock;
 @property (strong, nonatomic) CRBoxFlowLayout * _Nullable boxFlowLayout;
 @property (strong, nonatomic) CRBoxInputCellProperty * _Nullable customCellProperty;
 @property (strong, nonatomic, readonly) NSString  * _Nullable textValue;
@@ -291,6 +296,7 @@ boxInputView.customCellProperty = cellProperty;
 
 - (void)loadAndPrepareView;
 - (void)loadAndPrepareViewWithBeginEdit:(BOOL)beginEdit;
+- (void)reloadInputString:(NSString *_Nullable)value; // Reload string. (You can use this function to set deault value)
 - (void)clearAll;
 - (void)clearAllWithBeginEdit:(BOOL)beginEdit;
 
