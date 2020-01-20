@@ -9,6 +9,13 @@
 #import "CRBoxInputCellProperty.h"
 #import <Masonry/Masonry.h>
 
+@interface CRBoxInputCellProperty ()
+
+@property (copy, nonatomic, readwrite) NSString *originValue;
+
+@end
+
+
 @implementation CRBoxInputCellProperty
 
 - (instancetype)init
@@ -140,6 +147,11 @@
     }];
     
     return customSecurityView;
+}
+
+#pragma mark - Setter
+- (void)setMyOriginValue:(NSString *)originValue {
+    _originValue = originValue;
 }
 
 @end

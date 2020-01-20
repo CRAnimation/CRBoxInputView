@@ -141,7 +141,8 @@ typedef void(^ConfigCellShadowBlock)(CALayer *layer);
  若想一次性修改所有输入值，请使用 CRBoxInputView中的'reloadInputString'方法
  禁止修改该值！！！（除非你知道该怎么使用它。）
  */
-@property (copy, nonatomic) NSString *originValue;
+@property (copy, nonatomic, readonly) NSString *originValue;
+- (void)setMyOriginValue:(NSString *)originValue;
 
 /**
  密文类型

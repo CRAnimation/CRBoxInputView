@@ -389,9 +389,9 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         // setOriginValue
         NSUInteger focusIndex = _valueArr.count;
         if (_valueArr.count > 0 && indexPath.row <= focusIndex - 1) {
-            cellProperty.originValue = _valueArr[indexPath.row];
+            [cellProperty setMyOriginValue:_valueArr[indexPath.row]];
         }else{
-            cellProperty.originValue = @"";
+            [cellProperty setMyOriginValue:@""];
         }
         
         cell.boxInputCellProperty = cellProperty;
