@@ -7,6 +7,11 @@
 ### [中文文档](https://github.com/CRAnimation/CRBoxInputView#Header_Start) [/ English Document](https://github.com/CRAnimation/CRBoxInputView/blob/master/README_en.md#Header_Start)
 
 
+## Tip
+- 若图片加载不出来，请尝试开全局梯子
+- 如果好用，有劳点下Star。您的支持是我最大的动力！
+
+
 ## 组件特点
 - 支持iOS12短信验证码自动填充
 - 支持`Masonry`
