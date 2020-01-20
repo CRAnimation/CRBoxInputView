@@ -66,6 +66,7 @@
     return self;
 }
 
+#pragma mark - Copy
 - (id)copyWithZone:(NSZone *)zone
 {
     CRBoxInputCellProperty *copy = [[self class] allocWithZone:zone];
@@ -120,6 +121,7 @@
     return copy;
 }
 
+#pragma mark - Getter
 - (UIView *)defaultCustomSecurityView
 {
     UIView *customSecurityView = [UIView new];

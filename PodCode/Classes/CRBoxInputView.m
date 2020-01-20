@@ -305,8 +305,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     }
 }
 
-#pragma mark - Asterisk
-// 替换密文
+#pragma mark - Asterisk 替换密文
 /**
  * 替换密文
  * needEqualToCount：是否只替换最后一个
@@ -324,7 +323,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     [self setSecurityShow:YES index:index];
 }
 
-// 延时替换最后一个密文
+#pragma mark 延时替换最后一个密文
 - (void)delaySecurityProcessLastOne
 {
     __weak __typeof(self)weakSelf = self;
@@ -339,7 +338,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     }];
 }
 
-// 延时替换所有一个密文
+#pragma mark 延时替换所有一个密文
 - (void)delaySecurityProcessAll
 {
     __weak __typeof(self)weakSelf = self;
