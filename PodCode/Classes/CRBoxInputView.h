@@ -84,6 +84,9 @@ typedef void(^TextDidChangeblock)(NSString * _Nullable text, BOOL isFinished);
 - (void)loadAndPrepareView;
 - (void)loadAndPrepareViewWithBeginEdit:(BOOL)beginEdit;
 
+// 重载输入的数据
+- (void)reloadInputString:(NSString *_Nullable)value;
+
 /**
  清空输入
  desc: Clear all

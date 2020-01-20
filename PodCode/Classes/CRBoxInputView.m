@@ -93,6 +93,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     _ifNeedBeginEdit = NO;
 }
 
+#pragma mark - LoadAndPrepareView
 - (void)loadAndPrepareView
 {
     [self loadAndPrepareViewWithBeginEdit:YES];
@@ -122,7 +123,14 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     }];
     
     // tap
-    [self addGestureRecognizer:self.tapGR];
+    if (self.tapGR.view != self) {
+        [self addGestureRecognizer:self.tapGR];
+    }
+    
+    if (![self.textView.text isEqualToString:self.customCellProperty.originValue]) {
+        self.textView.text = self.customCellProperty.originValue;
+        [self textDidChange:self.textView];
+    }
     
     if (beginEdit) {
         [self beginEdit];
@@ -134,6 +142,15 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     [self.cellPropertyArr removeAllObjects];
     for (int i = 0; i < self.codeLength; i++) {
         [self.cellPropertyArr addObject:[self.customCellProperty copy]];
+    }
+}
+
+#pragma mark - Reload Input View
+- (void)reloadInputString:(NSString *_Nullable)value
+{
+    if (![self.textView.text isEqualToString:value]) {
+        self.textView.text = value;
+        [self textDidChange:self.textView];
     }
 }
 
