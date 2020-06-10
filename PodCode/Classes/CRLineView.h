@@ -12,7 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 #define CRColorMaster [UIColor colorWithRed:49/255.0 green:51/255.0 blue:64/255.0 alpha:1]
 
-@interface CRLineView : UIView
+@interface CRLineView : UIControl
+
+typedef void(^CRLineViewSelectChangeBlock)(CRLineView *lineView, BOOL selected);
 
 @property (strong, nonatomic) UIView    *lineView;
 
@@ -36,6 +38,11 @@ NS_ASSUME_NONNULL_BEGIN
  默认：[UIColor colorWithRed:49/255.0 green:51/255.0 blue:64/255.0 alpha:1]
  */
 @property (copy, nonatomic) UIColor *underlineColorFilled;
+
+/**
+ 选择状态改变时回调
+ */
+@property (copy, nonatomic) CRLineViewSelectChangeBlock __nullable selectChangeBlock;
 
 - (instancetype)initWithFrame:(CGRect)frame UNAVAILABLE_ATTRIBUTE;
 
