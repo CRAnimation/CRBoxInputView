@@ -374,6 +374,18 @@
             make.height.mas_equalTo(4);
             make.left.right.bottom.offset(0);
         }];
+        
+        lineView.selectChangeBlock = ^(CRLineView * _Nonnull lineView, BOOL selected) {
+            if (selected) {
+                [lineView.lineView mas_updateConstraints:^(MASConstraintMaker *make) {
+                    make.height.mas_equalTo(6);
+                }];
+            } else {
+                [lineView.lineView mas_updateConstraints:^(MASConstraintMaker *make) {
+                    make.height.mas_equalTo(4);
+                }];
+            }
+        };
 
         return lineView;
     };

@@ -12,11 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 #define CRColorMaster [UIColor colorWithRed:49/255.0 green:51/255.0 blue:64/255.0 alpha:1]
 
-@interface CRLineView : UIControl
+@interface CRLineView : UIView
 
 typedef void(^CRLineViewSelectChangeBlock)(CRLineView *lineView, BOOL selected);
 
 @property (strong, nonatomic) UIView    *lineView;
+@property (assign, nonatomic) BOOL      selected;
 
 /**
  下划线颜色

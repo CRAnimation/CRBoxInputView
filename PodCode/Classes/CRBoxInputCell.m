@@ -210,6 +210,8 @@
         else{
             _lineView.lineView.backgroundColor = CRColorMaster;
         }
+        
+        _lineView.selected = selected;
     }
     
     if (_ifNeedCursor) {

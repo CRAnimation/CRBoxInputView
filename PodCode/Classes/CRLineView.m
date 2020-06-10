@@ -49,7 +49,7 @@
 }
 
 - (void)setSelected:(BOOL)selected {
-    [super setSelected:selected];
+    _selected = selected;
     
     if (self.selectChangeBlock) {
         __weak __typeof(self)weakSelf = self;
