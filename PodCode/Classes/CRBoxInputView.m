@@ -88,6 +88,8 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     self.codeLength = 4;
     self.ifNeedCursor = YES;
     self.keyBoardType = UIKeyboardTypeNumberPad;
+    self.inputType = CRInputType_Number;
+    self.customInputRegex = @"";
     self.backgroundColor = [UIColor clearColor];
     _valueArr = [NSMutableArray new];
     _ifNeedBeginEdit = NO;
@@ -256,19 +258,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     
     //有空格去掉空格
     verStr = [verStr stringByReplacingOccurrencesOfString:@" " withString:@""];
-    
-    
-    
-    #warning Bear Test
-    self.inputType = CRInputType_Regex;
-    self.customInputRegex = @"[0-9]";
-    
-    verStr = @"1c6m2w3";
     verStr = [self filterInputContent:verStr];
-    NSLog(@"--verStr:%@", verStr);
-    
-    
-    
     
     if (verStr.length >= _codeLength) {
         verStr = [verStr substringToIndex:_codeLength];
