@@ -18,6 +18,15 @@ typedef NS_ENUM(NSInteger, CRTextEditStatus) {
     CRTextEditStatus_EndEdit,
 };
 
+typedef NS_ENUM(NSInteger, CRInputType) {
+    /// 数字
+    CRInputType_Number,
+    /// 普通（不作任何处理）
+    CRInputType_Normal,
+    /// 自定义正则
+    CRInputType_Regex,
+};
+
 typedef void(^TextDidChangeblock)(NSString * _Nullable text, BOOL isFinished);
 typedef void(^TextEditStatusChangeblock)(CRTextEditStatus editStatus);
 
@@ -62,6 +71,21 @@ typedef void(^TextEditStatusChangeblock)(CRTextEditStatus editStatus);
 @property (assign, nonatomic) UIKeyboardType keyBoardType;
 
 /**
+ 输入样式
+ inputType
+ default: CRInputType_Number
+ */
+@property (assign, nonatomic) CRInputType inputType;
+
+/**
+自定义正则匹配输入内容
+customInputRegex
+default: @""
+当inputType == CRInputType_Regex时才会生效
+*/
+@property (copy, nonatomic) NSString * _Nullable customInputRegex;
+
+/**
  textContentType
  描述: 你可以设置为 'nil' 或者 'UITextContentTypeOneTimeCode' 来自动获取短信验证码
  desc: You set this 'nil' or 'UITextContentTypeOneTimeCode' to auto fill verify code.
@@ -82,6 +106,7 @@ typedef void(^TextEditStatusChangeblock)(CRTextEditStatus editStatus);
  default: NO
  */
 @property (assign, nonatomic) BOOL ifClearAllInBeginEditing;
+
 
 @property (copy, nonatomic) TextDidChangeblock _Nullable textDidChangeblock;
 @property (copy, nonatomic) TextEditStatusChangeblock _Nullable textEditStatusChangeblock;
