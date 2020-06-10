@@ -147,6 +147,22 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     }
 }
 
+- (void)appendNewCell
+{
+    [self.cellPropertyArr addObject:[self.customCellProperty copy]];
+    self.codeLength++;
+    [self.mainCollectionView reloadData];
+}
+
+- (void)removeLastCell
+{
+    if (self.cellPropertyArr.count > 0) {
+        [self.cellPropertyArr removeLastObject];
+        self.codeLength--;
+        [self.mainCollectionView reloadData];
+    }
+}
+
 #pragma mark - Reload Input View
 - (void)reloadInputString:(NSString *_Nullable)value
 {

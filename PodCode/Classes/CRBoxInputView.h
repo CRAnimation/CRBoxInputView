@@ -153,4 +153,7 @@ default: @""
 // You can inherit and rewrite
 - (UICollectionViewCell *_Nullable)customCollectionView:(UICollectionView *_Nullable)collectionView cellForItemAtIndexPath:(NSIndexPath *_Nullable)indexPath;
 
+- (void)appendNewCell;
+- (void)removeLastCell;
+
 @end
