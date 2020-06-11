@@ -18,7 +18,7 @@
 - 支持`Masonry`
 - 支持密文显示
 - 支持自定义密文图片/view
-- 支持iOS8及以上操作系统
+- 支持动态修改codeLength
 
 > 该组件适用于短信验证码，密码输入框，手机号码输入框这些场景。<br/>希望你可以喜欢！
 
@@ -44,11 +44,11 @@ pod 'CRBoxInputView', '1.2.0'
 | [Base](#Anchor_Base) | ![Normal.png](/ReadmeResources/1Normal.png "Normal.png")  |
 | [Placeholder](#Anchor_Placeholder) | ![Placeholder.png](/ReadmeResources/Add1_Placeholder0.png "Placeholder.png")  |
 | [CustomBox](#Anchor_CustomBox)  | ![CustomBox.png](/ReadmeResources/2CustomBox.png "CustomBox.png")  |
-| [ResetCodeLength](#Anchor_ResetCodeLength)  | ![ResetCodeLength.png](/ReadmeResources/2ResetCodeLength.gif "ResetCodeLength.png")  |
 | [Line](#Anchor_Line)  | ![Line.png](/ReadmeResources/3.1Line.png "Line.png")  |
 | [SecretSymbol](#Anchor_SecretSymbol)  | ![SecretSymbol.png](/ReadmeResources/4SecretSymbol.png "SecretSymbol.png")  |
 | [SecretImage](#Anchor_SecretImage)  | ![SecretImage.png](/ReadmeResources/5SecretImage.png "SecretImage.png")  |
 | [SecretView](#Anchor_SecretView)  | ![SecretView.png](/ReadmeResources/6SecretView.png "SecretView.png") |
+| [ResetCodeLength](#Anchor_ResetCodeLength)  | ![ResetCodeLength.png](/ReadmeResources/2ResetCodeLength.gif "ResetCodeLength.png")  |
 
 ## 使用说明
 
@@ -126,14 +126,6 @@ CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
 boxInputView.boxFlowLayout.itemSize = CGSizeMake(50, 50);
 boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];
-```
-
-<br/>
-
-
-### <a id="Anchor_ResetCodeLength"></a>ResetCodeLength
-``` objc
-[boxInputView resetCodeLength:_boxInputView.codeLength+1 beginEdit:YES];
 ```
 
 
@@ -249,6 +241,13 @@ boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
 
+<br/>
+
+
+### <a id="Anchor_ResetCodeLength"></a>ResetCodeLength
+``` objc
+[boxInputView resetCodeLength:_boxInputView.codeLength+1 beginEdit:YES];
+```
 
 <br/>
 

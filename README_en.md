@@ -7,13 +7,15 @@
 
 ### [中文文档](https://github.com/CRAnimation/CRBoxInputView#Header_Start) [/ English Document](https://github.com/CRAnimation/CRBoxInputView/blob/master/README_en.md#Header_Start)
 
+## Tip
+- If you fell good. Could you please give me a star? Thank you.
 
 ## Feature
 -  Support verify code auto fill in iOS12
 -  Support `Masonry`
 -  Support security type
 -  Support custom security image / view
--  Support iOS8  and over
+-  Support change code length dynamically
 
 > You can use this widget for verify code, password input or phone number input.<br/>I hope you can like this!
 
@@ -40,11 +42,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 | [Base](#Anchor_Base) | ![Normal.png](/ReadmeResources/1Normal.png "Normal.png")  |
 | [Placeholder](#Anchor_Placeholder) | ![Placeholder.png](/ReadmeResources/Add1_Placeholder0.png "Placeholder.png")  |
 | [CustomBox](#Anchor_CustomBox)  | ![CustomBox.png](/ReadmeResources/2CustomBox.png "CustomBox.png")  |
-| [ResetCodeLength](#Anchor_ResetCodeLength)  | ![ResetCodeLength.png](/ReadmeResources/2ResetCodeLength.gif "ResetCodeLength.png")  |
 | [Line](#Anchor_Line)  | ![Line.png](/ReadmeResources/3.1Line.png "Line.png")  |
 | [SecretSymbol](#Anchor_SecretSymbol)  | ![SecretSymbol.png](/ReadmeResources/4SecretSymbol.png "SecretSymbol.png")  |
 | [SecretImage](#Anchor_SecretImage)  | ![SecretImage.png](/ReadmeResources/5SecretImage.png "SecretImage.png")  |
 | [SecretView](#Anchor_SecretView)  | ![SecretView.png](/ReadmeResources/6SecretView.png "SecretView.png") |
+| [ResetCodeLength](#Anchor_ResetCodeLength)  | ![ResetCodeLength.png](/ReadmeResources/2ResetCodeLength.gif "ResetCodeLength.png")  |
 
 ## Usage
 
@@ -121,14 +123,6 @@ CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
 boxInputView.boxFlowLayout.itemSize = CGSizeMake(50, 50);
 boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];
-```
-
-<br/>
-
-
-### <a id="Anchor_ResetCodeLength"></a>ResetCodeLength
-``` objc
-[boxInputView resetCodeLength:_boxInputView.codeLength+1 beginEdit:YES];
 ```
 
 
@@ -241,6 +235,14 @@ CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
 boxInputView.ifNeedSecurity = YES; //Required (You can change this property anytime. And the existing texts can be refreshed automatically.)
 boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];
+```
+
+<br/>
+
+
+### <a id="Anchor_ResetCodeLength"></a>ResetCodeLength
+``` objc
+[boxInputView resetCodeLength:_boxInputView.codeLength+1 beginEdit:YES];
 ```
 
 
