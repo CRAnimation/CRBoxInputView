@@ -44,7 +44,7 @@ pod 'CRBoxInputView', '1.1.7'
 ## 示列
 
 下载源代码后，可以从Example目录中执行 `pod install`，然后运行Demo。
-![iPhone 8 Copy 2.png](/ReadmeResources/ScreenShoot2.png "iPhone 8 Copy 2.png")
+![iPhone 8 Copy 2.png](/ReadmeResources/ScreenShoot3.png "iPhone 8 Copy 2.png")
 
 
 ## 快速指南
@@ -53,6 +53,7 @@ pod 'CRBoxInputView', '1.1.7'
 | [Base](#Anchor_Base) | ![Normal.png](/ReadmeResources/1Normal.png "Normal.png")  |
 | [Placeholder](#Anchor_Placeholder) | ![Placeholder.png](/ReadmeResources/Add1_Placeholder0.png "Placeholder.png")  |
 | [CustomBox](#Anchor_CustomBox)  | ![CustomBox.png](/ReadmeResources/2CustomBox.png "CustomBox.png")  |
+| [ChangeCodeCount](#Anchor_ChangeCodeCount)  | ![ChangeCodeCount.png](/ReadmeResources/3-1ChangeCodeCount.gif "ChangeCodeCount.png")  |
 | [Line](#Anchor_Line)  | ![Line.png](/ReadmeResources/3.1Line.png "Line.png")  |
 | [SecretSymbol](#Anchor_SecretSymbol)  | ![SecretSymbol.png](/ReadmeResources/4SecretSymbol.png "SecretSymbol.png")  |
 | [SecretImage](#Anchor_SecretImage)  | ![SecretImage.png](/ReadmeResources/5SecretImage.png "SecretImage.png")  |
@@ -128,6 +129,13 @@ boxInputView.boxFlowLayout.itemSize = CGSizeMake(50, 50);
 boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
+
+
+### <a id="Anchor_ChangeCodeCount"></a>ChangeCodeCount
+``` objc
+[boxInputView resetCodeLength:_boxInputView.codeLength+1 beginEdit:YES];
+```
+<br/>
 
 
 <br/>

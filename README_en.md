@@ -41,7 +41,7 @@ pod 'CRBoxInputView', '1.1.7'
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-![iPhone 8 Copy 2.png](/ReadmeResources/ScreenShoot2.png "iPhone 8 Copy 2.png")
+![iPhone 8 Copy 2.png](/ReadmeResources/ScreenShoot3.png "iPhone 8 Copy 2.png")
 
 
 ## Quick Guide
