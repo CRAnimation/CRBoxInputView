@@ -303,7 +303,7 @@
         __strong __typeof(weakSelf)strongSelf = weakSelf;
         make.left.mas_equalTo(offXStart);
         make.right.mas_equalTo(-offXStart);
-        make.height.mas_equalTo(YY_6(70));
+        make.height.mas_equalTo(YY_6(52));
         make.top.equalTo(strongSelf.bigLockImageView.mas_bottom).offset(YY_6(18));
     }];
     
