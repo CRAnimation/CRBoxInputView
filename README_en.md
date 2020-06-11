@@ -26,7 +26,7 @@ CRBoxInputView is available through [CocoaPods](https://cocoapods.org). To insta
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'CRBoxInputView', '1.2.0'
+pod 'CRBoxInputView', '1.2.1'
 ```
 
 

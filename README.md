@@ -28,7 +28,7 @@
 CRBoxInputView 可以通过 [CocoaPods](https://cocoapods.org). 来安装,  只需简单的在你的 Podfile 中添加如下代码:
 
 ```ruby
-pod 'CRBoxInputView', '1.2.0'
+pod 'CRBoxInputView', '1.2.1'
 ```
 
 
