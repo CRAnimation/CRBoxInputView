@@ -43,6 +43,17 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     return self;
 }
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self initDefaultValue];
+        [self addNotificationObserver];
+    }
+    
+    return self;
+}
+
 - (instancetype)init
 {
     self = [super init];
