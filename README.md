@@ -44,7 +44,7 @@ pod 'CRBoxInputView', '1.1.7'
 | [Base](#Anchor_Base) | ![Normal.png](/ReadmeResources/1Normal.png "Normal.png")  |
 | [Placeholder](#Anchor_Placeholder) | ![Placeholder.png](/ReadmeResources/Add1_Placeholder0.png "Placeholder.png")  |
 | [CustomBox](#Anchor_CustomBox)  | ![CustomBox.png](/ReadmeResources/2CustomBox.png "CustomBox.png")  |
-| [resetCodeLength](#Anchor_resetCodeLength)  | ![resetCodeLength.png](/ReadmeResources/2ResetCodeLength.gif "resetCodeLength.png")  |
+| [ResetCodeLength](#Anchor_ResetCodeLength)  | ![ResetCodeLength.png](/ReadmeResources/2ResetCodeLength.gif "ResetCodeLength.png")  |
 | [Line](#Anchor_Line)  | ![Line.png](/ReadmeResources/3.1Line.png "Line.png")  |
 | [SecretSymbol](#Anchor_SecretSymbol)  | ![SecretSymbol.png](/ReadmeResources/4SecretSymbol.png "SecretSymbol.png")  |
 | [SecretImage](#Anchor_SecretImage)  | ![SecretImage.png](/ReadmeResources/5SecretImage.png "SecretImage.png")  |
@@ -123,7 +123,8 @@ boxInputView.customCellProperty = cellProperty;
 
 <br/>
 
-### <a id="Anchor_resetCodeLength"></a>resetCodeLength
+
+### <a id="Anchor_ResetCodeLength"></a>ResetCodeLength
 ``` objc
 [boxInputView resetCodeLength:_boxInputView.codeLength+1 beginEdit:YES];
 ```
