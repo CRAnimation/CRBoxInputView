@@ -89,7 +89,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 - (void)applicationDidBecomeActive:(NSNotification *)notification
 {
     // 重新进来后响应，光标动画重新开始
-    [_mainCollectionView reloadData];
+    [self reloadAllCell];
 }
 
 #pragma mark - You can inherit
@@ -198,7 +198,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         self.textEditStatusChangeblock(CRTextEditStatus_BeginEdit);
     }
     
-    [self.mainCollectionView reloadData];
+    [self reloadAllCell];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
@@ -209,7 +209,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         self.textEditStatusChangeblock(CRTextEditStatus_EndEdit);
     }
     
-    [self.mainCollectionView reloadData];
+    [self reloadAllCell];
 }
 
 #pragma mark - TextViewEdit
@@ -236,7 +236,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     [_valueArr removeAllObjects];
     self.textView.text = @"";
     [self allSecurityClose];
-    [self.mainCollectionView reloadData];
+    [self reloadAllCell];
     [self triggerBlock];
     
     if (beginEdit) {
@@ -333,7 +333,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
             }
         }
     }
-    [_mainCollectionView reloadData];
+    [self reloadAllCell];
     
     _oldLength = verStr.length;
     
@@ -409,7 +409,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         if (strongSelf.valueArr.count > 0) {
             [strongSelf replaceValueArrToAsteriskWithIndex:strongSelf.valueArr.count-1 needEqualToCount:YES];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [strongSelf.mainCollectionView reloadData];
+                [strongSelf reloadAllCell];
             });
         }
     }];
@@ -424,7 +424,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         [strongSelf replaceValueArrToAsteriskWithIndex:idx needEqualToCount:NO];
     }];
     
-    [self.mainCollectionView reloadData];
+    [self reloadAllCell];
 }
 
 #pragma mark - DelayBlock
@@ -481,6 +481,19 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     }
     
     return tempCell;
+}
+
+- (void)reloadAllCell
+{
+    [self.mainCollectionView reloadData];
+
+    NSUInteger focusIndex = _valueArr.count;
+    /// 最后一个
+    if (focusIndex == self.codeLength) {
+        [self.mainCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:focusIndex - 1 inSection:0] atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
+    } else {
+        [self.mainCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:focusIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+    }
 }
 
 #pragma mark - Qiuck set
@@ -612,7 +625,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         [self allSecurityClose];
     }
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.mainCollectionView reloadData];
+        [self reloadAllCell];
     });
 }
 
