@@ -44,7 +44,7 @@ typedef void(^TextEditStatusChangeblock)(CRTextEditStatus editStatus);
  codeLength
  default: 4
  */
-@property (nonatomic, assign) NSInteger codeLength __deprecated_msg("Please use `- (instancetype)initWithCodeLength:(NSInteger)codeLength, or - (void)resetCodeLength:(NSInteger)codeLength beginEdit:(BOOL)beginEdit` in CRBoxInputView. This property will change to readonly sooner or later");;
+@property (nonatomic, assign, readonly) NSInteger codeLength; //If you want to set codeLength, please use `- (instancetype)initWithCodeLength:(NSInteger)codeLength, or - (void)resetCodeLength:(NSInteger)codeLength beginEdit:(BOOL)beginEdit` in CRBoxInputView. 
 
 /**
  是否开启密文模式

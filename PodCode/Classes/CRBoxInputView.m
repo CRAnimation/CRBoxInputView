@@ -22,6 +22,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     BOOL _ifNeedBeginEdit;
 }
 
+@property (nonatomic, assign) NSInteger codeLength;
 @property (nonatomic, strong) UITapGestureRecognizer *tapGR;
 @property (nonatomic, strong) CRBoxTextView *textView;
 @property (nonatomic, strong) UICollectionView *mainCollectionView;
