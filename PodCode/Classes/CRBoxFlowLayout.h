@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (assign, nonatomic) NSInteger itemNum;
 
+/** minLineSpacing
+* default: 10
+*/
 @property (assign, nonatomic) NSInteger minLineSpacing;
 
 - (void)autoCalucateLineSpacing;

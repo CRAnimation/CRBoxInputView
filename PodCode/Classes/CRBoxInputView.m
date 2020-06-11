@@ -518,8 +518,8 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         _mainCollectionView.backgroundColor = [UIColor clearColor];
         _mainCollectionView.delegate = self;
         _mainCollectionView.dataSource = self;
-        _mainCollectionView.layer.masksToBounds = NO;
-        _mainCollectionView.clipsToBounds = NO;
+        _mainCollectionView.layer.masksToBounds = YES;
+        _mainCollectionView.clipsToBounds = YES;
         [_mainCollectionView registerClass:[CRBoxInputCell class] forCellWithReuseIdentifier:CRBoxInputCellID];
     }
     

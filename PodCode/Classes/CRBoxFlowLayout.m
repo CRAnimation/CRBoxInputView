@@ -25,7 +25,7 @@
 {
     self.ifNeedEqualGap = YES;
     self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    self.minLineSpacing = 5;
+    self.minLineSpacing = 10;
     self.minimumLineSpacing = 0;
     self.minimumInteritemSpacing = 0;
     self.sectionInset = UIEdgeInsetsZero;
@@ -45,7 +45,7 @@
 {
     if (self.itemNum > 1) {
         CGFloat width = CGRectGetWidth(self.collectionView.frame);
-        self.minimumLineSpacing = floor(1.0 * (width - self.itemNum * self.itemSize.width) / (self.itemNum - 1));
+        self.minimumLineSpacing = floor(1.0 * (width - self.itemNum * self.itemSize.width - self.collectionView.contentInset.left - self.collectionView.contentInset.right) / (self.itemNum - 1));
         
         if (self.minimumLineSpacing < self.minLineSpacing) {
             self.minimumLineSpacing = self.minLineSpacing;

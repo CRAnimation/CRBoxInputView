@@ -301,9 +301,9 @@
     [self.view addSubview:_boxInputView];
     [_boxInputView mas_makeConstraints:^(MASConstraintMaker *make) {
         __strong __typeof(weakSelf)strongSelf = weakSelf;
-        make.width.mas_equalTo(XX_6(262));
+        make.left.mas_equalTo(offXStart);
+        make.right.mas_equalTo(-offXStart);
         make.height.mas_equalTo(YY_6(52));
-        make.centerX.offset(0);
         make.top.equalTo(strongSelf.bigLockImageView.mas_bottom).offset(YY_6(18));
     }];
     
@@ -317,6 +317,7 @@
 - (CRBoxInputView *)generateBoxInputView_normal
 {
     CRBoxInputView *_boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
+    _boxInputView.mainCollectionView.contentInset = UIEdgeInsetsMake(0, 20, 0, 20);
     [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
     
     if (@available(iOS 12.0, *)) {
@@ -335,6 +336,7 @@
     cellProperty.cellPlaceholderFont = [UIFont systemFontOfSize:20];
     
     CRBoxInputView *_boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
+    _boxInputView.mainCollectionView.contentInset = UIEdgeInsetsMake(0, 20, 0, 20);
     _boxInputView.ifNeedCursor = NO;
     _boxInputView.placeholderText = @"露可娜娜";
     _boxInputView.customCellProperty = cellProperty;
@@ -364,6 +366,7 @@
     };
 
     CRBoxInputView *_boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
+    _boxInputView.mainCollectionView.contentInset = UIEdgeInsetsMake(0, 10, 0, 10);
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
     [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
@@ -409,6 +412,7 @@
     };
 
     CRBoxInputView *_boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
+    _boxInputView.mainCollectionView.contentInset = UIEdgeInsetsMake(0, 10, 0, 10);
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
     [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
@@ -431,6 +435,7 @@
     cellProperty.securitySymbol = @"*";//need
 
     CRBoxInputView *_boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
+    _boxInputView.mainCollectionView.contentInset = UIEdgeInsetsMake(0, 10, 0, 10);
     _boxInputView.ifNeedSecurity = YES;//need
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
@@ -474,6 +479,7 @@
     };
 
     CRBoxInputView *_boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
+    _boxInputView.mainCollectionView.contentInset = UIEdgeInsetsMake(0, 10, 0, 10);
     _boxInputView.ifNeedSecurity = YES;//need
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
@@ -515,6 +521,7 @@
     };
 
     CRBoxInputView *_boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
+    _boxInputView.mainCollectionView.contentInset = UIEdgeInsetsMake(0, 10, 0, 10);
     _boxInputView.ifNeedSecurity = YES;//need
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
