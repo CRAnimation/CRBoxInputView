@@ -11,6 +11,7 @@
 #import <CRBoxInputView/CRLineView.h>
 #import <CRBoxInputView/CRSecrectImageView.h>
 
+#define offXStart XX_6(35)
 @interface CRDetailViewController ()
 
 @property(nonatomic, strong) UIButton *backBtn;
@@ -23,9 +24,10 @@
 @property(nonatomic, strong) CRBoxInputView *boxInputView;
 @property(nonatomic, strong) UIButton *verifyBtn;
 
-@property(nonatomic, strong) UIView *ifNeedSecurityView;
-@property(nonatomic, strong) UILabel *ifNeedSecurityLabel;
-@property(nonatomic, strong) UIImageView *ifNeedSecurityIcon;
+@property(nonatomic, strong) UIView *menuView;
+@property(nonatomic, strong) UIButton *ifNeedSecurityBtn;
+@property(nonatomic, strong) UIButton *addBtn;
+@property(nonatomic, strong) UIButton *removeBtn;
 
 @property (strong, nonatomic) UILabel   *valueLabel;
 
@@ -59,7 +61,6 @@
 - (void)createUI
 {
     __weak __typeof(self)weakSelf = self;
-    CGFloat offXStart = XX_6(35);
     
     _backBtn = [UIButton new];
     [_backBtn setImage:[UIImage imageNamed:@"backArrow"] forState:UIControlStateNormal];
@@ -159,40 +160,49 @@
 
 - (void)createIfNeedSecurityControlView
 {
-    __weak __typeof(self)weakSelf = self;
+    CGFloat btnWidth = XX_6(40);
     
-    _ifNeedSecurityView = [UIView new];
-//    _ifNeedSecurityView.backgroundColor = [UIColor orangeColor];
-    [self.view addSubview:_ifNeedSecurityView];
-    [_ifNeedSecurityView mas_makeConstraints:^(MASConstraintMaker *make) {
-        __strong __typeof(weakSelf)strongSelf = weakSelf;
-        make.centerX.offset(0);
-        make.top.equalTo(strongSelf.verifyBtn.mas_bottom).offset(21);
+    /// _menuView
+    _menuView = [UIView new];
+    [self.view addSubview:_menuView];
+    [_menuView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.offset(offXStart);
+        make.right.offset(-offXStart);
+        make.top.equalTo(self.verifyBtn.mas_bottom).offset(21);
+        make.height.mas_equalTo(btnWidth);
     }];
     
-    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(securityBtnEvent)];
-    [_ifNeedSecurityView addGestureRecognizer:tapGR];
-    
-    _ifNeedSecurityLabel = [UILabel new];
-    [_ifNeedSecurityView addSubview:_ifNeedSecurityLabel];
-    _ifNeedSecurityLabel.text = @"IfNeedSecurity:";
-    _ifNeedSecurityLabel.font = FontSize_6(16);
-    _ifNeedSecurityLabel.textColor = color_master;
-    [_ifNeedSecurityLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    /// _ifNeedSecurityBtn
+    _ifNeedSecurityBtn = [UIButton new];
+    [_ifNeedSecurityBtn addTarget:self action:@selector(securityBtnEvent) forControlEvents:UIControlEventTouchUpInside];
+    _ifNeedSecurityBtn.adjustsImageWhenHighlighted = NO;
+    [_ifNeedSecurityBtn setImage:[UIImage imageNamed:@"eyeOpen"] forState:UIControlStateNormal];
+    [_ifNeedSecurityBtn setImage:[UIImage imageNamed:@"eyeClose"] forState:UIControlStateSelected];
+    [_menuView addSubview:_ifNeedSecurityBtn];
+    [_ifNeedSecurityBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(0);
-        make.top.offset(0);
-        make.bottom.offset(0);
+        make.centerY.offset(0);
+        make.width.height.mas_equalTo(btnWidth);
     }];
     
-    _ifNeedSecurityIcon = [UIImageView new];
-    _ifNeedSecurityIcon.image = [UIImage imageNamed:@"eyeOpen"];
-    [_ifNeedSecurityView addSubview:_ifNeedSecurityIcon];
-    [_ifNeedSecurityIcon mas_makeConstraints:^(MASConstraintMaker *make) {
-        __strong __typeof(weakSelf)strongSelf = weakSelf;
-        make.left.offset(7).equalTo(strongSelf.ifNeedSecurityLabel.mas_right);
+    _removeBtn = [UIButton new];
+    [_removeBtn addTarget:self action:@selector(removeEvent) forControlEvents:UIControlEventTouchUpInside];
+    [_removeBtn setImage:[UIImage imageNamed:@"cellRemove"] forState:UIControlStateNormal];
+    [_menuView addSubview:_removeBtn];
+    [_removeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.offset(0);
         make.centerY.offset(0);
-        make.width.height.mas_equalTo(XX_6(25));
+        make.width.height.mas_equalTo(btnWidth);
+    }];
+    
+    _addBtn = [UIButton new];
+    [_addBtn addTarget:self action:@selector(addEvent) forControlEvents:UIControlEventTouchUpInside];
+    [_addBtn setImage:[UIImage imageNamed:@"cellAdd"] forState:UIControlStateNormal];
+    [_menuView addSubview:_addBtn];
+    [_addBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.removeBtn.mas_left).offset(-12);
+        make.centerY.offset(0);
+        make.width.height.mas_equalTo(btnWidth);
     }];
 }
 
@@ -204,10 +214,18 @@
 - (void)securityBtnEvent
 {
     _boxInputView.ifNeedSecurity = !_boxInputView.ifNeedSecurity;
-    if (_boxInputView.ifNeedSecurity) {
-        _ifNeedSecurityIcon.image = [UIImage imageNamed:@"eyeClose"];
-    }else{
-        _ifNeedSecurityIcon.image = [UIImage imageNamed:@"eyeOpen"];
+    _ifNeedSecurityBtn.selected = _boxInputView.ifNeedSecurity;
+}
+
+- (void)addEvent
+{
+    [_boxInputView resetCodeLength:_boxInputView.codeLength+1 beginEdit:YES];
+}
+
+- (void)removeEvent
+{
+    if (_boxInputView.codeLength > 0) {
+        [_boxInputView resetCodeLength:_boxInputView.codeLength-1 beginEdit:YES];
     }
 }
 
@@ -509,8 +527,6 @@
 - (void)clearBtnEvent
 {
     [_boxInputView clearAll];
-//    _boxInputView.placeholderText = @"123456";
-//    [_boxInputView resetCodeLength:6 beginEdit:YES];
 }
 
 @end
