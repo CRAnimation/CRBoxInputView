@@ -23,7 +23,7 @@ typedef NS_ENUM(NSInteger, CRInputType) {
     CRInputType_Number,
     /// 普通（不作任何处理）
     CRInputType_Normal,
-    /// 自定义正则
+    /// 自定义正则（此时需要设置customInputRegex）
     CRInputType_Regex,
 };
 
@@ -44,7 +44,7 @@ typedef void(^TextEditStatusChangeblock)(CRTextEditStatus editStatus);
  codeLength
  default: 4
  */
-@property (nonatomic, assign, readonly) NSInteger codeLength; //If you want to set codeLength, please use `- (instancetype)initWithCodeLength:(NSInteger)codeLength, or - (void)resetCodeLength:(NSInteger)codeLength beginEdit:(BOOL)beginEdit` in CRBoxInputView. 
+@property (nonatomic, assign, readonly) NSInteger codeLength; //If you want to set codeLength, please use `- (instancetype)initWithCodeLength:(NSInteger)codeLength, or - (void)resetCodeLength:(NSInteger)codeLength beginEdit:(BOOL)beginEdit` in CRBoxInputView.
 
 /**
  是否开启密文模式

@@ -319,6 +319,10 @@
     CRBoxInputView *_boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
     _boxInputView.mainCollectionView.contentInset = UIEdgeInsetsMake(0, 20, 0, 20);
     [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
+    _boxInputView.inputType = CRInputType_Number;
+    
+    _boxInputView.inputType = CRInputType_Regex;
+    _boxInputView.customInputRegex = @"[^0-9]";
     
     if (@available(iOS 12.0, *)) {
         _boxInputView.textContentType = UITextContentTypeOneTimeCode;

@@ -57,6 +57,13 @@ boxInputView.keyBoardType = UIKeyboardTypeNumberPad;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES]; // BeginEdit: If need begin edit.
 [self.view addSubview:boxInputView];
 
+// inputType（number）
+_boxInputView.inputType = CRInputType_Number;
+
+// inputType（regex）
+//_boxInputView.inputType = CRInputType_Regex;
+//_boxInputView.customInputRegex = @"[^0-9]";
+
 // Get value
 // func1, call back block when input text did change
 boxInputView.textDidChangeblock = ^(NSString *text, BOOL isFinished) {

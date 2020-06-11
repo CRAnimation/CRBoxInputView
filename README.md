@@ -61,6 +61,13 @@ boxInputView.keyBoardType = UIKeyboardTypeNumberPad;// 不设置时，默认UIKe
 [boxInputView loadAndPrepareViewWithBeginEdit:YES]; // BeginEdit:是否自动启用编辑模式
 [self.view addSubview:boxInputView];
 
+// 输入类型（纯数字）
+_boxInputView.inputType = CRInputType_Number;
+
+// 输入类型（正则表达式）
+//_boxInputView.inputType = CRInputType_Regex;
+//_boxInputView.customInputRegex = @"[^0-9]";
+
 // 获取值
 // 方法1, 当输入文字变化时触发回调block
 boxInputView.textDidChangeblock = ^(NSString *text, BOOL isFinished) {
