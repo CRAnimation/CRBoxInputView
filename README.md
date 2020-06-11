@@ -245,6 +245,7 @@ boxInputView.customCellProperty = cellProperty;
 
 
 ### <a id="Anchor_ResetCodeLength"></a>ResetCodeLength
+![ResetCodeLength.png](/ReadmeResources/2ResetCodeLength.gif "ResetCodeLength.png")
 ``` objc
 [boxInputView resetCodeLength:_boxInputView.codeLength+1 beginEdit:YES];
 ```
