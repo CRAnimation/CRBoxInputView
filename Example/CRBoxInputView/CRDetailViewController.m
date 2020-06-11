@@ -298,7 +298,7 @@
 #pragma mark - Normal
 - (CRBoxInputView *)generateBoxInputView_normal
 {
-    CRBoxInputView *_boxInputView = [CRBoxInputView new];
+    CRBoxInputView *_boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
     [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
     
     if (@available(iOS 12.0, *)) {
@@ -316,7 +316,7 @@
     cellProperty.cellPlaceholderTextColor = [UIColor colorWithRed:114/255.0 green:116/255.0 blue:124/255.0 alpha:0.3];
     cellProperty.cellPlaceholderFont = [UIFont systemFontOfSize:20];
     
-    CRBoxInputView *_boxInputView = [CRBoxInputView new];
+    CRBoxInputView *_boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
     _boxInputView.ifNeedCursor = NO;
     _boxInputView.placeholderText = @"露可娜娜";
     _boxInputView.customCellProperty = cellProperty;
@@ -345,7 +345,7 @@
         layer.shadowRadius = 4;
     };
 
-    CRBoxInputView *_boxInputView = [CRBoxInputView new];
+    CRBoxInputView *_boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
     [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
@@ -390,7 +390,7 @@
         return lineView;
     };
 
-    CRBoxInputView *_boxInputView = [CRBoxInputView new];
+    CRBoxInputView *_boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
     [_boxInputView loadAndPrepareViewWithBeginEdit:YES];
@@ -412,7 +412,7 @@
     cellProperty.showLine = YES;
     cellProperty.securitySymbol = @"*";//need
 
-    CRBoxInputView *_boxInputView = [CRBoxInputView new];
+    CRBoxInputView *_boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
     _boxInputView.ifNeedSecurity = YES;//need
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
@@ -455,7 +455,7 @@
         return secrectImageView;
     };
 
-    CRBoxInputView *_boxInputView = [CRBoxInputView new];
+    CRBoxInputView *_boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
     _boxInputView.ifNeedSecurity = YES;//need
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
@@ -496,7 +496,7 @@
         return customSecurityView;
     };
 
-    CRBoxInputView *_boxInputView = [CRBoxInputView new];
+    CRBoxInputView *_boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
     _boxInputView.ifNeedSecurity = YES;//need
     _boxInputView.boxFlowLayout.itemSize = CGSizeMake(XX_6(52), XX_6(52));
     _boxInputView.customCellProperty = cellProperty;
@@ -509,6 +509,8 @@
 - (void)clearBtnEvent
 {
     [_boxInputView clearAll];
+//    _boxInputView.placeholderText = @"123456";
+//    [_boxInputView resetCodeLength:6 beginEdit:YES];
 }
 
 @end

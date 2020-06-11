@@ -92,7 +92,7 @@ CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.cellPlaceholderTextColor = [UIColor colorWithRed:114/255.0 green:116/255.0 blue:124/255.0 alpha:0.3]; //可选
 cellProperty.cellPlaceholderFont = [UIFont systemFontOfSize:20]; //可选
 
-CRBoxInputView *boxInputView = [CRBoxInputView new];
+CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
 boxInputView.ifNeedCursor = NO; //可选
 boxInputView.placeholderText = @"露可娜娜"; //必需
 boxInputView.customCellProperty = cellProperty;
@@ -123,7 +123,7 @@ cellProperty.configCellShadowBlock = ^(CALayer * _Nonnull layer) {
     layer.shadowRadius = 4;
 };
 
-CRBoxInputView *boxInputView = [CRBoxInputView new];
+CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
 boxInputView.boxFlowLayout.itemSize = CGSizeMake(50, 50);
 boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];
@@ -150,7 +150,7 @@ cellProperty.customLineViewBlock = ^CRLineView * _Nonnull{
     return lineView;
 }; //可选
 
-CRBoxInputView *boxInputView = [CRBoxInputView new];
+CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
 boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];
 ```
@@ -165,7 +165,7 @@ boxInputView.customCellProperty = cellProperty;
 CRBoxInputCellProperty *cellProperty = [CRBoxInputCellProperty new];
 cellProperty.securitySymbol = @"*"; //可选
 
-CRBoxInputView *boxInputView = [CRBoxInputView new];
+CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
 boxInputView.ifNeedSecurity = YES; //必需（你可以在任何时候修改该属性，并且已经存在的文字会自动刷新。）
 boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:NO];
@@ -191,7 +191,7 @@ cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
     return secrectImageView;
 }; //必需
 
-CRBoxInputView *boxInputView = [CRBoxInputView new];
+CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
 boxInputView.ifNeedSecurity = YES; //必需（你可以在任何时候修改该属性，并且已经存在的文字会自动刷新。）
 boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];
@@ -224,7 +224,7 @@ cellProperty.customSecurityViewBlock = ^UIView * _Nonnull{
     return customSecurityView;
 }; //可选
 
-CRBoxInputView *boxInputView = [CRBoxInputView new];
+CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithCodeLength:4];
 boxInputView.ifNeedSecurity = YES; //必需（你可以在任何时候修改该属性，并且已经存在的文字会自动刷新。）
 boxInputView.customCellProperty = cellProperty;
 [boxInputView loadAndPrepareViewWithBeginEdit:YES];

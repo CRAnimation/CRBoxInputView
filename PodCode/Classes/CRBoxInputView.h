@@ -44,7 +44,7 @@ typedef void(^TextEditStatusChangeblock)(CRTextEditStatus editStatus);
  codeLength
  default: 4
  */
-@property (nonatomic, assign) NSInteger codeLength;
+@property (nonatomic, assign) NSInteger codeLength __deprecated_msg("Please use `- (instancetype)initWithCodeLength:(NSInteger)codeLength, or - (void)resetCodeLength:(NSInteger)codeLength beginEdit:(BOOL)beginEdit` in CRBoxInputView. This property will change to readonly sooner or later");;
 
 /**
  是否开启密文模式
@@ -153,7 +153,10 @@ default: @""
 // You can inherit and rewrite
 - (UICollectionViewCell *_Nullable)customCollectionView:(UICollectionView *_Nullable)collectionView cellForItemAtIndexPath:(NSIndexPath *_Nullable)indexPath;
 
-- (void)appendNewCell;
-- (void)removeLastCell;
+// code Length 调整
+- (void)resetCodeLength:(NSInteger)codeLength beginEdit:(BOOL)beginEdit;
+
+// Init
+- (instancetype _Nullable )initWithCodeLength:(NSInteger)codeLength;
 
 @end

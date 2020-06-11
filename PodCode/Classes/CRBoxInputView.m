@@ -32,7 +32,8 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 
 @implementation CRBoxInputView
 
-- (instancetype)initWithFrame:(CGRect)frame{
+- (instancetype)initWithFrame:(CGRect)frame
+{
     self = [super initWithFrame:frame];
     if (self) {
         [self initDefaultValue];
@@ -47,6 +48,18 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     if (self) {
         [self initDefaultValue];
         [self addNotificationObserver];
+    }
+    
+    return self;
+}
+
+- (instancetype _Nullable )initWithCodeLength:(NSInteger)codeLength
+{
+    self = [super init];
+    if (self) {
+        [self initDefaultValue];
+        [self addNotificationObserver];
+        self.codeLength = codeLength;
     }
     
     return self;
@@ -111,18 +124,21 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     [self generateCellPropertyArr];
     
     // mainCollectionView
-    [self addSubview:self.mainCollectionView];
-    [self.mainCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsZero);
-    }];
+    if (!self.mainCollectionView || ![self.subviews containsObject:self.mainCollectionView]) {
+        [self addSubview:self.mainCollectionView];
+        [self.mainCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(UIEdgeInsetsZero);
+        }];
+    }
     
     // textView
-    [self addSubview:self.textView];
-    [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.mas_equalTo(UIEdgeInsetsZero);
-        make.width.height.mas_equalTo(0);
-        make.left.top.mas_equalTo(0);
-    }];
+    if (!self.textView || ![self.subviews containsObject:self.textView]) {
+        [self addSubview:self.textView];
+        [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.height.mas_equalTo(0);
+            make.left.top.mas_equalTo(0);
+        }];
+    }
     
     // tap
     if (self.tapGR.view != self) {
@@ -147,20 +163,17 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     }
 }
 
-- (void)appendNewCell
+#pragma mark - code Length 调整
+- (void)resetCodeLength:(NSInteger)codeLength beginEdit:(BOOL)beginEdit
 {
-    [self.cellPropertyArr addObject:[self.customCellProperty copy]];
-    self.codeLength++;
-    [self.mainCollectionView reloadData];
-}
-
-- (void)removeLastCell
-{
-    if (self.cellPropertyArr.count > 0) {
-        [self.cellPropertyArr removeLastObject];
-        self.codeLength--;
-        [self.mainCollectionView reloadData];
+    if (codeLength<=0) {
+        NSAssert(NO, @"请输入大于0的验证码位数");
+        return;
     }
+    
+    self.codeLength = codeLength;
+    [self generateCellPropertyArr];
+    [self clearAllWithBeginEdit:beginEdit];
 }
 
 #pragma mark - Reload Input View
