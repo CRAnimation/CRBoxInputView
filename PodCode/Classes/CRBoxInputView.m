@@ -148,7 +148,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         [self addSubview:self.textView];
         [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.height.mas_equalTo(0);
-            make.left.top.mas_equalTo(0);
+            make.left.bottom.mas_equalTo(0); // 修复 IQKeyboardManager键盘遮挡问题
         }];
     }
     
