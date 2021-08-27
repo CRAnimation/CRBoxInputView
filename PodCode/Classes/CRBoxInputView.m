@@ -301,6 +301,11 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
     verStr = [verStr stringByReplacingOccurrencesOfString:@" " withString:@""];
     verStr = [self filterInputContent:verStr];
     
+    //自定义处理
+    if (self.textCustomProcessblock) {
+        verStr = self.textCustomProcessblock(verStr);
+    }
+    
     if (verStr.length >= _codeLength) {
         verStr = [verStr substringToIndex:_codeLength];
         [self endEdit];

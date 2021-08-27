@@ -29,6 +29,7 @@ typedef NS_ENUM(NSInteger, CRInputType) {
 
 typedef void(^TextDidChangeblock)(NSString * _Nullable text, BOOL isFinished);
 typedef void(^TextEditStatusChangeblock)(CRTextEditStatus editStatus);
+typedef NSString *(^TextCustomProcessblock)(NSString * _Nullable text);
 
 @interface CRBoxInputView : UIView
 
@@ -110,6 +111,8 @@ default: @""
 
 @property (copy, nonatomic) TextDidChangeblock _Nullable textDidChangeblock;
 @property (copy, nonatomic) TextEditStatusChangeblock _Nullable textEditStatusChangeblock;
+/// 文本自定义处理
+@property (copy, nonatomic) TextCustomProcessblock _Nullable textCustomProcessblock;
 @property (strong, nonatomic) CRBoxFlowLayout * _Nullable boxFlowLayout;
 @property (strong, nonatomic) CRBoxInputCellProperty * _Nullable customCellProperty;
 @property (strong, nonatomic, readonly) NSString  * _Nullable textValue;
