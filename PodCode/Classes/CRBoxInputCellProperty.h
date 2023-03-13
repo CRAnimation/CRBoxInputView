@@ -45,8 +45,8 @@ typedef void(^ConfigCellShadowBlock)(CALayer *layer);
 
 /**
  cell边框颜色
- 状态：无填充文字，未选中状态时
- 默认：与cellBorderColorFilled相同
+ 状态：填充文字后，未选中状态时
+ 默认：nil
  */
 @property (copy, nonatomic) UIColor *__nullable cellBorderColorFilled;
 
